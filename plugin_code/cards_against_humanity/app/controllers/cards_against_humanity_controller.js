@@ -23,6 +23,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             user = message.user,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game !== 'undefined' && self.game.state !== Game.STATES.STOPPED) {
             // game exists
             client.say(channel, 'A game is already running. Type !join to join the game.');
@@ -46,6 +50,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             nick = message.nick,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -68,6 +76,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             nick = message.nick,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -88,6 +100,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
          var channel = message.args[0],
             nick = message.nick,
             hostname = message.host;
+
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
 
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
@@ -111,6 +127,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             user = message.user,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             self.start(client, message, cmdArgs);
         } else {
@@ -130,6 +150,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             nick = message.nick,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -147,6 +171,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
         var channel = message.args[0],
             nick = message.nick,
             hostname = message.host;
+
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
 
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
@@ -168,6 +196,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             user = message.user,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -187,6 +219,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
     self.list = function (client, message, cmdArgs) {
         var channel = message.args[0];
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -204,6 +240,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
         var channel = message.args[0],
             nick = message.nick,
             hostname = message.host;
+
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
 
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
@@ -225,6 +265,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
         var channel = message.args[0],
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -241,6 +285,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
     self.status = function(client, message, cmdArgs) {
         var channel = message.args[0];
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start.');
         } else {
@@ -253,6 +301,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
         var channel = message.args[0],
             nick = message.nick,
             hostname = message.host;
+
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
 
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED){
             client.say(channel, 'No game running. Start the game by typing !start.');
@@ -276,6 +328,10 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
             nick = message.nick,
             hostname = message.host;
 
+        if (cmdArgs !== '') {
+            cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), function (str) { return str.trim(); });
+        }
+
         if (typeof self.game === 'undefined' || self.game.state === Game.STATES.STOPPED) {
             client.say(channel, 'No game running. Start the game by typing !start');
         } else {
@@ -289,15 +345,13 @@ var CardsAgainstHumanity = function CardsAgainstHumanity() {
         }
     };
 
-    self.help = function (client, message, cmdArgs) {
-        var channel = message.args[0],
-            nick = message.nick,
-            hostname = message.host;
-
-        client.say(nick, '!start, !cards, !join, !cah #, !stop, !pause, !resume, !status, !discard #, !join, !list, !players, !points, !quit, !ping');
-
+    self.wiki = function (client, message, cmdArgs){
+      if (client.nick.toLowerCase() === message.args[0].toLowerCase()) {
+        client.say(message.nick, 'https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity');
+      } else {
+        client.say(message.args[0], message.nick + ': https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity');
+      }
     };
-
 };
 
 exports = module.exports = CardsAgainstHumanity;

@@ -1,17 +1,37 @@
 {
-  "server":        "localhost",
-  "nick":          "DakDak",
+  "production": {
+    "server":        "irc.redbrick.dcu",
+    "nick":          "butlerxxx",
 
-  "connectCommands": [
-        {
-            "target": "",
-            "message": ""
-        }
-    ],
+    "connectCommands": [
+          {
+              "target": "",
+              "message": ""
+          }
+      ],
 
-  "clientOptions": {
-      "userName":             "creadak",
-      "floodProtection":      true,
-      "floodProtectionDelay": 175
+    "clientOptions": {
+        "userName":             "butlerx",
+        "floodProtection":      true,
+        "floodProtectionDelay": 175
+    }
+  },
+
+  "development": {
+    "server":        "irc.redbrick.dcu",
+    "nick":          "butlerDev",
+
+    "connectCommands": [
+          {
+              "target": "",
+              "message": ""
+          }
+      ],
+
+    "clientOptions": {
+        "userName":             "butlerx",
+        "floodProtection":      true,
+        "floodProtectionDelay": 175
+    }
   }
 }
