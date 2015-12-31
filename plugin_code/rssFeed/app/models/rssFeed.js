@@ -18,7 +18,7 @@ var RssFeed = function RssFeed() {
 
     if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
 
-    stream.pipe(feedparser);
+    stream.pipe(self.feedparser);
   });
 
 
