@@ -28,6 +28,7 @@
     "nodemon": "latest",
     "mathjs": "latest",
     "node-schedule": "latest",
-    "rss": "latest"
+    "feedparser": "latest",
+    "request": "latest"
   }
 }
