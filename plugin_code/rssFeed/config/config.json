@@ -1,0 +1,15 @@
+{
+  "development": {
+    "rssFeed": "https://news.ycombinator.com/rss",
+    "channels": ["#botdev"],
+    "channelsToExclude": [],
+    "channelsToJoin": [ "#botdev" ]
+  },
+
+  "production": {
+    "rssFeed": "https://news.ycombinator.com/rss",
+    "channels": ["#hackernews"],
+    "channelsToExclude": ["#CardsAgainstHumanity", "#Countdown", "#Uno", "#BookClub", "#bots"],
+    "channelsToJoin": ["#hackernews"]
+  }
+}
