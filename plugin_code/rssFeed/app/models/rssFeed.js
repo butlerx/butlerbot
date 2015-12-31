@@ -6,26 +6,27 @@ var env = process.env.NODE_ENV || 'development',
 var RssFeed = function RssFeed() {
   var self = this;
   self.config = config;
-  self.req = request(self.config.rssFeed);
-  self.feedparser = new FeedParser();
+  var req = request(self.config.rssFeed),
+      feedparser = new FeedParser();
 
   self.readFeed = function (client, message, cmdArgs) {
-    self.req.on('error', function (error) {
+    console.log('In readFeed');
+    req.on('error', function (error) {
       // handle any request errors
     });
-    self.req.on('response', function (res) {
+    req.on('response', function (res) {
       var stream = this;
 
       if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
 
-      stream.pipe(self.feedparser);
+      stream.pipe(feedparser);
     });
 
 
-    self.feedparser.on('error', function(error) {
+    feedparser.on('error', function(error) {
       // always handle errors
     });
-    self.feedparser.on('readable', function() {
+    feedparser.on('readable', function() {
       // This is where the action is!
       var stream = this
         , meta = this.meta // **NOTE** the "meta" is always available in the context of the feedparser instance
