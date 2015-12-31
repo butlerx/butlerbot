@@ -33,6 +33,7 @@ var RssFeed = function RssFeed() {
 
       while (item = stream.read()) {
         client.say(message.args[0], item.title + ' ' + item.comments);
+        console.log(item.title + ' ' + item.comments);
       }
     });
   };
