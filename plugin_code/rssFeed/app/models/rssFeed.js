@@ -9,7 +9,7 @@ var RssFeed = function RssFeed() {
   self.req = request(self.config.rssFeed);
   self.feedparser = new FeedParser();
 
-  self.readFeed() = function (client, message, cmdArgs) {
+  self.readFeed = function (client, message, cmdArgs) {
     self.req.on('error', function (error) {
       // handle any request errors
     });
