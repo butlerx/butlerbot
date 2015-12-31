@@ -6,9 +6,8 @@ var env = process.env.NODE_ENV || 'development',
 var RssFeed = function RssFeed() {
   var self = this;
   self.config = config;
-  self.fileName ='plugin_code/popping/config/url.json';
 
-  self.req = request(self.config.RssFeed);
+  self.req = request(self.config.rssFeed);
   self.feedparser = new FeedParser([options]);
 
   self.req.on('error', function (error) {
