@@ -1,14 +1,41 @@
 var env = process.env.NODE_ENV || 'development',
-    config = require('../../config/config.json')[env];
+    config = require('../../config/config.json')[env],
+    FeedParser = require('feedparser'),
+    request = require('request');
 
 var RssFeed = function RssFeed() {
   var self = this;
   self.config = config;
   self.fileName ='plugin_code/popping/config/url.json';
 
-  self.read = function (client, message, cmdArgs) {
+  self.req = request(self.config.RssFeed);
+  self.feedparser = new FeedParser([options]);
 
-  };
+  self.req.on('error', function (error) {
+    // handle any request errors
+  });
+  self.req.on('response', function (res) {
+    var stream = this;
+
+    if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
+
+    stream.pipe(feedparser);
+  });
+
+
+  self.feedparser.on('error', function(error) {
+    // always handle errors
+  });
+  self.feedparser.on('readable', function() {
+    // This is where the action is!
+    var stream = this
+      , meta = this.meta // **NOTE** the "meta" is always available in the context of the feedparser instance
+      , item;
+
+    while (item = stream.read()) {
+      console.log(item);
+    }
+  });
 }
 
 exports = module.exports = RssFeed;
