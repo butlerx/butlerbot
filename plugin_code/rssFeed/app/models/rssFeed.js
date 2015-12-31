@@ -8,7 +8,7 @@ var RssFeed = function RssFeed() {
   self.config = config;
 
   self.req = request(self.config.rssFeed);
-  self.feedparser = new FeedParser([options]);
+  self.feedparser = new FeedParser();
 
   self.req.on('error', function (error) {
     // handle any request errors
