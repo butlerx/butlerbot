@@ -1,4 +1,4 @@
-var RssFeed = require('./app/controllers/rssFeed.js');
+var RssFeed = require('./app/models/rssFeed.js');
 
 module.exports = function(app) {
   var rssFeed = new RssFeed();
