@@ -6,6 +6,4 @@ module.exports = function(app) {
   // Join Channels
   app.joinChannels(rssFeed.config.channelsToJoin);
 
-  app.cmd('start', '', rssFeed.config.channels, rssFeed.config.channelsToExclude, rssFeed.readFeed);
-
 };

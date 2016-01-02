@@ -11,6 +11,7 @@ var RssFeed = function RssFeed() {
 
   self.readFeed = function (client, message, cmdArgs) {
     console.log('In readFeed');
+    client.say(message.args[0], 'started feed for ' + self.config.rssFeed);
     req.on('error', function (error) {
       // handle any request errors
     });
@@ -38,6 +39,8 @@ var RssFeed = function RssFeed() {
       }
     });
   };
+
+  self.readFeed();
 }
 
 exports = module.exports = RssFeed;
