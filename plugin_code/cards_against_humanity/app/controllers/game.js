@@ -1,5 +1,6 @@
 const c = require('irc-colors');
 const _ = require('underscore');
+const util = require('util');
 const inflection = require('inflection');
 const Cards = require('../controllers/cards');
 

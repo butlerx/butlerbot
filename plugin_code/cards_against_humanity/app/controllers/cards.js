@@ -48,7 +48,8 @@ const Cards = function Cards (cards) {
      * @returns {*}
      */
   self.addCard = card => {
-    self.cards.push(card);85   return card;
+    self.cards.push(card);
+    return card;
   };
 
   /**

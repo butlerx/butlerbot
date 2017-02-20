@@ -15,9 +15,7 @@
     "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "fix": "eslint . --fix",
-    "build": "babel src --source-maps --out-dir lib",
-    "build:watch": "babel src --watch --source-maps --out-dir lib"
+    "fix": "eslint . --fix"
   },
   "license": "CC-BY-NC-SA-2.0",
   "dependencies": {
