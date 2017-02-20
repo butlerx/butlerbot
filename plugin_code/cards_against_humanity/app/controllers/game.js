@@ -1,16 +1,7 @@
-const util = require('util');
 const c = require('irc-colors');
 const _ = require('underscore');
 const inflection = require('inflection');
 const Cards = require('../controllers/cards');
-const fs = require('fs');
-const logFile = fs.createWriteStream('../../../logs/CAHdebug.log', { flags: 'a' });
-const logStdout = process.stdout;
-
-console.log = d => {
-  logFile.write(`${util.format(d)}\n`);
-  logStdout.write(`${util.format(d)}\n`);
-};
 
 /**
  * Available states for game

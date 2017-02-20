@@ -1,14 +1,5 @@
 const _ = require('underscore');
 const Card = require('../models/card');
-const fs = require('fs');
-const util = require('util');
-const logFile = fs.createWriteStream('../../../logs/CAHdebug.log', { flags: 'a' });
-const logStdout = process.stdout;
-
-console.log = d => {
-  logFile.write(`${util.format(d)}\n`);
-  logStdout.write(`${util.format(d)}\n`);
-};
 
 const Cards = function Cards (cards) {
   const self = this;
@@ -57,8 +48,7 @@ const Cards = function Cards (cards) {
      * @returns {*}
      */
   self.addCard = card => {
-    self.cards.push(card);
-    return card;
+    self.cards.push(card);85   return card;
   };
 
   /**
