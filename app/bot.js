@@ -1,8 +1,7 @@
-'use strict';
 const _ = require('underscore');
 const irc = require('irc');
 const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config.json')[env];
+let config = require('../config/config.json')[env];
 let client;
 const commands = [];
 const msgs = [];
@@ -23,6 +22,11 @@ exports.init = function () {
 
   console.log('Initializing...');
   // init irc client
+  config.server = process.env.SERVER || config.server;
+  config.nick = process.env.NICK || config.nick;
+  config.clientOptions.port = process.env.PORT || config.clientOptions.port;
+  config.clientOptions.userName = process.env.USER || config.clientOptions.userName;
+
   console.log(`Connecting to ${config.server} as ${config.nick}...`);
   client = new irc.Client(config.server, config.nick, config.clientOptions);
 
