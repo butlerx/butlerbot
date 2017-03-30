@@ -4,8 +4,7 @@
     "jest": true,
     "node": true
   },
-  "plugins": ["lodash"],
-  "extends": ["standard", "plugin:lodash/canonical"],
+  "extends": ["standard"],
   "globals": {
     "GENTLY": true
   },
