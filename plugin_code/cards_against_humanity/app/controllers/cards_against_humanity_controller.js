@@ -4,28 +4,23 @@ const Player = require('../models/player');
 const config = require('../../config/config');
 const dbModels = require('../../models');
 
-const CardsAgainstHumanity = function CardsAgainstHumanity() {
+function CardsAgainstHumanity() {
   const self = this;
-  self.game;
   self.config = config;
 
   /**
      * Start a game
      * @param client
      * @param message
-     * @param cmdArgs
+     * @param cmd
      */
-  self.start = (client, message, cmdArgs) => {
+  self.start = (client, message, cmd) => {
     // check if game running on the channel
     const channel = message.args[0];
-
     const nick = message.nick;
     const user = message.user;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
     if (!_.isUndefined(self.game) && self.game.state !== Game.STATES.STOPPED) {
       // game exists
@@ -45,23 +40,16 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * @param message
      * @param cmdArgs
      */
-  self.stop = (client, message, cmdArgs) => {
+  self.stop = (client, message) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
-
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
-    } else {
-      const player = self.game.getPlayer({ nick, hostname });
-      if (!_.isUndefined(player)) {
-        self.game.stop(self.game.getPlayer({ nick, hostname }));
-        self.game = undefined;
-      }
+    } else if (!_.isUndefined(self.game.getPlayer({ nick, hostname }))) {
+      self.game.stop(self.game.getPlayer({ nick, hostname }));
+      self.game = undefined;
     }
   };
 
@@ -69,24 +57,16 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Pause a game
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.pause = (client, message, cmdArgs) => {
+  self.pause = (client, message) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
-
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
-    } else {
-      const player = self.game.getPlayer({ nick, hostname });
-      if (!_.isUndefined(player)) {
-        self.game.pause();
-      }
+    } else if (!_.isUndefined(self.game.getPlayer({ nick, hostname }))) {
+      self.game.pause();
     }
   };
 
@@ -96,22 +76,15 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * @param message
      * @param cmdArgs
      */
-  self.resume = (client, message, cmdArgs) => {
+  self.resume = (client, message) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
-
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
-    } else {
-      const player = self.game.getPlayer({ nick, hostname });
-      if (!_.isUndefined(player)) {
-        self.game.resume();
-      }
+    } else if (!_.isUndefined(self.game.getPlayer({ nick, hostname }))) {
+      self.game.resume();
     }
   };
 
@@ -119,16 +92,12 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Add player to game
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.join = (client, message, cmdArgs) => {
+  self.join = (client, message, cmd) => {
     const nick = message.nick;
     const user = message.user;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       self.start(client, message, cmdArgs);
@@ -142,16 +111,11 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Remove player from game
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.quit = (client, message, cmdArgs) => {
+  self.quit = (client, message) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -164,16 +128,11 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Get players cards
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.cards = (client, message, cmdArgs) => {
+  self.cards = (client, message) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -187,17 +146,13 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Play cards
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.play = (client, message, cmdArgs) => {
+  self.play = (client, message, cmd) => {
     // check if everyone has played and end the round
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -213,14 +168,9 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * List players in the game
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.list = (client, { args }, cmdArgs) => {
+  self.list = (client, { args }) => {
     const channel = args[0];
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -233,16 +183,13 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Select the winner
      * @param client
      * @param message
-     * @param cmdArgs
+     * @param cmd
      */
-  self.winner = (client, message, cmdArgs) => {
+  self.winner = (client, message, cmd) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -258,14 +205,9 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Show top players in current game
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.points = (client, { args, host }, cmdArgs) => {
+  self.points = (client, { args }) => {
     const channel = args[0];
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -278,14 +220,9 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
      * Show top players in current game
      * @param client
      * @param message
-     * @param cmdArgs
      */
-  self.status = (client, { args }, cmdArgs) => {
+  self.status = (client, { args }) => {
     const channel = args[0];
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -294,16 +231,12 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
     }
   };
 
-  self.pick = (client, message, cmdArgs) => {
+  self.pick = (client, message, cmd) => {
     // check if everyone has played and end the round
     const channel = message.args[0];
-
     const nick = message.nick;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
@@ -322,14 +255,11 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
     }
   };
 
-  self.discard = (client, message, cmdArgs) => {
+  self.discard = (client, message, cmd) => {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start');
@@ -354,6 +284,6 @@ const CardsAgainstHumanity = function CardsAgainstHumanity() {
       );
     }
   };
-};
+}
 
-exports = module.exports = CardsAgainstHumanity;
+module.exports = CardsAgainstHumanity;

@@ -77,13 +77,6 @@ module.exports = app => {
     redbrickCommittee.config.channelsToExclude,
     redbrickCommittee.showFYR,
   );
-  app.cmd(
-    'reload',
-    '',
-    redbrickCommittee.config.channels,
-    redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.reload,
-  );
 
   // Private commands
   app.msg('cmt', '', redbrickCommittee.showCommitteeInfo);
@@ -96,5 +89,4 @@ module.exports = app => {
   app.msg('admins', '', redbrickCommittee.showAdmins);
   app.msg('webmaster', '', redbrickCommittee.showWebmaster);
   app.msg('fyr', '', redbrickCommittee.showFYR);
-  app.msg('reload', '', redbrickCommittee.reload);
 };

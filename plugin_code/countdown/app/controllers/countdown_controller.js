@@ -19,7 +19,7 @@ function Countdown() {
 
       const games = _.filter(
         self.challenges,
-        challenge => challenge.challenged.toLowerCase() === message.nick.toLowerCase(),
+        ({ challenged }) => challenged.toLowerCase() === message.nick.toLowerCase(),
       );
       const challengers = _.map(games, ({ challenger }) => challenger);
       const letterTimes = _.map(games, ({ letter }) => letter);
@@ -257,16 +257,13 @@ function Countdown() {
     }
   };
 
-  self.stop = (client, message) => {
-    const channel = message.args[0];
+  self.stop = (client, { args, nick }) => {
+    const channel = args[0];
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
-      client.say(message.args[0], 'No game running to stop.');
-    } else if (
-      self.game.challenger.nick === message.nick ||
-      self.game.challenged.nick === message.nick
-    ) {
-      self.game.stop(message.nick, false);
+      client.say(args[0], 'No game running to stop.');
+    } else if (self.game.challenger.nick === nick || self.game.challenged.nick === nick) {
+      self.game.stop(nick, false);
     } else {
       client.say(channel, 'Only the players can stop the game');
     }

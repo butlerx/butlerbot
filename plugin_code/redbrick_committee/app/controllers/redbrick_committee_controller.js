@@ -8,18 +8,8 @@ function RedbrickCommittee() {
   const self = this;
 
   self.config = config;
-  self.cache = false;
-  self.chair = true;
-  self.sec = true;
-  self.treasurer = true;
-  self.pro = true;
-  self.events = true;
-  self.helpdesk = true;
-  self.admins = true;
-  self.web = true;
-  self.fyr = true;
 
-  self.reload = () =>
+  self.committee = () =>
     new Promise((resolve, reject) => {
       request({
         uri    : 'http://redbrick.dcu.ie/api/committee',
@@ -31,130 +21,6 @@ function RedbrickCommittee() {
         .then(cmt => resolve(cmt))
         .catch(error => reject(error));
     });
-
-  self.committee = () => {
-    if (self.cache) {
-      return self.cmt;
-    }
-    self
-      .reload()
-      .then(committee => {
-        self.cmt = committee;
-        self.cache = true;
-        self.cacheCmt = setTimeout(() => {
-          clearTimeout(self.cacheCmt);
-          self.cache = false;
-        }, 60 * 10000 * self.config.waitTime);
-        return committee;
-      })
-      .catch(() => self.cmt);
-  };
-
-  self.wait = position => {
-    switch (position) {
-      default:
-        break;
-      case 'Chair':
-        self.chair = false;
-        self.waitChair = setTimeout(self.readyChair, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'Sec':
-        self.sec = false;
-        self.waitSec = setTimeout(self.readySec, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'Treasurer':
-        self.treasurer = false;
-        self.waitTreasurer = setTimeout(self.readyTreasurer, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'PRO':
-        self.pro = false;
-        self.waitPRO = setTimeout(self.readyPRO, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'Events':
-        self.events = false;
-        self.waitEvents = setTimeout(self.readyEvents, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'FYR':
-        self.fyr = false;
-        self.waitFYR = setTimeout(self.readyFYR, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'Web':
-        self.web = false;
-        self.waitWeb = setTimeout(self.readyWeb, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'Helpdesk':
-        self.helpdesk = false;
-        self.waitHelpdesk = setTimeout(self.readyHelpdesk, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-      case 'Admins':
-        self.admins = false;
-        self.waitAdmins = setTimeout(self.readyAdmins, 60 * 1000 * self.config.waitTime);
-        console.log(`Waiting for ${position}`);
-        break;
-    }
-  };
-
-  self.readyChair = () => {
-    clearTimeout(self.waitChair);
-    self.chair = true;
-    console.log('Ready for Chair');
-  };
-
-  self.readySec = () => {
-    clearTimeout(self.waitSec);
-    self.sec = true;
-    console.log('Ready for Secretary');
-  };
-
-  self.readyTreasurer = () => {
-    clearTimeout(self.waitTreasurer);
-    self.treasurer = true;
-    console.log('Ready for Treasurer');
-  };
-
-  self.readyPRO = () => {
-    clearTimeout(self.waitPRO);
-    self.pro = true;
-    console.log('Ready for PRO');
-  };
-
-  self.readyEvents = () => {
-    clearTimeout(self.waitEvents);
-    self.events = true;
-    console.log('Ready for Events');
-  };
-
-  self.readyFYR = () => {
-    clearTimeout(self.waitFYR);
-    self.fyr = true;
-    console.log('Ready for FYR');
-  };
-
-  self.readyWeb = () => {
-    clearTimeout(self.waitWeb);
-    self.web = true;
-    console.log('Ready for Webmaster');
-  };
-
-  self.readyHelpdesk = () => {
-    clearTimeout(self.waitHelpdesk);
-    self.helpdesk = true;
-    console.log('Ready for Helpdesk');
-  };
-
-  self.readyAdmins = () => {
-    clearTimeout(self.waitAdmins);
-    self.admins = true;
-    console.log('Ready for Admins');
-  };
 
   self.showCommitteeInfo = (client, message, cmdArgs) => {
     client.say(message.args[0], 'Committee details sent. Who you want to tell to resign!');
@@ -169,8 +35,9 @@ function RedbrickCommittee() {
     self.showAdmins(client, message, cmdArgs);
   };
 
-  self.showChair = (client, { nick }) => {
-    const chairperson = _.find(self.committee, { position: 'Chairperson' });
+  self.showChair = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const chairperson = _.find(cmt, { position: 'Chairperson' });
     if (!_.isUndefined(chairperson) && self.chair) {
       const chairString = `${chairperson.name} (${chairperson.nick})`;
       client.say(
@@ -181,8 +48,9 @@ function RedbrickCommittee() {
     }
   };
 
-  self.showSecretary = (client, { nick }) => {
-    const secretary = _.find(self.committee, { position: 'Secretary' });
+  self.showSecretary = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const secretary = _.find(cmt, { position: 'Secretary' });
     if (!_.isUndefined(secretary) && self.sec) {
       const secretaryString = `${secretary.name} (${secretary.nick})`;
       client.say(
@@ -193,8 +61,9 @@ function RedbrickCommittee() {
     }
   };
 
-  self.showTreasurer = (client, { nick }) => {
-    const treasurer = _.find(self.committee, { position: 'Treasurer' });
+  self.showTreasurer = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const treasurer = _.find(cmt, { position: 'Treasurer' });
     if (!_.isUndefined(treasurer) && self.treasurer) {
       const treasurerString = `${treasurer.name} (${treasurer.nick})`;
       client.say(
@@ -205,8 +74,9 @@ function RedbrickCommittee() {
     }
   };
 
-  self.showPRO = (client, { nick }) => {
-    const pro = _.find(self.committee, { position: 'Public Relations Officer' });
+  self.showPRO = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const pro = _.find(cmt, { position: 'Public Relations Officer' });
     if (!_.isUndefined(pro) && self.pro) {
       const proString = `${pro.name} (${pro.nick})`;
       client.say(
@@ -217,60 +87,60 @@ function RedbrickCommittee() {
     }
   };
 
-  self.showEvents = (client, { nick }) => {
-    const events = _.find(self.committee, { position: 'Events Officer' });
+  self.showEvents = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const events = _.find(cmt, { position: 'Events Officer' });
     if (!_.isUndefined(events) && self.events) {
       const eventsString = `${events.name} (${events.nick})`;
       client.say(
         nick,
         `Events Officer: ${eventsString} contact by /m ${events.nick} <message>, or email ${events.nick}@redbrick.dcu.ie`,
       );
-      self.wait('Events');
     }
   };
 
-  self.showFYR = (client, { nick }) => {
-    const firstYearRep = _.find(self.committee, { position: 'First Year Representative' });
+  self.showFYR = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const firstYearRep = _.find(cmt, { position: 'First Year Representative' });
     if (!_.isUndefined(firstYearRep) && self.fyr) {
       const fyrString = `${firstYearRep.name} (${firstYearRep.nick})`;
       client.say(
         nick,
         `First Year Representative: ${fyrString} contact by /m ${firstYearRep.nick} <message>, or email ${firstYearRep.nick}@redbrick.dcu.ie`,
       );
-      self.wait('FYR');
     }
   };
 
-  self.showWebmaster = (client, { nick }) => {
-    const webmaster = _.find(self.committee, { position: 'Webmaster' });
+  self.showWebmaster = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const webmaster = _.find(cmt, { position: 'Webmaster' });
     if (!_.isUndefined(webmaster) && self.web) {
       const webmasterString = `${webmaster.name} (${webmaster.nick})`;
       client.say(
         nick,
         `Webmaster: ${webmasterString} contact by /m ${webmaster.nick} <message>, or email ${webmaster.nick}@redbrick.dcu.ie`,
       );
-      self.wait('Web');
     }
   };
 
-  self.showHelpdesk = (client, { nick }) => {
-    const helpdesk = _.filter(self.committee, { position: 'Helpdesk' });
+  self.showHelpdesk = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const helpdesk = _.filter(cmt, { position: 'Helpdesk' });
     if (!_.isUndefined(helpdesk) && self.helpdesk) {
       const helpdeskString = _.map(helpdesk, ({ name, nick }) => `${name} (${nick})`).join(', ');
       client.say(nick, `Helpdesk: ${helpdeskString} contact by emailing helpdesk@redbrick.dcu.ie`);
-      self.wait('Helpdesk');
     }
   };
 
-  self.showAdmins = (client, { nick }) => {
-    const admins = _.filter(self.committee, { position: 'System Administrator' });
+  self.showAdmins = async (client, { nick }) => {
+    const cmt = await self.committee();
+    const admins = _.filter(cmt, { position: 'System Administrator' });
     if (!_.isUndefined(admins) && self.admins) {
       const adminsString = _.map(admins, ({ name, nick }) => `${name} (${nick})`).join(', ');
       client.say(
         nick,
         `System Administrators: ${adminsString} contact by emailing admins@redbrick.dcu.ie`,
       );
-      self.wait('Admins');
     }
   };
 }

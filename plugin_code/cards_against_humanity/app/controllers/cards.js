@@ -1,20 +1,20 @@
 const _ = require('lodash');
 const Card = require('../models/card');
 
-const Cards = function Cards(cards) {
+function Cards(allCards) {
   const self = this;
 
   self.cards = [];
 
   // add all cards in init array
-  _.forEach(cards, c => {
+  _.forEach(allCards, c => {
     let card;
     if (c instanceof Card) {
       card = c;
-    } else if (c.hasOwnProperty('value')) {
+    } else if ({}.hasOwnProperty.call(c, 'value')) {
       card = new Card(c);
     } else {
-      console.warning('Invalid card', c);
+      console.error('Invalid card', c);
     }
     self.cards.push(card);
   });
@@ -25,9 +25,10 @@ const Cards = function Cards(cards) {
      * @returns {Array} Array of the old, replaced cards
      */
   self.reset = cards => {
-    if (_.isUndefined(cards)) cards = [];
+    let hand = cards;
+    if (_.isUndefined(hand)) hand = [];
     const oldCards = self.cards;
-    self.cards = cards;
+    self.cards = hand;
     return oldCards;
   };
 
@@ -56,18 +57,17 @@ const Cards = function Cards(cards) {
      * @returns {*}
      */
   self.removeCard = card => {
-    if (!_.isUndefined(card)) {
-      self.cards = _.without(self.cards, card);
-    }
+    if (!_.isUndefined(card)) self.cards = _.without(self.cards, card);
     return card;
   };
 
   /**
      * Pick cards from the collection
-     * @param index (int|Array) Index of a single card, of Array of multiple indexes to remove and return
+     * @param cardIndex (int|Array) Index of a single card, of Array of multiple indexes to remove and return
      * @returns {Card|Cards} Instance of a single card, or instance of Cards if multiple indexes picked
      */
-  self.pickCards = function PickCard(index) {
+  self.pickCards = function PickCard(cardIndex) {
+    let index = cardIndex;
     if (_.isUndefined(index)) index = 0;
     if (_.isArray(index)) {
       // get multiple cards
@@ -110,6 +110,6 @@ const Cards = function Cards(cards) {
      * @returns {Number}
      */
   self.numCards = () => this.cards.length;
-};
+}
 
 module.exports = Cards;

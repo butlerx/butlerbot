@@ -18,22 +18,19 @@ function DublinBusInfo() {
   const self = this;
   self.config = config;
 
-  self.showStopInfo = (client, { args, nick }, cmd) => {
-    let cmdArgs = cmd;
-    if (cmdArgs !== '') {
-      cmdArgs = _.map(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+  self.showStopInfo = (client, { args, nick }, cmdArgs) => {
+    const cmd = cmdArgs !== '' ? _.map(cmdArgs.match(/(\w+)\s?/gi), str => str.trim()) : cmdArgs;
 
-    if (cmdArgs.length < 1 || isNaN(cmdArgs[0])) {
+    if (cmd.length < 1 || isNaN(cmd[0])) {
       client.say(args[0], `${nick}: Please supply a stop number.`);
-    } else if (_.isUndefined(cmdArgs[1])) {
+    } else if (_.isUndefined(cmd[1])) {
       dBus
-        .getStopInfo(cmdArgs[0])
+        .getStopInfo(cmd[0])
         .then(info => printBuses(info, client, args[0]))
         .catch(reason => client.say(args[0], `${nick}: Sorry, ${reason}.`));
     } else {
       dBus
-        .getStopInfoForBuses(cmdArgs[0], cmdArgs.splice(1))
+        .getStopInfoForBuses(cmd[0], cmd.splice(1))
         .then(info => printBuses(info, client, args[0]))
         .catch(reason => client.say(args[0], `${nick}: Sorry, ${reason}.`));
     }
