@@ -1,4 +1,6 @@
+const helpdesk = require('../plugin_code/helpdesk/setup.js');
+
 exports.connect = (app, callback) => {
-  require('../plugin_code/helpdesk/setup.js')(app);
+  helpdesk(app);
   callback();
 };

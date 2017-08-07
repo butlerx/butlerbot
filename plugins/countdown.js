@@ -1,4 +1,6 @@
+const countdown = require('../plugin_code/countdown/setup.js');
+
 exports.connect = (app, callback) => {
-  require('../plugin_code/countdown/setup.js')(app);
+  countdown(app);
   callback();
 };

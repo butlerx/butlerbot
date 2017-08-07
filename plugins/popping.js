@@ -1,4 +1,6 @@
+const pop = require('../plugin_code/popping/setup.js');
+
 exports.connect = (app, callback) => {
-  require('../plugin_code/popping/setup.js')(app);
+  pop(app);
   callback();
 };
