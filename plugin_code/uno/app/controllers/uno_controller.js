@@ -1,54 +1,39 @@
-'use strict';
-
 const _ = require('lodash');
 const Game = require('../models/game');
 const Player = require('../models/player');
+
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
 
-const Uno = function Uno () {
+function Uno() {
   const self = this;
   self.config = config;
 
   self.cards = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) return false;
     const player = self.game.getPlayer({ nick });
     self.game.showCards(player);
   };
 
   self.challenge = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) return false;
     self.game.challenge(nick);
   };
 
   self.draw = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) return false;
     self.game.draw(nick);
   };
 
   self.end = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) return false;
     self.game.endTurn(nick);
   };
 
   self.join = (client, { args, nick, user, host }, cmdArgs) => {
     const channel = args[0];
-
-    if (cmdArgs !== '') {
-      cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    }
+    let cmd = cmdArgs;
+    if (cmd !== '') cmd = _.invokeMap(cmd.match(/(\w+)\s?/gi), str => str.trim());
 
     if (
       !_.isUndefined(self.game) &&
@@ -61,7 +46,7 @@ const Uno = function Uno () {
     }
 
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.FINISHED) {
-      self.game = new Game(args[0], client, self.config, cmdArgs);
+      self.game = new Game(args[0], client, self.config, cmd);
     }
 
     const player = new Player(nick, user, host);
@@ -69,55 +54,36 @@ const Uno = function Uno () {
   };
 
   self.quit = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.FINISHED) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state === Game.STATES.FINISHED) return false;
     self.game.removePlayer(nick);
   };
 
   self.score = () => {
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) return false;
     self.game.showScores();
   };
 
   self.start = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.WAITING) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.WAITING) return false;
     self.game.start(nick);
   };
 
   self.stop = (client, { nick }) => {
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.FINISHED) {
-      return false;
-    }
-
-    if (_.isUndefined(self.game.getPlayer({ nick }))) {
-      return false;
-    }
-
+    if (_.isUndefined(self.game) || self.game.state === Game.STATES.FINISHED) return false;
+    if (_.isUndefined(self.game.getPlayer({ nick }))) return false;
     self.game.stop(nick);
   };
 
   self.play = (client, { nick }, cmdArgs) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) {
-      return false;
-    }
-    cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    self.game.play(nick, cmdArgs[0], cmdArgs[1]);
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) return false;
+    const args = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
+    self.game.play(nick, args[0], args[1]);
   };
 
   self.uno = (client, { nick }, cmdArgs) => {
-    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) {
-      return false;
-    }
-    cmdArgs = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
-    self.game.uno(nick, cmdArgs[0], cmdArgs[1]);
+    if (_.isUndefined(self.game) || self.game.state !== Game.STATES.PLAYABLE) return false;
+    const args = _.invokeMap(cmdArgs.match(/(\w+)\s?/gi), str => str.trim());
+    self.game.uno(nick, args[0], args[1]);
   };
 
   self.status = (client, { args }) => {
@@ -136,6 +102,6 @@ const Uno = function Uno () {
       client.say(args[0], `${nick}: https://github.com/butlerx/butlerbot/wiki/Uno`);
     }
   };
-};
+}
 
-exports = module.exports = Uno;
+module.exports = Uno;

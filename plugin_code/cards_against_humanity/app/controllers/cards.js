@@ -1,9 +1,7 @@
-'use strict';
-
 const _ = require('lodash');
 const Card = require('../models/card');
 
-const Cards = function Cards (cards) {
+const Cards = function Cards(cards) {
   const self = this;
 
   self.cards = [];
@@ -27,9 +25,7 @@ const Cards = function Cards (cards) {
      * @returns {Array} Array of the old, replaced cards
      */
   self.reset = cards => {
-    if (_.isUndefined(cards)) {
-      cards = [];
-    }
+    if (_.isUndefined(cards)) cards = [];
     const oldCards = self.cards;
     self.cards = cards;
     return oldCards;
@@ -71,20 +67,20 @@ const Cards = function Cards (cards) {
      * @param index (int|Array) Index of a single card, of Array of multiple indexes to remove and return
      * @returns {Card|Cards} Instance of a single card, or instance of Cards if multiple indexes picked
      */
-  self.pickCards = function (index) {
+  self.pickCards = function PickCard(index) {
     if (_.isUndefined(index)) index = 0;
     if (_.isArray(index)) {
       // get multiple cards
       const pickedCards = new Cards();
       // first get all cards
-      _.forEach(index, _.bind(i => {
-        const c = self.cards[i];
-        if (_.isUndefined(c)) {
-          throw new Error('Invalid card index');
-        }
-        //                cards.push();
-        pickedCards.addCard(c);
-      }, this));
+      _.forEach(
+        index,
+        _.bind(i => {
+          const c = self.cards[i];
+          if (_.isUndefined(c)) throw new Error('Invalid card index');
+          pickedCards.addCard(c);
+        }, this),
+      );
       // then remove them
       self.cards = _.without.apply(this, _.union([self.cards], pickedCards.cards));
       //            _.forEach(pickedCards, function(card) {
@@ -97,11 +93,10 @@ const Cards = function Cards (cards) {
       console.log(_.map(self.cards, 'id'));
       console.log(_.map(self.cards, 'value'));
       return pickedCards;
-    } else {
-      const card = self.cards[index];
-      self.removeCard(card);
-      return card;
     }
+    const card = self.cards[index];
+    self.removeCard(card);
+    return card;
   };
 
   /**
@@ -114,12 +109,7 @@ const Cards = function Cards (cards) {
      * Get amount of cards in collection
      * @returns {Number}
      */
-  self.numCards = function () {
-    return this.cards.length;
-  };
+  self.numCards = () => this.cards.length;
 };
 
-/**
- * Expose `Cards()`
- */
-exports = module.exports = Cards;
+module.exports = Cards;

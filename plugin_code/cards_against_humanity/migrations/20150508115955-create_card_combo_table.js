@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = {
-  up (queryInterface, { INTEGER, STRING }) {
+  up(queryInterface, { INTEGER, STRING }) {
     return queryInterface.createTable('card_combos', {
       game_id: {
         type         : INTEGER,
@@ -36,7 +34,7 @@ module.exports = {
     });
   },
 
-  down (queryInterface) {
+  down(queryInterface) {
     return queryInterface.dropTable('card_combos');
   },
 };

@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = {
-  up (queryInterface, { INTEGER, BOOLEAN }) {
+  up(queryInterface, { INTEGER, BOOLEAN }) {
     return queryInterface.createTable('cards', {
       id: {
         type         : INTEGER,
@@ -20,7 +18,7 @@ module.exports = {
     });
   },
 
-  down (queryInterface) {
+  down(queryInterface) {
     return queryInterface.dropTable('cards');
   },
 };

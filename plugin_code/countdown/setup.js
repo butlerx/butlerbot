@@ -1,5 +1,3 @@
-'use strict';
-
 const Countdown = require('./app/controllers/countdown_controller.js');
 
 module.exports = app => {
@@ -14,77 +12,77 @@ module.exports = app => {
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.accept
+    countdown.accept,
   );
   app.cmd(
     'buzz',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.buzz
+    countdown.buzz,
   );
   app.cmd(
     'cd',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.select
+    countdown.select,
   );
   app.cmd(
     'challenge',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.challenge
+    countdown.challenge,
   );
   app.cmd(
     'j',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.join
+    countdown.join,
   );
   app.cmd(
     'join',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.join
+    countdown.join,
   );
   app.cmd(
     'list',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.list
+    countdown.list,
   );
   app.cmd(
     'lock',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.lock
+    countdown.lock,
   );
   app.cmd(
     'quit',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.stop
+    countdown.stop,
   );
   app.cmd(
     'stop',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.stop
+    countdown.stop,
   );
   app.cmd(
     'wiki',
     '',
     countdown.config.pluginOptions.channels,
     countdown.config.pluginOptions.channelsToExclude,
-    countdown.wiki
+    countdown.wiki,
   );
 
   // Private commands

@@ -1,9 +1,7 @@
-'use strict';
-
 const _ = require('lodash');
 const Cards = require('../controllers/cards');
 
-const Player = function Player (nick, user, hostname) {
+const Player = function Player(nick, user, hostname) {
   const self = this;
   self.id = _.uniqueId('card');
   self.nick = nick;

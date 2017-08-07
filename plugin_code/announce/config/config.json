@@ -7,7 +7,7 @@
 
   "development": {
     "waitTime": 1,
-    "channelsToJoin": [ "#botdev" ],
+    "channelsToJoin": ["#botdev"],
     "baseUrl": "https://www.redbrick.dcu.ie/api/"
   }
 }

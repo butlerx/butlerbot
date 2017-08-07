@@ -1,21 +1,21 @@
-'use strict';
-
 const _ = require('lodash');
-const irc = require('irc');
+const { Client } = require('irc');
+
 const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config.json')[env];
+
 let client;
 const commands = [];
 const msgs = [];
 
-function checkUserMode () {
+function checkUserMode() {
   return true;
 }
 
 /**
  * Initialize the bot
  */
-exports.init = function () {
+exports.init = function bot() {
   const self = this;
 
   // Don't join channels until registered on the server
@@ -36,7 +36,7 @@ exports.init = function () {
   }
 
   console.log(`Connecting to ${config.server} as ${config.nick}...`);
-  client = new irc.Client(config.server, config.nick, config.clientOptions);
+  client = new Client(config.server, config.nick, config.clientOptions);
 
   self.joinChannels = channels => {
     if (!_.isUndefined(channels)) {
@@ -90,7 +90,11 @@ exports.init = function () {
   client.addListener('join', (channel, nick) => {
     console.log(`Joined ${channel} as ${nick}`);
     // Send join command after joining a channel
-    if (!_.isUndefined(config.joinCommands) && config.joinCommands.hasOwnProperty(channel) && config.joinCommands[channel].length > 0) {
+    if (
+      !_.isUndefined(config.joinCommands) &&
+      config.joinCommands.hasOwnProperty(channel) &&
+      config.joinCommands[channel].length > 0
+    ) {
       _.forEach(config.joinCommands[channel], cmd => {
         if (cmd.target && cmd.message) {
           client.say(cmd.target, cmd.message);
@@ -104,14 +108,11 @@ exports.init = function () {
     console.warn('IRC client error: ', message);
   });
 
-  client.addListener('message', function (from, to, text, message) {
+  client.addListener('message', function messageListener(from, to, text, message) {
     console.log(`message from ${from} to ${to}: ${text}`);
     // parse command
     const cmdArr = text.trim().match(/^[.|!](\w+)\s?(.*)$/i);
-    if (!cmdArr || cmdArr.length <= 1) {
-      // command not found
-      return false;
-    }
+    if (!cmdArr || cmdArr.length <= 1) return false;
     const cmd = cmdArr[1].toLowerCase();
     // parse arguments
     const cmdArgs = cmdArr[2];
@@ -122,42 +123,36 @@ exports.init = function () {
       // private message commands
       _.forEach(
         msgs,
-        _.bind(
-          c => {
-            if (cmd === c.cmd) {
-              console.log(`command: ${c.cmd}`);
-              // check user mode
-              if (checkUserMode(message, c.mode)) {
-                c.callback(client, message, cmdArgs);
-              }
+        _.bind(c => {
+          if (cmd === c.cmd) {
+            console.log(`command: ${c.cmd}`);
+            // check user mode
+            if (checkUserMode(message, c.mode)) {
+              c.callback(client, message, cmdArgs);
             }
-          },
-          this
-        )
+          }
+        }, this),
       );
     } else {
       // public commands
       _.forEach(
         commands,
-        _.bind(
-          c => {
-            // If the command matches
-            if (cmd === c.cmd) {
-              // If the channel matches the command channels or is set to respond on all channels and is not in the
-              // commands excluded channels
-              if (_.includes(c.channel, to) || c.channel === 'all') {
-                if (_.isUndefined(c.exclude) || !_.includes(c.exclude, to)) {
-                  console.log(`command: ${c.cmd}`);
-                  // check user mode
-                  if (checkUserMode(message, c.mode)) {
-                    c.callback(client, message, cmdArgs);
-                  }
+        _.bind(c => {
+          // If the command matches
+          if (cmd === c.cmd) {
+            // If the channel matches the command channels or is set to respond on all channels and is not in the
+            // commands excluded channels
+            if (_.includes(c.channel, to) || c.channel === 'all') {
+              if (_.isUndefined(c.exclude) || !_.includes(c.exclude, to)) {
+                console.log(`command: ${c.cmd}`);
+                // check user mode
+                if (checkUserMode(message, c.mode)) {
+                  c.callback(client, message, cmdArgs);
                 }
               }
             }
-          },
-          this
-        )
+          }
+        }, this),
       );
     }
   });

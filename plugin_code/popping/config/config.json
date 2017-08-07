@@ -2,7 +2,7 @@
   "development": {
     "channels": ["#botdev"],
     "channelsToExclude": [],
-    "channelsToJoin": [ "#botdev" ],
+    "channelsToJoin": ["#botdev"],
     "reddit": {
       "userAgent": "irc-bot",
       "refreshToken": "Will Need to get your own",

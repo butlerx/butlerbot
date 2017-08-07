@@ -1,7 +1,7 @@
 [
   {
     "type": "Question",
-    "value":"What mysteries lie beyond zergless' beard?",
+    "value": "What mysteries lie beyond zergless' beard?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -9,7 +9,7 @@
   },
   {
     "type": "Question",
-    "value":"According to shadow stats, %s is %s",
+    "value": "According to shadow stats, %s is %s",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,

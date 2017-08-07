@@ -1,6 +1,6 @@
 {
   "development": {
-   "letterOptions": {
+    "letterOptions": {
       "vowels": {
         "A": 15,
         "E": 21,
@@ -35,8 +35,28 @@
 
     "numberOptions": {
       "large": ["25", "50", "75", "100"],
-      "small": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+      "small": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
     },
 
     "roundOptions": {
@@ -51,8 +71,8 @@
     },
 
     "gameOptions": {
-      "setTopic":      true,
-      "topicBase":     "|| Dev Bot || Expect spam || Expect breakings",
+      "setTopic": true,
+      "topicBase": "|| Dev Bot || Expect spam || Expect breakings",
       "minutesBeforeStart": 2,
       "roundMinutes": 2,
       "maxIdleCount": 3
@@ -101,8 +121,28 @@
 
     "numberOptions": {
       "large": ["25", "50", "75", "100"],
-      "small": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+      "small": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
     },
 
     "roundOptions": {
@@ -117,9 +157,9 @@
     },
 
     "gameOptions": {
-      "setTopic":      true,
-      "topicBase":     "|| wiki: https://github.com/butlerx/butlerbot/wiki/Countdown",
-      "notifyUsers":   false,
+      "setTopic": true,
+      "topicBase": "|| wiki: https://github.com/butlerx/butlerbot/wiki/Countdown",
+      "notifyUsers": false,
       "minutesBeforeStart": 2,
       "maxIdleCount": 3
     },

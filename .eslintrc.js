@@ -1,69 +1,47 @@
 module.exports = {
-  'env': {
-    'es6'    : true,
-    'node'   : true,
+  env: {
+    es6: true,
+    node: true,
   },
-  'extends': ['eslint:recommended'],
-  'rules'  : {
-    'strict': [
+  extends: ['airbnb'],
+  rules: {
+    'linebreak-style': ['error', 'unix'],
+    'arrow-parens': ['error', 'as-needed'],
+    'no-param-reassign': ['error', { props: false }],
+    'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
+    'no-use-before-define': ['error', { functions: false }],
+    'max-len': [
+      'error',
+      100,
       2,
-     'global'
+      {
+        ignoreUrls: true,
+        ignoreComments: true,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
     ],
-    'indent': [
+    'no-shadow': [
       'error',
-      2,
-    ],
-    'linebreak-style': [
-      'error',
-      'unix',
-    ],
-    'quotes': [
-      'error',
-      'single',
+      {
+        builtinGlobals: true,
+        hoist: 'functions',
+        allow: ['resolve', 'reject', 'err'],
+      },
     ],
     'no-console': [
-      "error",
+      'error',
       {
-        allow: [
-          "log",
-          "warning",
-          "warn",
-          "error"
-        ]
-      }
+        allow: ['warn', 'trace', 'log', 'error'],
+      },
     ],
-    'semi': [
-      'error',
-      'always',
-    ],
-    'comma-dangle': [
-      'error',
-      'always-multiline',
-    ],
+    'consistent-return': 0,
     'key-spacing': [
       'error',
       {
-        'multiLine': {
-          'beforeColon': false,
-          'afterColon' : true,
-        },
-        'align': {
-          'beforeColon': false,
-          'afterColon' : true,
-          'on'         : 'colon',
-          'mode'       : 'strict',
-        },
-      },
-    ],
-    'no-multi-spaces': 0,
-    'no-var': [
-      'error',
-    ],
-    'prefer-const': [
-      'error',
-      {
-        'destructuring'         : 'any',
-        'ignoreReadBeforeAssign': false,
+        multiLine: { beforeColon: false, afterColon: true },
+        align: { beforeColon: false, afterColon: true, on: 'colon', mode: 'strict' },
       },
     ],
   },

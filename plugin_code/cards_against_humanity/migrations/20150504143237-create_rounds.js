@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = {
-  up (queryInterface, { INTEGER }) {
+  up(queryInterface, { INTEGER }) {
     return queryInterface.createTable('rounds', {
       game_id: {
         type      : INTEGER,
@@ -32,7 +30,7 @@ module.exports = {
     });
   },
 
-  down (queryInterface) {
+  down(queryInterface) {
     return queryInterface.dropTable('rounds');
   },
 };

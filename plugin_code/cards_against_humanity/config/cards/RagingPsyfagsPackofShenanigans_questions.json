@@ -1,7 +1,7 @@
 [
   {
     "type": "Question",
-    "value":"Mewtwo achieved a utopian society when he eliminated %s once and for all.",
+    "value": "Mewtwo achieved a utopian society when he eliminated %s once and for all.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -9,7 +9,7 @@
   },
   {
     "type": "Question",
-    "value":"The only thing that caused more of a shitfit than Mewtwo's new form is %s.",
+    "value": "The only thing that caused more of a shitfit than Mewtwo's new form is %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -17,7 +17,7 @@
   },
   {
     "type": "Question",
-    "value":"The idiots in that one room at the Westin finally got kicked out of Anthrocon for %s.",
+    "value": "The idiots in that one room at the Westin finally got kicked out of Anthrocon for %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -25,7 +25,7 @@
   },
   {
     "type": "Question",
-    "value":"Furaffinity went down for 48 hours because of %s.",
+    "value": "Furaffinity went down for 48 hours because of %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -33,7 +33,7 @@
   },
   {
     "type": "Question",
-    "value":"My most shameful orgasm was the time I masturbated to %s.",
+    "value": "My most shameful orgasm was the time I masturbated to %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -41,7 +41,7 @@
   },
   {
     "type": "Question",
-    "value":"I got an STD from %s.",
+    "value": "I got an STD from %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -49,7 +49,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is serious business.",
+    "value": "%s is serious business.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -57,7 +57,7 @@
   },
   {
     "type": "Question",
-    "value":"If you don't pay your Comcast cable bill, they will send %s after you.",
+    "value": "If you don't pay your Comcast cable bill, they will send %s after you.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -65,7 +65,7 @@
   },
   {
     "type": "Question",
-    "value":"What are the worst 3 cards in your hand right now?",
+    "value": "What are the worst 3 cards in your hand right now?",
     "keep": "Yes",
     "draw": 2,
     "pick": 3,
@@ -73,7 +73,7 @@
   },
   {
     "type": "Question",
-    "value":"Yu-Gi-Oh players were shocked when the win condition of holding 5 Exodia pieces was replaced by %s, %s, and %s.",
+    "value": "Yu-Gi-Oh players were shocked when the win condition of holding 5 Exodia pieces was replaced by %s, %s, and %s.",
     "keep": "Yes",
     "draw": 2,
     "pick": 3,
@@ -81,7 +81,7 @@
   },
   {
     "type": "Question",
-    "value":"In recent tech news, computers are now being ruined by %s.",
+    "value": "In recent tech news, computers are now being ruined by %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -89,7 +89,7 @@
   },
   {
     "type": "Question",
-    "value":"I was fapping to %s, but %s walked in on me.",
+    "value": "I was fapping to %s, but %s walked in on me.",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -97,7 +97,7 @@
   },
   {
     "type": "Question",
-    "value":"%s ruined the %s fandom for all eternity.",
+    "value": "%s ruined the %s fandom for all eternity.",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -105,7 +105,7 @@
   },
   {
     "type": "Question",
-    "value":"You don't want to find %s in your Furnando's Lasagna Wrap.",
+    "value": "You don't want to find %s in your Furnando's Lasagna Wrap.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -113,7 +113,7 @@
   },
   {
     "type": "Question",
-    "value":"I unwatched his FurAffinity page because he kept posting %s.",
+    "value": "I unwatched his FurAffinity page because he kept posting %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -121,7 +121,7 @@
   },
   {
     "type": "Question",
-    "value":"Anthrocon was ruined by %s.",
+    "value": "Anthrocon was ruined by %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,

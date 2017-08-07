@@ -166,7 +166,8 @@
     "draw": 0,
     "pick": 1,
     "source": "CaH Second Expansion"
-  },{
+  },
+  {
     "type": "Answer",
     "value": "Nunchuck moves",
     "keep": "Yes",

@@ -1,5 +1,3 @@
-'use strict';
-
 const Uno = require('./app/controllers/uno_controller.js');
 
 module.exports = app => {
@@ -14,42 +12,42 @@ module.exports = app => {
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.cards
+    uno.cards,
   );
   app.cmd(
     'challenge',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.challenge
+    uno.challenge,
   );
   app.cmd(
     'j',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.join
+    uno.join,
   );
   app.cmd(
     'join',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.join
+    uno.join,
   );
   app.cmd(
     'quit',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.quit
+    uno.quit,
   );
   app.cmd(
     'q',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.quit
+    uno.quit,
   );
   // app.cmd('score', '', uno.config.pluginOptions.channels, uno.config.pluginOptions.channelsToExclude, uno.score);
   app.cmd(
@@ -57,35 +55,35 @@ module.exports = app => {
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.status
+    uno.status,
   );
   app.cmd(
     'start',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.start
+    uno.start,
   );
   app.cmd(
     'stop',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.stop
+    uno.stop,
   );
   app.cmd(
     'uno',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.uno
+    uno.uno,
   );
   app.cmd(
     'wiki',
     '',
     uno.config.pluginOptions.channels,
     uno.config.pluginOptions.channelsToExclude,
-    uno.wiki
+    uno.wiki,
   );
 
   // Private commands

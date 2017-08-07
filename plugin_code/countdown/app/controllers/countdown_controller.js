@@ -1,16 +1,14 @@
-'use strict';
-
 const _ = require('lodash');
 const Game = require('./game');
 const Player = require('../models/player');
 const challenges = require('../../config/challenges.json');
 const fs = require('fs');
+
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
 
-const Countdown = function Countdown () {
+function Countdown() {
   const self = this;
-  self.game;
   self.config = config;
   self.challenges = challenges;
   self.challengesFile = 'plugin_code/countdown/config/challenges.json';
@@ -21,7 +19,7 @@ const Countdown = function Countdown () {
 
       const games = _.filter(
         self.challenges,
-        challenge => challenge.challenged.toLowerCase() === message.nick.toLowerCase()
+        challenge => challenge.challenged.toLowerCase() === message.nick.toLowerCase(),
       );
       const challengers = _.map(games, ({ challenger }) => challenger);
       const letterTimes = _.map(games, ({ letter }) => letter);
@@ -43,7 +41,7 @@ const Countdown = function Countdown () {
             challenged,
             letterTime,
             numberTime,
-            conundrumTime
+            conundrumTime,
           );
           self.game.addPlayer(challenged);
         } else {
@@ -66,11 +64,12 @@ const Countdown = function Countdown () {
           challenged,
           letterTime,
           numberTime,
-          conundrumTime
+          conundrumTime,
         );
         client.say(
           channel,
-          `letters: ${letterTime * 60} numbers: ${numberTime * 60} conundrum: ${conundrumTime * 60}`
+          `letters: ${letterTime * 60} numbers: ${numberTime * 60} conundrum: ${conundrumTime *
+            60}`,
         );
         self.game.addPlayer(challenged);
       }
@@ -84,9 +83,8 @@ const Countdown = function Countdown () {
       if (_.isUndefined(cmdArgs)) {
         client.say(args[0], 'Please supply a word to the buzz function');
         return false;
-      } else {
-        self.game.playConundrum(nick, cmdArgs);
       }
+      self.game.playConundrum(nick, cmdArgs);
     } else {
       client.say(args[0], 'Sorry, the !buzz command is not available right now');
     }
@@ -103,15 +101,15 @@ const Countdown = function Countdown () {
     if (args[0] === '') {
       client.say(channel, 'Please supply a nick with this command');
     } else if (client.nick.toLowerCase() === args[0].toLowerCase()) {
-      client.say(channel, 'You can\'t challenge the bot');
+      client.say(channel, "You can't challenge the bot");
     } else if (message.nick.toLowerCase() === args[0].toLowerCase()) {
-      client.say(channel, 'You can\'t challenge yourself');
+      client.say(channel, "You can't challenge yourself");
     } else if (
       !_.isUndefined(
         _.find(self.challenges, {
           challenger: args[0].toLowerCase(),
           challenged: message.nick.toLowerCase(),
-        })
+        }),
       )
     ) {
       self.accept(client, message, args[0]); // move accept in here
@@ -132,14 +130,12 @@ const Countdown = function Countdown () {
           } else if (arg[0].toLowerCase() === 'conundrum') {
             conundrumTime = self.config.roundOptions.conundrumRoundMinutes;
           }
-        } else {
-          if (arg[0].toLowerCase() === 'letters') {
-            letterTime = arg[1] / 60;
-          } else if (arg[0].toLowerCase() === 'numbers') {
-            numberTime = arg[1] / 60;
-          } else if (arg[0].toLowerCase() === 'conundrum') {
-            conundrumTime = arg[1] / 60;
-          }
+        } else if (arg[0].toLowerCase() === 'letters') {
+          letterTime = arg[1] / 60;
+        } else if (arg[0].toLowerCase() === 'numbers') {
+          numberTime = arg[1] / 60;
+        } else if (arg[0].toLowerCase() === 'conundrum') {
+          conundrumTime = arg[1] / 60;
         }
       }
       self.challenges.push({
@@ -153,7 +149,7 @@ const Countdown = function Countdown () {
       client.say(channel, `${message.nick}: has challenged ${args[0]}`);
       client.say(
         channel,
-        `${args[0]}: To accept ${message.nick}'s challenge, simply !accept ${message.nick}`
+        `${args[0]}: To accept ${message.nick}'s challenge, simply !accept ${message.nick}`,
       );
     } else {
       client.say(channel, `${message.nick}: You have already challenged ${args[0]}.`);
@@ -167,7 +163,7 @@ const Countdown = function Countdown () {
       self.challenges = _.reject(
         self.challenges,
         ({ challenger, challenged }) =>
-          challenger === self.game.challenger.nick && challenged === self.game.challenged.nick
+          challenger === self.game.challenger.nick && challenged === self.game.challenged.nick,
       );
       fs.writeFile(self.challengesFile, JSON.stringify(self.challenges, null, 2));
     } else {
@@ -189,8 +185,8 @@ const Countdown = function Countdown () {
         client.say(
           args[0],
           `${nick}: You have issued challenges to the following players: ${challengesSent.join(
-            ', '
-          )}.`
+            ', ',
+          )}.`,
         );
       }
 
@@ -201,8 +197,8 @@ const Countdown = function Countdown () {
         client.say(
           args[0],
           `${nick}: You have been challenged by the following players: ${challengesReceived.join(
-            ', '
-          )}.`
+            ', ',
+          )}.`,
         );
       }
     }
@@ -267,7 +263,8 @@ const Countdown = function Countdown () {
     if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
       client.say(message.args[0], 'No game running to stop.');
     } else if (
-      self.game.challenger.nick === message.nick || self.game.challenged.nick === message.nick
+      self.game.challenger.nick === message.nick ||
+      self.game.challenged.nick === message.nick
     ) {
       self.game.stop(message.nick, false);
     } else {
@@ -282,6 +279,6 @@ const Countdown = function Countdown () {
       client.say(args[0], `${nick}: https://github.com/butlerx/butlerbot/wiki/Countdown`);
     }
   };
-};
+}
 
-exports = module.exports = Countdown;
+module.exports = Countdown;

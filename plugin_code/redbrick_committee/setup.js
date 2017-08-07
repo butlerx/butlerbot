@@ -1,5 +1,3 @@
-'use strict';
-
 const RedbrickCommittee = require('./app/controllers/redbrick_committee_controller.js');
 
 module.exports = app => {
@@ -14,77 +12,77 @@ module.exports = app => {
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showCommitteeInfo
+    redbrickCommittee.showCommitteeInfo,
   );
   app.cmd(
     'chair',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showChair
+    redbrickCommittee.showChair,
   );
   app.cmd(
     'treasurer',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showTreasurer
+    redbrickCommittee.showTreasurer,
   );
   app.cmd(
     'secretary',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showSecretary
+    redbrickCommittee.showSecretary,
   );
   app.cmd(
     'pro',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showPRO
+    redbrickCommittee.showPRO,
   );
   app.cmd(
     'events',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showEvents
+    redbrickCommittee.showEvents,
   );
   app.cmd(
     'helpdesk',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showHelpdesk
+    redbrickCommittee.showHelpdesk,
   );
   app.cmd(
     'admins',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showAdmins
+    redbrickCommittee.showAdmins,
   );
   app.cmd(
     'webmaster',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showWebmaster
+    redbrickCommittee.showWebmaster,
   );
   app.cmd(
     'fyr',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.showFYR
+    redbrickCommittee.showFYR,
   );
   app.cmd(
     'reload',
     '',
     redbrickCommittee.config.channels,
     redbrickCommittee.config.channelsToExclude,
-    redbrickCommittee.reload
+    redbrickCommittee.reload,
   );
 
   // Private commands

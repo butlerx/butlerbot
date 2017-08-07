@@ -1,5 +1,3 @@
-'use strict';
-
 const c = require('irc-colors');
 const _ = require('lodash');
 const inflection = require('inflection');
@@ -14,7 +12,7 @@ const STATES = {
   WAITING : 'Waiting',
 };
 
-const Game = function (channel, client, config, cmdArgs) {
+function Game(channel, client, config, cmdArgs) {
   const self = this;
 
   self.players = [];
@@ -32,7 +30,8 @@ const Game = function (channel, client, config, cmdArgs) {
   self.deck.shuffle();
 
   if (
-    !_.isUndefined(self.config.gameOptions.pointLimit) && !isNaN(self.config.gameOptions.pointLimit)
+    !_.isUndefined(self.config.gameOptions.pointLimit) &&
+    !isNaN(self.config.gameOptions.pointLimit)
   ) {
     console.log(`Setting pointLimit to ${self.config.gameOptions.pointLimit} from config`);
     self.pointLimit = self.config.gameOptions.pointLimit;
@@ -84,7 +83,7 @@ const Game = function (channel, client, config, cmdArgs) {
     clearTimeout(self.startTimeout);
     self.say(`PING! ${_.map(self.players, ({ nick }) => nick).join(', ')}`);
     self.say(
-      'The current game took too long to start and has been cancelled. If you are still active, please join again to start a new game.'
+      'The current game took too long to start and has been cancelled. If you are still active, please join again to start a new game.',
     );
     self.stop();
   };
@@ -101,7 +100,7 @@ const Game = function (channel, client, config, cmdArgs) {
       const card = self.deck.deal();
 
       if (showCard === true) {
-        self.pm(nick, `You drew ${c.bold.white('[' + hand.numCards() + '] ')}${card.toString()}`);
+        self.pm(nick, `You drew ${c.bold.white(`[${hand.numCards()}] `)}${card.toString()}`);
       }
 
       hand.addCard(card);
@@ -117,9 +116,10 @@ const Game = function (channel, client, config, cmdArgs) {
       const currentPlayerIndex = self.players.indexOf(self.currentPlayer);
       const nextPlayerIndex = (currentPlayerIndex + 1) % self.players.length;
 
-      const nextPlayer = self.players[nextPlayerIndex].skipped === false
-        ? self.players[nextPlayerIndex]
-        : self.currentPlayer;
+      const nextPlayer =
+        self.players[nextPlayerIndex].skipped === false
+          ? self.players[nextPlayerIndex]
+          : self.currentPlayer;
       return nextPlayer;
     }
 
@@ -145,7 +145,7 @@ const Game = function (channel, client, config, cmdArgs) {
     const seconds = Math.max(
       60,
       60 * self.config.gameOptions.turnMinutes -
-        self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement
+        self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement,
     );
     const timeLimit = seconds * 1000;
     const roundElapsed = now.getTime() - self.roundStarted.getTime();
@@ -174,7 +174,7 @@ const Game = function (channel, client, config, cmdArgs) {
     let cardString = 'Your cards are:';
     if (!_.isUndefined(player)) {
       _.forEach(player.hand.getCards(), (card, index) => {
-        cardString += c.bold(' [' + index + '] ') + card.toString();
+        cardString += c.bold(` [${index}] `) + card.toString();
         if (cardString.length >= 200) {
           self.pm(player.nick, cardString);
           cardString = '';
@@ -188,11 +188,11 @@ const Game = function (channel, client, config, cmdArgs) {
     const seconds = Math.max(
       60,
       60 * self.config.gameOptions.turnMinutes -
-        self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement
+        self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement,
     );
 
     self.say(
-      `TURN ${self.turn}: ${self.currentPlayer.nick}'s turn. ${seconds} seconds on the clock`
+      `TURN ${self.turn}: ${self.currentPlayer.nick}'s turn. ${seconds} seconds on the clock`,
     );
   };
 
@@ -241,7 +241,7 @@ const Game = function (channel, client, config, cmdArgs) {
     self.showCards(self.currentPlayer);
     self.pm(
       self.currentPlayer.nick,
-      `The current card is: ${self.discard.getCurrentCard().toString()}`
+      `The current card is: ${self.discard.getCurrentCard().toString()}`,
     );
 
     self.roundStarted = new Date();
@@ -257,10 +257,11 @@ const Game = function (channel, client, config, cmdArgs) {
       self.draw(self.currentPlayer.nick, true);
     } else {
       self.say(
-        `${self.currentPlayer.nick} has idled ${self.config.gameOptions.maxIdleTurns} ${inflection.inflect(
+        `${self.currentPlayer.nick} has idled ${self.config.gameOptions
+          .maxIdleTurns} ${inflection.inflect(
           'time',
-          self.config.gameOptions.maxIdleTurns
-        )}. Removing them from the game.`
+          self.config.gameOptions.maxIdleTurns,
+        )}. Removing them from the game.`,
       );
       self.removePlayer(self.currentPlayer.nick);
     }
@@ -279,7 +280,7 @@ const Game = function (channel, client, config, cmdArgs) {
     if (self.currentPlayer.hasPlayed === false && self.currentPlayer.hasDrawn === false) {
       self.pm(
         self.currentPlayer.nick,
-        'You must at least draw a card before you can end your turn'
+        'You must at least draw a card before you can end your turn',
       );
       return false;
     }
@@ -320,12 +321,9 @@ const Game = function (channel, client, config, cmdArgs) {
       self.deal(player, 7);
     });
     self.setTopic(
-      c.bold.lime('A game of ') +
-        c.bold.yellow('U') +
-        c.bold.green('N') +
-        c.bold.blue('O') +
-        c.bold.red('!') +
-        c.bold.lime(' is running.')
+      `${c.bold.lime('A game of ')}${c.bold.yellow('U')}${c.bold.green('N')}${c.bold.blue(
+        'O',
+      )}${c.bold.red('!')}${c.bold.lime(' is running.')}`,
     );
     self.nextTurn();
   };
@@ -344,7 +342,7 @@ const Game = function (channel, client, config, cmdArgs) {
 
     playString += `${nick} has ${hand.numCards()} ${inflection.inflect(
       'card',
-      hand.numCards()
+      hand.numCards(),
     )} left`;
 
     self.say(playString);
@@ -370,7 +368,7 @@ const Game = function (channel, client, config, cmdArgs) {
       return false;
     }
 
-    card = parseInt(card);
+    card = parseInt(card, 10);
 
     if (card < 0 || card >= player.hand.numCards()) {
       self.pm(player.nick, 'Please enter a valid index');
@@ -388,11 +386,12 @@ const Game = function (channel, client, config, cmdArgs) {
     }
 
     if (
-      player.hand.getCard(card).color === 'WILD' && !_.includes(self.colors, color.toUpperCase())
+      player.hand.getCard(card).color === 'WILD' &&
+      !_.includes(self.colors, color.toUpperCase())
     ) {
       self.pm(
         player.nick,
-        'Please provide a valid color for this card. [Red, Blue, Green, Yellow]'
+        'Please provide a valid color for this card. [Red, Blue, Green, Yellow]',
       );
       return false;
     }
@@ -414,18 +413,20 @@ const Game = function (channel, client, config, cmdArgs) {
     if (pickedCard.color === 'WILD') {
       playString += `${player.nick} has changed the color to `;
       switch (color.toUpperCase()) {
-      case 'YELLOW':
-        playString += `${c.bold.yellow(color)}. `;
-        break;
-      case 'GREEN':
-        playString += `${c.bold.green(color)}. `;
-        break;
-      case 'BLUE':
-        playString += `${c.bold.blue(color)}. `;
-        break;
-      case 'RED':
-        playString += `${c.bold.red(color)}. `;
-        break;
+        case 'YELLOW':
+          playString += `${c.bold.yellow(color)}. `;
+          break;
+        case 'GREEN':
+          playString += `${c.bold.green(color)}. `;
+          break;
+        case 'BLUE':
+          playString += `${c.bold.blue(color)}. `;
+          break;
+        case 'RED':
+          playString += `${c.bold.red(color)}. `;
+          break;
+        default:
+          break;
       }
       pickedCard.color = color.toUpperCase();
     }
@@ -459,7 +460,8 @@ const Game = function (channel, client, config, cmdArgs) {
     });
 
     self.say(
-      `${self.currentPlayer.nick} has drawn a card and has ${self.currentPlayer.hand.numCards()} left.`
+      `${self.currentPlayer
+        .nick} has drawn a card and has ${self.currentPlayer.hand.numCards()} left.`,
     );
 
     const drawnCard = self.currentPlayer.hand.getCard(self.currentPlayer.hand.numCards() - 1);
@@ -506,7 +508,7 @@ const Game = function (channel, client, config, cmdArgs) {
 
     if (!_.isUndefined(challengeablePlayer)) {
       self.say(
-        `${player.nick} has successfully challenged ${challengeablePlayer.nick}. ${challengeablePlayer.nick} has drawn 2 cards.`
+        `${player.nick} has successfully challenged ${challengeablePlayer.nick}. ${challengeablePlayer.nick} has drawn 2 cards.`,
       );
       self.deal(challengeablePlayer, 2, true);
       challengeablePlayer = false;
@@ -522,7 +524,9 @@ const Game = function (channel, client, config, cmdArgs) {
     if (self.state === STATES.PLAYABLE) {
       self.say(`It is currently ${self.currentPlayer.nick} go!`);
     } else {
-      self.say(`${self.players.length} people are playing. ${_.map(self.players, 'nick').join(', ')}`);
+      self.say(
+        `${self.players.length} people are playing. ${_.map(self.players, 'nick').join(', ')}`,
+      );
     }
   };
 
@@ -549,9 +553,7 @@ const Game = function (channel, client, config, cmdArgs) {
   self.removePlayer = nick => {
     const player = self.getPlayer({ nick });
 
-    if (_.isUndefined(player)) {
-      return false;
-    }
+    if (_.isUndefined(player)) return false;
 
     // Add cards back into the deck
     _.forEach(player.hand.getCards(), card => {
@@ -582,7 +584,8 @@ const Game = function (channel, client, config, cmdArgs) {
   self.setTopic = topic => {
     // ignore if not configured to set topic
     if (
-      _.isUndefined(self.config.gameOptions.setTopic) || self.config.gameOptions.setTopic === false
+      _.isUndefined(self.config.gameOptions.setTopic) ||
+      self.config.gameOptions.setTopic === false
     ) {
       return false;
     }
@@ -617,7 +620,7 @@ const Game = function (channel, client, config, cmdArgs) {
     self.findAndRemoveIfPlaying(nick);
   };
 
-  self.playerQuitHandler = (nick) => {
+  self.playerQuitHandler = nick => {
     console.log(`${nick} has quit. Removing from game.`);
     self.findAndRemoveIfPlaying(nick);
   };
@@ -646,9 +649,15 @@ const Game = function (channel, client, config, cmdArgs) {
       c.bold.green('N') +
       c.bold.blue('O') +
       c.bold.red('!') +
-      c.bold.lime(' has been started. Type !j to get in on the fun! and !start when ready to play.')
+      c.bold.lime(
+        ' has been started. Type !j to get in on the fun! and !start when ready to play.',
+      ),
   );
-  // self.say('A new game of ' + c.bold.yellow('U') + c.bold.green('N') + c.bold.blue('O') + c.bold.red('!') + ' has been started. Type !j to join' + ' and !start when ready.');
+  self.say(
+    `A new game of ${c.bold.yellow('U')}${c.bold.green('N')}${c.bold.blue('O')}${c.bold.red(
+      '!',
+    )} has been started. Type !j to join` + ' and !start when ready.',
+  );
 
   if (_.isUndefined(self.config.gameOptions.minutesBeforeStart)) {
     self.minutesBeforeStart = 10;
@@ -663,8 +672,8 @@ const Game = function (channel, client, config, cmdArgs) {
   self.client.addListener(`kick${self.channel}`, self.playerKickHandler);
   self.client.addListener('quit', self.playerQuitHandler);
   self.client.addListener('nick', self.playerNickChangeHandler);
-};
+}
 
 Game.STATES = STATES;
 
-exports = module.exports = Game;
+module.exports = Game;

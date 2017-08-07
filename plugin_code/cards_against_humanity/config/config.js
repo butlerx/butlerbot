@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 const JaySchema = require('jayschema');
 const _ = require('lodash');
@@ -9,7 +7,7 @@ const _ = require('lodash');
  * @param identifier Identifier of the card file
  * @param filename Filename of the card file
  */
-function loadCardFile (identifier, filename) {
+function loadCardFile(identifier, filename) {
   console.log(`Loading ${identifier}: ${filename}`);
   if (fs.existsSync(filename)) {
     const data = require(filename);
@@ -31,7 +29,7 @@ function loadCardFile (identifier, filename) {
 const config = _.assignIn(
   require(`${__dirname}/../config/env/all.js`),
   require(`${__dirname}/../config/env/${process.env.NODE_ENV}.json`) || {},
-  { cards: [] }
+  { cards: [] },
 );
 
 // check custom card files and create them if they don't exist
@@ -69,8 +67,9 @@ const schema = {
         type       : 'integer',
       },
       pick: {
-        description: 'Amount of cards that should be picked from the hand when this card is in play',
-        type       : 'integer',
+        description:
+          'Amount of cards that should be picked from the hand when this card is in play',
+        type: 'integer',
       },
       source: {
         description: 'Source of the card (e.g. expansion, community etc)',

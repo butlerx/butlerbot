@@ -1,10 +1,8 @@
-'use strict';
-
 const _ = require('lodash');
 const Card = require('../models/card');
 const cards = require('../../config/cards.json');
 
-const Deck = function Deck (deck) {
+function Deck(deck) {
   const self = this;
   self.cards = [];
 
@@ -50,6 +48,6 @@ const Deck = function Deck (deck) {
   self.getCards = () => self.cards;
 
   self.numCards = () => self.cards.length;
-};
+}
 
-exports = module.exports = Deck;
+module.exports = Deck;

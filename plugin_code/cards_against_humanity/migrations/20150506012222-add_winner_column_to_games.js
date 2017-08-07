@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = {
-  up (queryInterface, { INTEGER }) {
+  up(queryInterface, { INTEGER }) {
     return queryInterface.addColumn('games', 'winner_id', {
       type      : INTEGER,
       references: {
@@ -11,7 +9,7 @@ module.exports = {
     });
   },
 
-  down (queryInterface) {
+  down(queryInterface) {
     return queryInterface.removeColumn('games', 'winner_id');
   },
 };

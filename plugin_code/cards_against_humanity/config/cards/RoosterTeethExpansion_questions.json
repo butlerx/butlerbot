@@ -1,7 +1,7 @@
 [
   {
     "type": "Question",
-    "value":"Why are there six %s when there are only four %s?",
+    "value": "Why are there six %s when there are only four %s?",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -9,7 +9,7 @@
   },
   {
     "type": "Question",
-    "value":"What is your mating call?",
+    "value": "What is your mating call?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -17,7 +17,7 @@
   },
   {
     "type": "Question",
-    "value":"What is the worst thing anyone could say in front of the police?",
+    "value": "What is the worst thing anyone could say in front of the police?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -25,7 +25,7 @@
   },
   {
     "type": "Question",
-    "value":"What is the saddest thing you've ever seen?",
+    "value": "What is the saddest thing you've ever seen?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -33,7 +33,7 @@
   },
   {
     "type": "Question",
-    "value":"What is your favorite book?",
+    "value": "What is your favorite book?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -41,7 +41,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is the greatest Canadian",
+    "value": "%s is the greatest Canadian",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -49,7 +49,7 @@
   },
   {
     "type": "Question",
-    "value":"What is the meaning of life?",
+    "value": "What is the meaning of life?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -57,7 +57,7 @@
   },
   {
     "type": "Question",
-    "value":"If you could fuck anyone in the world, who would you choose?",
+    "value": "If you could fuck anyone in the world, who would you choose?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -65,7 +65,7 @@
   },
   {
     "type": "Question",
-    "value":"No one in the office expected the bromance between %s and %s",
+    "value": "No one in the office expected the bromance between %s and %s",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -73,7 +73,7 @@
   },
   {
     "type": "Question",
-    "value":"Select two cards to create your team name",
+    "value": "Select two cards to create your team name",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -81,7 +81,7 @@
   },
   {
     "type": "Question",
-    "value":"This week on VS, %s challenges %s to a game of %s",
+    "value": "This week on VS, %s challenges %s to a game of %s",
     "keep": "Yes",
     "draw": 2,
     "pick": 3,
@@ -89,7 +89,7 @@
   },
   {
     "type": "Question",
-    "value":"The war's over. We're holding a parade in %s's honor. %s drives the float, and %s is in charge of confetti",
+    "value": "The war's over. We're holding a parade in %s's honor. %s drives the float, and %s is in charge of confetti",
     "keep": "Yes",
     "draw": 2,
     "pick": 3,
@@ -97,7 +97,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is the best %s ever. Of all time",
+    "value": "%s is the best %s ever. Of all time",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -105,7 +105,7 @@
   },
   {
     "type": "Question",
-    "value":"%s wins! %s is a horse!",
+    "value": "%s wins! %s is a horse!",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -113,7 +113,7 @@
   },
   {
     "type": "Question",
-    "value":"If you got $1,000,000 per week, would you %s, but in the next day, you'd have to %s?",
+    "value": "If you got $1,000,000 per week, would you %s, but in the next day, you'd have to %s?",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -121,7 +121,7 @@
   },
   {
     "type": "Question",
-    "value":"My name is %s, and I hate %s!",
+    "value": "My name is %s, and I hate %s!",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -129,7 +129,7 @@
   },
   {
     "type": "Question",
-    "value":"Would you guys still like me if my name was %s?",
+    "value": "Would you guys still like me if my name was %s?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -137,7 +137,7 @@
   },
   {
     "type": "Question",
-    "value":"You threw it against the wall like a %s!",
+    "value": "You threw it against the wall like a %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -145,7 +145,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is %s as dicks",
+    "value": "%s is %s as dicks",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -153,7 +153,7 @@
   },
   {
     "type": "Question",
-    "value":"Who has a fake Internet girlfriend?",
+    "value": "Who has a fake Internet girlfriend?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -161,7 +161,7 @@
   },
   {
     "type": "Question",
-    "value":"Why is Geoff cool?",
+    "value": "Why is Geoff cool?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -169,7 +169,7 @@
   },
   {
     "type": "Question",
-    "value":"Why are we here?",
+    "value": "Why are we here?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -177,7 +177,7 @@
   },
   {
     "type": "Question",
-    "value":"What would be your chosen catchphrase?",
+    "value": "What would be your chosen catchphrase?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -185,7 +185,7 @@
   },
   {
     "type": "Question",
-    "value":"Where are we going for lunch?",
+    "value": "Where are we going for lunch?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -193,7 +193,7 @@
   },
   {
     "type": "Question",
-    "value":"What makes Caboose angry?",
+    "value": "What makes Caboose angry?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -201,7 +201,7 @@
   },
   {
     "type": "Question",
-    "value":"What is your biggest feature?",
+    "value": "What is your biggest feature?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -209,7 +209,7 @@
   },
   {
     "type": "Question",
-    "value":"%s. That's top",
+    "value": "%s. That's top",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -217,7 +217,7 @@
   },
   {
     "type": "Question",
-    "value":"After getting wasted at PAX, Burnie announced that 'I am %s!'",
+    "value": "After getting wasted at PAX, Burnie announced that 'I am %s!'",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -225,7 +225,7 @@
   },
   {
     "type": "Question",
-    "value":"Close up of my %s",
+    "value": "Close up of my %s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -233,7 +233,7 @@
   },
   {
     "type": "Question",
-    "value":"Come to Fort %s!",
+    "value": "Come to Fort %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -241,7 +241,7 @@
   },
   {
     "type": "Question",
-    "value":"Describe yourself in one word/phrase",
+    "value": "Describe yourself in one word/phrase",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -249,7 +249,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is probably a Venusaur kind of guy",
+    "value": "%s is probably a Venusaur kind of guy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -257,7 +257,7 @@
   },
   {
     "type": "Question",
-    "value":"What is Game Night?",
+    "value": "What is Game Night?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -265,7 +265,7 @@
   },
   {
     "type": "Question",
-    "value":"What are fire hydrants called in England?",
+    "value": "What are fire hydrants called in England?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -273,7 +273,7 @@
   },
   {
     "type": "Question",
-    "value":"People like %s",
+    "value": "People like %s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -281,7 +281,7 @@
   },
   {
     "type": "Question",
-    "value":"My %s is trying to die",
+    "value": "My %s is trying to die",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -289,7 +289,7 @@
   },
   {
     "type": "Question",
-    "value":"So, I was just walking along, until suddenly %s came along and attacked me",
+    "value": "So, I was just walking along, until suddenly %s came along and attacked me",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -297,7 +297,7 @@
   },
   {
     "type": "Question",
-    "value":"Thanks to %s for this week's theme song",
+    "value": "Thanks to %s for this week's theme song",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -305,7 +305,7 @@
   },
   {
     "type": "Question",
-    "value":"Shout out to %s!",
+    "value": "Shout out to %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -313,7 +313,7 @@
   },
   {
     "type": "Question",
-    "value":"Shout out to my mom. Called my Teddy Bear %s",
+    "value": "Shout out to my mom. Called my Teddy Bear %s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -321,7 +321,7 @@
   },
   {
     "type": "Question",
-    "value":"It's not my fault. Somebody put %s in my way",
+    "value": "It's not my fault. Somebody put %s in my way",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -329,7 +329,7 @@
   },
   {
     "type": "Question",
-    "value":"It's a %s out there",
+    "value": "It's a %s out there",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -337,7 +337,7 @@
   },
   {
     "type": "Question",
-    "value":"If you were allowed to do one illegal thing, what would it be?",
+    "value": "If you were allowed to do one illegal thing, what would it be?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -345,7 +345,7 @@
   },
   {
     "type": "Question",
-    "value":"If you could have any superpower, what would it be?",
+    "value": "If you could have any superpower, what would it be?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -353,7 +353,7 @@
   },
   {
     "type": "Question",
-    "value":"LLLLLLLLLLLLLET'S %s!",
+    "value": "LLLLLLLLLLLLLET'S %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -361,7 +361,7 @@
   },
   {
     "type": "Question",
-    "value":"Lindsay could fuck up %s",
+    "value": "Lindsay could fuck up %s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -369,7 +369,7 @@
   },
   {
     "type": "Question",
-    "value":"Let's do %s again! This is fun!",
+    "value": "Let's do %s again! This is fun!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -377,7 +377,7 @@
   },
   {
     "type": "Question",
-    "value":"Fight, fight, fight, %s?",
+    "value": "Fight, fight, fight, %s?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -385,7 +385,7 @@
   },
   {
     "type": "Question",
-    "value":"Dude, I got sixteen %s!",
+    "value": "Dude, I got sixteen %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -393,7 +393,7 @@
   },
   {
     "type": "Question",
-    "value":"Does our house say 'We love %s?'",
+    "value": "Does our house say 'We love %s?'",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -401,7 +401,7 @@
   },
   {
     "type": "Question",
-    "value":"Detective %s is down!",
+    "value": "Detective %s is down!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -409,7 +409,7 @@
   },
   {
     "type": "Question",
-    "value":"I'ma smother you in my %s!",
+    "value": "I'ma smother you in my %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -417,7 +417,7 @@
   },
   {
     "type": "Question",
-    "value":"Fuck it, I mean %s, right?",
+    "value": "Fuck it, I mean %s, right?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,

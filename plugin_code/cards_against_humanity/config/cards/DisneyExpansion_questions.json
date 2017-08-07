@@ -1,7 +1,7 @@
 [
   {
     "type": "Question",
-    "value":"My favorite Disneyland attraction is the Hall of %s.",
+    "value": "My favorite Disneyland attraction is the Hall of %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -9,7 +9,7 @@
   },
   {
     "type": "Question",
-    "value":"Rumor has it there’s %s inside the Matterhorn.",
+    "value": "Rumor has it there’s %s inside the Matterhorn.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -17,7 +17,7 @@
   },
   {
     "type": "Question",
-    "value":"Make Mine %s!",
+    "value": "Make Mine %s!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -25,7 +25,7 @@
   },
   {
     "type": "Question",
-    "value":"For your safety, remain seated with your seat belts fastened, keeping %s inside the bobsled.",
+    "value": "For your safety, remain seated with your seat belts fastened, keeping %s inside the bobsled.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -33,7 +33,7 @@
   },
   {
     "type": "Question",
-    "value":"Captain EO? More like Captain %s.",
+    "value": "Captain EO? More like Captain %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -41,7 +41,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is a half-day attraction at best.",
+    "value": "%s is a half-day attraction at best.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -49,7 +49,7 @@
   },
   {
     "type": "Question",
-    "value":"Is this haunted room actually %s?",
+    "value": "Is this haunted room actually %s?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -57,7 +57,7 @@
   },
   {
     "type": "Question",
-    "value":"Yo ho, yo ho, %s for me!",
+    "value": "Yo ho, yo ho, %s for me!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -65,7 +65,7 @@
   },
   {
     "type": "Question",
-    "value":"Do you want to build %s?",
+    "value": "Do you want to build %s?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -73,7 +73,7 @@
   },
   {
     "type": "Question",
-    "value":"Which would you choose: %s or being stuck for an hour on %s?",
+    "value": "Which would you choose: %s or being stuck for an hour on %s?",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -81,7 +81,7 @@
   },
   {
     "type": "Question",
-    "value":"What they need is an attraction based on %s.",
+    "value": "What they need is an attraction based on %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -89,7 +89,7 @@
   },
   {
     "type": "Question",
-    "value":"How typical. %s exits into %s.",
+    "value": "How typical. %s exits into %s.",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -97,7 +97,7 @@
   },
   {
     "type": "Question",
-    "value":"They say “guest,” but what they mean is %s.",
+    "value": "They say “guest,” but what they mean is %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -105,7 +105,7 @@
   },
   {
     "type": "Question",
-    "value":"The Handsome Prince saved Snow White from death with %s.",
+    "value": "The Handsome Prince saved Snow White from death with %s.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -113,7 +113,7 @@
   },
   {
     "type": "Question",
-    "value":"The Three Cabilleros: Donald Duck, %s, and %s.",
+    "value": "The Three Cabilleros: Donald Duck, %s, and %s.",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -121,7 +121,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is a wish your heart makes.",
+    "value": "%s is a wish your heart makes.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -129,7 +129,7 @@
   },
   {
     "type": "Question",
-    "value":"%s is closed for refurbishment.",
+    "value": "%s is closed for refurbishment.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -137,7 +137,7 @@
   },
   {
     "type": "Question",
-    "value":"We spent all afternoon at %s’s lair on %s Island.",
+    "value": "We spent all afternoon at %s’s lair on %s Island.",
     "keep": "Yes",
     "draw": 1,
     "pick": 2,
@@ -145,7 +145,7 @@
   },
   {
     "type": "Question",
-    "value":"We have 999 happy haunts, but there’s room for %s",
+    "value": "We have 999 happy haunts, but there’s room for %s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -153,7 +153,7 @@
   },
   {
     "type": "Question",
-    "value":"Since when is %s a Disney princess?",
+    "value": "Since when is %s a Disney princess?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,

@@ -1,5 +1,4 @@
-'use strict';
-/*eslint-env and, mocha */
+/* eslint-env and, mocha */
 
 const assert = require('assert');
 const config = require('../config/config');
@@ -14,20 +13,18 @@ describe('Cards', () => {
     });
 
     it('should not be duplicated', () => {
-      if (
-        _.difference(config.cards, _.uniqBy(config.cards, ({ value }) => value)).length !== 0
-      ) {
+      if (_.difference(config.cards, _.uniqBy(config.cards, ({ value }) => value)).length !== 0) {
         console.log(
           _.map(
             _.difference(config.cards, _.uniqBy(config.cards, ({ value }) => value)),
-            ({ value }) => value
-          )
+            ({ value }) => value,
+          ),
         );
       }
 
       assert.equal(
         0,
-        _.difference(config.cards, _.uniqBy(config.cards, ({ value }) => value)).length
+        _.difference(config.cards, _.uniqBy(config.cards, ({ value }) => value)).length,
       );
     });
   });

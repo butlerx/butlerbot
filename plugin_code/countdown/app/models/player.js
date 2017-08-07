@@ -1,8 +1,6 @@
-'use strict';
-
 const _ = require('lodash');
 
-const Player = function Player (nick) {
+function Player(nick) {
   const self = this;
 
   self.id = _.uniqueId('player');
@@ -16,6 +14,6 @@ const Player = function Player (nick) {
   self.hasBuzzed = false;
   self.isLocked = false;
   self.idleCount = 0;
-};
+}
 
-module.exports = exports = Player;
+module.exports = Player;

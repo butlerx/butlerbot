@@ -1,5 +1,3 @@
-'use strict';
-
 const CardsAgainstHumanity = require('./app/controllers/cards_against_humanity_controller.js');
 
 module.exports = app => {
@@ -14,105 +12,105 @@ module.exports = app => {
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.cards
+    cardsAgainstHumanity.cards,
   );
   app.cmd(
     'cah',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.pick
+    cardsAgainstHumanity.pick,
   );
   app.cmd(
     'discard',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.discard
+    cardsAgainstHumanity.discard,
   );
   app.cmd(
     'j',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.join
+    cardsAgainstHumanity.join,
   );
   app.cmd(
     'join',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.join
+    cardsAgainstHumanity.join,
   );
   app.cmd(
     'list',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.list
+    cardsAgainstHumanity.list,
   );
   app.cmd(
     'pause',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.pause
+    cardsAgainstHumanity.pause,
   );
   app.cmd(
     'players',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.list
+    cardsAgainstHumanity.list,
   );
   app.cmd(
     'points',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.points
+    cardsAgainstHumanity.points,
   );
   app.cmd(
     'quit',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.quit
+    cardsAgainstHumanity.quit,
   );
   app.cmd(
     'resume',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.resume
+    cardsAgainstHumanity.resume,
   );
   app.cmd(
     'status',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.status
+    cardsAgainstHumanity.status,
   );
   app.cmd(
     'start',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.start
+    cardsAgainstHumanity.start,
   );
   app.cmd(
     'stop',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.stop
+    cardsAgainstHumanity.stop,
   );
   app.cmd(
     'wiki',
     '',
     cardsAgainstHumanity.config.pluginOptions.channels,
     cardsAgainstHumanity.config.pluginOptions.channelsToExclude,
-    cardsAgainstHumanity.wiki
+    cardsAgainstHumanity.wiki,
   );
 
   // Private commands

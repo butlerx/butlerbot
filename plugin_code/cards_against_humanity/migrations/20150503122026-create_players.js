@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = {
-  up (queryInterface, { INTEGER, STRING, DATE }) {
+  up(queryInterface, { INTEGER, STRING, DATE }) {
     return queryInterface.createTable('players', {
       id: {
         type         : INTEGER,
@@ -27,7 +25,7 @@ module.exports = {
     });
   },
 
-  down (queryInterface) {
+  down(queryInterface) {
     return queryInterface.dropTable('players');
   },
 };

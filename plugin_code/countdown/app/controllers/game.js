@@ -1,8 +1,8 @@
-'use strict';
-
 const _ = require('lodash');
 const inflection = require('inflection');
 const mathjs = require('mathjs');
+const dictionary = require('../../config/dictionary.json');
+const conundrums = require('../../config/conundrums.json');
 
 const STATES = {
   STOPPED          : 'Stopped',
@@ -19,7 +19,7 @@ const STATES = {
   SELECTING        : 'Selecting',
 };
 
-const Game = function Game (
+function Game(
   channel,
   client,
   config,
@@ -27,7 +27,7 @@ const Game = function Game (
   challenged,
   lettersTime,
   numbersTime,
-  conundrumsTime
+  conundrumsTime,
 ) {
   const self = this;
 
@@ -66,13 +66,13 @@ const Game = function Game (
 
   console.log(self.channel);
   console.log(
-    `letters: ${self.lettersTime} numbers: ${self.numbersTime} conundrum: ${self.conundrumsTime}`
+    `letters: ${self.lettersTime} numbers: ${self.numbersTime} conundrum: ${self.conundrumsTime}`,
   );
 
   console.log('Loading dictionary');
 
-  self.dictionary = require('../../config/dictionary.json')['words'];
-  self.conundrums = require('../../config/conundrums.json')['words'];
+  self.dictionary = dictionary.words;
+  self.conundrums = conundrums.words;
   self.countdown_words = _.filter(self.dictionary, ({ length }) => length <= 9);
   self.conundrum_words = _.shuffle(_.map(self.conundrums, word => word.toUpperCase()));
 
@@ -137,7 +137,8 @@ const Game = function Game (
 
     if (self.round > 1 && gameEnded !== true) {
       self.say(
-        `${self.challenged.nick} has ${self.challenged.points} points while ${self.challenger.nick} has ${self.challenger.points} points.`
+        `${self.challenged.nick} has ${self.challenged.points} points while ${self.challenger
+          .nick} has ${self.challenger.points} points.`,
       );
     }
 
@@ -171,26 +172,24 @@ const Game = function Game (
   self.showWinner = () => {
     if (self.challenger.points > self.challenged.points) {
       self.say(
-        `${self.challenger.nick} has won the game with ${self.challenger.points} ${inflection.inflect(
+        `${self.challenger.nick} has won the game with ${self.challenger
+          .points} ${inflection.inflect('point', self.challenger.points)}! While ${self.challenged
+          .nick} got ${self.challenged.points} ${inflection.inflect(
           'point',
-          self.challenger.points
-        )}! While ${self.challenged.nick} got ${self.challenged.points} ${inflection.inflect(
-          'point',
-          self.challenged.points
-        )}! Congratulations!`
+          self.challenged.points,
+        )}! Congratulations!`,
       );
     } else if (self.challenged.points > self.challenger.points) {
       self.say(
-        `${self.challenged.nick} has won the game with ${self.challenged.points} ${inflection.inflect(
+        `${self.challenged.nick} has won the game with ${self.challenged
+          .points} ${inflection.inflect('point', self.challenged.points)}! While ${self.challenger
+          .nick} got ${self.challenger.points} ${inflection.inflect(
           'point',
-          self.challenged.points
-        )}! While ${self.challenger.nick} got ${self.challenger.points} ${inflection.inflect(
-          'point',
-          self.challenger.points
-        )}! Congratulations!`
+          self.challenger.points,
+        )}! Congratulations!`,
       );
     } else {
-      self.say('The game has ended in a tie! Perhaps there\'ll be a rematch?');
+      self.say("The game has ended in a tie! Perhaps there'll be a rematch?");
     }
     self.stop(null, true);
   };
@@ -204,17 +203,18 @@ const Game = function Game (
     // check that there's enough players in the game and end if we have waited the
     if (self.challenger.hasJoined === false) {
       self.say(
-        `Waiting for ${self.challenger.nick}. Stopping in ${self.config.gameOptions.minutesBeforeStart} ${inflection.inflect(
+        `Waiting for ${self.challenger.nick}. Stopping in ${self.config.gameOptions
+          .minutesBeforeStart} ${inflection.inflect(
           'minute',
-          self.config.gameOptions.minutesBeforeStart
-        )} if they don't join.`
+          self.config.gameOptions.minutesBeforeStart,
+        )} if they don't join.`,
       );
 
       self.state = STATES.WAITING;
       // stop game if not enough pleyers in however many minutes in the config
       self.stopTimeout = setTimeout(
         self.stop,
-        60 * 1000 * self.config.gameOptions.minutesBeforeStart
+        60 * 1000 * self.config.gameOptions.minutesBeforeStart,
       );
       return false;
     }
@@ -228,13 +228,15 @@ const Game = function Game (
       return false;
     } else if (self.challenger.idleCount === self.config.gameOptions.maxIdleCount) {
       self.say(
-        `${self.challenger.nick} has idled too many times. ${self.challenged.nick} has won by default.`
+        `${self.challenger.nick} has idled too many times. ${self.challenged
+          .nick} has won by default.`,
       );
       self.stop();
       return false;
     } else if (self.challenged.idleCount === self.config.gameOptions.maxIdleCount) {
       self.say(
-        `${self.challenged.nick} has idled too many times. ${self.challenger.nick} has won by default.`
+        `${self.challenged.nick} has idled too many times. ${self.challenger
+          .nick} has won by default.`,
       );
       self.stop();
       return false;
@@ -257,14 +259,15 @@ const Game = function Game (
     } else {
       console.log('Conundrum round');
       self.say(
-        `Starting conundrum in ${self.config.roundOptions.secondsBeforeConundrum} ${inflection.inflect(
+        `Starting conundrum in ${self.config.roundOptions
+          .secondsBeforeConundrum} ${inflection.inflect(
           'second',
-          self.config.roundOptions.secondsBeforeConundrum
-        )}`
+          self.config.roundOptions.secondsBeforeConundrum,
+        )}`,
       );
       self.conundrumTimeout = setTimeout(
         self.conundrumRound,
-        self.config.roundOptions.secondsBeforeConundrum * 1000
+        self.config.roundOptions.secondsBeforeConundrum * 1000,
       );
     }
   };
@@ -362,7 +365,7 @@ const Game = function Game (
         } else {
           // If word is less than 9 characters
           self.say(
-            `Both players have scored ${self.answers.challenger.word.length} points this round.`
+            `Both players have scored ${self.answers.challenger.word.length} points this round.`,
           );
           self.challenger.points += self.answers.challenger.word.length;
           self.challenged.points += self.answers.challenged.word.length;
@@ -376,7 +379,8 @@ const Game = function Game (
         } else {
           // If word is less than 9 characters
           self.say(
-            `${self.challenger.nick} has won this round and scored ${self.answers.challenger.word.length} points.`
+            `${self.challenger.nick} has won this round and scored ${self.answers.challenger.word
+              .length} points.`,
           );
           self.challenger.points += self.answers.challenger.word.length;
         }
@@ -389,7 +393,8 @@ const Game = function Game (
         } else {
           // If word is less than 9 characters
           self.say(
-            `${self.challenged.nick} has won this round and scored ${self.answers.challenged.word.length} points.`
+            `${self.challenged.nick} has won this round and scored ${self.answers.challenged.word
+              .length} points.`,
           );
           self.challenged.points += self.answers.challenged.word.length;
         }
@@ -408,7 +413,8 @@ const Game = function Game (
       } else {
         // If word is less than 9 characters
         self.say(
-          `${self.challenger.nick} has won this round and scored ${self.answers.challenger.word.length} points.`
+          `${self.challenger.nick} has won this round and scored ${self.answers.challenger.word
+            .length} points.`,
         );
         self.challenger.points += self.answers.challenger.word.length;
       }
@@ -426,7 +432,8 @@ const Game = function Game (
       } else {
         // If word is less than 9 characters
         self.say(
-          `${self.challenged.nick} has won this round and scored ${self.answers.challenged.word.length} points.`
+          `${self.challenged.nick} has won this round and scored ${self.answers.challenged.word
+            .length} points.`,
         );
         self.challenged.points += self.answers.challenged.word.length;
       }
@@ -454,9 +461,11 @@ const Game = function Game (
   };
 
   self.numberRoundEnd = () => {
-    const challengerDifference = Math.max(self.table.target, self.answers.challenger.value) -
+    const challengerDifference =
+      Math.max(self.table.target, self.answers.challenger.value) -
       Math.min(self.table.target, self.answers.challenger.value);
-    const challengedDifference = Math.max(self.table.target, self.answers.challenged.value) -
+    const challengedDifference =
+      Math.max(self.table.target, self.answers.challenged.value) -
       Math.min(self.table.target, self.answers.challenged.value);
 
     if (challengedDifference > 10 && challengerDifference > 10) {
@@ -464,34 +473,44 @@ const Game = function Game (
     } else if (challengerDifference < challengedDifference) {
       if (self.answers.challenger.value === self.table.target) {
         self.say(
-          `${self.challenger.nick} has hit the target of ${self.table.target} with ${self.answers.challenger.expression} and receives 10 points.`
+          `${self.challenger.nick} has hit the target of ${self.table.target} with ${self.answers
+            .challenger.expression} and receives 10 points.`,
         );
         self.challenger.points += 10;
       } else if (challengerDifference <= 5) {
         self.say(
-          `${self.challenger.nick} has gotten within ${challengerDifference} of the target with ${self.answers.challenger.expression} = ${self.answers.challenger.value} and receives 7 points.`
+          `${self.challenger
+            .nick} has gotten within ${challengerDifference} of the target with ${self.answers
+            .challenger.expression} = ${self.answers.challenger.value} and receives 7 points.`,
         );
         self.challenger.points += 7;
       } else if (challengerDifference <= 10) {
         self.say(
-          `${self.challenger.nick} has gotten within ${challengerDifference} of the target with ${self.answers.challenger.expression} = ${self.answers.challenger.value} and receives 5 points.`
+          `${self.challenger
+            .nick} has gotten within ${challengerDifference} of the target with ${self.answers
+            .challenger.expression} = ${self.answers.challenger.value} and receives 5 points.`,
         );
         self.challenger.points += 5;
       }
     } else if (challengedDifference < challengerDifference) {
       if (self.answers.challenged.value === self.table.target) {
         self.say(
-          `${self.challenged.nick} has hit the target of ${self.table.target} with ${self.answers.challenged.expression} and receives 10 points.`
+          `${self.challenged.nick} has hit the target of ${self.table.target} with ${self.answers
+            .challenged.expression} and receives 10 points.`,
         );
         self.challenged.points += 10;
       } else if (challengedDifference <= 5) {
         self.say(
-          `${self.challenged.nick} has gotten within ${challengedDifference} of the target with ${self.answers.challenged.expression} = ${self.answers.challenged.value} and receives 7 points.`
+          `${self.challenged
+            .nick} has gotten within ${challengedDifference} of the target with ${self.answers
+            .challenged.expression} = ${self.answers.challenged.value} and receives 7 points.`,
         );
         self.challenged.points += 7;
       } else if (challengedDifference <= 10) {
         self.say(
-          `${self.challenged.nick} has gotten within ${challengedDifference} of the target with ${self.answers.challenged.expression} = ${self.answers.challenged.value} and receives 5 points.`
+          `${self.challenged
+            .nick} has gotten within ${challengedDifference} of the target with ${self.answers
+            .challenged.expression} = ${self.answers.challenged.value} and receives 5 points.`,
         );
         self.challenged.points += 5;
       }
@@ -501,29 +520,39 @@ const Game = function Game (
         self.answers.challenged.value === self.table.target
       ) {
         self.say(
-          `${self.challenged.nick} hit the target of ${self.table.target} with ${self.answers.challenged.expression}`
+          `${self.challenged.nick} hit the target of ${self.table.target} with ${self.answers
+            .challenged.expression}`,
         );
         self.say(
-          `${self.challenger.nick} hit the target of ${self.table.target} with ${self.answers.challenger.expression}`
+          `${self.challenger.nick} hit the target of ${self.table.target} with ${self.answers
+            .challenger.expression}`,
         );
         self.say('Both players have hit the target and scored 10 points.');
         self.challenger.points += 10;
         self.challenged.points += 10;
       } else if (challengedDifference <= 5 && challengerDifference <= 5) {
         self.say(
-          `${self.challenged.nick} has gotten within ${challengedDifference} of the target with ${self.answers.challenged.expression} = ${self.answers.challenged.value} and receives 7 points.`
+          `${self.challenged
+            .nick} has gotten within ${challengedDifference} of the target with ${self.answers
+            .challenged.expression} = ${self.answers.challenged.value} and receives 7 points.`,
         );
         self.say(
-          `${self.challenger.nick} has gotten within ${challengerDifference} of the target with ${self.answers.challenger.expression} = ${self.answers.challenger.value} and receives 7 points.`
+          `${self.challenger
+            .nick} has gotten within ${challengerDifference} of the target with ${self.answers
+            .challenger.expression} = ${self.answers.challenger.value} and receives 7 points.`,
         );
         self.challenged.points += 7;
         self.challenger.points += 7;
       } else if (challengedDifference <= 10 && challengerDifference <= 10) {
         self.say(
-          `${self.challenged.nick} has gotten within ${challengedDifference} of the target with ${self.answers.challenged.expression} = ${self.answers.challenged.value} and receives 5 points.`
+          `${self.challenged
+            .nick} has gotten within ${challengedDifference} of the target with ${self.answers
+            .challenged.expression} = ${self.answers.challenged.value} and receives 5 points.`,
         );
         self.say(
-          `${self.challenger.nick} has gotten within ${challengerDifference} of the target with ${self.answers.challenger.expression} = ${self.answers.challenger.value} and receives 5 points.`
+          `${self.challenger
+            .nick} has gotten within ${challengerDifference} of the target with ${self.answers
+            .challenger.expression} = ${self.answers.challenger.value} and receives 5 points.`,
         );
         self.challenged.points += 5;
         self.challenger.points += 5;
@@ -575,7 +604,8 @@ const Game = function Game (
 
     self.say(`${self.selector.nick} will choose the letters for this round.`);
     self.say(
-      `${self.selector.nick}: Choose the letters for this round with a command similar to: !cd ccvcvccvv`
+      `${self.selector
+        .nick}: Choose the letters for this round with a command similar to: !cd ccvcvccvv`,
     );
     self.say(`${self.selector.nick}: Where c is a consonant and v is a vowel.`);
   };
@@ -634,15 +664,15 @@ const Game = function Game (
         self.say(
           `${self.lettersTime * 60} ${inflection.inflect(
             'second',
-            self.lettersTime * 60
-          )} on the clock`
+            self.lettersTime * 60,
+          )} on the clock`,
         );
       } else {
         self.say(
           `${self.config.roundOptions.lettersRoundMinutes} ${inflection.inflect(
             'minute',
-            self.config.roundOptions.roundMinutes
-          )} on the clock`
+            self.config.roundOptions.roundMinutes,
+          )} on the clock`,
         );
       }
 
@@ -652,16 +682,16 @@ const Game = function Game (
           self.challenger.nick,
           `${self.lettersTime * 60} ${inflection.inflect(
             'second',
-            self.lettersTime * 60
-          )} on the clock`
+            self.lettersTime * 60,
+          )} on the clock`,
         );
       } else {
         self.pm(
           self.challenger.nick,
           `${self.config.roundOptions.lettersRoundMinutes} ${inflection.inflect(
             'minute',
-            self.config.roundOptions.roundMinutes
-          )} on the clock`
+            self.config.roundOptions.roundMinutes,
+          )} on the clock`,
         );
       }
       self.pm(self.challenger.nick, 'Play a word with !cd [word]');
@@ -673,16 +703,16 @@ const Game = function Game (
           self.challenged.nick,
           `${self.lettersTime * 60} ${inflection.inflect(
             'second',
-            self.lettersTime * 60
-          )} on the clock`
+            self.lettersTime * 60,
+          )} on the clock`,
         );
       } else {
         self.pm(
           self.challenged.nick,
           `${self.config.roundOptions.lettersRoundMinutes} ${inflection.inflect(
             'minute',
-            self.config.roundOptions.roundMinutes
-          )} on the clock`
+            self.config.roundOptions.roundMinutes,
+          )} on the clock`,
         );
       }
 
@@ -697,12 +727,12 @@ const Game = function Game (
     word = word.toUpperCase();
     if (self.challenger.nick === player || self.challenged.nick === player) {
       if (
-        self.challenger.nick === player && self.challenger.isLocked === true ||
-        self.challenged.nick === player && self.challenged.isLocked === true
+        (self.challenger.nick === player && self.challenger.isLocked === true) ||
+        (self.challenged.nick === player && self.challenged.isLocked === true)
       ) {
         self.pm(
           player,
-          'You cannot play anymore words as you have locked in your answer for this round'
+          'You cannot play anymore words as you have locked in your answer for this round',
         );
         return false;
       }
@@ -711,7 +741,7 @@ const Game = function Game (
       if (word.length <= 2 || word.length > 9) {
         self.pm(
           player,
-          'Your word must be between 3 and 9 letters long and only use the characters available for this round.'
+          'Your word must be between 3 and 9 letters long and only use the characters available for this round.',
         );
         return false;
       }
@@ -733,23 +763,22 @@ const Game = function Game (
       if (valid !== true) {
         self.pm(
           player,
-          'Your word must not reuse any letters more than they appear, and must only use letters that have been slected for this round'
+          'Your word must not reuse any letters more than they appear, and must only use letters that have been slected for this round',
         );
         return false;
-      } else {
-        if (self.challenger.nick === player) {
-          self.answers.challenger = {
-            word,
-            valid: _.includes(self.countdown_words, word.toUpperCase()),
-          };
-          self.challenger.hasPlayed = true;
-        } else if (self.challenged.nick === player) {
-          self.answers.challenged = {
-            word,
-            valid: _.includes(self.countdown_words, word.toUpperCase()),
-          };
-          self.challenged.hasPlayed = true;
-        }
+      }
+      if (self.challenger.nick === player) {
+        self.answers.challenger = {
+          word,
+          valid: _.includes(self.countdown_words, word.toUpperCase()),
+        };
+        self.challenger.hasPlayed = true;
+      } else if (self.challenged.nick === player) {
+        self.answers.challenged = {
+          word,
+          valid: _.includes(self.countdown_words, word.toUpperCase()),
+        };
+        self.challenged.hasPlayed = true;
       }
 
       self.pm(player, `You played: ${word}. Good luck.`);
@@ -768,7 +797,8 @@ const Game = function Game (
 
     self.say(`${self.selector.nick} will choose the Numbers for this round.`);
     self.say(
-      `${self.selector.nick}: Choose the Numbers for this round with a command similar to: !cd lslsss`
+      `${self.selector
+        .nick}: Choose the Numbers for this round with a command similar to: !cd lslsss`,
     );
     self.say(`${self.selector.nick}: Where l is a large number and s is a small number.`);
   };
@@ -805,72 +835,69 @@ const Game = function Game (
 
       clearInterval(self.roundTimer);
       self.say(
-        `Numbers for this round: ${self.table.numbers.join(
-          ' '
-        )} and the target is: ${self.table.target}`
+        `Numbers for this round: ${self.table.numbers.join(' ')} and the target is: ${self.table
+          .target}`,
       );
       if (!_.isUndefined(self.numbersTime)) {
         self.say(
           `${self.numbersTime * 60} ${inflection.inflect(
             'second',
-            self.numbersTime * 60
-          )} on the clock`
+            self.numbersTime * 60,
+          )} on the clock`,
         );
       } else {
         self.say(
           `${self.config.roundOptions.numbersRoundMinutes} ${inflection.inflect(
             'minute',
-            self.config.roundOptions.numbersRoundMinutes
-          )} on the clock`
+            self.config.roundOptions.numbersRoundMinutes,
+          )} on the clock`,
         );
       }
 
       self.pm(
         self.challenger.nick,
-        `Numbers for this round: ${self.table.numbers.join(
-          ' '
-        )} and the target is: ${self.table.target}`
+        `Numbers for this round: ${self.table.numbers.join(' ')} and the target is: ${self.table
+          .target}`,
       );
       if (!_.isUndefined(self.numbersTime)) {
         self.pm(
           self.challenger.nick,
           `${self.numbersTime * 60} ${inflection.inflect(
             'second',
-            self.numbersTime * 60
-          )} on the clock`
+            self.numbersTime * 60,
+          )} on the clock`,
         );
       } else {
         self.pm(
           self.challenger.nick,
           `${self.config.roundOptions.numbersRoundMinutes} ${inflection.inflect(
             'minute',
-            self.config.roundOptions.numbersRoundMinutes
-          )} on the clock`
+            self.config.roundOptions.numbersRoundMinutes,
+          )} on the clock`,
         );
       }
       self.pm(self.challenger.nick, 'Play an equation with !cd [equation]');
 
       self.pm(
         self.challenged.nick,
-        `Numbers for this round: ${self.table.numbers.join(
-          ' '
-        )} and the target is: ${self.table.target}`
+        `Numbers for this round: ${self.table.numbers.join(' ')} and the target is: ${self.table
+          .target}`,
       );
       if (!_.isUndefined(self.numbersTime)) {
         self.pm(
           self.challenged.nick,
           `${self.numbersTime * 60} ${inflection.inflect(
             'second',
-            self.numbersTime * 60
-          )} on the clock`
+            self.numbersTime * 60,
+          )} on the clock`,
         );
       } else {
         self.pm(
           self.challenged.nick,
           `${self.config.roundOptions.numbersRoundMinutes} ${inflection.inflect(
             'minute',
-            self.config.roundOptions.numbersRoundMinutes
-          )} on the clock`
+            self.config.roundOptions.numbersRoundMinutes,
+          )} on the clock`,
         );
       }
       self.pm(self.challenged.nick, 'Play an equation with !cd [equation]');
@@ -895,10 +922,8 @@ const Game = function Game (
 
       // If the expression uses invalid characters
       if (
-        _.reject(
-          expression,
-          number => _.includes(self.valid_numbers_characters, number) === true
-        ).length !== 0
+        _.reject(expression, number => _.includes(self.valid_numbers_characters, number) === true)
+          .length !== 0
       ) {
         self.pm(player, 'Your expression contains illegal characters');
         return false;
@@ -921,7 +946,7 @@ const Game = function Game (
       if (valid !== true) {
         self.pm(
           player,
-          'Your expression must only use selected numbers and must not reuse numbers more times than they appear'
+          'Your expression must only use selected numbers and must not reuse numbers more times than they appear',
         );
         return false;
       }
@@ -938,8 +963,8 @@ const Game = function Game (
         self.pm(
           player,
           `Your expression results in a negative number. Your expression result is:${mathjs.eval(
-            expression
-          )}`
+            expression,
+          )}`,
         );
         return false;
       }
@@ -948,8 +973,8 @@ const Game = function Game (
         self.pm(
           player,
           `Your expression does not result in a whole number. Your expression result is: ${mathjs.eval(
-            expression
-          )}`
+            expression,
+          )}`,
         );
         return false;
       }
@@ -964,7 +989,7 @@ const Game = function Game (
 
       self.pm(
         player,
-        `You have submitted ${expression}. Your result is ${mathjs.eval(expression)}`
+        `You have submitted ${expression}. Your result is ${mathjs.eval(expression)}`,
       );
     }
   };
@@ -985,9 +1010,9 @@ const Game = function Game (
         Math.min(self.challenger.points, self.challenged.points) <=
       10
     ) {
-      self.say('Fingers on buzzers for today\'s crucial countdown conundrum');
+      self.say("Fingers on buzzers for today's crucial countdown conundrum");
     } else {
-      self.say('Fingers on buzzers for today\'s countdown conundrum');
+      self.say("Fingers on buzzers for today's countdown conundrum");
     }
     self.say('Use !buzz word to guess the conundrum.');
     self.say(`Conundrum: ${_.shuffle(self.table.conundrum).join(' ')}`);
@@ -1005,7 +1030,7 @@ const Game = function Game (
         if (self.challenged.hasBuzzed === false) {
           if (self.table.conundrum === word) {
             self.say(
-              `${player} has correctly guessed the countdown conundrum and scored 10 points`
+              `${player} has correctly guessed the countdown conundrum and scored 10 points`,
             );
             self.challenged.points += 10;
             self.conundrumAns = true;
@@ -1027,7 +1052,7 @@ const Game = function Game (
 
             if (valid === true && _.includes(self.conundrum_words, word)) {
               self.say(
-                `${player} has correctly guessed the countdown conundrum and scored 10 points`
+                `${player} has correctly guessed the countdown conundrum and scored 10 points`,
               );
               self.challenged.points += 10;
               self.conundrumAns = true;
@@ -1037,12 +1062,14 @@ const Game = function Game (
               self.challenged.hasBuzzed = true;
             }
           }
-        } else          { self.say(`${player} has already Buzzed`); }
+        } else {
+          self.say(`${player} has already Buzzed`);
+        }
       } else {
         if (self.challenger.hasBuzzed === false) {
           if (self.table.conundrum === word) {
             self.say(
-              `${player} has correctly guessed the countdown conundrum and scored 10 points`
+              `${player} has correctly guessed the countdown conundrum and scored 10 points`,
             );
             self.challenger.points += 10;
             self.conundrumAns = true;
@@ -1064,7 +1091,7 @@ const Game = function Game (
 
             if (valid === true && _.includes(self.conundrum_words, word)) {
               self.say(
-                `${player} has correctly guessed the countdown conundrum and scored 10 points`
+                `${player} has correctly guessed the countdown conundrum and scored 10 points`,
               );
               self.challenger.points += 10;
               self.conundrumAns = true;
@@ -1210,10 +1237,11 @@ const Game = function Game (
 
   self.showPoints = () => {
     if (self.round === 0) {
-      self.say('The game hasn\'t begun yet');
+      self.say("The game hasn't begun yet");
     } else {
       self.setTopic(
-        `Round ${self.round}: ${self.challenged.nick} has ${self.challenged.points} points while ${self.challenger.nick} has ${self.challenger.points} points.`
+        `Round ${self.round}: ${self.challenged.nick} has ${self.challenged
+          .points} points while ${self.challenger.nick} has ${self.challenger.points} points.`,
       );
     }
   };
@@ -1258,7 +1286,7 @@ const Game = function Game (
    * @param channel
    * @param message
    */
-  self.playerQuitHandler = (nick) => {
+  self.playerQuitHandler = nick => {
     console.log(`Player ${nick} left`);
     self.findAndRemoveIfPlaying(nick);
   };
@@ -1295,8 +1323,8 @@ const Game = function Game (
   client.addListener('quit', self.playerQuitHandler);
   client.addListener(`kick${channel}`, self.playerKickHandler);
   client.addListener('nick', self.playerNickChangeHandler);
-};
+}
 
 Game.STATES = STATES;
 
-exports = module.exports = Game;
+module.exports = Game;

@@ -1,7 +1,7 @@
 [
   {
     "type": "Answer",
-    "value":"Brogrammers",
+    "value": "Brogrammers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -9,7 +9,7 @@
   },
   {
     "type": "Answer",
-    "value":"Command-line magic",
+    "value": "Command-line magic",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -17,7 +17,7 @@
   },
   {
     "type": "Answer",
-    "value":"Continuous integration",
+    "value": "Continuous integration",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -25,7 +25,7 @@
   },
   {
     "type": "Answer",
-    "value":"Copypasta",
+    "value": "Copypasta",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -33,7 +33,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Cult of Mac",
+    "value": "The Cult of Mac",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -41,7 +41,7 @@
   },
   {
     "type": "Answer",
-    "value":"Degraded performance in some AWS availability zones",
+    "value": "Degraded performance in some AWS availability zones",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -49,7 +49,7 @@
   },
   {
     "type": "Answer",
-    "value":"Developers",
+    "value": "Developers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -57,7 +57,7 @@
   },
   {
     "type": "Answer",
-    "value":"DevOps",
+    "value": "DevOps",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -65,7 +65,7 @@
   },
   {
     "type": "Answer",
-    "value":"Eating sushi with Andrew Clay Shafer",
+    "value": "Eating sushi with Andrew Clay Shafer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -73,7 +73,7 @@
   },
   {
     "type": "Answer",
-    "value":"fuckedcompany.com",
+    "value": "fuckedcompany.com",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -81,7 +81,7 @@
   },
   {
     "type": "Answer",
-    "value":"Git",
+    "value": "Git",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -89,7 +89,7 @@
   },
   {
     "type": "Answer",
-    "value":"Golang",
+    "value": "Golang",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -97,7 +97,7 @@
   },
   {
     "type": "Answer",
-    "value":"Growth hacking",
+    "value": "Growth hacking",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -105,7 +105,7 @@
   },
   {
     "type": "Answer",
-    "value":"vi vi vi",
+    "value": "vi vi vi",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -113,7 +113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hacker News",
+    "value": "Hacker News",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -121,7 +121,7 @@
   },
   {
     "type": "Answer",
-    "value":"Larry Ellison",
+    "value": "Larry Ellison",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -129,7 +129,7 @@
   },
   {
     "type": "Answer",
-    "value":"Leaky abstractions",
+    "value": "Leaky abstractions",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -137,7 +137,7 @@
   },
   {
     "type": "Answer",
-    "value":"Meritocracy",
+    "value": "Meritocracy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -145,7 +145,7 @@
   },
   {
     "type": "Answer",
-    "value":"MongoDB",
+    "value": "MongoDB",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -153,7 +153,7 @@
   },
   {
     "type": "Answer",
-    "value":"Node.js",
+    "value": "Node.js",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -161,7 +161,7 @@
   },
   {
     "type": "Answer",
-    "value":"NPM",
+    "value": "NPM",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -169,7 +169,7 @@
   },
   {
     "type": "Answer",
-    "value":"Pareto Inefficient Nash Equilibriums",
+    "value": "Pareto Inefficient Nash Equilibriums",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -177,7 +177,7 @@
   },
   {
     "type": "Answer",
-    "value":"Posting on Etsy's codeascraft blog",
+    "value": "Posting on Etsy's codeascraft blog",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -185,7 +185,7 @@
   },
   {
     "type": "Answer",
-    "value":"Python",
+    "value": "Python",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -193,7 +193,7 @@
   },
   {
     "type": "Answer",
-    "value":"Python datetime module",
+    "value": "Python datetime module",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -201,7 +201,7 @@
   },
   {
     "type": "Answer",
-    "value":"Rebasing the entire fucking repo",
+    "value": "Rebasing the entire fucking repo",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -209,7 +209,7 @@
   },
   {
     "type": "Answer",
-    "value":"RecruiterFail",
+    "value": "RecruiterFail",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -217,7 +217,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ruby",
+    "value": "Ruby",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -225,7 +225,7 @@
   },
   {
     "type": "Answer",
-    "value":"Running out of IPv4 addresses",
+    "value": "Running out of IPv4 addresses",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -233,7 +233,7 @@
   },
   {
     "type": "Answer",
-    "value":"Sysadmins",
+    "value": "Sysadmins",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -241,7 +241,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Stanford of Canada",
+    "value": "The Stanford of Canada",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -249,7 +249,7 @@
   },
   {
     "type": "Answer",
-    "value":"Thought leadership",
+    "value": "Thought leadership",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -257,7 +257,7 @@
   },
   {
     "type": "Answer",
-    "value":"Twitter",
+    "value": "Twitter",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -265,7 +265,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unicode errors",
+    "value": "Unicode errors",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -273,7 +273,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unknown source in your stack trace",
+    "value": "Unknown source in your stack trace",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -281,7 +281,7 @@
   },
   {
     "type": "Answer",
-    "value":"Waiting for console.aws.amazon.com",
+    "value": "Waiting for console.aws.amazon.com",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -289,7 +289,7 @@
   },
   {
     "type": "Answer",
-    "value":"Women in tech",
+    "value": "Women in tech",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -297,7 +297,7 @@
   },
   {
     "type": "Answer",
-    "value":"Yet another package manager",
+    "value": "Yet another package manager",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -305,7 +305,7 @@
   },
   {
     "type": "Answer",
-    "value":"Our Release Engineer",
+    "value": "Our Release Engineer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -313,7 +313,7 @@
   },
   {
     "type": "Answer",
-    "value":"DevOps Days",
+    "value": "DevOps Days",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -321,7 +321,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bullshit.io",
+    "value": "Bullshit.io",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -329,7 +329,7 @@
   },
   {
     "type": "Answer",
-    "value":"OpenSSL",
+    "value": "OpenSSL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -337,7 +337,7 @@
   },
   {
     "type": "Answer",
-    "value":"Heartbleed",
+    "value": "Heartbleed",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -345,7 +345,7 @@
   },
   {
     "type": "Answer",
-    "value":"The NSA",
+    "value": "The NSA",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -353,7 +353,7 @@
   },
   {
     "type": "Answer",
-    "value":"O'Reilly",
+    "value": "O'Reilly",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -361,7 +361,7 @@
   },
   {
     "type": "Answer",
-    "value":"Google",
+    "value": "Google",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -369,7 +369,7 @@
   },
   {
     "type": "Answer",
-    "value":"Magic Spray",
+    "value": "Magic Spray",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -377,7 +377,7 @@
   },
   {
     "type": "Answer",
-    "value":"Web scale",
+    "value": "Web scale",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -385,7 +385,7 @@
   },
   {
     "type": "Answer",
-    "value":"Functional programming",
+    "value": "Functional programming",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -393,7 +393,7 @@
   },
   {
     "type": "Answer",
-    "value":"Stack trace generator",
+    "value": "Stack trace generator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -401,7 +401,7 @@
   },
   {
     "type": "Answer",
-    "value":"ActionScript 3",
+    "value": "ActionScript 3",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -409,7 +409,7 @@
   },
   {
     "type": "Answer",
-    "value":"SVN",
+    "value": "SVN",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -417,7 +417,7 @@
   },
   {
     "type": "Answer",
-    "value":"Perl 6",
+    "value": "Perl 6",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -425,7 +425,7 @@
   },
   {
     "type": "Answer",
-    "value":"COTS Shareware",
+    "value": "COTS Shareware",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -433,7 +433,7 @@
   },
   {
     "type": "Answer",
-    "value":"2400 baud modem",
+    "value": "2400 baud modem",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -441,7 +441,7 @@
   },
   {
     "type": "Answer",
-    "value":"A squirrel with a taste for fiber",
+    "value": "A squirrel with a taste for fiber",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -449,7 +449,7 @@
   },
   {
     "type": "Answer",
-    "value":"CAP Theorem",
+    "value": "CAP Theorem",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -457,7 +457,7 @@
   },
   {
     "type": "Answer",
-    "value":"Snowflake server",
+    "value": "Snowflake server",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -465,7 +465,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Cisco router with a flaky chip",
+    "value": "A Cisco router with a flaky chip",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -473,7 +473,7 @@
   },
   {
     "type": "Answer",
-    "value":"NullPointerException: null",
+    "value": "NullPointerException: null",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -481,7 +481,7 @@
   },
   {
     "type": "Answer",
-    "value":"Apache 1.2 running as root",
+    "value": "Apache 1.2 running as root",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -489,7 +489,7 @@
   },
   {
     "type": "Answer",
-    "value":"More buzzwords than you can shake a scrum at",
+    "value": "More buzzwords than you can shake a scrum at",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -497,7 +497,7 @@
   },
   {
     "type": "Answer",
-    "value":"A GitHub Outage",
+    "value": "A GitHub Outage",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -505,7 +505,7 @@
   },
   {
     "type": "Answer",
-    "value":"VisualBasic DLLs",
+    "value": "VisualBasic DLLs",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -513,7 +513,7 @@
   },
   {
     "type": "Answer",
-    "value":"A JAR full of spaghetti",
+    "value": "A JAR full of spaghetti",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -521,7 +521,7 @@
   },
   {
     "type": "Answer",
-    "value":"An epic caffeine bender",
+    "value": "An epic caffeine bender",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -529,7 +529,7 @@
   },
   {
     "type": "Answer",
-    "value":"A WSDL from 2003",
+    "value": "A WSDL from 2003",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -537,7 +537,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Sales & Marketing department",
+    "value": "The Sales & Marketing department",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -545,7 +545,7 @@
   },
   {
     "type": "Answer",
-    "value":"Business logic in PowerPoint slides",
+    "value": "Business logic in PowerPoint slides",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -553,7 +553,7 @@
   },
   {
     "type": "Answer",
-    "value":"/var/log symlinked to /dev/null",
+    "value": "/var/log symlinked to /dev/null",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -561,7 +561,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hypervisors running hypervisors running hypervisors",
+    "value": "Hypervisors running hypervisors running hypervisors",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -569,7 +569,7 @@
   },
   {
     "type": "Answer",
-    "value":"An angry badger with an electromagnet on its back",
+    "value": "An angry badger with an electromagnet on its back",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -577,7 +577,7 @@
   },
   {
     "type": "Answer",
-    "value":"A shared root password",
+    "value": "A shared root password",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -585,7 +585,7 @@
   },
   {
     "type": "Answer",
-    "value":"Private keys in /var/www",
+    "value": "Private keys in /var/www",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -593,7 +593,7 @@
   },
   {
     "type": "Answer",
-    "value":"Parsing HTML with regex",
+    "value": "Parsing HTML with regex",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -601,7 +601,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 3.5\" floppy disk",
+    "value": "A 3.5\" floppy disk",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -609,7 +609,7 @@
   },
   {
     "type": "Answer",
-    "value":"An untested restore process",
+    "value": "An untested restore process",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -617,7 +617,7 @@
   },
   {
     "type": "Answer",
-    "value":"A cron job that reboots the server every 5 minutes",
+    "value": "A cron job that reboots the server every 5 minutes",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -625,7 +625,7 @@
   },
   {
     "type": "Answer",
-    "value":"Apache Zookeeper on a 286",
+    "value": "Apache Zookeeper on a 286",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -633,7 +633,7 @@
   },
   {
     "type": "Answer",
-    "value":"Sadness as a Service",
+    "value": "Sadness as a Service",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -641,7 +641,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cloud-based business strategy",
+    "value": "Cloud-based business strategy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -649,7 +649,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cloud 2.0",
+    "value": "Cloud 2.0",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -657,7 +657,7 @@
   },
   {
     "type": "Answer",
-    "value":"The next Y2K",
+    "value": "The next Y2K",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -665,7 +665,7 @@
   },
   {
     "type": "Answer",
-    "value":"An army of chaos monkeys, all carrying flamethrowers",
+    "value": "An army of chaos monkeys, all carrying flamethrowers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -673,7 +673,7 @@
   },
   {
     "type": "Answer",
-    "value":"A CORBA service written in Ada which communicates using JSONx",
+    "value": "A CORBA service written in Ada which communicates using JSONx",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -681,7 +681,7 @@
   },
   {
     "type": "Answer",
-    "value":"A home-rolled systemd replacement",
+    "value": "A home-rolled systemd replacement",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -689,7 +689,7 @@
   },
   {
     "type": "Answer",
-    "value":"A custom kernel with Frontpage Extensions installed",
+    "value": "A custom kernel with Frontpage Extensions installed",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -697,7 +697,7 @@
   },
   {
     "type": "Answer",
-    "value":"A mobile web 2.0 RIA",
+    "value": "A mobile web 2.0 RIA",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -705,7 +705,7 @@
   },
   {
     "type": "Answer",
-    "value":"Agony-Driven Development",
+    "value": "Agony-Driven Development",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -713,7 +713,7 @@
   },
   {
     "type": "Answer",
-    "value":"Being acquired by Oracle",
+    "value": "Being acquired by Oracle",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -721,7 +721,7 @@
   },
   {
     "type": "Answer",
-    "value":"Catastrophic Failure as a Service",
+    "value": "Catastrophic Failure as a Service",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -729,7 +729,7 @@
   },
   {
     "type": "Answer",
-    "value":"10,000 Nagios alerts per second",
+    "value": "10,000 Nagios alerts per second",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -737,7 +737,7 @@
   },
   {
     "type": "Answer",
-    "value":"A global write lock",
+    "value": "A global write lock",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -745,7 +745,7 @@
   },
   {
     "type": "Answer",
-    "value":"75-tier architecture",
+    "value": "75-tier architecture",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -753,7 +753,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hand-crafted artisan x86 assembly code:q",
+    "value": "Hand-crafted artisan x86 assembly code:q",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -761,7 +761,7 @@
   },
   {
     "type": "Answer",
-    "value":"The world's only fully-functional ROFLcopter",
+    "value": "The world's only fully-functional ROFLcopter",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -769,7 +769,7 @@
   },
   {
     "type": "Answer",
-    "value":"A proof that P=NP written in BASIC",
+    "value": "A proof that P=NP written in BASIC",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -777,7 +777,7 @@
   },
   {
     "type": "Answer",
-    "value":"An Exchange email loop",
+    "value": "An Exchange email loop",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -785,7 +785,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Volker-Craig terminal",
+    "value": "A Volker-Craig terminal",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -793,7 +793,7 @@
   },
   {
     "type": "Answer",
-    "value":"A self-aware PHP script",
+    "value": "A self-aware PHP script",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -801,7 +801,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 500-megabyte UDP packet",
+    "value": "A 500-megabyte UDP packet",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -809,7 +809,7 @@
   },
   {
     "type": "Answer",
-    "value":"The last remaining Multics server on Earth",
+    "value": "The last remaining Multics server on Earth",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -817,7 +817,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Null-modem cable",
+    "value": "A Null-modem cable",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -825,7 +825,7 @@
   },
   {
     "type": "Answer",
-    "value":"A turducken made entirely of bash scripts",
+    "value": "A turducken made entirely of bash scripts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -833,7 +833,7 @@
   },
   {
     "type": "Answer",
-    "value":"Write-only code",
+    "value": "Write-only code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -841,7 +841,7 @@
   },
   {
     "type": "Answer",
-    "value":"PagerDuty configured with a random number generator",
+    "value": "PagerDuty configured with a random number generator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -849,7 +849,7 @@
   },
   {
     "type": "Answer",
-    "value":"Netscape Navigator 3.2 support",
+    "value": "Netscape Navigator 3.2 support",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -857,7 +857,7 @@
   },
   {
     "type": "Answer",
-    "value":"Mutation of immutable data",
+    "value": "Mutation of immutable data",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -865,7 +865,7 @@
   },
   {
     "type": "Answer",
-    "value":"Maven downloading the entire internet",
+    "value": "Maven downloading the entire internet",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -873,7 +873,7 @@
   },
   {
     "type": "Answer",
-    "value":"Continuous Disintegration",
+    "value": "Continuous Disintegration",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -881,7 +881,7 @@
   },
   {
     "type": "Answer",
-    "value":"IE6",
+    "value": "IE6",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -889,7 +889,7 @@
   },
   {
     "type": "Answer",
-    "value":"Scrum Master",
+    "value": "Scrum Master",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -897,7 +897,7 @@
   },
   {
     "type": "Answer",
-    "value":"Magic Smoke",
+    "value": "Magic Smoke",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -905,7 +905,7 @@
   },
   {
     "type": "Answer",
-    "value":"done done",
+    "value": "done done",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -913,7 +913,7 @@
   },
   {
     "type": "Answer",
-    "value":"Tech Debt Day",
+    "value": "Tech Debt Day",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -921,7 +921,7 @@
   },
   {
     "type": "Answer",
-    "value":"Log Shipping",
+    "value": "Log Shipping",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -929,7 +929,7 @@
   },
   {
     "type": "Answer",
-    "value":"uucp",
+    "value": "uucp",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -937,7 +937,7 @@
   },
   {
     "type": "Answer",
-    "value":"4chan Party Van",
+    "value": "4chan Party Van",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -945,7 +945,7 @@
   },
   {
     "type": "Answer",
-    "value":"Tcl",
+    "value": "Tcl",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -953,7 +953,7 @@
   },
   {
     "type": "Answer",
-    "value":"NoOps",
+    "value": "NoOps",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -961,7 +961,7 @@
   },
   {
     "type": "Answer",
-    "value":"An angry whale shitting containers",
+    "value": "An angry whale shitting containers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -969,7 +969,7 @@
   },
   {
     "type": "Answer",
-    "value":":(){ :|:&};:",
+    "value": ":(){ :|:&};:",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -977,7 +977,7 @@
   },
   {
     "type": "Answer",
-    "value":"Too Big Data",
+    "value": "Too Big Data",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -985,7 +985,7 @@
   },
   {
     "type": "Answer",
-    "value":"Accidentally the entire data center",
+    "value": "Accidentally the entire data center",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -993,7 +993,7 @@
   },
   {
     "type": "Answer",
-    "value":"freebasing caffeine",
+    "value": "freebasing caffeine",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1001,7 +1001,7 @@
   },
   {
     "type": "Answer",
-    "value":"Fat fingered",
+    "value": "Fat fingered",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1009,7 +1009,7 @@
   },
   {
     "type": "Answer",
-    "value":"Half open TCP connections",
+    "value": "Half open TCP connections",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1017,7 +1017,7 @@
   },
   {
     "type": "Answer",
-    "value":"Steve Ballmer wielding a battleaxe",
+    "value": "Steve Ballmer wielding a battleaxe",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1025,7 +1025,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 50k line Bash script that's achieved self awareness",
+    "value": "A 50k line Bash script that's achieved self awareness",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1033,7 +1033,7 @@
   },
   {
     "type": "Answer",
-    "value":"Gigadevops",
+    "value": "Gigadevops",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1041,7 +1041,7 @@
   },
   {
     "type": "Answer",
-    "value":"Enterprise Grade Bash scripts",
+    "value": "Enterprise Grade Bash scripts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1049,7 +1049,7 @@
   },
   {
     "type": "Answer",
-    "value":"Agile",
+    "value": "Agile",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1057,7 +1057,7 @@
   },
   {
     "type": "Answer",
-    "value":"A pink sombrero and a fifth of tequila",
+    "value": "A pink sombrero and a fifth of tequila",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1065,7 +1065,7 @@
   },
   {
     "type": "Answer",
-    "value":"A simple 15 level Hiera hierarachy",
+    "value": "A simple 15 level Hiera hierarachy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1073,7 +1073,7 @@
   },
   {
     "type": "Answer",
-    "value":"lolscale.",
+    "value": "lolscale.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1081,7 +1081,7 @@
   },
   {
     "type": "Answer",
-    "value":"CouchDB",
+    "value": "CouchDB",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1089,7 +1089,7 @@
   },
   {
     "type": "Answer",
-    "value":"GeoCouchDB",
+    "value": "GeoCouchDB",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1097,7 +1097,7 @@
   },
   {
     "type": "Answer",
-    "value":"High Availability",
+    "value": "High Availability",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1105,7 +1105,7 @@
   },
   {
     "type": "Answer",
-    "value":"Map-Reduce",
+    "value": "Map-Reduce",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1113,7 +1113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Web Scale?",
+    "value": "Web Scale?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1121,7 +1121,7 @@
   },
   {
     "type": "Answer",
-    "value":"Erlang",
+    "value": "Erlang",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1129,7 +1129,7 @@
   },
   {
     "type": "Answer",
-    "value":"a non-ironic BSOD",
+    "value": "a non-ironic BSOD",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1137,7 +1137,7 @@
   },
   {
     "type": "Answer",
-    "value":"ntpdate",
+    "value": "ntpdate",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1145,7 +1145,7 @@
   },
   {
     "type": "Answer",
-    "value":"Systemd",
+    "value": "Systemd",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1153,7 +1153,7 @@
   },
   {
     "type": "Answer",
-    "value":"12 factor application",
+    "value": "12 factor application",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1161,7 +1161,7 @@
   },
   {
     "type": "Answer",
-    "value":"Fail early, fail often",
+    "value": "Fail early, fail often",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1169,7 +1169,7 @@
   },
   {
     "type": "Answer",
-    "value":"Regex",
+    "value": "Regex",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1177,7 +1177,7 @@
   },
   {
     "type": "Answer",
-    "value":"A violation of the most basic engineering principles.",
+    "value": "A violation of the most basic engineering principles.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1185,7 +1185,7 @@
   },
   {
     "type": "Answer",
-    "value":"The BOFH",
+    "value": "The BOFH",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1193,7 +1193,7 @@
   },
   {
     "type": "Answer",
-    "value":"A water buffalo",
+    "value": "A water buffalo",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1201,7 +1201,7 @@
   },
   {
     "type": "Answer",
-    "value":"a routing loop",
+    "value": "a routing loop",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1209,7 +1209,7 @@
   },
   {
     "type": "Answer",
-    "value":"a queue with no consumers",
+    "value": "a queue with no consumers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1217,7 +1217,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bitcoin mining",
+    "value": "Bitcoin mining",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1225,7 +1225,7 @@
   },
   {
     "type": "Answer",
-    "value":"A firewall full of holes",
+    "value": "A firewall full of holes",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1233,7 +1233,7 @@
   },
   {
     "type": "Answer",
-    "value":"An uncontrollable deluge of emails",
+    "value": "An uncontrollable deluge of emails",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1241,7 +1241,7 @@
   },
   {
     "type": "Answer",
-    "value":"I heard about it on hacker news",
+    "value": "I heard about it on hacker news",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1249,7 +1249,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ycombinator",
+    "value": "Ycombinator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1257,7 +1257,7 @@
   },
   {
     "type": "Answer",
-    "value":"a jailbroken iPad",
+    "value": "a jailbroken iPad",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1265,7 +1265,7 @@
   },
   {
     "type": "Answer",
-    "value":"\"Fuck it, we'll do it live!\"",
+    "value": "\"Fuck it, we'll do it live!\"",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1273,7 +1273,7 @@
   },
   {
     "type": "Answer",
-    "value":"Vagrant",
+    "value": "Vagrant",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1281,7 +1281,7 @@
   },
   {
     "type": "Answer",
-    "value":"Nokogiri Gem",
+    "value": "Nokogiri Gem",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1289,7 +1289,7 @@
   },
   {
     "type": "Answer",
-    "value":"Docker",
+    "value": "Docker",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1297,7 +1297,7 @@
   },
   {
     "type": "Answer",
-    "value":"a \"MRW\" animated gif",
+    "value": "a \"MRW\" animated gif",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1305,7 +1305,7 @@
   },
   {
     "type": "Answer",
-    "value":"$HOME/.gem",
+    "value": "$HOME/.gem",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1313,7 +1313,7 @@
   },
   {
     "type": "Answer",
-    "value":"a posting on Craigslist \"internet engineers\" jobs forum",
+    "value": "a posting on Craigslist \"internet engineers\" jobs forum",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1321,7 +1321,7 @@
   },
   {
     "type": "Answer",
-    "value":"ssh in a for loop",
+    "value": "ssh in a for loop",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1329,7 +1329,7 @@
   },
   {
     "type": "Answer",
-    "value":"a cold cup of coffee",
+    "value": "a cold cup of coffee",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1337,7 +1337,7 @@
   },
   {
     "type": "Answer",
-    "value":"Destroying your tools with your tools",
+    "value": "Destroying your tools with your tools",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1345,7 +1345,7 @@
   },
   {
     "type": "Answer",
-    "value":"UTF-9",
+    "value": "UTF-9",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1353,7 +1353,7 @@
   },
   {
     "type": "Answer",
-    "value":"a dozen vendor t-shirts",
+    "value": "a dozen vendor t-shirts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1361,7 +1361,7 @@
   },
   {
     "type": "Answer",
-    "value":"unlimited data plan",
+    "value": "unlimited data plan",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1369,7 +1369,7 @@
   },
   {
     "type": "Answer",
-    "value":"UTF-7",
+    "value": "UTF-7",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1377,7 +1377,7 @@
   },
   {
     "type": "Answer",
-    "value":"out-of-band access",
+    "value": "out-of-band access",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1385,7 +1385,7 @@
   },
   {
     "type": "Answer",
-    "value":"sudo rm -rf /",
+    "value": "sudo rm -rf /",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1393,7 +1393,7 @@
   },
   {
     "type": "Answer",
-    "value":"kill -9",
+    "value": "kill -9",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1401,7 +1401,7 @@
   },
   {
     "type": "Answer",
-    "value":"a series of tiny shellscripts",
+    "value": "a series of tiny shellscripts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1409,7 +1409,7 @@
   },
   {
     "type": "Answer",
-    "value":"Dogecoin",
+    "value": "Dogecoin",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1417,7 +1417,7 @@
   },
   {
     "type": "Answer",
-    "value":"Kernel panic",
+    "value": "Kernel panic",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1425,7 +1425,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hugops!",
+    "value": "Hugops!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1433,7 +1433,7 @@
   },
   {
     "type": "Answer",
-    "value":"Lolcats",
+    "value": "Lolcats",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1441,7 +1441,7 @@
   },
   {
     "type": "Answer",
-    "value":"Culture",
+    "value": "Culture",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1449,7 +1449,7 @@
   },
   {
     "type": "Answer",
-    "value":"Percussive maintenance",
+    "value": "Percussive maintenance",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1457,7 +1457,7 @@
   },
   {
     "type": "Answer",
-    "value":"IE 7 Support",
+    "value": "IE 7 Support",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1465,7 +1465,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hangops",
+    "value": "Hangops",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1473,7 +1473,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unix philosophy",
+    "value": "Unix philosophy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1481,7 +1481,7 @@
   },
   {
     "type": "Answer",
-    "value":"Trying to install MongoDB on AIX 3",
+    "value": "Trying to install MongoDB on AIX 3",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1489,7 +1489,7 @@
   },
   {
     "type": "Answer",
-    "value":"A server rack full of crushed dreams",
+    "value": "A server rack full of crushed dreams",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1497,7 +1497,7 @@
   },
   {
     "type": "Answer",
-    "value":"Monads",
+    "value": "Monads",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1505,7 +1505,7 @@
   },
   {
     "type": "Answer",
-    "value":"Silos",
+    "value": "Silos",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1513,7 +1513,7 @@
   },
   {
     "type": "Answer",
-    "value":"Elastic Load Balancers",
+    "value": "Elastic Load Balancers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1521,7 +1521,7 @@
   },
   {
     "type": "Answer",
-    "value":"RFC1178",
+    "value": "RFC1178",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1529,7 +1529,7 @@
   },
   {
     "type": "Answer",
-    "value":"Full-stack developer",
+    "value": "Full-stack developer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1537,7 +1537,7 @@
   },
   {
     "type": "Answer",
-    "value":"Andrew Clay Shaffer",
+    "value": "Andrew Clay Shaffer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1545,7 +1545,7 @@
   },
   {
     "type": "Answer",
-    "value":"Jordan Sissel",
+    "value": "Jordan Sissel",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1553,7 +1553,7 @@
   },
   {
     "type": "Answer",
-    "value":"A new printer.",
+    "value": "A new printer.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1561,7 +1561,7 @@
   },
   {
     "type": "Answer",
-    "value":"A potato",
+    "value": "A potato",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1569,7 +1569,7 @@
   },
   {
     "type": "Answer",
-    "value":"Office Space",
+    "value": "Office Space",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1577,7 +1577,7 @@
   },
   {
     "type": "Answer",
-    "value":"Git Blame",
+    "value": "Git Blame",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1585,7 +1585,7 @@
   },
   {
     "type": "Answer",
-    "value":"Developers! Developers! Developers! Developers!",
+    "value": "Developers! Developers! Developers! Developers!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1593,7 +1593,7 @@
   },
   {
     "type": "Answer",
-    "value":"Your account",
+    "value": "Your account",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1601,7 +1601,7 @@
   },
   {
     "type": "Answer",
-    "value":"Single stepping through the kernel",
+    "value": "Single stepping through the kernel",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1609,7 +1609,7 @@
   },
   {
     "type": "Answer",
-    "value":"De-linting source code",
+    "value": "De-linting source code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1617,7 +1617,7 @@
   },
   {
     "type": "Answer",
-    "value":"Significant whitespace",
+    "value": "Significant whitespace",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1625,7 +1625,7 @@
   },
   {
     "type": "Answer",
-    "value":"@beerops",
+    "value": "@beerops",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1633,7 +1633,7 @@
   },
   {
     "type": "Answer",
-    "value":"secret sauce",
+    "value": "secret sauce",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1641,7 +1641,7 @@
   },
   {
     "type": "Answer",
-    "value":"# What is this used for?",
+    "value": "# What is this used for?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1649,7 +1649,7 @@
   },
   {
     "type": "Answer",
-    "value":"Regular Expressions",
+    "value": "Regular Expressions",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1657,7 +1657,7 @@
   },
   {
     "type": "Answer",
-    "value":"# FIXME: For now, just don't validate",
+    "value": "# FIXME: For now, just don't validate",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1665,7 +1665,7 @@
   },
   {
     "type": "Answer",
-    "value":"ASAP",
+    "value": "ASAP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1673,7 +1673,7 @@
   },
   {
     "type": "Answer",
-    "value":"Nagios",
+    "value": "Nagios",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1681,7 +1681,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Goddamn CDN",
+    "value": "The Goddamn CDN",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1689,7 +1689,7 @@
   },
   {
     "type": "Answer",
-    "value":"Authentication and authorization",
+    "value": "Authentication and authorization",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1697,7 +1697,7 @@
   },
   {
     "type": "Answer",
-    "value":"A cluster of applications on a cluster of servers",
+    "value": "A cluster of applications on a cluster of servers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1705,7 +1705,7 @@
   },
   {
     "type": "Answer",
-    "value":"Beating the server into submission with your bare hands.",
+    "value": "Beating the server into submission with your bare hands.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1713,7 +1713,7 @@
   },
   {
     "type": "Answer",
-    "value":"Read-only Fridays",
+    "value": "Read-only Fridays",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1721,7 +1721,7 @@
   },
   {
     "type": "Answer",
-    "value":"r/sysadmin",
+    "value": "r/sysadmin",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1729,7 +1729,7 @@
   },
   {
     "type": "Answer",
-    "value":"Distributed Computing",
+    "value": "Distributed Computing",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1737,7 +1737,7 @@
   },
   {
     "type": "Answer",
-    "value":"Sprint Planning",
+    "value": "Sprint Planning",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1745,7 +1745,7 @@
   },
   {
     "type": "Answer",
-    "value":"Merge Conflicts",
+    "value": "Merge Conflicts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1753,7 +1753,7 @@
   },
   {
     "type": "Answer",
-    "value":"# we *LIE* about what happened and return a \"success\"",
+    "value": "# we *LIE* about what happened and return a \"success\"",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1761,7 +1761,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unplugging a server and waiting to see who complains",
+    "value": "Unplugging a server and waiting to see who complains",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1769,7 +1769,7 @@
   },
   {
     "type": "Answer",
-    "value":"THE MAGMA PEOPLE ARE WAITING FOR OUR MISTAKES.",
+    "value": "THE MAGMA PEOPLE ARE WAITING FOR OUR MISTAKES.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1777,7 +1777,7 @@
   },
   {
     "type": "Answer",
-    "value":"a tiny ounce of knowledge",
+    "value": "a tiny ounce of knowledge",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1785,7 +1785,7 @@
   },
   {
     "type": "Answer",
-    "value":"Too big to fail",
+    "value": "Too big to fail",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1793,7 +1793,7 @@
   },
   {
     "type": "Answer",
-    "value":"NoQA Movement",
+    "value": "NoQA Movement",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1801,7 +1801,7 @@
   },
   {
     "type": "Answer",
-    "value":"A few instances",
+    "value": "A few instances",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1809,7 +1809,7 @@
   },
   {
     "type": "Answer",
-    "value":"operations hipster",
+    "value": "operations hipster",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1817,7 +1817,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cowboy developer",
+    "value": "Cowboy developer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1825,7 +1825,7 @@
   },
   {
     "type": "Answer",
-    "value":"cubism farm",
+    "value": "cubism farm",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1833,7 +1833,7 @@
   },
   {
     "type": "Answer",
-    "value":"HipChat",
+    "value": "HipChat",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1841,7 +1841,7 @@
   },
   {
     "type": "Answer",
-    "value":"An IRC bot written entirely in sed",
+    "value": "An IRC bot written entirely in sed",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1849,7 +1849,7 @@
   },
   {
     "type": "Answer",
-    "value":"works for me",
+    "value": "works for me",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1857,7 +1857,7 @@
   },
   {
     "type": "Answer",
-    "value":"a torrent of Torrenters torrenting",
+    "value": "a torrent of Torrenters torrenting",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1865,7 +1865,7 @@
   },
   {
     "type": "Answer",
-    "value":"COBOL",
+    "value": "COBOL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1873,7 +1873,7 @@
   },
   {
     "type": "Answer",
-    "value":"in b4 FIRST",
+    "value": "in b4 FIRST",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1881,7 +1881,7 @@
   },
   {
     "type": "Answer",
-    "value":"Donald Knuth",
+    "value": "Donald Knuth",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1889,7 +1889,7 @@
   },
   {
     "type": "Answer",
-    "value":"Rebooting All The Things",
+    "value": "Rebooting All The Things",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1897,7 +1897,7 @@
   },
   {
     "type": "Answer",
-    "value":"Running Openstack in Production",
+    "value": "Running Openstack in Production",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1905,7 +1905,7 @@
   },
   {
     "type": "Answer",
-    "value":"the Berkshelf way",
+    "value": "the Berkshelf way",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1913,7 +1913,7 @@
   },
   {
     "type": "Answer",
-    "value":"DNS",
+    "value": "DNS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1921,7 +1921,7 @@
   },
   {
     "type": "Answer",
-    "value":"SIGHUP",
+    "value": "SIGHUP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1929,7 +1929,7 @@
   },
   {
     "type": "Answer",
-    "value":"Animated GIF",
+    "value": "Animated GIF",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1937,7 +1937,7 @@
   },
   {
     "type": "Answer",
-    "value":"PC LOAD LETTER",
+    "value": "PC LOAD LETTER",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1945,7 +1945,7 @@
   },
   {
     "type": "Answer",
-    "value":"Automate",
+    "value": "Automate",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1953,7 +1953,7 @@
   },
   {
     "type": "Answer",
-    "value":"Delightful",
+    "value": "Delightful",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1961,7 +1961,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cache",
+    "value": "Cache",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1969,7 +1969,7 @@
   },
   {
     "type": "Answer",
-    "value":"Proxy",
+    "value": "Proxy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1977,7 +1977,7 @@
   },
   {
     "type": "Answer",
-    "value":"an online book seller",
+    "value": "an online book seller",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1985,7 +1985,7 @@
   },
   {
     "type": "Answer",
-    "value":"Dust Bunnies",
+    "value": "Dust Bunnies",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -1993,7 +1993,7 @@
   },
   {
     "type": "Answer",
-    "value":"Pete Cheslock",
+    "value": "Pete Cheslock",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2001,7 +2001,7 @@
   },
   {
     "type": "Answer",
-    "value":"Networking",
+    "value": "Networking",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2009,7 +2009,7 @@
   },
   {
     "type": "Answer",
-    "value":"A sad log with a mustache",
+    "value": "A sad log with a mustache",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2017,7 +2017,7 @@
   },
   {
     "type": "Answer",
-    "value":"Blue Screen Of Death",
+    "value": "Blue Screen Of Death",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2025,7 +2025,7 @@
   },
   {
     "type": "Answer",
-    "value":"iso 8601",
+    "value": "iso 8601",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2033,7 +2033,7 @@
   },
   {
     "type": "Answer",
-    "value":"Daniel J. Bernstein",
+    "value": "Daniel J. Bernstein",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2041,7 +2041,7 @@
   },
   {
     "type": "Answer",
-    "value":"Linus Torvalds",
+    "value": "Linus Torvalds",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2049,7 +2049,7 @@
   },
   {
     "type": "Answer",
-    "value":"Broadcom chipset",
+    "value": "Broadcom chipset",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2057,7 +2057,7 @@
   },
   {
     "type": "Answer",
-    "value":"Moe",
+    "value": "Moe",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2065,7 +2065,7 @@
   },
   {
     "type": "Answer",
-    "value":"That XKCD comic about sysadmins",
+    "value": "That XKCD comic about sysadmins",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2073,7 +2073,7 @@
   },
   {
     "type": "Answer",
-    "value":"iso 8859",
+    "value": "iso 8859",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2081,7 +2081,7 @@
   },
   {
     "type": "Answer",
-    "value":"RFC 1149",
+    "value": "RFC 1149",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2089,7 +2089,7 @@
   },
   {
     "type": "Answer",
-    "value":"A pimply faced youth with nothing to lose",
+    "value": "A pimply faced youth with nothing to lose",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2097,7 +2097,7 @@
   },
   {
     "type": "Answer",
-    "value":"Theo de Raadt yelling at newbs",
+    "value": "Theo de Raadt yelling at newbs",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2105,7 +2105,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hate driven development",
+    "value": "Hate driven development",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2113,7 +2113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Lotus123",
+    "value": "Lotus123",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2121,7 +2121,7 @@
   },
   {
     "type": "Answer",
-    "value":"/dev/null as a service",
+    "value": "/dev/null as a service",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2129,7 +2129,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hackathons",
+    "value": "Hackathons",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2137,7 +2137,7 @@
   },
   {
     "type": "Answer",
-    "value":"GNU/Linux",
+    "value": "GNU/Linux",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2145,7 +2145,7 @@
   },
   {
     "type": "Answer",
-    "value":"ZeroVM",
+    "value": "ZeroVM",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2153,7 +2153,7 @@
   },
   {
     "type": "Answer",
-    "value":"Stringing cloudtobutt.pl into postfix.",
+    "value": "Stringing cloudtobutt.pl into postfix.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2161,7 +2161,7 @@
   },
   {
     "type": "Answer",
-    "value":"ZeroMQ over SSH",
+    "value": "ZeroMQ over SSH",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2169,7 +2169,7 @@
   },
   {
     "type": "Answer",
-    "value":"SQLite",
+    "value": "SQLite",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2177,7 +2177,7 @@
   },
   {
     "type": "Answer",
-    "value":"LevelDB",
+    "value": "LevelDB",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2185,7 +2185,7 @@
   },
   {
     "type": "Answer",
-    "value":"Leap second bug",
+    "value": "Leap second bug",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2193,7 +2193,7 @@
   },
   {
     "type": "Answer",
-    "value":"The fucking JVM",
+    "value": "The fucking JVM",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2201,7 +2201,7 @@
   },
   {
     "type": "Answer",
-    "value":"continuous deployment",
+    "value": "continuous deployment",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2209,7 +2209,7 @@
   },
   {
     "type": "Answer",
-    "value":"Tor",
+    "value": "Tor",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2217,7 +2217,7 @@
   },
   {
     "type": "Answer",
-    "value":"bash",
+    "value": "bash",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2225,7 +2225,7 @@
   },
   {
     "type": "Answer",
-    "value":"numactl",
+    "value": "numactl",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2233,7 +2233,7 @@
   },
   {
     "type": "Answer",
-    "value":"zsh",
+    "value": "zsh",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2241,7 +2241,7 @@
   },
   {
     "type": "Answer",
-    "value":"Standing around outside on the streets of SOMA with an overheating laptop drunk while fixing your god damn Saturday night deployment.",
+    "value": "Standing around outside on the streets of SOMA with an overheating laptop drunk while fixing your god damn Saturday night deployment.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2249,7 +2249,7 @@
   },
   {
     "type": "Answer",
-    "value":"Vegan friendly init scripts.",
+    "value": "Vegan friendly init scripts.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2257,7 +2257,7 @@
   },
   {
     "type": "Answer",
-    "value":"Committing from the bar.",
+    "value": "Committing from the bar.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2265,7 +2265,7 @@
   },
   {
     "type": "Answer",
-    "value":"Servers that follow daylight savings time.",
+    "value": "Servers that follow daylight savings time.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2273,7 +2273,7 @@
   },
   {
     "type": "Answer",
-    "value":"Rolling Grubhub into the build failed script.",
+    "value": "Rolling Grubhub into the build failed script.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2281,7 +2281,7 @@
   },
   {
     "type": "Answer",
-    "value":"command line options",
+    "value": "command line options",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2289,7 +2289,7 @@
   },
   {
     "type": "Answer",
-    "value":"Temporary hotfixes",
+    "value": "Temporary hotfixes",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2297,7 +2297,7 @@
   },
   {
     "type": "Answer",
-    "value":"jsLinux",
+    "value": "jsLinux",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2305,7 +2305,7 @@
   },
   {
     "type": "Answer",
-    "value":"SIGKILL",
+    "value": "SIGKILL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2313,7 +2313,7 @@
   },
   {
     "type": "Answer",
-    "value":"Your private browsing history",
+    "value": "Your private browsing history",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2321,7 +2321,7 @@
   },
   {
     "type": "Answer",
-    "value":"Wearing protection during peer programing.",
+    "value": "Wearing protection during peer programing.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2329,7 +2329,7 @@
   },
   {
     "type": "Answer",
-    "value":"top",
+    "value": "top",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2337,7 +2337,7 @@
   },
   {
     "type": "Answer",
-    "value":"Arguing over the internet.",
+    "value": "Arguing over the internet.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2345,7 +2345,7 @@
   },
   {
     "type": "Answer",
-    "value":"year 2038",
+    "value": "year 2038",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2353,7 +2353,7 @@
   },
   {
     "type": "Answer",
-    "value":"dd",
+    "value": "dd",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2361,7 +2361,7 @@
   },
   {
     "type": "Answer",
-    "value":"pdisk",
+    "value": "pdisk",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2369,7 +2369,7 @@
   },
   {
     "type": "Answer",
-    "value":"rsync",
+    "value": "rsync",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2377,7 +2377,7 @@
   },
   {
     "type": "Answer",
-    "value":"CFLAGS",
+    "value": "CFLAGS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2385,7 +2385,7 @@
   },
   {
     "type": "Answer",
-    "value":"cowsay",
+    "value": "cowsay",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2393,7 +2393,7 @@
   },
   {
     "type": "Answer",
-    "value":"profanity in the git log",
+    "value": "profanity in the git log",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2401,7 +2401,7 @@
   },
   {
     "type": "Answer",
-    "value":"Gentoo",
+    "value": "Gentoo",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2409,7 +2409,7 @@
   },
   {
     "type": "Answer",
-    "value":"The CEO",
+    "value": "The CEO",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2417,7 +2417,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ping Pong",
+    "value": "Ping Pong",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2425,7 +2425,7 @@
   },
   {
     "type": "Answer",
-    "value":"Dennis Ritchie",
+    "value": "Dennis Ritchie",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2433,7 +2433,7 @@
   },
   {
     "type": "Answer",
-    "value":"PAM Happy Hour",
+    "value": "PAM Happy Hour",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2441,7 +2441,7 @@
   },
   {
     "type": "Answer",
-    "value":"Complex systems usually operate in failure mode.",
+    "value": "Complex systems usually operate in failure mode.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2449,7 +2449,7 @@
   },
   {
     "type": "Answer",
-    "value":"FAT32",
+    "value": "FAT32",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2457,7 +2457,7 @@
   },
   {
     "type": "Answer",
-    "value":"winsock",
+    "value": "winsock",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2465,7 +2465,7 @@
   },
   {
     "type": "Answer",
-    "value":"fork() on Windows",
+    "value": "fork() on Windows",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2473,7 +2473,7 @@
   },
   {
     "type": "Answer",
-    "value":"runlists",
+    "value": "runlists",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2481,7 +2481,7 @@
   },
   {
     "type": "Answer",
-    "value":"sudo",
+    "value": "sudo",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2489,7 +2489,7 @@
   },
   {
     "type": "Answer",
-    "value":"echo shell_exec(\"sudo ./smbkill \".escapeshellcmd($_GET['kill']).\" 2>&1\");",
+    "value": "echo shell_exec(\"sudo ./smbkill \".escapeshellcmd($_GET['kill']).\" 2>&1\");",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2497,7 +2497,7 @@
   },
   {
     "type": "Answer",
-    "value":"kill -9 -1",
+    "value": "kill -9 -1",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2505,7 +2505,7 @@
   },
   {
     "type": "Answer",
-    "value":"curl 4chan | sudo sh",
+    "value": "curl 4chan | sudo sh",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2513,7 +2513,7 @@
   },
   {
     "type": "Answer",
-    "value":"HTML9 Responsive Boilerstrap JS",
+    "value": "HTML9 Responsive Boilerstrap JS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2521,7 +2521,7 @@
   },
   {
     "type": "Answer",
-    "value":"Neckbeards",
+    "value": "Neckbeards",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2529,7 +2529,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Certified SCRUM Master",
+    "value": "A Certified SCRUM Master",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2537,7 +2537,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bus error",
+    "value": "Bus error",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2545,7 +2545,7 @@
   },
   {
     "type": "Answer",
-    "value":"git reset --hard origin/master",
+    "value": "git reset --hard origin/master",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2553,7 +2553,7 @@
   },
   {
     "type": "Answer",
-    "value":"Forcing push to master",
+    "value": "Forcing push to master",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2561,7 +2561,7 @@
   },
   {
     "type": "Answer",
-    "value":"LogFiles\\W3SVC1",
+    "value": "LogFiles\\W3SVC1",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2569,7 +2569,7 @@
   },
   {
     "type": "Answer",
-    "value":"A German installation of Windows NT4",
+    "value": "A German installation of Windows NT4",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2577,7 +2577,7 @@
   },
   {
     "type": "Answer",
-    "value":"curl | sh -c",
+    "value": "curl | sh -c",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2585,7 +2585,7 @@
   },
   {
     "type": "Answer",
-    "value":"OpenLDAP",
+    "value": "OpenLDAP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2593,7 +2593,7 @@
   },
   {
     "type": "Answer",
-    "value":"Spot Instances",
+    "value": "Spot Instances",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2601,7 +2601,7 @@
   },
   {
     "type": "Answer",
-    "value":"Those ksh scripts",
+    "value": "Those ksh scripts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2609,7 +2609,7 @@
   },
   {
     "type": "Answer",
-    "value":"/cgi-bin/php5",
+    "value": "/cgi-bin/php5",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2617,7 +2617,7 @@
   },
   {
     "type": "Answer",
-    "value":"A $60 QNAP and some positive thinking",
+    "value": "A $60 QNAP and some positive thinking",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2625,7 +2625,7 @@
   },
   {
     "type": "Answer",
-    "value":"raspberryPI",
+    "value": "raspberryPI",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2633,7 +2633,7 @@
   },
   {
     "type": "Answer",
-    "value":"Windows ME",
+    "value": "Windows ME",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2641,7 +2641,7 @@
   },
   {
     "type": "Answer",
-    "value":"@echo off",
+    "value": "@echo off",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2649,7 +2649,7 @@
   },
   {
     "type": "Answer",
-    "value":"Active Directory",
+    "value": "Active Directory",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2657,7 +2657,7 @@
   },
   {
     "type": "Answer",
-    "value":"conflict minerals",
+    "value": "conflict minerals",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2665,7 +2665,7 @@
   },
   {
     "type": "Answer",
-    "value":"continuous incineration",
+    "value": "continuous incineration",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2673,7 +2673,7 @@
   },
   {
     "type": "Answer",
-    "value":"The gentle sound of weeping drifting from the server room",
+    "value": "The gentle sound of weeping drifting from the server room",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2681,7 +2681,7 @@
   },
   {
     "type": "Answer",
-    "value":"eventual consistency",
+    "value": "eventual consistency",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2689,7 +2689,7 @@
   },
   {
     "type": "Answer",
-    "value":"Microsoft® Azure",
+    "value": "Microsoft® Azure",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2697,7 +2697,7 @@
   },
   {
     "type": "Answer",
-    "value":"Pinging the broadcast address",
+    "value": "Pinging the broadcast address",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2705,7 +2705,7 @@
   },
   {
     "type": "Answer",
-    "value":"That moment when you realize CTRL-Z cannot save you",
+    "value": "That moment when you realize CTRL-Z cannot save you",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2713,7 +2713,7 @@
   },
   {
     "type": "Answer",
-    "value":"127.0.0.1",
+    "value": "127.0.0.1",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2721,7 +2721,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ethernet",
+    "value": "Ethernet",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2729,7 +2729,7 @@
   },
   {
     "type": "Answer",
-    "value":"IPv6",
+    "value": "IPv6",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2737,7 +2737,7 @@
   },
   {
     "type": "Answer",
-    "value":"Re-writing deployment scripts at 2 AM",
+    "value": "Re-writing deployment scripts at 2 AM",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2745,7 +2745,7 @@
   },
   {
     "type": "Answer",
-    "value":"Piping /var/log/messages to Twitter",
+    "value": "Piping /var/log/messages to Twitter",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2753,7 +2753,7 @@
   },
   {
     "type": "Answer",
-    "value":"A pseudorandom number generator",
+    "value": "A pseudorandom number generator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2761,7 +2761,7 @@
   },
   {
     "type": "Answer",
-    "value":"An outage window",
+    "value": "An outage window",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2769,7 +2769,7 @@
   },
   {
     "type": "Answer",
-    "value":"Sentinel System Driver",
+    "value": "Sentinel System Driver",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2777,7 +2777,7 @@
   },
   {
     "type": "Answer",
-    "value":"fpm",
+    "value": "fpm",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2785,7 +2785,7 @@
   },
   {
     "type": "Answer",
-    "value":"catastrophic cancellation",
+    "value": "catastrophic cancellation",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2793,7 +2793,7 @@
   },
   {
     "type": "Answer",
-    "value":"termcap",
+    "value": "termcap",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2801,7 +2801,7 @@
   },
   {
     "type": "Answer",
-    "value":"f00d",
+    "value": "f00d",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2809,7 +2809,7 @@
   },
   {
     "type": "Answer",
-    "value":"one giant SPOF",
+    "value": "one giant SPOF",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2817,7 +2817,7 @@
   },
   {
     "type": "Answer",
-    "value":"Richard Stallman's Neckbeard",
+    "value": "Richard Stallman's Neckbeard",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2825,7 +2825,7 @@
   },
   {
     "type": "Answer",
-    "value":"phpMyAdmin",
+    "value": "phpMyAdmin",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2833,7 +2833,7 @@
   },
   {
     "type": "Answer",
-    "value":"Righteous Anger",
+    "value": "Righteous Anger",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2841,7 +2841,7 @@
   },
   {
     "type": "Answer",
-    "value":"Crowdsourced Architecture",
+    "value": "Crowdsourced Architecture",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2849,7 +2849,7 @@
   },
   {
     "type": "Answer",
-    "value":"/etc/hosts",
+    "value": "/etc/hosts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2857,7 +2857,7 @@
   },
   {
     "type": "Answer",
-    "value":"CEOs with root access",
+    "value": "CEOs with root access",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2865,7 +2865,7 @@
   },
   {
     "type": "Answer",
-    "value":"Automagic Metaprogramming",
+    "value": "Automagic Metaprogramming",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2873,7 +2873,7 @@
   },
   {
     "type": "Answer",
-    "value":"Re-implementing TCP over UDP",
+    "value": "Re-implementing TCP over UDP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2881,7 +2881,7 @@
   },
   {
     "type": "Answer",
-    "value":"#define BEGIN  {",
+    "value": "#define BEGIN  {",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2889,7 +2889,7 @@
   },
   {
     "type": "Answer",
-    "value":"Microsoft Access over a WAN",
+    "value": "Microsoft Access over a WAN",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2897,7 +2897,7 @@
   },
   {
     "type": "Answer",
-    "value":"git submodules",
+    "value": "git submodules",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2905,7 +2905,7 @@
   },
   {
     "type": "Answer",
-    "value":"Haskell",
+    "value": "Haskell",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2913,7 +2913,7 @@
   },
   {
     "type": "Answer",
-    "value":"Functional Reactive",
+    "value": "Functional Reactive",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2921,7 +2921,7 @@
   },
   {
     "type": "Answer",
-    "value":"Paxos",
+    "value": "Paxos",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2929,7 +2929,7 @@
   },
   {
     "type": "Answer",
-    "value":"memegen",
+    "value": "memegen",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2937,7 +2937,7 @@
   },
   {
     "type": "Answer",
-    "value":"Flynn",
+    "value": "Flynn",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2945,7 +2945,7 @@
   },
   {
     "type": "Answer",
-    "value":"eventual persistence",
+    "value": "eventual persistence",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2953,7 +2953,7 @@
   },
   {
     "type": "Answer",
-    "value":"Jenkins",
+    "value": "Jenkins",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2961,7 +2961,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bingo Balls",
+    "value": "Bingo Balls",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2969,7 +2969,7 @@
   },
   {
     "type": "Answer",
-    "value":"Mechanically Recovered Turkey",
+    "value": "Mechanically Recovered Turkey",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2977,7 +2977,7 @@
   },
   {
     "type": "Answer",
-    "value":"ChatOps",
+    "value": "ChatOps",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2985,7 +2985,7 @@
   },
   {
     "type": "Answer",
-    "value":"Scala",
+    "value": "Scala",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -2993,7 +2993,7 @@
   },
   {
     "type": "Answer",
-    "value":"WONTFIX",
+    "value": "WONTFIX",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3001,7 +3001,7 @@
   },
   {
     "type": "Answer",
-    "value":"Trello board",
+    "value": "Trello board",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3009,7 +3009,7 @@
   },
   {
     "type": "Answer",
-    "value":"mechanically recovered data",
+    "value": "mechanically recovered data",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3017,7 +3017,7 @@
   },
   {
     "type": "Answer",
-    "value":"Friday afternoon deployment",
+    "value": "Friday afternoon deployment",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3025,7 +3025,7 @@
   },
   {
     "type": "Answer",
-    "value":"YoloDB",
+    "value": "YoloDB",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3033,7 +3033,7 @@
   },
   {
     "type": "Answer",
-    "value":"Piping random scripts from the internet into bash",
+    "value": "Piping random scripts from the internet into bash",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3041,7 +3041,7 @@
   },
   {
     "type": "Answer",
-    "value":"(╯°□°）╯︵ ┻━┻",
+    "value": "(╯°□°）╯︵ ┻━┻",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3049,7 +3049,7 @@
   },
   {
     "type": "Answer",
-    "value":"post-mortems",
+    "value": "post-mortems",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3057,7 +3057,7 @@
   },
   {
     "type": "Answer",
-    "value":"Github selfies",
+    "value": "Github selfies",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3065,7 +3065,7 @@
   },
   {
     "type": "Answer",
-    "value":"Production deployments that depend on GitHub",
+    "value": "Production deployments that depend on GitHub",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3073,7 +3073,7 @@
   },
   {
     "type": "Answer",
-    "value":"RFC 2324",
+    "value": "RFC 2324",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3081,7 +3081,7 @@
   },
   {
     "type": "Answer",
-    "value":"Your code featured on The Daily WTF.",
+    "value": "Your code featured on The Daily WTF.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3089,7 +3089,7 @@
   },
   {
     "type": "Answer",
-    "value":"optimistic transactions",
+    "value": "optimistic transactions",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3097,7 +3097,7 @@
   },
   {
     "type": "Answer",
-    "value":"Webscale",
+    "value": "Webscale",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3105,7 +3105,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cats",
+    "value": "Cats",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3113,7 +3113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ponies",
+    "value": "Ponies",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3121,7 +3121,7 @@
   },
   {
     "type": "Answer",
-    "value":"Your Mum",
+    "value": "Your Mum",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3129,7 +3129,7 @@
   },
   {
     "type": "Answer",
-    "value":"Using Brain Fuck in production",
+    "value": "Using Brain Fuck in production",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3137,7 +3137,7 @@
   },
   {
     "type": "Answer",
-    "value":"Picking the best color to paint your bike shed",
+    "value": "Picking the best color to paint your bike shed",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3145,7 +3145,7 @@
   },
   {
     "type": "Answer",
-    "value":"Server cages",
+    "value": "Server cages",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3153,7 +3153,7 @@
   },
   {
     "type": "Answer",
-    "value":"Copy-on-write",
+    "value": "Copy-on-write",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3161,7 +3161,7 @@
   },
   {
     "type": "Answer",
-    "value":"deduplication",
+    "value": "deduplication",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3169,7 +3169,7 @@
   },
   {
     "type": "Answer",
-    "value":"LART",
+    "value": "LART",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3177,7 +3177,7 @@
   },
   {
     "type": "Answer",
-    "value":"BOFH",
+    "value": "BOFH",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3185,7 +3185,7 @@
   },
   {
     "type": "Answer",
-    "value":"Program Management",
+    "value": "Program Management",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3193,7 +3193,7 @@
   },
   {
     "type": "Answer",
-    "value":"Product Managers",
+    "value": "Product Managers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3201,7 +3201,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Ballmer Peak",
+    "value": "The Ballmer Peak",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3209,7 +3209,7 @@
   },
   {
     "type": "Answer",
-    "value":"0xDEADBEEF",
+    "value": "0xDEADBEEF",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3217,7 +3217,7 @@
   },
   {
     "type": "Answer",
-    "value":"A coked-up tech recruiter",
+    "value": "A coked-up tech recruiter",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3225,7 +3225,7 @@
   },
   {
     "type": "Answer",
-    "value":"A contractor that tells you it was a real learning experience",
+    "value": "A contractor that tells you it was a real learning experience",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3233,7 +3233,7 @@
   },
   {
     "type": "Answer",
-    "value":"RTFM",
+    "value": "RTFM",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3241,7 +3241,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 1996 Java applet",
+    "value": "A 1996 Java applet",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3249,7 +3249,7 @@
   },
   {
     "type": "Answer",
-    "value":"A virtual machine running a virtual machine until it brings on the Singularity",
+    "value": "A virtual machine running a virtual machine until it brings on the Singularity",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3257,7 +3257,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ops doing dev = technical debt",
+    "value": "Ops doing dev = technical debt",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3265,7 +3265,7 @@
   },
   {
     "type": "Answer",
-    "value":"#And right here, we'd like a miracle.",
+    "value": "#And right here, we'd like a miracle.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3273,7 +3273,7 @@
   },
   {
     "type": "Answer",
-    "value":"Sparkly Devops Princess",
+    "value": "Sparkly Devops Princess",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3281,7 +3281,7 @@
   },
   {
     "type": "Answer",
-    "value":"Patrick Debois",
+    "value": "Patrick Debois",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3289,7 +3289,7 @@
   },
   {
     "type": "Answer",
-    "value":"git merge --force",
+    "value": "git merge --force",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3297,7 +3297,7 @@
   },
   {
     "type": "Answer",
-    "value":"A literal cluster fuck",
+    "value": "A literal cluster fuck",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3305,7 +3305,7 @@
   },
   {
     "type": "Answer",
-    "value":"The library that imports all other libraries",
+    "value": "The library that imports all other libraries",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3313,7 +3313,7 @@
   },
   {
     "type": "Answer",
-    "value":"The tech lead's shitty pet project",
+    "value": "The tech lead's shitty pet project",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3321,7 +3321,7 @@
   },
   {
     "type": "Answer",
-    "value":"An entirely commented out file",
+    "value": "An entirely commented out file",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3329,7 +3329,7 @@
   },
   {
     "type": "Answer",
-    "value":"A constructor for RandomThing",
+    "value": "A constructor for RandomThing",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3337,7 +3337,7 @@
   },
   {
     "type": "Answer",
-    "value":"Circular imports",
+    "value": "Circular imports",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3345,7 +3345,7 @@
   },
   {
     "type": "Answer",
-    "value":"A pull request with a winking smiley ;)",
+    "value": "A pull request with a winking smiley ;)",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3353,7 +3353,7 @@
   },
   {
     "type": "Answer",
-    "value":"Syntactic sugar coma",
+    "value": "Syntactic sugar coma",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3361,7 +3361,7 @@
   },
   {
     "type": "Answer",
-    "value":"Former employees who still have admin access to live production servers",
+    "value": "Former employees who still have admin access to live production servers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3369,7 +3369,7 @@
   },
   {
     "type": "Answer",
-    "value":"The ib_logfiles",
+    "value": "The ib_logfiles",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3377,7 +3377,7 @@
   },
   {
     "type": "Answer",
-    "value":"The mysql client",
+    "value": "The mysql client",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3385,7 +3385,7 @@
   },
   {
     "type": "Answer",
-    "value":"Paul Graham",
+    "value": "Paul Graham",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3393,7 +3393,7 @@
   },
   {
     "type": "Answer",
-    "value":"The much neglected IPv5",
+    "value": "The much neglected IPv5",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3401,7 +3401,7 @@
   },
   {
     "type": "Answer",
-    "value":"cron jobs that edit cron jobs",
+    "value": "cron jobs that edit cron jobs",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3409,7 +3409,7 @@
   },
   {
     "type": "Answer",
-    "value":"Snail scale",
+    "value": "Snail scale",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3417,7 +3417,7 @@
   },
   {
     "type": "Answer",
-    "value":"Testing positive for mongonucleosis",
+    "value": "Testing positive for mongonucleosis",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3425,7 +3425,7 @@
   },
   {
     "type": "Answer",
-    "value":"PEBKAC",
+    "value": "PEBKAC",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3433,7 +3433,7 @@
   },
   {
     "type": "Answer",
-    "value":"ReiserFS",
+    "value": "ReiserFS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3441,7 +3441,7 @@
   },
   {
     "type": "Answer",
-    "value":"/dev/null",
+    "value": "/dev/null",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3449,7 +3449,7 @@
   },
   {
     "type": "Answer",
-    "value":"Little Bobby Tables",
+    "value": "Little Bobby Tables",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3457,7 +3457,7 @@
   },
   {
     "type": "Answer",
-    "value":"Solar flares",
+    "value": "Solar flares",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3465,7 +3465,7 @@
   },
   {
     "type": "Answer",
-    "value":"Global warming",
+    "value": "Global warming",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3473,7 +3473,7 @@
   },
   {
     "type": "Answer",
-    "value":"Short Stroking",
+    "value": "Short Stroking",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3481,7 +3481,7 @@
   },
   {
     "type": "Answer",
-    "value":"Reticulating Splines",
+    "value": "Reticulating Splines",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3489,7 +3489,7 @@
   },
   {
     "type": "Answer",
-    "value":"RAID 3 SSD cluster",
+    "value": "RAID 3 SSD cluster",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3497,7 +3497,7 @@
   },
   {
     "type": "Answer",
-    "value":"Re-implementing TCP over TCP",
+    "value": "Re-implementing TCP over TCP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3505,7 +3505,7 @@
   },
   {
     "type": "Answer",
-    "value":"Mixed endianness",
+    "value": "Mixed endianness",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3513,7 +3513,7 @@
   },
   {
     "type": "Answer",
-    "value":"OAuth",
+    "value": "OAuth",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3521,7 +3521,7 @@
   },
   {
     "type": "Answer",
-    "value":"traceroute",
+    "value": "traceroute",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3529,7 +3529,7 @@
   },
   {
     "type": "Answer",
-    "value":"rockstar",
+    "value": "rockstar",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3537,7 +3537,7 @@
   },
   {
     "type": "Answer",
-    "value":"packet loss",
+    "value": "packet loss",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3545,7 +3545,7 @@
   },
   {
     "type": "Answer",
-    "value":"smokeping",
+    "value": "smokeping",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3553,7 +3553,7 @@
   },
   {
     "type": "Answer",
-    "value":"losing the root password",
+    "value": "losing the root password",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3561,7 +3561,7 @@
   },
   {
     "type": "Answer",
-    "value":"Works on my machine!",
+    "value": "Works on my machine!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3569,7 +3569,7 @@
   },
   {
     "type": "Answer",
-    "value":"malloc",
+    "value": "malloc",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3577,7 +3577,7 @@
   },
   {
     "type": "Answer",
-    "value":"buffer overflow",
+    "value": "buffer overflow",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3585,7 +3585,7 @@
   },
   {
     "type": "Answer",
-    "value":"StackOverflow is offline?!",
+    "value": "StackOverflow is offline?!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3593,7 +3593,7 @@
   },
   {
     "type": "Answer",
-    "value":"server logs",
+    "value": "server logs",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3601,7 +3601,7 @@
   },
   {
     "type": "Answer",
-    "value":"Penetration test",
+    "value": "Penetration test",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3609,7 +3609,7 @@
   },
   {
     "type": "Answer",
-    "value":"Deploying on a Friday afternoon",
+    "value": "Deploying on a Friday afternoon",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3617,7 +3617,7 @@
   },
   {
     "type": "Answer",
-    "value":"Quipu",
+    "value": "Quipu",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3625,7 +3625,7 @@
   },
   {
     "type": "Answer",
-    "value":"too many authorization failures",
+    "value": "too many authorization failures",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3633,7 +3633,7 @@
   },
   {
     "type": "Answer",
-    "value":"two single quotes",
+    "value": "two single quotes",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3641,7 +3641,7 @@
   },
   {
     "type": "Answer",
-    "value":"kremvax",
+    "value": "kremvax",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3649,7 +3649,7 @@
   },
   {
     "type": "Answer",
-    "value":"the unix epoch",
+    "value": "the unix epoch",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3657,7 +3657,7 @@
   },
   {
     "type": "Answer",
-    "value":"0-day exploits",
+    "value": "0-day exploits",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3665,7 +3665,7 @@
   },
   {
     "type": "Answer",
-    "value":"tribal knowledge",
+    "value": "tribal knowledge",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3673,7 +3673,7 @@
   },
   {
     "type": "Answer",
-    "value":"puppet",
+    "value": "puppet",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3681,7 +3681,7 @@
   },
   {
     "type": "Answer",
-    "value":"RHEL4",
+    "value": "RHEL4",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3689,7 +3689,7 @@
   },
   {
     "type": "Answer",
-    "value":"DevOps Reactions",
+    "value": "DevOps Reactions",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3697,7 +3697,7 @@
   },
   {
     "type": "Answer",
-    "value":"syntax error",
+    "value": "syntax error",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3705,7 +3705,7 @@
   },
   {
     "type": "Answer",
-    "value":"killall -9",
+    "value": "killall -9",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3713,7 +3713,7 @@
   },
   {
     "type": "Answer",
-    "value":"pre caffeine typos",
+    "value": "pre caffeine typos",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3721,7 +3721,7 @@
   },
   {
     "type": "Answer",
-    "value":"banana pi",
+    "value": "banana pi",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3729,7 +3729,7 @@
   },
   {
     "type": "Answer",
-    "value":"RAID 0",
+    "value": "RAID 0",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3737,7 +3737,7 @@
   },
   {
     "type": "Answer",
-    "value":"PIP",
+    "value": "PIP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3745,7 +3745,7 @@
   },
   {
     "type": "Answer",
-    "value":"PyPi",
+    "value": "PyPi",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3753,7 +3753,7 @@
   },
   {
     "type": "Answer",
-    "value":"Synergy",
+    "value": "Synergy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3761,7 +3761,7 @@
   },
   {
     "type": "Answer",
-    "value":"dev",
+    "value": "dev",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3769,7 +3769,7 @@
   },
   {
     "type": "Answer",
-    "value":"Java",
+    "value": "Java",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3777,7 +3777,7 @@
   },
   {
     "type": "Answer",
-    "value":"geometric distances",
+    "value": "geometric distances",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3785,7 +3785,7 @@
   },
   {
     "type": "Answer",
-    "value":"Indian Ocean",
+    "value": "Indian Ocean",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3793,7 +3793,7 @@
   },
   {
     "type": "Answer",
-    "value":"Out of bounds exception",
+    "value": "Out of bounds exception",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3801,7 +3801,7 @@
   },
   {
     "type": "Answer",
-    "value":"rm -rf /",
+    "value": "rm -rf /",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3809,7 +3809,7 @@
   },
   {
     "type": "Answer",
-    "value":"hunter2",
+    "value": "hunter2",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3817,7 +3817,7 @@
   },
   {
     "type": "Answer",
-    "value":"GCHQ",
+    "value": "GCHQ",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3825,7 +3825,7 @@
   },
   {
     "type": "Answer",
-    "value":"NSA FOIA request",
+    "value": "NSA FOIA request",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3833,7 +3833,7 @@
   },
   {
     "type": "Answer",
-    "value":"wat",
+    "value": "wat",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3841,7 +3841,7 @@
   },
   {
     "type": "Answer",
-    "value":"kanban",
+    "value": "kanban",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3849,7 +3849,7 @@
   },
   {
     "type": "Answer",
-    "value":"Halt and Catch Fire",
+    "value": "Halt and Catch Fire",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3857,7 +3857,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ansible",
+    "value": "Ansible",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3865,7 +3865,7 @@
   },
   {
     "type": "Answer",
-    "value":"Template out",
+    "value": "Template out",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3873,7 +3873,7 @@
   },
   {
     "type": "Answer",
-    "value":"bzero",
+    "value": "bzero",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3881,7 +3881,7 @@
   },
   {
     "type": "Answer",
-    "value":"sendmail",
+    "value": "sendmail",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3889,7 +3889,7 @@
   },
   {
     "type": "Answer",
-    "value":"bare metal",
+    "value": "bare metal",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3897,7 +3897,7 @@
   },
   {
     "type": "Answer",
-    "value":"Slackware",
+    "value": "Slackware",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3905,7 +3905,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bazaar",
+    "value": "Bazaar",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3913,7 +3913,7 @@
   },
   {
     "type": "Answer",
-    "value":"runit",
+    "value": "runit",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3921,7 +3921,7 @@
   },
   {
     "type": "Answer",
-    "value":"Home-grown monitoring solution",
+    "value": "Home-grown monitoring solution",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3929,7 +3929,7 @@
   },
   {
     "type": "Answer",
-    "value":"Virident",
+    "value": "Virident",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3937,7 +3937,7 @@
   },
   {
     "type": "Answer",
-    "value":"ifconfig lo down",
+    "value": "ifconfig lo down",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3945,7 +3945,7 @@
   },
   {
     "type": "Answer",
-    "value":"Arch linux in production",
+    "value": "Arch linux in production",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3953,7 +3953,7 @@
   },
   {
     "type": "Answer",
-    "value":"AUR",
+    "value": "AUR",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3961,7 +3961,7 @@
   },
   {
     "type": "Answer",
-    "value":"Btrfs on a 2.6 kernel in production",
+    "value": "Btrfs on a 2.6 kernel in production",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3969,7 +3969,7 @@
   },
   {
     "type": "Answer",
-    "value":"Actually reading the manual",
+    "value": "Actually reading the manual",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3977,7 +3977,7 @@
   },
   {
     "type": "Answer",
-    "value":"telnetd on the payment tier",
+    "value": "telnetd on the payment tier",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3985,7 +3985,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Hungary Games",
+    "value": "The Hungary Games",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -3993,7 +3993,7 @@
   },
   {
     "type": "Answer",
-    "value":"the GIL",
+    "value": "the GIL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4001,7 +4001,7 @@
   },
   {
     "type": "Answer",
-    "value":"Solaris",
+    "value": "Solaris",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4009,7 +4009,7 @@
   },
   {
     "type": "Answer",
-    "value":"SmartOS",
+    "value": "SmartOS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4017,7 +4017,7 @@
   },
   {
     "type": "Answer",
-    "value":"Joyent",
+    "value": "Joyent",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4025,7 +4025,7 @@
   },
   {
     "type": "Answer",
-    "value":"Big-endian x86",
+    "value": "Big-endian x86",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4033,7 +4033,7 @@
   },
   {
     "type": "Answer",
-    "value":"Uncyclopedia.org",
+    "value": "Uncyclopedia.org",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4041,7 +4041,7 @@
   },
   {
     "type": "Answer",
-    "value":"Spongebob Squarepants",
+    "value": "Spongebob Squarepants",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4049,7 +4049,7 @@
   },
   {
     "type": "Answer",
-    "value":"Flux Capacitor",
+    "value": "Flux Capacitor",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4057,7 +4057,7 @@
   },
   {
     "type": "Answer",
-    "value":"Toaster on Wheels",
+    "value": "Toaster on Wheels",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4065,7 +4065,7 @@
   },
   {
     "type": "Answer",
-    "value":"The previous developer",
+    "value": "The previous developer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4073,7 +4073,7 @@
   },
   {
     "type": "Answer",
-    "value":"Debian experimental in production",
+    "value": "Debian experimental in production",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4081,7 +4081,7 @@
   },
   {
     "type": "Answer",
-    "value":"10 years since last update",
+    "value": "10 years since last update",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4089,7 +4089,7 @@
   },
   {
     "type": "Answer",
-    "value":"rm /dev/null",
+    "value": "rm /dev/null",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4097,7 +4097,7 @@
   },
   {
     "type": "Answer",
-    "value":"Testing in production",
+    "value": "Testing in production",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4105,7 +4105,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Gang of Four becoming a real gang",
+    "value": "The Gang of Four becoming a real gang",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4113,7 +4113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Shoving the code down the compilers throat with catch statements",
+    "value": "Shoving the code down the compilers throat with catch statements",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4121,7 +4121,7 @@
   },
   {
     "type": "Answer",
-    "value":"Legacy Code that you're terrified of deleting",
+    "value": "Legacy Code that you're terrified of deleting",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4129,7 +4129,7 @@
   },
   {
     "type": "Answer",
-    "value":"That one goddamn line",
+    "value": "That one goddamn line",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4137,7 +4137,7 @@
   },
   {
     "type": "Answer",
-    "value":"HTML5 vs Flash",
+    "value": "HTML5 vs Flash",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4145,7 +4145,7 @@
   },
   {
     "type": "Answer",
-    "value":"Sudo: make me a sandwich",
+    "value": "Sudo: make me a sandwich",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4153,7 +4153,7 @@
   },
   {
     "type": "Answer",
-    "value":"Java's Syntax",
+    "value": "Java's Syntax",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4161,7 +4161,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Travelling Salesman Problem",
+    "value": "The Travelling Salesman Problem",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4169,7 +4169,7 @@
   },
   {
     "type": "Answer",
-    "value":"Subjective C",
+    "value": "Subjective C",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4177,7 +4177,7 @@
   },
   {
     "type": "Answer",
-    "value":"Ubuntu? I have to learn Ubuntu?",
+    "value": "Ubuntu? I have to learn Ubuntu?",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4185,7 +4185,7 @@
   },
   {
     "type": "Answer",
-    "value":"Dell custumer support",
+    "value": "Dell custumer support",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4193,7 +4193,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Genius Bar",
+    "value": "The Genius Bar",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4201,7 +4201,7 @@
   },
   {
     "type": "Answer",
-    "value":"That Goddamn Paperclip",
+    "value": "That Goddamn Paperclip",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4209,7 +4209,7 @@
   },
   {
     "type": "Answer",
-    "value":"Laziness, impatience, and hubris",
+    "value": "Laziness, impatience, and hubris",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4217,7 +4217,7 @@
   },
   {
     "type": "Answer",
-    "value":"A deleted StackOverflow post",
+    "value": "A deleted StackOverflow post",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4225,7 +4225,7 @@
   },
   {
     "type": "Answer",
-    "value":"All our code becoming self-documenting because I declared it so",
+    "value": "All our code becoming self-documenting because I declared it so",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4233,7 +4233,7 @@
   },
   {
     "type": "Answer",
-    "value":"VBScript, the future of software!",
+    "value": "VBScript, the future of software!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4241,7 +4241,7 @@
   },
   {
     "type": "Answer",
-    "value":"The waterfall model",
+    "value": "The waterfall model",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4249,7 +4249,7 @@
   },
   {
     "type": "Answer",
-    "value":"NaN",
+    "value": "NaN",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4257,7 +4257,7 @@
   },
   {
     "type": "Answer",
-    "value":"undefined",
+    "value": "undefined",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4265,7 +4265,7 @@
   },
   {
     "type": "Answer",
-    "value":"An empty int",
+    "value": "An empty int",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4273,7 +4273,7 @@
   },
   {
     "type": "Answer",
-    "value":"Continous Testing",
+    "value": "Continous Testing",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4281,7 +4281,7 @@
   },
   {
     "type": "Answer",
-    "value":"Service Virtualization",
+    "value": "Service Virtualization",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4289,7 +4289,7 @@
   },
   {
     "type": "Answer",
-    "value":"Test Automation",
+    "value": "Test Automation",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4297,7 +4297,7 @@
   },
   {
     "type": "Answer",
-    "value":"Writing a Perl script to deploy Puppet Enterprise",
+    "value": "Writing a Perl script to deploy Puppet Enterprise",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4305,7 +4305,7 @@
   },
   {
     "type": "Answer",
-    "value":"The OOM Killer",
+    "value": "The OOM Killer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4313,7 +4313,7 @@
   },
   {
     "type": "Answer",
-    "value":"$lastjob",
+    "value": "$lastjob",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4321,7 +4321,7 @@
   },
   {
     "type": "Answer",
-    "value":"segfault",
+    "value": "segfault",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4329,7 +4329,7 @@
   },
   {
     "type": "Answer",
-    "value":"$i++",
+    "value": "$i++",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4337,7 +4337,7 @@
   },
   {
     "type": "Answer",
-    "value":"tabs not spaces",
+    "value": "tabs not spaces",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4345,7 +4345,7 @@
   },
   {
     "type": "Answer",
-    "value":"spaces not tabs",
+    "value": "spaces not tabs",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4353,7 +4353,7 @@
   },
   {
     "type": "Answer",
-    "value":"Spaces and tabs in the same file",
+    "value": "Spaces and tabs in the same file",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4361,7 +4361,7 @@
   },
   {
     "type": "Answer",
-    "value":"iptables",
+    "value": "iptables",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4369,7 +4369,7 @@
   },
   {
     "type": "Answer",
-    "value":"Fedora Core 9",
+    "value": "Fedora Core 9",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4377,7 +4377,7 @@
   },
   {
     "type": "Answer",
-    "value":"\\LaTeX{}",
+    "value": "\\LaTeX{}",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4385,7 +4385,7 @@
   },
   {
     "type": "Answer",
-    "value":"NumPy",
+    "value": "NumPy",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4393,7 +4393,7 @@
   },
   {
     "type": "Answer",
-    "value":"An unmaintained man-page",
+    "value": "An unmaintained man-page",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4401,7 +4401,7 @@
   },
   {
     "type": "Answer",
-    "value":"An old Gentoo installation",
+    "value": "An old Gentoo installation",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4409,7 +4409,7 @@
   },
   {
     "type": "Answer",
-    "value":"TeX",
+    "value": "TeX",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4417,7 +4417,7 @@
   },
   {
     "type": "Answer",
-    "value":"null-pointer",
+    "value": "null-pointer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4425,7 +4425,7 @@
   },
   {
     "type": "Answer",
-    "value":"Delphi code from the 1990's",
+    "value": "Delphi code from the 1990's",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4433,7 +4433,7 @@
   },
   {
     "type": "Answer",
-    "value":"Turning it off and on again",
+    "value": "Turning it off and on again",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4441,7 +4441,7 @@
   },
   {
     "type": "Answer",
-    "value":"A PHP script comprised of shell_exec()'s",
+    "value": "A PHP script comprised of shell_exec()'s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4449,7 +4449,7 @@
   },
   {
     "type": "Answer",
-    "value":"A PHP script comprised of exec($_REQUEST['cmd'])",
+    "value": "A PHP script comprised of exec($_REQUEST['cmd'])",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4457,7 +4457,7 @@
   },
   {
     "type": "Answer",
-    "value":"Computer Science III",
+    "value": "Computer Science III",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4465,7 +4465,7 @@
   },
   {
     "type": "Answer",
-    "value":"Multiple measurement systems",
+    "value": "Multiple measurement systems",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4473,7 +4473,7 @@
   },
   {
     "type": "Answer",
-    "value":"Date formats other than yyyy-mm-dd",
+    "value": "Date formats other than yyyy-mm-dd",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4481,7 +4481,7 @@
   },
   {
     "type": "Answer",
-    "value":"12 hour clocks",
+    "value": "12 hour clocks",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4489,7 +4489,7 @@
   },
   {
     "type": "Answer",
-    "value":"Clocks in a timezone other than UTC",
+    "value": "Clocks in a timezone other than UTC",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4497,7 +4497,7 @@
   },
   {
     "type": "Answer",
-    "value":"Machines not running NTP",
+    "value": "Machines not running NTP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4505,7 +4505,7 @@
   },
   {
     "type": "Answer",
-    "value":"Using Fahrenheit instead of Celsius",
+    "value": "Using Fahrenheit instead of Celsius",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4513,7 +4513,7 @@
   },
   {
     "type": "Answer",
-    "value":"Classic Vi",
+    "value": "Classic Vi",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4521,7 +4521,7 @@
   },
   {
     "type": "Answer",
-    "value":"Mesos",
+    "value": "Mesos",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4529,7 +4529,7 @@
   },
   {
     "type": "Answer",
-    "value":"Diva designer",
+    "value": "Diva designer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4537,7 +4537,7 @@
   },
   {
     "type": "Answer",
-    "value":"sudo chmod -R 777 /",
+    "value": "sudo chmod -R 777 /",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4545,7 +4545,7 @@
   },
   {
     "type": "Answer",
-    "value":"Concurrent Javascript",
+    "value": "Concurrent Javascript",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4553,7 +4553,7 @@
   },
   {
     "type": "Answer",
-    "value":"NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!",
+    "value": "NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4561,7 +4561,7 @@
   },
   {
     "type": "Answer",
-    "value":"Nazi Zombies!!!",
+    "value": "Nazi Zombies!!!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4569,7 +4569,7 @@
   },
   {
     "type": "Answer",
-    "value":"Netscape Navigator",
+    "value": "Netscape Navigator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4577,7 +4577,7 @@
   },
   {
     "type": "Answer",
-    "value":"Mosaic",
+    "value": "Mosaic",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4585,7 +4585,7 @@
   },
   {
     "type": "Answer",
-    "value":"Adobe",
+    "value": "Adobe",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4593,7 +4593,7 @@
   },
   {
     "type": "Answer",
-    "value":"Microsoft",
+    "value": "Microsoft",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4601,7 +4601,7 @@
   },
   {
     "type": "Answer",
-    "value":"Apple",
+    "value": "Apple",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4609,7 +4609,7 @@
   },
   {
     "type": "Answer",
-    "value":"Samsung",
+    "value": "Samsung",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4617,7 +4617,7 @@
   },
   {
     "type": "Answer",
-    "value":"A new ultrabook",
+    "value": "A new ultrabook",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4625,7 +4625,7 @@
   },
   {
     "type": "Answer",
-    "value":"Binaries",
+    "value": "Binaries",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4633,7 +4633,7 @@
   },
   {
     "type": "Answer",
-    "value":"GitHub",
+    "value": "GitHub",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4641,7 +4641,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Monad",
+    "value": "A Monad",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4649,7 +4649,7 @@
   },
   {
     "type": "Answer",
-    "value":"Silk Road",
+    "value": "Silk Road",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4657,7 +4657,7 @@
   },
   {
     "type": "Answer",
-    "value":"--enable-h8",
+    "value": "--enable-h8",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4665,7 +4665,7 @@
   },
   {
     "type": "Answer",
-    "value":"--omg-optimized",
+    "value": "--omg-optimized",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4673,7 +4673,7 @@
   },
   {
     "type": "Answer",
-    "value":"--funroll-loops",
+    "value": "--funroll-loops",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4681,7 +4681,7 @@
   },
   {
     "type": "Answer",
-    "value":"--disable-instructions",
+    "value": "--disable-instructions",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4689,7 +4689,7 @@
   },
   {
     "type": "Answer",
-    "value":"An old Solaris developer",
+    "value": "An old Solaris developer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4697,7 +4697,7 @@
   },
   {
     "type": "Answer",
-    "value":"\"This webpage is not available\"",
+    "value": "\"This webpage is not available\"",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4705,7 +4705,7 @@
   },
   {
     "type": "Answer",
-    "value":"65,536",
+    "value": "65,536",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4713,7 +4713,7 @@
   },
   {
     "type": "Answer",
-    "value":"Being marked CLOSED WONTFIX",
+    "value": "Being marked CLOSED WONTFIX",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4721,7 +4721,7 @@
   },
   {
     "type": "Answer",
-    "value":"A datacenter migration",
+    "value": "A datacenter migration",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4729,7 +4729,7 @@
   },
   {
     "type": "Answer",
-    "value":"Loading the servers in the back of a shady Canadian's truck",
+    "value": "Loading the servers in the back of a shady Canadian's truck",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4737,7 +4737,7 @@
   },
   {
     "type": "Answer",
-    "value":"The business acumen of the Mormon Church",
+    "value": "The business acumen of the Mormon Church",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4745,7 +4745,7 @@
   },
   {
     "type": "Answer",
-    "value":"High Latency",
+    "value": "High Latency",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4753,7 +4753,7 @@
   },
   {
     "type": "Answer",
-    "value":"sudo !!",
+    "value": "sudo !!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4761,7 +4761,7 @@
   },
   {
     "type": "Answer",
-    "value":"Defcon",
+    "value": "Defcon",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4769,7 +4769,7 @@
   },
   {
     "type": "Answer",
-    "value":"The training budget",
+    "value": "The training budget",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4777,7 +4777,7 @@
   },
   {
     "type": "Answer",
-    "value":"SUID root",
+    "value": "SUID root",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4785,7 +4785,7 @@
   },
   {
     "type": "Answer",
-    "value":"regex golf",
+    "value": "regex golf",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4793,7 +4793,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Monoid",
+    "value": "A Monoid",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4801,7 +4801,7 @@
   },
   {
     "type": "Answer",
-    "value":"Slashdot",
+    "value": "Slashdot",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4809,7 +4809,7 @@
   },
   {
     "type": "Answer",
-    "value":"quantum encryption",
+    "value": "quantum encryption",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4817,7 +4817,7 @@
   },
   {
     "type": "Answer",
-    "value":"JIRA Jr!",
+    "value": "JIRA Jr!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4825,7 +4825,7 @@
   },
   {
     "type": "Answer",
-    "value":"rm -rf Russian roulette",
+    "value": "rm -rf Russian roulette",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4833,7 +4833,7 @@
   },
   {
     "type": "Answer",
-    "value":"errors which disappear in debug builds",
+    "value": "errors which disappear in debug builds",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4841,7 +4841,7 @@
   },
   {
     "type": "Answer",
-    "value":"javascript webservers",
+    "value": "javascript webservers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4849,7 +4849,7 @@
   },
   {
     "type": "Answer",
-    "value":"sysadmins sneaking Minecraft on the production server",
+    "value": "sysadmins sneaking Minecraft on the production server",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4857,7 +4857,7 @@
   },
   {
     "type": "Answer",
-    "value":"reporting bugs on IRC",
+    "value": "reporting bugs on IRC",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4865,7 +4865,7 @@
   },
   {
     "type": "Answer",
-    "value":"Emacs keyboard shortcuts",
+    "value": "Emacs keyboard shortcuts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4873,7 +4873,7 @@
   },
   {
     "type": "Answer",
-    "value":"DevOps podcasts",
+    "value": "DevOps podcasts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4881,7 +4881,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hamachi for VPN",
+    "value": "Hamachi for VPN",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4889,7 +4889,7 @@
   },
   {
     "type": "Answer",
-    "value":"debugging Genetically Programmed code",
+    "value": "debugging Genetically Programmed code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4897,7 +4897,7 @@
   },
   {
     "type": "Answer",
-    "value":"Exchanging childhood memories for 160GiB of storage",
+    "value": "Exchanging childhood memories for 160GiB of storage",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4905,7 +4905,7 @@
   },
   {
     "type": "Answer",
-    "value":"Saint IGNUcius",
+    "value": "Saint IGNUcius",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4913,7 +4913,7 @@
   },
   {
     "type": "Answer",
-    "value":"--force",
+    "value": "--force",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4921,7 +4921,7 @@
   },
   {
     "type": "Answer",
-    "value":"gem native extensions",
+    "value": "gem native extensions",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4929,7 +4929,7 @@
   },
   {
     "type": "Answer",
-    "value":"anti-affinity",
+    "value": "anti-affinity",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4937,7 +4937,7 @@
   },
   {
     "type": "Answer",
-    "value":"multi factor authentication",
+    "value": "multi factor authentication",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4945,7 +4945,7 @@
   },
   {
     "type": "Answer",
-    "value":"Python is the new Basic",
+    "value": "Python is the new Basic",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4953,7 +4953,7 @@
   },
   {
     "type": "Answer",
-    "value":"YAML",
+    "value": "YAML",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4961,7 +4961,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cloud-agnostic",
+    "value": "Cloud-agnostic",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4969,7 +4969,7 @@
   },
   {
     "type": "Answer",
-    "value":"Borland StarTeam",
+    "value": "Borland StarTeam",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4977,7 +4977,7 @@
   },
   {
     "type": "Answer",
-    "value":"Paralax!",
+    "value": "Paralax!",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4985,7 +4985,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Python implementation that's basically just a whole bunch of C Preprocessor macros",
+    "value": "A Python implementation that's basically just a whole bunch of C Preprocessor macros",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -4993,7 +4993,7 @@
   },
   {
     "type": "Answer",
-    "value":"The empty string language {ε} = Ø",
+    "value": "The empty string language {ε} = Ø",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5001,7 +5001,7 @@
   },
   {
     "type": "Answer",
-    "value":"Idempotence",
+    "value": "Idempotence",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5009,7 +5009,7 @@
   },
   {
     "type": "Answer",
-    "value":"Chef-client running on OS/2 Warp",
+    "value": "Chef-client running on OS/2 Warp",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5017,7 +5017,7 @@
   },
   {
     "type": "Answer",
-    "value":"@SwiftOnSecurity",
+    "value": "@SwiftOnSecurity",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5025,7 +5025,7 @@
   },
   {
     "type": "Answer",
-    "value":"Adam Jacob's guitar",
+    "value": "Adam Jacob's guitar",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5033,7 +5033,7 @@
   },
   {
     "type": "Answer",
-    "value":"PowerShell",
+    "value": "PowerShell",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5041,7 +5041,7 @@
   },
   {
     "type": "Answer",
-    "value":"Clock skew",
+    "value": "Clock skew",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5049,7 +5049,7 @@
   },
   {
     "type": "Answer",
-    "value":"A good scotch collection at your desk.",
+    "value": "A good scotch collection at your desk.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5057,7 +5057,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 1:1 that goes straight to the bar.",
+    "value": "A 1:1 that goes straight to the bar.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5065,7 +5065,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 16 hour incident bridge.",
+    "value": "A 16 hour incident bridge.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5073,7 +5073,7 @@
   },
   {
     "type": "Answer",
-    "value":"Something said by a NetEng that you didn't understand.",
+    "value": "Something said by a NetEng that you didn't understand.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5081,7 +5081,7 @@
   },
   {
     "type": "Answer",
-    "value":"An obscure stack trace",
+    "value": "An obscure stack trace",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5089,7 +5089,7 @@
   },
   {
     "type": "Answer",
-    "value":"An app with no logging",
+    "value": "An app with no logging",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5097,7 +5097,7 @@
   },
   {
     "type": "Answer",
-    "value":"Steering the Titanic with a popsicle stick",
+    "value": "Steering the Titanic with a popsicle stick",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5105,7 +5105,7 @@
   },
   {
     "type": "Answer",
-    "value":"A peer that doesn't believe in peer review",
+    "value": "A peer that doesn't believe in peer review",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5113,7 +5113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Angular js",
+    "value": "Angular js",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5121,7 +5121,7 @@
   },
   {
     "type": "Answer",
-    "value":"A former MENSA member",
+    "value": "A former MENSA member",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5129,7 +5129,7 @@
   },
   {
     "type": "Answer",
-    "value":"More bloat than GNU code",
+    "value": "More bloat than GNU code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5137,7 +5137,7 @@
   },
   {
     "type": "Answer",
-    "value":"Emacs pinky problems",
+    "value": "Emacs pinky problems",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5145,7 +5145,7 @@
   },
   {
     "type": "Answer",
-    "value":"Arguing over Java or C#",
+    "value": "Arguing over Java or C#",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5153,7 +5153,7 @@
   },
   {
     "type": "Answer",
-    "value":"Best Practices",
+    "value": "Best Practices",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5161,7 +5161,7 @@
   },
   {
     "type": "Answer",
-    "value":"Programming drunk",
+    "value": "Programming drunk",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5169,7 +5169,7 @@
   },
   {
     "type": "Answer",
-    "value":"Custom Nagios scripts",
+    "value": "Custom Nagios scripts",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5177,7 +5177,7 @@
   },
   {
     "type": "Answer",
-    "value":"ITIL",
+    "value": "ITIL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5185,7 +5185,7 @@
   },
   {
     "type": "Answer",
-    "value":"branded hoodies",
+    "value": "branded hoodies",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5193,7 +5193,7 @@
   },
   {
     "type": "Answer",
-    "value":"angel investors",
+    "value": "angel investors",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5201,7 +5201,7 @@
   },
   {
     "type": "Answer",
-    "value":"series B funding",
+    "value": "series B funding",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5209,7 +5209,7 @@
   },
   {
     "type": "Answer",
-    "value":"A noose made out of cat 5 cable",
+    "value": "A noose made out of cat 5 cable",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5217,7 +5217,7 @@
   },
   {
     "type": "Answer",
-    "value":"A kernel hacker's beard",
+    "value": "A kernel hacker's beard",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5225,7 +5225,7 @@
   },
   {
     "type": "Answer",
-    "value":"The reaping of child processes",
+    "value": "The reaping of child processes",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5233,7 +5233,7 @@
   },
   {
     "type": "Answer",
-    "value":"nginx",
+    "value": "nginx",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5241,7 +5241,7 @@
   },
   {
     "type": "Answer",
-    "value":"the outsourced IT department",
+    "value": "the outsourced IT department",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5249,7 +5249,7 @@
   },
   {
     "type": "Answer",
-    "value":"a NSFW MOTD file",
+    "value": "a NSFW MOTD file",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5257,7 +5257,7 @@
   },
   {
     "type": "Answer",
-    "value":"ASCII art",
+    "value": "ASCII art",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5265,7 +5265,7 @@
   },
   {
     "type": "Answer",
-    "value":"bugzilla",
+    "value": "bugzilla",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5273,7 +5273,7 @@
   },
   {
     "type": "Answer",
-    "value":"boto",
+    "value": "boto",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5281,7 +5281,7 @@
   },
   {
     "type": "Answer",
-    "value":"malicious code",
+    "value": "malicious code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5289,7 +5289,7 @@
   },
   {
     "type": "Answer",
-    "value":"The return of the Y2K bug",
+    "value": "The return of the Y2K bug",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5297,7 +5297,7 @@
   },
   {
     "type": "Answer",
-    "value":"A highly sophisticated regular expression",
+    "value": "A highly sophisticated regular expression",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5305,7 +5305,7 @@
   },
   {
     "type": "Answer",
-    "value":"A mint-in-box AOL trial CD",
+    "value": "A mint-in-box AOL trial CD",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5313,7 +5313,7 @@
   },
   {
     "type": "Answer",
-    "value":"log aggregation",
+    "value": "log aggregation",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5321,7 +5321,7 @@
   },
   {
     "type": "Answer",
-    "value":"The OWASP Top 10",
+    "value": "The OWASP Top 10",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5329,7 +5329,7 @@
   },
   {
     "type": "Answer",
-    "value":"Water-scrum-fall",
+    "value": "Water-scrum-fall",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5337,7 +5337,7 @@
   },
   {
     "type": "Answer",
-    "value":"Yet another attempt at re-writing Nagios",
+    "value": "Yet another attempt at re-writing Nagios",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5345,7 +5345,7 @@
   },
   {
     "type": "Answer",
-    "value":"infinite loops",
+    "value": "infinite loops",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5353,7 +5353,7 @@
   },
   {
     "type": "Answer",
-    "value":"bareword variables",
+    "value": "bareword variables",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5361,7 +5361,7 @@
   },
   {
     "type": "Answer",
-    "value":"rubocop",
+    "value": "rubocop",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5369,7 +5369,7 @@
   },
   {
     "type": "Answer",
-    "value":"A project of Stuxnet-level complexity",
+    "value": "A project of Stuxnet-level complexity",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5377,7 +5377,7 @@
   },
   {
     "type": "Answer",
-    "value":"The RFCs for streaming video codecs",
+    "value": "The RFCs for streaming video codecs",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5385,7 +5385,7 @@
   },
   {
     "type": "Answer",
-    "value":"Terraform",
+    "value": "Terraform",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5393,7 +5393,7 @@
   },
   {
     "type": "Answer",
-    "value":"AWK",
+    "value": "AWK",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5401,7 +5401,7 @@
   },
   {
     "type": "Answer",
-    "value":"Greybeards",
+    "value": "Greybeards",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5409,7 +5409,7 @@
   },
   {
     "type": "Answer",
-    "value":"Database antipatterns",
+    "value": "Database antipatterns",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5417,7 +5417,7 @@
   },
   {
     "type": "Answer",
-    "value":"Cat5 'o 9 tails",
+    "value": "Cat5 'o 9 tails",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5425,7 +5425,7 @@
   },
   {
     "type": "Answer",
-    "value":"USB Type-C",
+    "value": "USB Type-C",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5433,7 +5433,7 @@
   },
   {
     "type": "Answer",
-    "value":"Just plain text",
+    "value": "Just plain text",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5441,7 +5441,7 @@
   },
   {
     "type": "Answer",
-    "value":"HTTP 418: I'm a teapot",
+    "value": "HTTP 418: I'm a teapot",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5449,7 +5449,7 @@
   },
   {
     "type": "Answer",
-    "value":"haveToMakeMyOwnArrayIsEmptyMethodBecauseCrappyJavaDoesNotHaveIt()",
+    "value": "haveToMakeMyOwnArrayIsEmptyMethodBecauseCrappyJavaDoesNotHaveIt()",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5457,7 +5457,7 @@
   },
   {
     "type": "Answer",
-    "value":"// TODO",
+    "value": "// TODO",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5465,7 +5465,7 @@
   },
   {
     "type": "Answer",
-    "value":"Rereading code of last night",
+    "value": "Rereading code of last night",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5473,7 +5473,7 @@
   },
   {
     "type": "Answer",
-    "value":"Debugging 500 lines of code per method. Average.",
+    "value": "Debugging 500 lines of code per method. Average.",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5481,7 +5481,7 @@
   },
   {
     "type": "Answer",
-    "value":"localhost",
+    "value": "localhost",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5489,7 +5489,7 @@
   },
   {
     "type": "Answer",
-    "value":"It doesn't happen on my machine",
+    "value": "It doesn't happen on my machine",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5497,7 +5497,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unit testing randomization",
+    "value": "Unit testing randomization",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5505,7 +5505,7 @@
   },
   {
     "type": "Answer",
-    "value":"Dropping tables on a Friday",
+    "value": "Dropping tables on a Friday",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5513,7 +5513,7 @@
   },
   {
     "type": "Answer",
-    "value":"Literally driving development",
+    "value": "Literally driving development",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5521,7 +5521,7 @@
   },
   {
     "type": "Answer",
-    "value":"while(true)",
+    "value": "while(true)",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5529,7 +5529,7 @@
   },
   {
     "type": "Answer",
-    "value":"Using a switch for a boolean",
+    "value": "Using a switch for a boolean",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5537,7 +5537,7 @@
   },
   {
     "type": "Answer",
-    "value":"ENUM('Y','N');",
+    "value": "ENUM('Y','N');",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5545,7 +5545,7 @@
   },
   {
     "type": "Answer",
-    "value":"Mac OSX",
+    "value": "Mac OSX",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5553,7 +5553,7 @@
   },
   {
     "type": "Answer",
-    "value":"Replacing all dev machines with Raspberry Pis",
+    "value": "Replacing all dev machines with Raspberry Pis",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5561,7 +5561,7 @@
   },
   {
     "type": "Answer",
-    "value":"Redirecting www to dev",
+    "value": "Redirecting www to dev",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5569,7 +5569,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Cloud",
+    "value": "The Cloud",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5577,7 +5577,7 @@
   },
   {
     "type": "Answer",
-    "value":"1337",
+    "value": "1337",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5585,7 +5585,7 @@
   },
   {
     "type": "Answer",
-    "value":"Minorities in tech",
+    "value": "Minorities in tech",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5593,7 +5593,7 @@
   },
   {
     "type": "Answer",
-    "value":"Another Wordpress vulnerability",
+    "value": "Another Wordpress vulnerability",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5601,7 +5601,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Raspberry Pi botnet",
+    "value": "A Raspberry Pi botnet",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5609,7 +5609,7 @@
   },
   {
     "type": "Answer",
-    "value":"DDoSing 127.0.0.1",
+    "value": "DDoSing 127.0.0.1",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5617,7 +5617,7 @@
   },
   {
     "type": "Answer",
-    "value":"Low Orbit Ion Cannon",
+    "value": "Low Orbit Ion Cannon",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5625,7 +5625,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hack Forums",
+    "value": "Hack Forums",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5633,7 +5633,7 @@
   },
   {
     "type": "Answer",
-    "value":"/r/talesfromtechsupport",
+    "value": "/r/talesfromtechsupport",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5641,7 +5641,7 @@
   },
   {
     "type": "Answer",
-    "value":"@sadserver",
+    "value": "@sadserver",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5649,7 +5649,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bobby Tables",
+    "value": "Bobby Tables",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5657,7 +5657,7 @@
   },
   {
     "type": "Answer",
-    "value":"Downtime",
+    "value": "Downtime",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5665,7 +5665,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unixbeards",
+    "value": "Unixbeards",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5673,7 +5673,7 @@
   },
   {
     "type": "Answer",
-    "value":"Excessively long variable names",
+    "value": "Excessively long variable names",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5681,7 +5681,7 @@
   },
   {
     "type": "Answer",
-    "value":"A parent killing its children",
+    "value": "A parent killing its children",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5689,7 +5689,7 @@
   },
   {
     "type": "Answer",
-    "value":"Commenting every line of code",
+    "value": "Commenting every line of code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5697,7 +5697,7 @@
   },
   {
     "type": "Answer",
-    "value":"DEFCON",
+    "value": "DEFCON",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5705,7 +5705,7 @@
   },
   {
     "type": "Answer",
-    "value":"Richard Stallman",
+    "value": "Richard Stallman",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5713,7 +5713,7 @@
   },
   {
     "type": "Answer",
-    "value":"Emojis as identifiers",
+    "value": "Emojis as identifiers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5721,7 +5721,7 @@
   },
   {
     "type": "Answer",
-    "value":"Trolling the sysadmins",
+    "value": "Trolling the sysadmins",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5729,7 +5729,7 @@
   },
   {
     "type": "Answer",
-    "value":"Running Java 6",
+    "value": "Running Java 6",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5737,7 +5737,7 @@
   },
   {
     "type": "Answer",
-    "value":"UNDO UNDO UNDO",
+    "value": "UNDO UNDO UNDO",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5745,7 +5745,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hypertext Coffee Pot Control Protocol",
+    "value": "Hypertext Coffee Pot Control Protocol",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5753,7 +5753,7 @@
   },
   {
     "type": "Answer",
-    "value":"IP Over Avian Carriers",
+    "value": "IP Over Avian Carriers",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5761,7 +5761,7 @@
   },
   {
     "type": "Answer",
-    "value":"SONET to Sonnet Translation",
+    "value": "SONET to Sonnet Translation",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5769,7 +5769,7 @@
   },
   {
     "type": "Answer",
-    "value":"IP Over Avian Carriers with QoS",
+    "value": "IP Over Avian Carriers with QoS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5777,7 +5777,7 @@
   },
   {
     "type": "Answer",
-    "value":"SCCS",
+    "value": "SCCS",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5785,7 +5785,7 @@
   },
   {
     "type": "Answer",
-    "value":"Infinite Monkey Protocol Suite",
+    "value": "Infinite Monkey Protocol Suite",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5793,7 +5793,7 @@
   },
   {
     "type": "Answer",
-    "value":"National Security Letter",
+    "value": "National Security Letter",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5801,7 +5801,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hyper Text Coffee Pot Control Protocol for Tea Efflux Appliances (HTCPCP-TEA)",
+    "value": "Hyper Text Coffee Pot Control Protocol for Tea Efflux Appliances (HTCPCP-TEA)",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5809,7 +5809,7 @@
   },
   {
     "type": "Answer",
-    "value":"NSA (No Secrecy Afforded) Certificate Extension",
+    "value": "NSA (No Secrecy Afforded) Certificate Extension",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5817,7 +5817,7 @@
   },
   {
     "type": "Answer",
-    "value":"Scenic Routing for IPv6",
+    "value": "Scenic Routing for IPv6",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5825,7 +5825,7 @@
   },
   {
     "type": "Answer",
-    "value":"Really Explicit Congestion Notification (RECN)",
+    "value": "Really Explicit Congestion Notification (RECN)",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5833,7 +5833,7 @@
   },
   {
     "type": "Answer",
-    "value":"Internet Explorer",
+    "value": "Internet Explorer",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5841,7 +5841,7 @@
   },
   {
     "type": "Answer",
-    "value":"Windows for Workgroups",
+    "value": "Windows for Workgroups",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5849,7 +5849,7 @@
   },
   {
     "type": "Answer",
-    "value":"M-x dwim",
+    "value": "M-x dwim",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5857,7 +5857,7 @@
   },
   {
     "type": "Answer",
-    "value":"===== operator",
+    "value": "===== operator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5865,7 +5865,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Tor Network",
+    "value": "The Tor Network",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5873,7 +5873,7 @@
   },
   {
     "type": "Answer",
-    "value":"kibo",
+    "value": "kibo",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5881,7 +5881,7 @@
   },
   {
     "type": "Answer",
-    "value":"Elvish",
+    "value": "Elvish",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5889,7 +5889,7 @@
   },
   {
     "type": "Answer",
-    "value":"Klingon",
+    "value": "Klingon",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5897,7 +5897,7 @@
   },
   {
     "type": "Answer",
-    "value":"Na'vi",
+    "value": "Na'vi",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5905,7 +5905,7 @@
   },
   {
     "type": "Answer",
-    "value":"XSLT",
+    "value": "XSLT",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5913,7 +5913,7 @@
   },
   {
     "type": "Answer",
-    "value":"A blue box",
+    "value": "A blue box",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5921,7 +5921,7 @@
   },
   {
     "type": "Answer",
-    "value":"APL",
+    "value": "APL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5929,7 +5929,7 @@
   },
   {
     "type": "Answer",
-    "value":"Snobol",
+    "value": "Snobol",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5937,7 +5937,7 @@
   },
   {
     "type": "Answer",
-    "value":"Bogosort",
+    "value": "Bogosort",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5945,7 +5945,7 @@
   },
   {
     "type": "Answer",
-    "value":"The Jargon File",
+    "value": "The Jargon File",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5953,7 +5953,7 @@
   },
   {
     "type": "Answer",
-    "value":"AI-complete",
+    "value": "AI-complete",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5961,7 +5961,7 @@
   },
   {
     "type": "Answer",
-    "value":"BCPL",
+    "value": "BCPL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5969,7 +5969,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Flash plug-in for wget",
+    "value": "A Flash plug-in for wget",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5977,7 +5977,7 @@
   },
   {
     "type": "Answer",
-    "value":"?= operator",
+    "value": "?= operator",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5985,7 +5985,7 @@
   },
   {
     "type": "Answer",
-    "value":"12 hamsters",
+    "value": "12 hamsters",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -5993,7 +5993,7 @@
   },
   {
     "type": "Answer",
-    "value":"Selenium",
+    "value": "Selenium",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6001,7 +6001,7 @@
   },
   {
     "type": "Answer",
-    "value":"Robert'); DROP TABLE Students;--",
+    "value": "Robert'); DROP TABLE Students;--",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6009,7 +6009,7 @@
   },
   {
     "type": "Answer",
-    "value":"Trusting User Input",
+    "value": "Trusting User Input",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6017,7 +6017,7 @@
   },
   {
     "type": "Answer",
-    "value":"Guru Meditation",
+    "value": "Guru Meditation",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6025,7 +6025,7 @@
   },
   {
     "type": "Answer",
-    "value":"Unexpected T_PAAMAYIM_NEKUDOTAYIM",
+    "value": "Unexpected T_PAAMAYIM_NEKUDOTAYIM",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6033,7 +6033,7 @@
   },
   {
     "type": "Answer",
-    "value":"402: Payment required",
+    "value": "402: Payment required",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6041,7 +6041,7 @@
   },
   {
     "type": "Answer",
-    "value":"Treating warnings as errors",
+    "value": "Treating warnings as errors",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6049,7 +6049,7 @@
   },
   {
     "type": "Answer",
-    "value":"Turning up to work still drunk from yesterday",
+    "value": "Turning up to work still drunk from yesterday",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6065,7 +6065,7 @@
   },
   {
     "type": "Answer",
-    "value":"A 75-tier architecture",
+    "value": "A 75-tier architecture",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6073,7 +6073,7 @@
   },
   {
     "type": "Answer",
-    "value":"A customized .fvwmrc",
+    "value": "A customized .fvwmrc",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6081,7 +6081,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Github Outage",
+    "value": "A Github Outage",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6089,7 +6089,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Piñata full of error messages",
+    "value": "A Piñata full of error messages",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6097,7 +6097,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Scrum Master",
+    "value": "A Scrum Master",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6105,7 +6105,7 @@
   },
   {
     "type": "Answer",
-    "value":"A Snowflake server",
+    "value": "A Snowflake server",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6113,7 +6113,7 @@
   },
   {
     "type": "Answer",
-    "value":"Digital Ocean",
+    "value": "Digital Ocean",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6121,7 +6121,7 @@
   },
   {
     "type": "Answer",
-    "value":"EFnet in the 90s",
+    "value": "EFnet in the 90s",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6129,7 +6129,7 @@
   },
   {
     "type": "Answer",
-    "value":"Epoch time in milliseconds",
+    "value": "Epoch time in milliseconds",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6137,7 +6137,7 @@
   },
   {
     "type": "Answer",
-    "value":"FileMaker Instant Web Publishing",
+    "value": "FileMaker Instant Web Publishing",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6145,7 +6145,7 @@
   },
   {
     "type": "Answer",
-    "value":"Hand-crafted artisanal x86 assembly code",
+    "value": "Hand-crafted artisanal x86 assembly code",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6153,7 +6153,7 @@
   },
   {
     "type": "Answer",
-    "value":"LinkedIn",
+    "value": "LinkedIn",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6161,7 +6161,7 @@
   },
   {
     "type": "Answer",
-    "value":"NoSQL",
+    "value": "NoSQL",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6169,7 +6169,7 @@
   },
   {
     "type": "Answer",
-    "value":"Patent",
+    "value": "Patent",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6177,7 +6177,7 @@
   },
   {
     "type": "Answer",
-    "value":"Shift-Ctrl-F12-\\",
+    "value": "Shift-Ctrl-F12-\\",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6185,7 +6185,7 @@
   },
   {
     "type": "Answer",
-    "value":"Tech Recruiters",
+    "value": "Tech Recruiters",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6193,7 +6193,7 @@
   },
   {
     "type": "Answer",
-    "value":"Waiting for console.aws.amazon.com...",
+    "value": "Waiting for console.aws.amazon.com...",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6201,7 +6201,7 @@
   },
   {
     "type": "Answer",
-    "value":"Windows XP",
+    "value": "Windows XP",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,
@@ -6209,7 +6209,7 @@
   },
   {
     "type": "Answer",
-    "value":"Zombie processes",
+    "value": "Zombie processes",
     "keep": "Yes",
     "draw": 0,
     "pick": 1,

@@ -1,10 +1,10 @@
-'use strict';
+const path = require('path');
+const plug = require('plug');
 
 module.exports = app => {
-  const path = require('path');
-  const plugger = require('plug').create(app);
+  const plugger = plug.create(app);
 
-  plugger.on('connect', (pluginName) => {
+  plugger.on('connect', pluginName => {
     console.log(`Loaded ${pluginName} plugin.`);
   });
 

@@ -1,5 +1,3 @@
-'use strict';
-
 const Bookclub = require('./app/controllers/Bookclub.js');
 
 module.exports = app => {
@@ -14,35 +12,35 @@ module.exports = app => {
     '',
     bookclub.config.channels,
     bookclub.config.channelsToExclude,
-    bookclub.suggest
+    bookclub.suggest,
   );
   app.cmd(
     'current',
     '',
     bookclub.config.channels,
     bookclub.config.channelsToExclude,
-    bookclub.thisMonth
+    bookclub.thisMonth,
   );
   app.cmd(
     'next',
     '',
     bookclub.config.channels,
     bookclub.config.channelsToExclude,
-    bookclub.nextMonth
+    bookclub.nextMonth,
   );
   app.cmd(
     'listbooks',
     '',
     bookclub.config.channels,
     bookclub.config.channelsToExclude,
-    bookclub.showBooks
+    bookclub.showBooks,
   );
   app.cmd(
     'listread',
     '',
     bookclub.config.channels,
     bookclub.config.channelsToExclude,
-    bookclub.showRead
+    bookclub.showRead,
   );
   app.cmd('v', '', bookclub.config.channels, bookclub.config.channelsToExclude, bookclub.vote);
 

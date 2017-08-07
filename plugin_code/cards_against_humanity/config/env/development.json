@@ -1,9 +1,9 @@
 {
   "gameOptions": {
-    "setTopic":      true,
-    "topicBase":     "|| Dev Bot || Expect spam || Expect breakings",
-    "notifyUsers":   false,
-    "pointLimit":    5,
+    "setTopic": true,
+    "topicBase": "|| Dev Bot || Expect spam || Expect breakings",
+    "notifyUsers": false,
+    "pointLimit": 5,
     "idleLimit": 2,
     "secondsBeforeStart": 60,
     "roundMinutes": 6,

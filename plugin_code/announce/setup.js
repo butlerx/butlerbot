@@ -1,5 +1,3 @@
-'use strict';
-
 const Announce = require('./app/controllers/announce.js');
 
 module.exports = app => {

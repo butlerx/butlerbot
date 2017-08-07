@@ -1,6 +1,6 @@
-'use strict';
+const announce = require('../plugin_code/announce/setup.js');
 
 exports.connect = (app, callback) => {
-  require('../plugin_code/announce/setup.js')(app);
+  announce(app);
   callback();
 };

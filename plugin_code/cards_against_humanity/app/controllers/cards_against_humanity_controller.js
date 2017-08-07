@@ -1,12 +1,10 @@
-'use strict';
-
 const _ = require('lodash');
 const Game = require('./game');
 const Player = require('../models/player');
 const config = require('../../config/config');
 const dbModels = require('../../models');
 
-const CardsAgainstHumanity = function CardsAgainstHumanity () {
+const CardsAgainstHumanity = function CardsAgainstHumanity() {
   const self = this;
   self.game;
   self.config = config;
@@ -352,7 +350,7 @@ const CardsAgainstHumanity = function CardsAgainstHumanity () {
     } else {
       client.say(
         args[0],
-        `${nick}: https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity`
+        `${nick}: https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity`,
       );
     }
   };

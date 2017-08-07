@@ -1,5 +1,3 @@
-'use strict';
-
 const Helpdesk = require('./app/controllers/Helpdesk.js');
 
 module.exports = app => {
@@ -9,7 +7,13 @@ module.exports = app => {
   app.joinChannels(helpdesk.config.channelsToJoin);
 
   // Add commands
-  app.cmd('halpdack', '', helpdesk.config.channels, helpdesk.config.channelsToExclude, helpdesk.help);
+  app.cmd(
+    'halpdack',
+    '',
+    helpdesk.config.channels,
+    helpdesk.config.channelsToExclude,
+    helpdesk.help,
+  );
   app.cmd('list', '', helpdesk.config.channels, helpdesk.config.channelsToExclude, helpdesk.list);
 
   // PM commands

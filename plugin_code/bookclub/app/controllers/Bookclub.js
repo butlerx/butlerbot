@@ -1,9 +1,8 @@
-'use strict';
-
 const _ = require('lodash');
 const fs = require('fs');
 const schedule = require('node-schedule');
 const amazon = require('amazon-product-api');
+
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
 const booksToRead = require('../../config/booksToRead.json');
@@ -11,7 +10,7 @@ const booksRead = require('../../config/booksRead.json');
 const thisMonthBook = require('../../config/thisMonthBook.json');
 const nextMonthBook = require('../../config/nextMonthBook.json');
 
-const Bookclub = function Bookclub () {
+const Bookclub = function Bookclub() {
   const self = this;
   self.config = config;
   self.booksToRead = booksToRead;
@@ -47,7 +46,8 @@ const Bookclub = function Bookclub () {
     if (month === self.thisMonthBook.month) {
       client.say(
         args[0],
-        `This months book is ${self.thisMonthBook.title} by ${self.thisMonthBook.author}, ${self.thisMonthBook.link}`
+        `This months book is ${self.thisMonthBook.title} by ${self.thisMonthBook.author}, ${self
+          .thisMonthBook.link}`,
       );
     } else {
       self.changeBook(client, month, args[0]);
@@ -61,7 +61,8 @@ const Bookclub = function Bookclub () {
     if (month === self.thisMonthBook.month) {
       client.say(
         args[0],
-        `Next months book is ${self.nextMonthBook.title} by ${self.nextMonthBook.author}, ${self.nextMonthBook.link}`
+        `Next months book is ${self.nextMonthBook.title} by ${self.nextMonthBook.author}, ${self
+          .nextMonthBook.link}`,
       );
     } else {
       self.changeBook(client, month, args[0]);
@@ -88,12 +89,12 @@ const Bookclub = function Bookclub () {
 
     const books = _.filter(
       self.booksToRead,
-      book => book.title.toLowerCase() === input[0].toLowerCase()
+      book => book.title.toLowerCase() === input[0].toLowerCase(),
     );
     const titles = _.map(books, book => book.title.toLowerCase());
     const read = _.filter(
       self.booksRead,
-      book => book.title.toLowerCase() === input[0].toLowerCase()
+      book => book.title.toLowerCase() === input[0].toLowerCase(),
     );
     const titlesRead = _.map(read, book => book.title.toLowerCase());
 
@@ -131,7 +132,7 @@ const Bookclub = function Bookclub () {
           self.booksToRead.push({ title, author, pages, suggested: nick, month: 0, link });
           self.write('booksToRead', self.booksToRead);
           client.say(args[0], 'Book added!');
-        }
+        },
       );
     }
   };
@@ -142,7 +143,8 @@ const Bookclub = function Bookclub () {
     self.setTopic(
       client,
       channel,
-      `This months book is ${self.nextMonthBook.title} by ${self.nextMonthBook.author} || This months discussion: ${self.thisMonthBook.title}`
+      `This months book is ${self.nextMonthBook.title} by ${self.nextMonthBook
+        .author} || This months discussion: ${self.thisMonthBook.title}`,
     );
     self.booksRead.push(thisMonthBook);
     self.write('booksRead', self.booksRead);
@@ -159,11 +161,13 @@ const Bookclub = function Bookclub () {
     // say book and cvhange TOPIC
     client.say(
       channel,
-      `This months book is ${self.thisMonthBook.title} by ${self.thisMonthBook.author} suggested by ${self.thisMonthBook.suggested}, ${self.thisMonthBook.link}`
+      `This months book is ${self.thisMonthBook.title} by ${self.thisMonthBook
+        .author} suggested by ${self.thisMonthBook.suggested}, ${self.thisMonthBook.link}`,
     );
     client.say(
       channel,
-      `Next months book is ${self.nextMonthBook.title} by ${self.nextMonthBook.author} suggested by ${self.nextMonthBook.suggested}, ${self.nextMonthBook.link}`
+      `Next months book is ${self.nextMonthBook.title} by ${self.nextMonthBook
+        .author} suggested by ${self.nextMonthBook.suggested}, ${self.nextMonthBook.link}`,
     );
   };
 
@@ -194,7 +198,8 @@ const Bookclub = function Bookclub () {
     for (let i = 0; i < self.booksToRead.length; i++) {
       client.say(
         nick,
-        ` [${i}] ${self.booksToRead[i].title} by ${self.booksToRead[i].author} suggested by ${self.booksToRead[i].suggested}, ${self.booksToRead[i].link}`
+        ` [${i}] ${self.booksToRead[i].title} by ${self.booksToRead[i].author} suggested by ${self
+          .booksToRead[i].suggested}, ${self.booksToRead[i].link}`,
       );
     }
   };
@@ -204,46 +209,47 @@ const Bookclub = function Bookclub () {
     for (let i = 0; i < self.booksRead.length; i++) {
       let month = 'No Month';
       switch (self.booksRead[i].month) {
-      case 0:
-        month = 'January';
-        break;
-      case 1:
-        month = 'Febuary';
-        break;
-      case 2:
-        month = 'March';
-        break;
-      case 3:
-        month = 'April';
-        break;
-      case 4:
-        month = 'May';
-        break;
-      case 5:
-        month = 'June';
-        break;
-      case 6:
-        month = 'July';
-        break;
-      case 7:
-        month = 'August';
-        break;
-      case 8:
-        month = 'September';
-        break;
-      case 9:
-        month = 'October';
-        break;
-      case 10:
-        month = 'November';
-        break;
-      case 11:
-        month = 'December';
-        break;
+        case 0:
+          month = 'January';
+          break;
+        case 1:
+          month = 'Febuary';
+          break;
+        case 2:
+          month = 'March';
+          break;
+        case 3:
+          month = 'April';
+          break;
+        case 4:
+          month = 'May';
+          break;
+        case 5:
+          month = 'June';
+          break;
+        case 6:
+          month = 'July';
+          break;
+        case 7:
+          month = 'August';
+          break;
+        case 8:
+          month = 'September';
+          break;
+        case 9:
+          month = 'October';
+          break;
+        case 10:
+          month = 'November';
+          break;
+        case 11:
+          month = 'December';
+          break;
       }
       client.say(
         nick,
-        `${month}: ${self.booksRead[i].title} by ${self.booksRead[i].author} suggested by ${self.booksRead[i].suggested}, ${self.booksRead[i].link}`
+        `${month}: ${self.booksRead[i].title} by ${self.booksRead[i].author} suggested by ${self
+          .booksRead[i].suggested}, ${self.booksRead[i].link}`,
       );
     }
   };
@@ -257,32 +263,29 @@ const Bookclub = function Bookclub () {
       if (_.includes(self.voted, message.nick.toLowerCase())) {
         client.say(message.args[0], `${message.nick} you've arlready voted`);
         return false;
-      } else {
-        if (args[0].toLowerCase() === 'keep') {
-          self.keep++;
-          self.voted.push(message.nick.toLowerCase());
-          client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
-        } else {
-          if (args[0].toLowerCase() === 'new') {
-            if (self.new === 2) {
-              self.startTimeout = setTimeout(self.startTimeoutFunction, 10 * 60 * 1000);
-            }
-            self.new++;
-            self.voted.push(message.nick.toLowerCase());
-            if (self.new === 6 && self.keep === 0) {
-              const month = self.date.getMonth();
-              self.changeBook(self.client, month, message.args[0]); // NOTE: need to fix change book
-              self.keep = 0;
-              self.new = 0;
-              self.voted = [];
-              clearTimeout(self.startTimeout);
-              return true;
-            }
-            client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
-          } else {
-            client.say(message.args[0], `${args[0]} is not a valid input`);
-          }
+      }
+      if (args[0].toLowerCase() === 'keep') {
+        self.keep++;
+        self.voted.push(message.nick.toLowerCase());
+        client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
+      } else if (args[0].toLowerCase() === 'new') {
+        if (self.new === 2) {
+          self.startTimeout = setTimeout(self.startTimeoutFunction, 10 * 60 * 1000);
         }
+        self.new++;
+        self.voted.push(message.nick.toLowerCase());
+        if (self.new === 6 && self.keep === 0) {
+          const month = self.date.getMonth();
+          self.changeBook(self.client, month, message.args[0]); // NOTE: need to fix change book
+          self.keep = 0;
+          self.new = 0;
+          self.voted = [];
+          clearTimeout(self.startTimeout);
+          return true;
+        }
+        client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
+      } else {
+        client.say(message.args[0], `${args[0]} is not a valid input`);
       }
     }
   };
@@ -294,7 +297,7 @@ const Bookclub = function Bookclub () {
         const month = self.date.getMonth() - 1;
         self.changeBook(self.client, month, self.config.channels[0]);
       } else {
-        self.client.say(self.config.channels[0], 'You\'ve voted to keep this months book');
+        self.client.say(self.config.channels[0], "You've voted to keep this months book");
       }
       self.keep = 0;
       self.new = 0;

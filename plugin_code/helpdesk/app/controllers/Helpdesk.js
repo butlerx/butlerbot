@@ -1,11 +1,10 @@
-'use strict';
-
 const request = require('request');
 const cheerio = require('cheerio');
+
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
 
-const Helpdesk = function Helpdesk () {
+function Helpdesk() {
   const self = this;
   self.config = config;
 
@@ -18,7 +17,7 @@ const Helpdesk = function Helpdesk () {
     if (input[0] === '') {
       client.say(
         channel,
-        'Helpdesk is a bot to help with all your problems pm me !help for a list of commads'
+        'Helpdesk is a bot to help with all your problems pm me !help for a list of commads',
       );
       return false;
     }
@@ -65,6 +64,6 @@ const Helpdesk = function Helpdesk () {
     }
     client.say(channel, `The commands are ${commands} and pm only commands are ${pmCommands}`);
   };
-};
+}
 
-exports = module.exports = Helpdesk;
+module.exports = Helpdesk;

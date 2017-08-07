@@ -4,9 +4,9 @@
     "topicBase": "|| Dev Bot || Expect spam || Expect breakings",
     "awsId": "",
     "awsSecret": "",
-    "channels": [ "#botdev" ],
+    "channels": ["#botdev"],
     "channelsToExclude": [],
-    "channelsToJoin": [ "#botdev" ]
+    "channelsToJoin": ["#botdev"]
   },
 
   "production": {

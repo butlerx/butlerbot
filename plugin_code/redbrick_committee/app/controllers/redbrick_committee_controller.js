@@ -1,44 +1,44 @@
-'use strict';
-
 const _ = require('lodash');
 const request = require('request-promise-native');
 
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
 
-const RedbrickCommittee = function RedbrickCommittee () {
+function RedbrickCommittee() {
   const self = this;
 
-  self.config    = config;
-  self.cache     = false;
-  self.chair     = true;
-  self.sec       = true;
+  self.config = config;
+  self.cache = false;
+  self.chair = true;
+  self.sec = true;
   self.treasurer = true;
-  self.pro       = true;
-  self.events    = true;
-  self.helpdesk  = true;
-  self.admins    = true;
-  self.web       = true;
-  self.fyr       = true;
+  self.pro = true;
+  self.events = true;
+  self.helpdesk = true;
+  self.admins = true;
+  self.web = true;
+  self.fyr = true;
 
-  self.reload = () => {
-    return new Promise((resolve, reject) => {
+  self.reload = () =>
+    new Promise((resolve, reject) => {
       request({
         uri    : 'http://redbrick.dcu.ie/api/committee',
         headers: {
           'User-Agent': 'Request-Promise',
         },
         json: true,
-      }).then((cmt => resolve(cmt)))
-      .catch((error => reject(error)));
+      })
+        .then(cmt => resolve(cmt))
+        .catch(error => reject(error));
     });
-  };
 
   self.committee = () => {
     if (self.cache) {
       return self.cmt;
-    } else {
-      self.reload().then((committee) => {
+    }
+    self
+      .reload()
+      .then(committee => {
         self.cmt = committee;
         self.cache = true;
         self.cacheCmt = setTimeout(() => {
@@ -47,59 +47,58 @@ const RedbrickCommittee = function RedbrickCommittee () {
         }, 60 * 10000 * self.config.waitTime);
         return committee;
       })
-      .catch(() => {
-        return self.cmt;
-      });
-    }
+      .catch(() => self.cmt);
   };
 
   self.wait = position => {
     switch (position) {
-    case 'Chair':
-      self.chair = false;
-      self.waitChair = setTimeout(self.readyChair, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'Sec':
-      self.sec = false;
-      self.waitSec = setTimeout(self.readySec, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'Treasurer':
-      self.treasurer = false;
-      self.waitTreasurer = setTimeout(self.readyTreasurer, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'PRO':
-      self.pro = false;
-      self.waitPRO = setTimeout(self.readyPRO, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'Events':
-      self.events = false;
-      self.waitEvents = setTimeout(self.readyEvents, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'FYR':
-      self.fyr = false;
-      self.waitFYR = setTimeout(self.readyFYR, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'Web':
-      self.web = false;
-      self.waitWeb = setTimeout(self.readyWeb, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'Helpdesk':
-      self.helpdesk = false;
-      self.waitHelpdesk = setTimeout(self.readyHelpdesk, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
-    case 'Admins':
-      self.admins = false;
-      self.waitAdmins = setTimeout(self.readyAdmins, 60 * 1000 * self.config.waitTime);
-      console.log(`Waiting for ${position}`);
-      break;
+      default:
+        break;
+      case 'Chair':
+        self.chair = false;
+        self.waitChair = setTimeout(self.readyChair, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'Sec':
+        self.sec = false;
+        self.waitSec = setTimeout(self.readySec, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'Treasurer':
+        self.treasurer = false;
+        self.waitTreasurer = setTimeout(self.readyTreasurer, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'PRO':
+        self.pro = false;
+        self.waitPRO = setTimeout(self.readyPRO, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'Events':
+        self.events = false;
+        self.waitEvents = setTimeout(self.readyEvents, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'FYR':
+        self.fyr = false;
+        self.waitFYR = setTimeout(self.readyFYR, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'Web':
+        self.web = false;
+        self.waitWeb = setTimeout(self.readyWeb, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'Helpdesk':
+        self.helpdesk = false;
+        self.waitHelpdesk = setTimeout(self.readyHelpdesk, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
+      case 'Admins':
+        self.admins = false;
+        self.waitAdmins = setTimeout(self.readyAdmins, 60 * 1000 * self.config.waitTime);
+        console.log(`Waiting for ${position}`);
+        break;
     }
   };
 
@@ -176,7 +175,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const chairString = `${chairperson.name} (${chairperson.nick})`;
       client.say(
         nick,
-        `Chairperson: ${chairString} contact by /m ${chairperson.nick} <message>, or email ${chairperson.name}@redbrick.dcu.ie`
+        `Chairperson: ${chairString} contact by /m ${chairperson.nick} <message>, or email ${chairperson.name}@redbrick.dcu.ie`,
       );
       self.wait('Chair');
     }
@@ -188,7 +187,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const secretaryString = `${secretary.name} (${secretary.nick})`;
       client.say(
         nick,
-        `Secretary: ${secretaryString} contact by /m ${secretary.nick} <message>, or email ${secretary.nick}@redbrick.dcu.ie`
+        `Secretary: ${secretaryString} contact by /m ${secretary.nick} <message>, or email ${secretary.nick}@redbrick.dcu.ie`,
       );
       self.wait('Sec');
     }
@@ -200,7 +199,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const treasurerString = `${treasurer.name} (${treasurer.nick})`;
       client.say(
         nick,
-        `Treasurer: ${treasurerString} contact by /m ${treasurer.nick} <message>, or email ${treasurer.nick}@redbrick.dcu.ie`
+        `Treasurer: ${treasurerString} contact by /m ${treasurer.nick} <message>, or email ${treasurer.nick}@redbrick.dcu.ie`,
       );
       self.wait('Treasurer');
     }
@@ -212,7 +211,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const proString = `${pro.name} (${pro.nick})`;
       client.say(
         nick,
-        `Public Relations Officer: ${proString} contact by /m ${pro.nick} <message>, or email ${pro.nick}@redbrick.dcu.ie`
+        `Public Relations Officer: ${proString} contact by /m ${pro.nick} <message>, or email ${pro.nick}@redbrick.dcu.ie`,
       );
       self.wait('PRO');
     }
@@ -224,7 +223,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const eventsString = `${events.name} (${events.nick})`;
       client.say(
         nick,
-        `Events Officer: ${eventsString} contact by /m ${events.nick} <message>, or email ${events.nick}@redbrick.dcu.ie`
+        `Events Officer: ${eventsString} contact by /m ${events.nick} <message>, or email ${events.nick}@redbrick.dcu.ie`,
       );
       self.wait('Events');
     }
@@ -236,7 +235,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const fyrString = `${firstYearRep.name} (${firstYearRep.nick})`;
       client.say(
         nick,
-        `First Year Representative: ${fyrString} contact by /m ${firstYearRep.nick} <message>, or email ${firstYearRep.nick}@redbrick.dcu.ie`
+        `First Year Representative: ${fyrString} contact by /m ${firstYearRep.nick} <message>, or email ${firstYearRep.nick}@redbrick.dcu.ie`,
       );
       self.wait('FYR');
     }
@@ -248,7 +247,7 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const webmasterString = `${webmaster.name} (${webmaster.nick})`;
       client.say(
         nick,
-        `Webmaster: ${webmasterString} contact by /m ${webmaster.nick} <message>, or email ${webmaster.nick}@redbrick.dcu.ie`
+        `Webmaster: ${webmasterString} contact by /m ${webmaster.nick} <message>, or email ${webmaster.nick}@redbrick.dcu.ie`,
       );
       self.wait('Web');
     }
@@ -269,11 +268,11 @@ const RedbrickCommittee = function RedbrickCommittee () {
       const adminsString = _.map(admins, ({ name, nick }) => `${name} (${nick})`).join(', ');
       client.say(
         nick,
-        `System Administrators: ${adminsString} contact by emailing admins@redbrick.dcu.ie`
+        `System Administrators: ${adminsString} contact by emailing admins@redbrick.dcu.ie`,
       );
       self.wait('Admins');
     }
   };
-};
+}
 
-exports = module.exports = RedbrickCommittee;
+module.exports = RedbrickCommittee;

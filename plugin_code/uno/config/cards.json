@@ -99,12 +99,12 @@
   { "type": "Skip", "color": "BLUE", "value": 20 },
   { "type": "Skip", "color": "RED", "value": 20 },
   { "type": "Skip", "color": "RED", "value": 20 },
-  { "type": "Wild", "color": "WILD", "value": 50},
-  { "type": "Wild", "color": "WILD", "value": 50},
-  { "type": "Wild", "color": "WILD", "value": 50},
-  { "type": "Wild", "color": "WILD", "value": 50},
-  { "type": "Wild Draw Four", "color": "WILD", "value": 50},
-  { "type": "Wild Draw Four", "color": "WILD", "value": 50},
-  { "type": "Wild Draw Four", "color": "WILD", "value": 50},
-  { "type": "Wild Draw Four", "color": "WILD", "value": 50}
+  { "type": "Wild", "color": "WILD", "value": 50 },
+  { "type": "Wild", "color": "WILD", "value": 50 },
+  { "type": "Wild", "color": "WILD", "value": 50 },
+  { "type": "Wild", "color": "WILD", "value": 50 },
+  { "type": "Wild Draw Four", "color": "WILD", "value": 50 },
+  { "type": "Wild Draw Four", "color": "WILD", "value": 50 },
+  { "type": "Wild Draw Four", "color": "WILD", "value": 50 },
+  { "type": "Wild Draw Four", "color": "WILD", "value": 50 }
 ]
