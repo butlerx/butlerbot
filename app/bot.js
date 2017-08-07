@@ -92,7 +92,7 @@ exports.init = function bot() {
     // Send join command after joining a channel
     if (
       !_.isUndefined(config.joinCommands) &&
-      config.joinCommands.hasOwnProperty(channel) &&
+      Object.prototype.hasOwnProperty.call(config.joinCommands, channel) &&
       config.joinCommands[channel].length > 0
     ) {
       _.forEach(config.joinCommands[channel], cmd => {

@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const fs = require('fs');
+const fs = require('fs-extra');
 const schedule = require('node-schedule');
 const amazon = require('amazon-product-api');
 
@@ -10,7 +10,7 @@ const booksRead = require('../../config/booksRead.json');
 const thisMonthBook = require('../../config/thisMonthBook.json');
 const nextMonthBook = require('../../config/nextMonthBook.json');
 
-const Bookclub = function Bookclub() {
+function Bookclub() {
   const self = this;
   self.config = config;
   self.booksToRead = booksToRead;
@@ -153,7 +153,7 @@ const Bookclub = function Bookclub() {
     const newbook = Math.floor(Math.random() * self.booksToRead.length);
     self.nextMonthBook = self.booksToRead[newbook];
     self.booksToRead.splice(newbook, 1);
-    self.nextMonthBook.month = month + 1 % 12;
+    self.nextMonthBook.month = (month + 1) % 12;
     // write out booksToRead and thisMonthBook
     self.write('booksToRead', self.booksToRead);
     self.write('thisMonthBook', self.thisMonthBook);
@@ -186,16 +186,15 @@ const Bookclub = function Bookclub() {
   };
 
   self.write = (fileName, file) => {
-    fileName = `plugin_code/bookclub/config/${fileName}.json`;
-    fs.writeFile(fileName, JSON.stringify(file, null, 2), err => {
-      if (err) return console.log(err);
-      console.log(`writing to ${fileName}`);
-    });
+    fs
+      .outputJson(`plugin_code/bookclub/config/${fileName}.json`, file)
+      .then(console.log(`writing to ${fileName}`))
+      .catch(console.error);
   };
 
   self.showBooks = (client, { nick }) => {
     self.client = client;
-    for (let i = 0; i < self.booksToRead.length; i++) {
+    for (let i = 0; i < self.booksToRead.length; i += 1) {
       client.say(
         nick,
         ` [${i}] ${self.booksToRead[i].title} by ${self.booksToRead[i].author} suggested by ${self
@@ -206,9 +205,9 @@ const Bookclub = function Bookclub() {
 
   self.showRead = (client, { nick }) => {
     self.client = client;
-    for (let i = 0; i < self.booksRead.length; i++) {
+    self.booksRead.forEach(book => {
       let month = 'No Month';
-      switch (self.booksRead[i].month) {
+      switch (book.month) {
         case 0:
           month = 'January';
           break;
@@ -245,13 +244,15 @@ const Bookclub = function Bookclub() {
         case 11:
           month = 'December';
           break;
+        default:
+          month = 'Month not found';
+          break;
       }
       client.say(
         nick,
-        `${month}: ${self.booksRead[i].title} by ${self.booksRead[i].author} suggested by ${self
-          .booksRead[i].suggested}, ${self.booksRead[i].link}`,
+        `${month}: ${book.title} by ${book.author} suggested by ${book.suggested}, ${book.link}`,
       );
-    }
+    });
   };
 
   self.vote = (client, message, cmdArgs) => {
@@ -265,14 +266,14 @@ const Bookclub = function Bookclub() {
         return false;
       }
       if (args[0].toLowerCase() === 'keep') {
-        self.keep++;
+        self.keep += 1;
         self.voted.push(message.nick.toLowerCase());
         client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
       } else if (args[0].toLowerCase() === 'new') {
         if (self.new === 2) {
           self.startTimeout = setTimeout(self.startTimeoutFunction, 10 * 60 * 1000);
         }
-        self.new++;
+        self.new += 1;
         self.voted.push(message.nick.toLowerCase());
         if (self.new === 6 && self.keep === 0) {
           const month = self.date.getMonth();
@@ -304,6 +305,6 @@ const Bookclub = function Bookclub() {
       self.voted = [];
     }
   };
-};
+}
 
-exports = module.exports = Bookclub;
+module.exports = Bookclub;

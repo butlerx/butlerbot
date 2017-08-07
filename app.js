@@ -6,6 +6,7 @@
  * @version 1.1.0
  */
 const bot = require('./app/bot');
+const plug = require('./plugins.js');
 
 console.log('butlerbot');
 // Set node env
@@ -13,4 +14,4 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 bot.init();
 // load plugins
-require('./plugins.js')(bot);
+plug(bot);
