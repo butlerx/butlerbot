@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const Cards = require('../controllers/cards');
 
-const Player = function Player(nick, user, hostname) {
+function Player(nick, user, hostname) {
   const self = this;
   self.id = _.uniqueId('card');
   self.nick = nick;
@@ -15,9 +15,6 @@ const Player = function Player(nick, user, hostname) {
   self.idleCount = 0;
   self.points = 0;
   self.inactiveRounds = 0;
-};
+}
 
-/**
- * Expose `Player()`
- */
-exports = module.exports = Player;
+module.exports = Player;

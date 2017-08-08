@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:alpine
 ENV NODE_ENV=production
 WORKDIR /usr/src/app
 ADD . /usr/src/app/

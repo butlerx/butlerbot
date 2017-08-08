@@ -1,6 +1,6 @@
 const c = require('irc-colors');
 
-const Card = function Card(card) {
+function Card(card) {
   const self = this;
 
   self.type = card.type;
@@ -27,6 +27,8 @@ const Card = function Card(card) {
       case 'Wild Draw Four':
         self.wildDrawFour(game);
         break;
+      default:
+        break;
     }
   };
 
@@ -41,6 +43,8 @@ const Card = function Card(card) {
       case 'Reverse':
       case 'Draw Two':
         return self.color === 'WILD' || (self.color === color || self.type === type);
+      default:
+        break;
     }
   };
 
@@ -143,6 +147,8 @@ const Card = function Card(card) {
 
         cardString += 'Wild Draw Four';
         break;
+      default:
+        break;
     }
 
     switch (self.color) {
@@ -161,10 +167,11 @@ const Card = function Card(card) {
       case 'WILD':
         cardString = c.bold.rainbow(cardString);
         break;
+      default:
+        break;
     }
-
     return cardString;
   };
-};
+}
 
-exports = module.exports = Card;
+module.exports = Card;

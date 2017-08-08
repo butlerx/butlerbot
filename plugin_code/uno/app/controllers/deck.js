@@ -18,23 +18,17 @@ function Deck(deck) {
     self.cards = _.shuffle(_.shuffle(self.cards));
   };
 
-  self.deal = () => self.cards.pop();
-
   self.addCard = card => {
     self.cards.push(card);
   };
 
   self.removeCard = card => {
-    if (_.isUndefined(card)) {
-      return false;
-    }
-
+    if (_.isUndefined(card)) return false;
     self.cards = _.without(self.cards, card);
     return card;
   };
 
   self.checkPlayable = (index, currentCard) => self.cards[index].isPlayable(currentCard);
-
   self.getCard = index => self.cards[index];
 
   self.pickCard = index => {
@@ -43,10 +37,9 @@ function Deck(deck) {
     return card;
   };
 
+  self.deal = () => self.cards.pop();
   self.getCurrentCard = () => self.cards[self.cards.length - 1];
-
   self.getCards = () => self.cards;
-
   self.numCards = () => self.cards.length;
 }
 

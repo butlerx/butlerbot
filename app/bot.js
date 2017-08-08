@@ -95,9 +95,9 @@ exports.init = function bot() {
       Object.prototype.hasOwnProperty.call(config.joinCommands, channel) &&
       config.joinCommands[channel].length > 0
     ) {
-      _.forEach(config.joinCommands[channel], cmd => {
-        if (cmd.target && cmd.message) {
-          client.say(cmd.target, cmd.message);
+      _.forEach(config.joinCommands[channel], ({ target, message }) => {
+        if (target && message) {
+          client.say(target, message);
         }
       });
     }

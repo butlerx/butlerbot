@@ -1,45 +1,10 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const JaySchema = require('jayschema');
 const _ = require('lodash');
+const models = require('../models');
+const env = require('./../config/env/all.js');
 
-/**
- * Load and validate a card file
- * @param identifier Identifier of the card file
- * @param filename Filename of the card file
- */
-function loadCardFile(identifier, filename) {
-  console.log(`Loading ${identifier}: ${filename}`);
-  if (fs.existsSync(filename)) {
-    const data = require(filename);
-    validator.validate(data, schema, errors => {
-      if (errors) {
-        console.error(`${identifier}: Validation error`);
-        console.error(errors);
-      } else {
-        console.log(`${identifier}: Validation OK!`);
-        config.cards = _.union(config.cards, data);
-      }
-    });
-  } else {
-    console.error('File does not exists');
-  }
-}
-
-// Initialize base configuration and ENV
-const config = _.assignIn(
-  require(`${__dirname}/../config/env/all.js`),
-  require(`${__dirname}/../config/env/${process.env.NODE_ENV}.json`) || {},
-  { cards: [] },
-);
-
-// check custom card files and create them if they don't exist
-if (!fs.existsSync(`${__dirname}/../config/cards/Custom_a.json`)) {
-  fs.writeFileSync(`${__dirname}/../config/cards/Custom_a.json`, '[]');
-}
-if (!fs.existsSync(`${__dirname}/../config/cards/Custom_q.json`)) {
-  fs.writeFileSync(`${__dirname}/../config/cards/Custom_q.json`, '[]');
-}
-
+let config;
 // Init validator
 const validator = new JaySchema();
 // Define schema to calidate against
@@ -79,6 +44,62 @@ const schema = {
     required: ['value', 'type', 'pick', 'draw'],
   },
 };
+
+/**
+ * Load and validate a card file
+ * @param identifier Identifier of the card file
+ * @param filename Filename of the card file
+ */
+async function loadCardFile(identifier, filename) {
+  console.log(`Loading ${identifier}: ${filename}`);
+  try {
+    if (!fs.exists(filename)) throw new Error('File does not exists');
+    const data = await fs.readJson(filename);
+    validator.validate(data, schema, err => {
+      if (err) throw new Error(`${identifier}: Validation error: ${err}`);
+      console.log(`${identifier}: Validation OK!`);
+      config.cards = _.union(config.cards, data);
+      _.forEach(data, ({ type, value }) => {
+        if (type.toLowerCase() === 'question') {
+          updateOrCreateInstance(
+            models.Card,
+            { where: { text: value } },
+            { text: value, times_played: 0, question: true },
+            null,
+          );
+        } else if (type.toLowerCase() === 'answer') {
+          updateOrCreateInstance(
+            models.Card,
+            { where: { text: value } },
+            { text: value, times_played: 0, question: false },
+            null,
+          );
+        }
+      });
+    });
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// Initialize base configuration and ENV
+async function main() {
+  try {
+    const json =
+      (await fs.readJson(`${__dirname}/../config/env/${process.env.NODE_ENV}.json`)) || {};
+    config = _.assignIn(env, json, { cards: [] });
+
+    // check custom card files and create them if they don't exist
+    if (!fs.existsSync(`${__dirname}/../config/cards/Custom_a.json`)) {
+      await fs.outputJson(`${__dirname}/../config/cards/Custom_a.json`, []);
+    }
+    if (!fs.existsSync(`${__dirname}/../config/cards/Custom_q.json`)) {
+      await fs.outputJson(`${__dirname}/../config/cards/Custom_q.json`, []);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 const cardFiles = {
   // Base Set
@@ -237,12 +258,22 @@ const cardFiles = {
   CustomQuestions: `${__dirname}/../config/cards/Custom_q.json`,
 };
 
+function updateOrCreateInstance(model, query, createFields, updateFields) {
+  model.findOne(query).then(instance => {
+    if (instance === null && createFields !== null) {
+      model.create(createFields);
+    } else if (instance !== null && updateFields !== null) {
+      instance.update(updateFields);
+    }
+  });
+}
+
 // Validate and load cards files
 console.log('Loading card data...');
-for (const i in cardFiles) {
-  if (cardFiles.hasOwnProperty(i)) {
-    loadCardFile(i, cardFiles[i]);
-  }
-}
+main().then(() => {
+  Object.entries(cardFiles).forEach(([id, json]) => {
+    if (Object.prototype.hasOwnProperty.call(cardFiles, id)) loadCardFile(id, json);
+  });
+});
 
 module.exports = config;

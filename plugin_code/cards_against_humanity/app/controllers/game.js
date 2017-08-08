@@ -4,6 +4,7 @@ const util = require('util');
 const inflection = require('inflection');
 const Cards = require('../controllers/cards');
 
+const seconds = sec => sec * 1000;
 /**
  * Available states for game
  * @type {{STOPPED: string, STARTED: string, PLAYABLE: string, PLAYED: string, ROUND_END: string, WAITING: string}}
@@ -406,7 +407,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
 
     self.updatePointsDatabaseTable();
 
-    self.round++;
+    self.round += 1;
     self.dbGame.update({ num_rounds: self.round });
     console.log('Starting round ', self.round);
 
@@ -474,7 +475,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
               `${player.nick}(${player.hostname}) has ${player.cards.numCards()} cards. Dealing ${10 -
                 player.cards.numCards()} cards`,
             );
-            for (let i = player.cards.numCards(); i < 10; i++) {
+            for (let i = player.cards.numCards(); i < 10; i += 1) {
               self.checkDecks();
               const card = self.decks.answer.pickCards();
               player.cards.addCard(card);
@@ -484,7 +485,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
         }, this),
       );
     } else if (typeof num !== 'undefined') {
-      for (let i = player.cards.numCards(); i < num; i++) {
+      for (let i = player.cards.numCards(); i < num; i += 1) {
         self.checkDecks();
         const card = self.decks.answer.pickCards();
         player.cards.addCard(card);
@@ -503,7 +504,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
     // var count = self.table.answer.length;
     _.forEach(
       self.table.answer,
-      _.bind(function (cards) {
+      _.bind(function cleanCards(cards) {
         _.forEach(
           cards.getCards(),
           _.bind(card => {
@@ -571,11 +572,11 @@ function Game(channel, client, config, cmdArgs, dbModels) {
     // draw cards
     if (self.table.question.draw > 0) {
       _.forEach(_.filter(self.players, { isCzar: false, isActive: true }), player => {
-        for (let i = 0; i < self.table.question.draw; i++) {
+        for (let i = 0; i < self.table.question.draw; i += 1) {
           self.checkDecks();
-          const c = self.decks.answer.pickCards();
-          player.cards.addCard(c);
-          c.owner = player;
+          const pickedCard = self.decks.answer.pickCards();
+          player.cards.addCard(pickedCard);
+          pickedCard.owner = player;
         }
       });
     }
@@ -590,16 +591,16 @@ function Game(channel, client, config, cmdArgs, dbModels) {
      * @param cards card indexes in players hand
      * @param player Player who played the cards
      */
-  self.playCard = (cards, player) => {
+  self.playCard = (rawCards, player) => {
     // don't allow if game is paused
     if (self.state === STATES.PAUSED) {
       self.say('Game is currently paused.');
       return false;
     }
 
+    const cards = _.uniq(rawCards);
     console.log(`${player.nick} played cards`, cards.join(', '));
     // make sure different cards are played
-    cards = _.uniq(cards);
     if (self.state !== STATES.PLAYABLE || player.cards.numCards() === 0) {
       self.say(`${player.nick}: Can't play at the moment.`);
     } else if (!_.isUndefined(player)) {
@@ -654,14 +655,14 @@ function Game(channel, client, config, cmdArgs, dbModels) {
      * @param cards Array of card indexes to discard
      * @param player The player who discarded
      */
-  self.discard = (cards, player) => {
+  self.discard = (rawCards, player) => {
     if (self.state === STATES.PAUSED) {
       self.say('Game is currently paused');
       return false;
     }
 
+    let cards = _.uniq(rawCards);
     console.log(`${player.nick} discarded ${cards.join(', ')}`);
-    cards = _.uniq(cards);
 
     if (self.state !== STATES.PLAYABLE || player.cards.numCards() === 0) {
       self.say(`${player.nick}: Can't discard at the moment.`);
@@ -679,7 +680,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
 
         if (cards.length === 0) {
           cards = [];
-          for (let i = 0; i < player.cards.numCards(); i++) {
+          for (let i = 0; i < player.cards.numCards(); i += 1) {
             cards[i] = i;
           }
         }
@@ -701,7 +702,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
         });
 
         player.hasDiscarded = true;
-        player.points--;
+        player.points -= 1;
 
         self.pm(
           player.nick,
@@ -733,13 +734,13 @@ function Game(channel, client, config, cmdArgs, dbModels) {
       self.markInactivePlayers();
       // show end of turn
       self.showEntries();
-    } else if (roundElapsed >= timeLimit - 10 * 1000 && roundElapsed < timeLimit) {
+    } else if (roundElapsed >= timeLimit - seconds(10) && roundElapsed < timeLimit) {
       // 10s ... 0s left
       self.say('10 seconds left!');
-    } else if (roundElapsed >= timeLimit - 30 * 1000 && roundElapsed < timeLimit - 20 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(30) && roundElapsed < timeLimit - seconds(20)) {
       // 30s ... 20s left
       self.say('30 seconds left!');
-    } else if (roundElapsed >= timeLimit - 60 * 1000 && roundElapsed < timeLimit - 50 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(60) && roundElapsed < timeLimit - seconds(50)) {
       // 60s ... 50s left
       self.say('Hurry up, 1 minute left!');
       self.showStatus();
@@ -749,7 +750,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
   /**
      * Show the entries
      */
-  self.showEntries = function () {
+  self.showEntries = function showEntries() {
     // clear round timer
     clearInterval(self.turnTimer);
 
@@ -808,16 +809,16 @@ function Game(channel, client, config, cmdArgs, dbModels) {
       console.log('the czar is inactive, selecting winner');
       self.say('Time is up. I will pick the winner on this round.');
       // Check czar & remove player after 3 timeouts
-      self.czar.inactiveRounds++;
+      self.czar.inactiveRounds += 1;
       // select winner
       self.selectWinner(Math.round(Math.random() * (self.table.answer.length - 1)));
-    } else if (roundElapsed >= timeLimit - 10 * 1000 && roundElapsed < timeLimit) {
+    } else if (roundElapsed >= timeLimit - seconds(10) && roundElapsed < timeLimit) {
       // 10s ... 0s left
       self.say(`${self.czar.nick}: 10 seconds left!`);
-    } else if (roundElapsed >= timeLimit - 30 * 1000 && roundElapsed < timeLimit - 20 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(30) && roundElapsed < timeLimit - seconds(20)) {
       // 30s ... 20s left
       self.say(`${self.czar.nick}: 30 seconds left!`);
-    } else if (roundElapsed >= timeLimit - 60 * 1000 && roundElapsed < timeLimit - 50 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(60) && roundElapsed < timeLimit - seconds(50)) {
       // 60s ... 50s left
       self.say(`${self.czar.nick}: Hurry up, 1 minute left!`);
     }
@@ -849,7 +850,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
       } else {
         self.state = STATES.ROUND_END;
         const owner = winner.cards[0].owner;
-        owner.points++;
+        owner.points += 1;
         // announce winner
         self.say(
           `${c.bold('Winner is: ') + owner.nick} with "${self.getFullEntry(
@@ -876,12 +877,12 @@ function Game(channel, client, config, cmdArgs, dbModels) {
      * @param answers
      * @returns {*|Object|ServerResponse}
      */
-  self.getFullEntry = function ({ value }, answers) {
+  self.getFullEntry = function getFullEntry({ value }, answers) {
     const args = [value];
     _.forEach(
       answers,
-      _.bind(({ value }) => {
-        args.push(value);
+      _.bind(answer => {
+        args.push(answer.value);
       }, this),
     );
     return util.format.apply(this, args);
@@ -994,8 +995,8 @@ function Game(channel, client, config, cmdArgs, dbModels) {
      * @param options Extra options
      * @returns The removed player or false if invalid player
      */
-  self.removePlayer = (player, options) => {
-    options = _.assignIn({}, options);
+  self.removePlayer = (player, args) => {
+    const options = _.assignIn({}, args);
     if (!_.isUndefined(player) && player.isActive) {
       console.log(`removing${player.nick} from the game`);
       // get cards in hand
@@ -1151,6 +1152,8 @@ function Game(channel, client, config, cmdArgs, dbModels) {
       case STATES.PAUSED:
         self.say(`${c.bold('Status: ')}Game is paused.`);
         break;
+      default:
+        break;
     }
   };
 
@@ -1201,7 +1204,7 @@ function Game(channel, client, config, cmdArgs, dbModels) {
      * @param channel
      * @param nick
      */
-  self.playerPartHandler = (channel, nick) => {
+  self.playerPartHandler = (chan, nick) => {
     console.log(`Player ${nick} left`);
     self.findAndRemoveIfPlaying(nick);
   };
@@ -1325,4 +1328,4 @@ function Game(channel, client, config, cmdArgs, dbModels) {
 // export static state constant
 Game.STATES = STATES;
 
-exports = module.exports = Game;
+module.exports = Game;

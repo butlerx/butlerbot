@@ -40,6 +40,7 @@
     "node-schedule": "^1.2.1",
     "plug": "https://github.com/butlerx/plug.git",
     "request": "^2.81.0",
+    "request-promise": "^4.2.1",
     "request-promise-native": "^1.0.4",
     "sequelize": "^3.30.4",
     "snoowrap": "^1.14.0"

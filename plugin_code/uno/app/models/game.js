@@ -89,7 +89,7 @@ function Game(channel, client, config, cmdArgs) {
   };
 
   self.deal = ({ nick, hand }, number, showCard) => {
-    for (let i = 0; i < number; i++) {
+    for (let i = 0; i < number; i += 1) {
       if (self.deck.numCards() === 0) {
         self.deck = self.discard;
         self.discard = new Deck(false);
@@ -141,13 +141,11 @@ function Game(channel, client, config, cmdArgs) {
   self.turnTimer = () => {
     // check the time
     const now = new Date();
-
-    const seconds = Math.max(
-      60,
-      60 * self.config.gameOptions.turnMinutes -
-        self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement,
-    );
+    const idleTime = self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement;
+    const turnMin = 60 * self.config.gameOptions.turnMinutes;
+    const seconds = Math.max(60, turnMin - idleTime);
     const timeLimit = seconds * 1000;
+    const second = sec => sec * 1000;
     const roundElapsed = now.getTime() - self.roundStarted.getTime();
 
     console.log('Round elapsed:', roundElapsed, now.getTime(), self.roundStarted.getTime());
@@ -155,15 +153,15 @@ function Game(channel, client, config, cmdArgs) {
     if (roundElapsed >= timeLimit) {
       self.say('Time is up!');
       self.idled();
-    } else if (roundElapsed >= timeLimit - 10 * 1000 && roundElapsed < timeLimit) {
+    } else if (roundElapsed >= timeLimit - second(10) && roundElapsed < timeLimit) {
       // 10s ... 0s left
       self.say('10 seconds left!');
       self.pm(self.currentPlayer.nick, '10 seconds left');
-    } else if (roundElapsed >= timeLimit - 30 * 1000 && roundElapsed < timeLimit - 20 * 1000) {
+    } else if (roundElapsed >= timeLimit - second(30) && roundElapsed < timeLimit - second(20)) {
       // 30s ... 20s left
       self.say('30 seconds left!');
       self.pm(self.currentPlayer.nick, '30 seconds left');
-    } else if (roundElapsed >= timeLimit - 60 * 1000 && roundElapsed < timeLimit - 50 * 1000) {
+    } else if (roundElapsed >= timeLimit - second(60) && roundElapsed < timeLimit - second(50)) {
       // 60s ... 50s left
       self.say('Hurry up, 1 minute left!');
       self.pm(self.currentPlayer.nick, 'Hurry up, 1 minute left!');
@@ -185,11 +183,9 @@ function Game(channel, client, config, cmdArgs) {
   };
 
   self.showRoundInfo = () => {
-    const seconds = Math.max(
-      60,
-      60 * self.config.gameOptions.turnMinutes -
-        self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement,
-    );
+    const turnMin = 60 * self.config.gameOptions.turnMinutes;
+    const idleTime = self.currentPlayer.idleTurns * self.config.gameOptions.idleRoundTimerDecrement;
+    const seconds = Math.max(60, turnMin - idleTime);
 
     self.say(
       `TURN ${self.turn}: ${self.currentPlayer.nick}'s turn. ${seconds} seconds on the clock`,
@@ -350,8 +346,9 @@ function Game(channel, client, config, cmdArgs) {
     card.onPlay(self);
   };
 
-  self.play = (nick, card, color) => {
+  self.play = (nick, cardRaw, color) => {
     const player = self.getPlayer({ nick });
+    const card = parseInt(cardRaw, 10);
 
     if (_.isUndefined(player)) {
       console.log('Player is undefined');
@@ -363,12 +360,10 @@ function Game(channel, client, config, cmdArgs) {
       return false;
     }
 
-    if (isNaN(card)) {
+    if (isNaN(cardRaw)) {
       self.pm(player.nick, 'Please enter a valid numeric index');
       return false;
     }
-
-    card = parseInt(card, 10);
 
     if (card < 0 || card >= player.hand.numCards()) {
       self.pm(player.nick, 'Please enter a valid index');
@@ -402,12 +397,8 @@ function Game(channel, client, config, cmdArgs) {
     }
 
     const pickedCard = player.hand.pickCard(card);
-    let playString = '';
-
     self.discard.addCard(pickedCard);
-
-    playString += `${player.nick} has played ${pickedCard.toString()}! ${player.nick} has ${player.hand.numCards()} left.`;
-
+    let playString = `${player.nick} has played ${pickedCard.toString()}! ${player.nick} has ${player.hand.numCards()} left.`;
     pickedCard.onPlay(self);
 
     if (pickedCard.color === 'WILD') {
@@ -435,9 +426,9 @@ function Game(channel, client, config, cmdArgs) {
 
     player.hasPlayed = true;
 
-    _.forEach(self.players, player => {
-      player.challengeable = false;
-    });
+    for (let i = 0; i < self.players.length; i += 1) {
+      self.players[i].challengeable = false;
+    }
     self.endTurn();
   };
 
@@ -483,26 +474,16 @@ function Game(channel, client, config, cmdArgs) {
     if (self.currentPlayer.hand.numCards() === 2) {
       self.currentPlayer.uno = true;
       self.say(`${self.currentPlayer.nick} has declared UNO!`);
-      if (!_.isUndefined(card)) {
-        self.play(nick, card, color);
-      }
+      if (!_.isUndefined(card)) self.play(nick, card, color);
     }
   };
 
   self.challenge = nick => {
     const player = self.getPlayer({ nick });
 
-    if (_.isUndefined(player) === true) {
-      return false;
-    }
-
-    if (player.hasChallenged === true) {
-      return false;
-    }
-
-    if (self.turn === 1) {
-      return false;
-    }
+    if (_.isUndefined(player) === true) return false;
+    if (player.hasChallenged === true) return false;
+    if (self.turn === 1) return false;
 
     let challengeablePlayer = self.getPlayer({ challengeable: true });
 
@@ -513,7 +494,7 @@ function Game(channel, client, config, cmdArgs) {
       self.deal(challengeablePlayer, 2, true);
       challengeablePlayer = false;
     } else {
-      self.say(`${player.nick} has unsuccessfully challeneged  and has picked up 2 cards.`);
+      self.say(`${player.nick} has unsuccessfully challeneged and has picked up 2 cards.`);
       self.deal(player, 2, true);
     }
 
@@ -521,13 +502,11 @@ function Game(channel, client, config, cmdArgs) {
   };
 
   self.showStatus = () => {
-    if (self.state === STATES.PLAYABLE) {
-      self.say(`It is currently ${self.currentPlayer.nick} go!`);
-    } else {
-      self.say(
-        `${self.players.length} people are playing. ${_.map(self.players, 'nick').join(', ')}`,
-      );
-    }
+    self.say(
+      self.state === STATES.PLAYABLE
+        ? `It is currently ${self.currentPlayer.nick} go!`
+        : `${self.players.length} people are playing. ${_.map(self.players, 'nick').join(', ')}`,
+    );
   };
 
   self.addPlayer = player => {
@@ -537,17 +516,11 @@ function Game(channel, client, config, cmdArgs) {
       hostname: player.hostname,
     });
 
-    if (!_.isUndefined(alreadyPlayer)) {
-      return false;
-    }
-
+    if (!_.isUndefined(alreadyPlayer)) return false;
     self.players.push(player);
     self.state = STATES.WAITING;
     self.say(`${player.nick} has joined the game!`);
-
-    if (self.state === STATES.WAITING && self.players.length === 10) {
-      self.start();
-    }
+    if (self.state === STATES.WAITING && self.players.length === 10) self.start();
   };
 
   self.removePlayer = nick => {
@@ -591,10 +564,9 @@ function Game(channel, client, config, cmdArgs) {
     }
 
     // construct new topic
-    let newTopic = topic;
-    if (!_.isUndefined(self.config.gameOptions.topicBase)) {
-      newTopic = `${topic} ${self.config.gameOptions.topicBase}`;
-    }
+    const newTopic = !_.isUndefined(self.config.gameOptions.topicBase)
+      ? `${topic} ${self.config.gameOptions.topicBase}`
+      : topic;
 
     // set it
     client.send('TOPIC', channel, newTopic);
@@ -610,12 +582,12 @@ function Game(channel, client, config, cmdArgs) {
     }
   };
 
-  self.playerPartHandler = (channel, nick) => {
+  self.playerPartHandler = (chan, nick) => {
     console.log(`${nick} left. Removing from game.`);
     self.findAndRemoveIfPlaying(nick);
   };
 
-  self.playerKickHandler = (nick, by) => {
+  self.playerKickHandler = (chan, nick, by) => {
     console.log(`${nick} was kicked by ${by}. Removing from game.`);
     self.findAndRemoveIfPlaying(nick);
   };
@@ -642,21 +614,12 @@ function Game(channel, client, config, cmdArgs) {
   self.pm = (nick, string) => {
     self.client.say(nick, string);
   };
-
   self.setTopic(
-    c.bold.lime('A game of ') +
-      c.bold.yellow('U') +
-      c.bold.green('N') +
-      c.bold.blue('O') +
-      c.bold.red('!') +
-      c.bold.lime(
-        ' has been started. Type !j to get in on the fun! and !start when ready to play.',
-      ),
-  );
-  self.say(
-    `A new game of ${c.bold.yellow('U')}${c.bold.green('N')}${c.bold.blue('O')}${c.bold.red(
-      '!',
-    )} has been started. Type !j to join` + ' and !start when ready.',
+    `${c.bold.lime('A game of')} ${c.bold.yellow('U')}${c.bold.green('N')}${c.bold.blue(
+      'O',
+    )}${c.bold.red('!')} ${c.bold.lime(
+      'has been started. Type !j to get in on the fun! and !start when ready to play.',
+    )}`,
   );
 
   if (_.isUndefined(self.config.gameOptions.minutesBeforeStart)) {
@@ -669,7 +632,7 @@ function Game(channel, client, config, cmdArgs) {
   self.startTimeout = setTimeout(self.startTimeoutFunction, self.minutesBeforeStart * 60 * 1000);
 
   self.client.addListener('part', self.playerPartHandler);
-  self.client.addListener(`kick${self.channel}`, self.playerKickHandler);
+  self.client.addListener('kick', self.playerKickHandler);
   self.client.addListener('quit', self.playerQuitHandler);
   self.client.addListener('nick', self.playerNickChangeHandler);
 }

@@ -123,22 +123,25 @@ function RedbrickCommittee() {
     }
   };
 
-  self.showHelpdesk = async (client, { nick }) => {
+  self.showHelpdesk = async (client, args) => {
     const cmt = await self.committee();
     const helpdesk = _.filter(cmt, { position: 'Helpdesk' });
     if (!_.isUndefined(helpdesk) && self.helpdesk) {
       const helpdeskString = _.map(helpdesk, ({ name, nick }) => `${name} (${nick})`).join(', ');
-      client.say(nick, `Helpdesk: ${helpdeskString} contact by emailing helpdesk@redbrick.dcu.ie`);
+      client.say(
+        args.nick,
+        `Helpdesk: ${helpdeskString} contact by emailing helpdesk@redbrick.dcu.ie`,
+      );
     }
   };
 
-  self.showAdmins = async (client, { nick }) => {
+  self.showAdmins = async (client, args) => {
     const cmt = await self.committee();
     const admins = _.filter(cmt, { position: 'System Administrator' });
     if (!_.isUndefined(admins) && self.admins) {
       const adminsString = _.map(admins, ({ name, nick }) => `${name} (${nick})`).join(', ');
       client.say(
-        nick,
+        args.nick,
         `System Administrators: ${adminsString} contact by emailing admins@redbrick.dcu.ie`,
       );
     }

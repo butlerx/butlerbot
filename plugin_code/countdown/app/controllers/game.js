@@ -75,26 +75,27 @@ function Game(
   self.conundrums = conundrums.words;
   self.countdown_words = _.filter(self.dictionary, ({ length }) => length <= 9);
   self.conundrum_words = _.shuffle(_.map(self.conundrums, word => word.toUpperCase()));
+  const seconds = sec => sec * 1000;
 
   console.log('loading alphabet');
 
   // Load vowels
   self.vowels = [];
 
-  for (const letter in self.config.letterOptions.vowels) {
-    for (let i = 0; i < self.config.letterOptions.vowels[letter]; i++) {
-      self.vowels.push(letter);
+  Object.entries(self.config.letterOptions.vowels).forEach(([letter, num]) => {
+    for (let i = 0; i < num; i += 1) {
+      self.consonants.push(letter);
     }
-  }
+  });
 
   self.consonants = [];
 
   // Load consonants
-  for (const letter in self.config.letterOptions.consonants) {
-    for (let i = 0; i < self.config.letterOptions.consonants[letter]; i++) {
+  Object.entries(self.config.letterOptions.consonants).forEach(([letter, num]) => {
+    for (let i = 0; i < num; i += 1) {
       self.consonants.push(letter);
     }
-  }
+  });
 
   self.vowels = _.shuffle(_.shuffle(self.vowels));
   self.consonants = _.shuffle(_.shuffle(self.consonants));
@@ -214,7 +215,7 @@ function Game(
       // stop game if not enough pleyers in however many minutes in the config
       self.stopTimeout = setTimeout(
         self.stop,
-        60 * 1000 * self.config.gameOptions.minutesBeforeStart,
+        seconds(60) * self.config.gameOptions.minutesBeforeStart,
       );
       return false;
     }
@@ -242,7 +243,7 @@ function Game(
       return false;
     }
 
-    self.round++;
+    self.round += 1;
     self.showPoints();
     console.log('Starting round ', self.round);
     self.challenger.hasPlayed = false;
@@ -267,7 +268,7 @@ function Game(
       );
       self.conundrumTimeout = setTimeout(
         self.conundrumRound,
-        self.config.roundOptions.secondsBeforeConundrum * 1000,
+        seconds(self.config.roundOptions.secondsBeforeConundrum),
       );
     }
   };
@@ -290,7 +291,7 @@ function Game(
       self.challenger.isLocked !== true
     ) {
       self.say(`${self.challenger.nick} has idled.`);
-      self.challenger.idleCount++;
+      self.challenger.idleCount += 1;
     }
 
     if (
@@ -299,33 +300,27 @@ function Game(
       self.challenged.isLocked !== true
     ) {
       self.say(`${self.challenged.nick} has idled.`);
-      self.challenged.idleCount++;
+      self.challenged.idleCount += 1;
     }
 
     if (self.state === STATES.PLAY_LETTERS) {
       self.state = STATES.LETTERS_ROUND_END;
-
       if (self.challenger.hasPlayed !== true) {
         self.answers.challenger = { word: self.table.letters.join(''), valid: false };
       }
-
       if (self.challenged.hasPlayed !== true) {
         self.answers.challenged = { word: self.table.letters.join(''), valid: false };
       }
-
       self.letterRoundEnd();
       self.nextRound();
     } else if (self.state === STATES.PLAY_NUMBERS) {
       self.state = STATES.NUMBERS_ROUND_END;
-
       if (self.challenger.hasPlayed !== true) {
         self.answers.challenger = { value: self.table.target + 20 };
       }
-
       if (self.challenged.hasPlayed !== true) {
         self.answers.challenged = { value: self.table.target + 20 };
       }
-
       self.numberRoundEnd();
       self.nextRound();
     } else if (self.state === STATES.CONUNDRUM) {
@@ -348,7 +343,6 @@ function Game(
     if (self.challenger.hasPlayed === true) {
       self.say(`${self.challenger.nick} has played: ${self.answers.challenger.word}`);
     }
-
     if (self.challenged.hasPlayed === true) {
       self.say(`${self.challenged.nick} has played: ${self.answers.challenged.word}`);
     }
@@ -719,12 +713,12 @@ function Game(
       self.state = STATES.PLAY_LETTERS;
       clearInterval(self.roundTimer);
       self.roundStarted = new Date();
-      self.roundTimer = setInterval(self.roundTimerCheck, 10 * 1000);
+      self.roundTimer = setInterval(self.roundTimerCheck, seconds(10));
     }
   };
 
-  self.playLetters = (player, word) => {
-    word = word.toUpperCase();
+  self.playLetters = (player, wrd) => {
+    const word = wrd.toUpperCase();
     if (self.challenger.nick === player || self.challenged.nick === player) {
       if (
         (self.challenger.nick === player && self.challenger.isLocked === true) ||
@@ -750,7 +744,7 @@ function Game(
       const letters = _.clone(self.table.letters);
       let valid = true;
 
-      for (let i = 0; i < word.length; i++) {
+      for (let i = 0; i < word.length; i += 1) {
         if (_.includes(letters, word[i].toUpperCase())) {
           console.log(letters);
           letters.splice(_.indexOf(letters, word[i]), 1);
@@ -905,7 +899,7 @@ function Game(
       self.state = STATES.PLAY_NUMBERS;
       clearInterval(self.roundTimer);
       self.roundStarted = new Date();
-      self.roundTimer = setInterval(self.roundTimerCheck, 10 * 1000);
+      self.roundTimer = setInterval(self.roundTimerCheck, seconds(10));
     }
   };
 
@@ -933,7 +927,7 @@ function Game(
       const numbers = _.clone(self.table.numbers);
       let valid = true;
 
-      for (let i = 0; i < playerNumbers.length; i++) {
+      for (let i = 0; i < playerNumbers.length; i += 1) {
         if (_.includes(numbers, playerNumbers[i])) {
           console.log(numbers);
           numbers.splice(_.indexOf(numbers, playerNumbers[i]), 1);
@@ -1020,12 +1014,12 @@ function Game(
     self.state = STATES.CONUNDRUM;
     clearInterval(self.roundTimer);
     self.roundStarted = new Date();
-    self.roundTimer = setInterval(self.roundTimerCheck, 10 * 1000);
+    self.roundTimer = setInterval(self.roundTimerCheck, seconds(10));
   };
 
-  self.playConundrum = (player, word) => {
+  self.playConundrum = (player, userWord) => {
     if (self.challenged.nick === player || self.challenger.nick === player) {
-      word = word.toUpperCase();
+      const word = userWord.toUpperCase();
       if (self.challenged.nick === player) {
         if (self.challenged.hasBuzzed === false) {
           if (self.table.conundrum === word) {
@@ -1040,7 +1034,7 @@ function Game(
             const letters = _.clone(self.table.conundrum.split(''));
             let valid = true;
 
-            for (let i = 0; i < word.length; i++) {
+            for (let i = 0; i < word.length; i += 1) {
               if (_.includes(letters, word[i].toUpperCase())) {
                 console.log(letters);
                 letters.splice(_.indexOf(letters, word[i]), 1);
@@ -1079,7 +1073,7 @@ function Game(
             const letters = _.clone(self.table.conundrum.split(''));
             let valid = true;
 
-            for (let i = 0; i < word.length; i++) {
+            for (let i = 0; i < word.length; i += 1) {
               if (_.includes(letters, word[i].toUpperCase())) {
                 console.log(letters);
                 letters.splice(_.indexOf(letters, word[i]), 1);
@@ -1121,27 +1115,27 @@ function Game(
 
     if (self.state === STATES.PLAY_LETTERS) {
       if (!_.isUndefined(self.lettersTime)) {
-        timeLimit = 60 * 1000 * self.lettersTime;
+        timeLimit = seconds(60) * self.lettersTime;
       } else if (!_.isUndefined(self.config.roundOptions.lettersRoundMinutes)) {
-        timeLimit = 60 * 1000 * self.config.roundOptions.lettersRoundMinutes;
+        timeLimit = seconds(60) * self.config.roundOptions.lettersRoundMinutes;
       } else {
-        timeLimit = 60 * 1000 * 2;
+        timeLimit = seconds(60) * 2;
       }
     } else if (self.state === STATES.PLAY_NUMBERS) {
       if (!_.isUndefined(self.numbersTime)) {
-        timeLimit = 60 * 1000 * self.numbersTime;
+        timeLimit = seconds(60) * self.numbersTime;
       } else if (!_.isUndefined(self.config.roundOptions.numbersRoundMinutes)) {
-        timeLimit = 60 * 1000 * self.config.roundOptions.numbersRoundMinutes;
+        timeLimit = seconds(60) * self.config.roundOptions.numbersRoundMinutes;
       } else {
-        timeLimit = 60 * 1000 * 5;
+        timeLimit = seconds(60) * 5;
       }
     } else if (self.state === STATES.CONUNDRUM) {
       if (!_.isUndefined(self.conundrumsTime)) {
-        timeLimit = 60 * 1000 * self.conundrumsTime;
+        timeLimit = seconds(60) * self.conundrumsTime;
       } else if (!_.isUndefined(self.config.roundOptions.conundrumRoundMinutes)) {
-        timeLimit = 60 * 1000 * self.config.roundOptions.conundrumRoundMinutes;
+        timeLimit = seconds(60) * self.config.roundOptions.conundrumRoundMinutes;
       } else {
-        timeLimit = 60 * 1000 * 2;
+        timeLimit = seconds(60) * 2;
       }
     }
 
@@ -1153,19 +1147,19 @@ function Game(
       self.say('DO DO DO D-D-DOOOO');
       self.roundEnd();
       // Do something
-    } else if (roundElapsed >= timeLimit - 10 * 1000 && roundElapsed < timeLimit) {
+    } else if (roundElapsed >= timeLimit - seconds(10) && roundElapsed < timeLimit) {
       self.say('10 seconds left!');
       self.pm(self.challenger.nick, '10 seconds left');
       self.pm(self.challenged.nick, '10 seconds left');
-    } else if (roundElapsed >= timeLimit - 20 * 1000 && roundElapsed < timeLimit - 10 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(20) && roundElapsed < timeLimit - seconds(10)) {
       self.say('20 seconds left!');
       self.pm(self.challenger.nick, '20 seconds left');
       self.pm(self.challenged.nick, '20 seconds left');
-    } else if (roundElapsed >= timeLimit - 30 * 1000 && roundElapsed < timeLimit - 20 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(30) && roundElapsed < timeLimit - seconds(20)) {
       self.say('30 seconds left!');
       self.pm(self.challenger.nick, '30 seconds left');
       self.pm(self.challenged.nick, '30 seconds left');
-    } else if (roundElapsed >= timeLimit - 60 * 1000 && roundElapsed < timeLimit - 50 * 1000) {
+    } else if (roundElapsed >= timeLimit - seconds(60) && roundElapsed < timeLimit - seconds(50)) {
       self.say('1 minute left!');
       self.pm(self.challenger.nick, '1 minute left');
       self.pm(self.challenged.nick, '1 minute left');
@@ -1259,10 +1253,8 @@ function Game(
    * Handle player parts
    * @param channel
    * @param nick
-   * @param reason
-   * @param message
    */
-  self.playerPartHandler = (channel, nick) => {
+  self.playerPartHandler = (chan, nick) => {
     console.log(`Player ${nick} left`);
     self.findAndRemoveIfPlaying(nick);
   };

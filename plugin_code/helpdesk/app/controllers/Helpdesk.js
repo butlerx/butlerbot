@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require('request-promise');
 const cheerio = require('cheerio');
 
 const env = process.env.NODE_ENV || 'development';
@@ -21,47 +21,28 @@ function Helpdesk() {
       );
       return false;
     }
-    const url = self.config.wiki + input[0];
-    request(url, (error, response, body) => {
-      if (!error) {
-        const $page = cheerio.load(body);
-        let text;
-        $page('.mw-content-ltr').filter(() => {
-          const data = $page(this);
-          text = data.children().first().text();
-          client.say(channel, url);
-          client.say(nick, text);
-        });
-        $page('.noarticletext').filter(() => {
+    const options = {
+      uri      : self.config.wiki + input[0],
+      transform: body => cheerio.load(body),
+    };
+    request(options)
+      .then($ => {
+        if ($('.noarticletext').exists('p')) {
           client.say(channel, 'Sorry theres no help for that');
-        });
-      } else {
-        console.log(`We’ve encountered an error: ${error}`);
-      }
-    });
+          return;
+        }
+        client.say(nick, $('.mw-content-ltr').children().first().text());
+        client.say(channel, options.uri);
+      })
+      .catch(err => {
+        console.log(`We’ve encountered an error: ${err}`);
+      });
   };
 
   self.list = (client, { args, nick }) => {
-    let channel = args[0];
-    if (channel === client.nick) {
-      channel = nick;
-    }
-    let commands = '';
-    let pmCommands = '';
-    for (let i = 0; i < self.config.commands.length; i++) {
-      if (i !== self.config.commands.length - 1) {
-        commands += `${self.config.commands[i]}, `;
-      } else {
-        commands += self.config.commands[i];
-      }
-    }
-    for (let i = 0; i < self.config.pmCommands.length; i++) {
-      if (i !== self.config.pmCommands.length - 1) {
-        pmCommands += `${self.config.commands[i]}, `;
-      } else {
-        pmCommands += self.config.pmCommands[i];
-      }
-    }
+    const channel = args[0] === client.nick ? nick : args[0];
+    const commands = self.config.commands.join(', ');
+    const pmCommands = self.config.pmCommands.join(', ');
     client.say(channel, `The commands are ${commands} and pm only commands are ${pmCommands}`);
   };
 }

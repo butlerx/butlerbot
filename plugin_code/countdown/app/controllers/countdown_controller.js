@@ -119,7 +119,7 @@ function Countdown() {
         challenged: args[0].toLowerCase(),
       })
     ) {
-      for (let i = 1; i < args.length; i++) {
+      for (let i = 1; i < args.length; i += 1) {
         const arg = args[i].split(':');
         if (_.reject(arg[1], number => _.includes(validNumbers, number) === true).length !== 0) {
           client.say(channel, `The ${arg[0]} isnt valid`);
@@ -235,9 +235,9 @@ function Countdown() {
     }
   };
 
-  self.select = (client, message, cmdArgs) => {
+  self.select = (client, message, cmd) => {
+    const cmdArgs = cmd.toLowerCase();
     if (!_.isUndefined(self.game) && self.game.state === Game.STATES.LETTERS) {
-      cmdArgs = cmdArgs.toLowerCase();
       if (cmdArgs === '') {
         client.say(message.args[0], 'Please supply arguments to the !cd command');
         return false;
@@ -245,7 +245,6 @@ function Countdown() {
       const args = cmdArgs.replace(/\s/g, '').split('');
       self.game.letters(message.nick, args);
     } else if (!_.isUndefined(self.game) && self.game.state === Game.STATES.NUMBERS) {
-      cmdArgs = cmdArgs.toLowerCase();
       if (cmdArgs === '') {
         client.say(message.args[0], 'Please supply arguments to the !cd command');
         return false;

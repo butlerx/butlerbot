@@ -1,6 +1,6 @@
 const Deck = require('../controllers/deck.js');
 
-const Player = function (nick, user, hostname) {
+function Player(nick, user, hostname) {
   const self = this;
 
   self.nick = nick;
@@ -15,6 +15,6 @@ const Player = function (nick, user, hostname) {
   self.hasChallenged = false;
   self.uno = false;
   self.challengable = false;
-};
+}
 
-exports = module.exports = Player;
+module.exports = Player;

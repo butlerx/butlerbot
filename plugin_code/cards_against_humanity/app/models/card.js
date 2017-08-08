@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const Card = function Card(card) {
+function Card(card) {
   const self = this;
   self.id = _.uniqueId();
   self.type = card.type || '';
@@ -9,9 +9,6 @@ const Card = function Card(card) {
   self.value =
     card.value ||
     'A bug in the mainframe (please file a bug report, if you actually get this card)';
-};
+}
 
-/**
- * Expose `Card()`
- */
-exports = module.exports = Card;
+module.exports = Card;
