@@ -1,4 +1,4 @@
-module.exports = (sequelize, { INTEGER, DATE }) =>
+export default (sequelize, { INTEGER, DATE }) =>
   sequelize.define(
     'Game',
     {

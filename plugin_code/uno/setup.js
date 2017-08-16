@@ -1,6 +1,6 @@
-const Uno = require('./app/controllers/uno_controller.js');
+import Uno from './app/controllers/uno_controller.js';
 
-module.exports = app => {
+export default app => {
   const uno = new Uno();
 
   // Join channels

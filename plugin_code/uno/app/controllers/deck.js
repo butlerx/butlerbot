@@ -1,6 +1,6 @@
-const _ = require('lodash');
-const Card = require('../models/card');
-const cards = require('../../config/cards.json');
+import _ from 'lodash';
+import Card from '../models/card';
+import cards from '../../config/cards.json';
 
 function Deck(deck) {
   const self = this;
@@ -43,4 +43,4 @@ function Deck(deck) {
   self.numCards = () => self.cards.length;
 }
 
-module.exports = Deck;
+export default Deck;

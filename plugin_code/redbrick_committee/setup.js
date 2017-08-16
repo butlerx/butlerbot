@@ -1,6 +1,6 @@
-const RedbrickCommittee = require('./app/controllers/redbrick_committee_controller.js');
+import RedbrickCommittee from './app/controllers/redbrickCommittee';
 
-module.exports = app => {
+export default app => {
   const redbrickCommittee = new RedbrickCommittee();
 
   // Join Channels

@@ -1,18 +1,18 @@
-const _ = require('lodash');
-const request = require('request-promise-native');
+import _ from 'lodash';
+import request from 'request-promise-native';
+import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
-const config = require('../../config/config.json')[env];
 
-function RedbrickCommittee() {
-  const self = this;
+class RedbrickCommittee {
+  constructor() {
+    this.config = config[env];
+  }
 
-  self.config = config;
-
-  self.committee = () =>
-    new Promise((resolve, reject) => {
+  committee() {
+    return new Promise((resolve, reject) => {
       request({
-        uri    : 'http://redbrick.dcu.ie/api/committee',
+        uri    : this.config.url,
         headers: {
           'User-Agent': 'Request-Promise',
         },
@@ -21,131 +21,129 @@ function RedbrickCommittee() {
         .then(cmt => resolve(cmt))
         .catch(error => reject(error));
     });
+  }
 
-  self.showCommitteeInfo = (client, message, cmdArgs) => {
+  showCommitteeInfo(client, message, cmdArgs) {
     client.say(message.args[0], 'Committee details sent. Who you want to tell to resign!');
-    self.showChair(client, message, cmdArgs);
-    self.showSecretary(client, message, cmdArgs);
-    self.showTreasurer(client, message, cmdArgs);
-    self.showPRO(client, message, cmdArgs);
-    self.showEvents(client, message, cmdArgs);
-    self.showFYR(client, message, cmdArgs);
-    self.showWebmaster(client, message, cmdArgs);
-    self.showHelpdesk(client, message, cmdArgs);
-    self.showAdmins(client, message, cmdArgs);
-  };
+    this.showChair(client, message, cmdArgs);
+    this.showSecretary(client, message, cmdArgs);
+    this.showTreasurer(client, message, cmdArgs);
+    this.showPRO(client, message, cmdArgs);
+    this.showEvents(client, message, cmdArgs);
+    this.showFYR(client, message, cmdArgs);
+    this.showWebmaster(client, message, cmdArgs);
+    this.showHelpdesk(client, message, cmdArgs);
+    this.showAdmins(client, message, cmdArgs);
+  }
 
-  self.showChair = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showChair(client, { nick }) {
+    const cmt = await this.committee();
     const chairperson = _.find(cmt, { position: 'Chairperson' });
-    if (!_.isUndefined(chairperson) && self.chair) {
+    if (!_.isUndefined(chairperson) && this.chair) {
       const chairString = `${chairperson.name} (${chairperson.nick})`;
       client.say(
         nick,
         `Chairperson: ${chairString} contact by /m ${chairperson.nick} <message>, or email ${chairperson.name}@redbrick.dcu.ie`,
       );
-      self.wait('Chair');
+      this.wait('Chair');
     }
-  };
+  }
 
-  self.showSecretary = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showSecretary(client, { nick }) {
+    const cmt = await this.committee();
     const secretary = _.find(cmt, { position: 'Secretary' });
-    if (!_.isUndefined(secretary) && self.sec) {
+    if (!_.isUndefined(secretary) && this.sec) {
       const secretaryString = `${secretary.name} (${secretary.nick})`;
       client.say(
         nick,
         `Secretary: ${secretaryString} contact by /m ${secretary.nick} <message>, or email ${secretary.nick}@redbrick.dcu.ie`,
       );
-      self.wait('Sec');
+      this.wait('Sec');
     }
-  };
+  }
 
-  self.showTreasurer = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showTreasurer(client, { nick }) {
+    const cmt = await this.committee();
     const treasurer = _.find(cmt, { position: 'Treasurer' });
-    if (!_.isUndefined(treasurer) && self.treasurer) {
+    if (!_.isUndefined(treasurer) && this.treasurer) {
       const treasurerString = `${treasurer.name} (${treasurer.nick})`;
       client.say(
         nick,
         `Treasurer: ${treasurerString} contact by /m ${treasurer.nick} <message>, or email ${treasurer.nick}@redbrick.dcu.ie`,
       );
-      self.wait('Treasurer');
+      this.wait('Treasurer');
     }
-  };
+  }
 
-  self.showPRO = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showPRO(client, { nick }) {
+    const cmt = await this.committee();
     const pro = _.find(cmt, { position: 'Public Relations Officer' });
-    if (!_.isUndefined(pro) && self.pro) {
+    if (!_.isUndefined(pro) && this.pro) {
       const proString = `${pro.name} (${pro.nick})`;
       client.say(
         nick,
         `Public Relations Officer: ${proString} contact by /m ${pro.nick} <message>, or email ${pro.nick}@redbrick.dcu.ie`,
       );
-      self.wait('PRO');
+      this.wait('PRO');
     }
-  };
+  }
 
-  self.showEvents = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showEvents(client, { nick }) {
+    const cmt = await this.committee();
     const events = _.find(cmt, { position: 'Events Officer' });
-    if (!_.isUndefined(events) && self.events) {
+    if (!_.isUndefined(events) && this.events) {
       const eventsString = `${events.name} (${events.nick})`;
       client.say(
         nick,
         `Events Officer: ${eventsString} contact by /m ${events.nick} <message>, or email ${events.nick}@redbrick.dcu.ie`,
       );
     }
-  };
+  }
 
-  self.showFYR = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showFYR(client, { nick }) {
+    const cmt = await this.committee();
     const firstYearRep = _.find(cmt, { position: 'First Year Representative' });
-    if (!_.isUndefined(firstYearRep) && self.fyr) {
+    if (!_.isUndefined(firstYearRep) && this.fyr) {
       const fyrString = `${firstYearRep.name} (${firstYearRep.nick})`;
       client.say(
         nick,
         `First Year Representative: ${fyrString} contact by /m ${firstYearRep.nick} <message>, or email ${firstYearRep.nick}@redbrick.dcu.ie`,
       );
     }
-  };
+  }
 
-  self.showWebmaster = async (client, { nick }) => {
-    const cmt = await self.committee();
+  async showWebmaster(client, { nick }) {
+    const cmt = await this.committee();
     const webmaster = _.find(cmt, { position: 'Webmaster' });
-    if (!_.isUndefined(webmaster) && self.web) {
+    if (!_.isUndefined(webmaster) && this.web) {
       const webmasterString = `${webmaster.name} (${webmaster.nick})`;
       client.say(
         nick,
         `Webmaster: ${webmasterString} contact by /m ${webmaster.nick} <message>, or email ${webmaster.nick}@redbrick.dcu.ie`,
       );
     }
-  };
+  }
 
-  self.showHelpdesk = async (client, args) => {
-    const cmt = await self.committee();
+  async showHelpdesk(client, { nick }) {
+    const cmt = await this.committee();
     const helpdesk = _.filter(cmt, { position: 'Helpdesk' });
-    if (!_.isUndefined(helpdesk) && self.helpdesk) {
+    if (!_.isUndefined(helpdesk) && this.helpdesk) {
       const helpdeskString = _.map(helpdesk, ({ name, nick }) => `${name} (${nick})`).join(', ');
-      client.say(
-        args.nick,
-        `Helpdesk: ${helpdeskString} contact by emailing helpdesk@redbrick.dcu.ie`,
-      );
+      client.say(nick, `Helpdesk: ${helpdeskString} contact by emailing helpdesk@redbrick.dcu.ie`);
     }
-  };
+  }
 
-  self.showAdmins = async (client, args) => {
-    const cmt = await self.committee();
+  async showAdmins(client, { nick }) {
+    const cmt = await this.committee();
     const admins = _.filter(cmt, { position: 'System Administrator' });
-    if (!_.isUndefined(admins) && self.admins) {
+    if (!_.isUndefined(admins) && this.admins) {
       const adminsString = _.map(admins, ({ name, nick }) => `${name} (${nick})`).join(', ');
       client.say(
-        args.nick,
+        nick,
         `System Administrators: ${adminsString} contact by emailing admins@redbrick.dcu.ie`,
       );
     }
-  };
+  }
 }
 
-module.exports = RedbrickCommittee;
+export default RedbrickCommittee;

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   up(queryInterface, { INTEGER, STRING }) {
     return queryInterface.createTable('card_combos', {
       game_id: {

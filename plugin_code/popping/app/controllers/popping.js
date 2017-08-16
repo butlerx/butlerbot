@@ -1,19 +1,20 @@
-const Snoowrap = require('snoowrap');
+import Snoowrap from 'snoowrap';
+import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
-const config = require('../../config/config.json')[env];
-
 const r = new Snoowrap(config.reddit);
 
-function Popping() {
-  const self = this;
-  self.config = config;
+class Popping {
+  constructor() {
+    this.config = config[env];
+  }
 
-  self.pop = (client, { args }) =>
-    r.getRandomSubmission('popping')
-      .then(listing => {
-        client.say(args[0], `NSFW! (most likely) ${listing[Math.floor(Math.random() * listing.length)].url}`);
-      });
+  pop(client, { args }) {
+    r.getRandomSubmission('popping').then(listing => {
+      client.say(args[0], `NSFW! (most likely) ${listing[Math.floor(Math.random() * listing.length)].url}`);
+    });
+    return this;
+  }
 }
 
-module.exports = Popping;
+export default Popping;

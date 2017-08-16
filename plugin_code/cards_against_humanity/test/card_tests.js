@@ -1,8 +1,9 @@
 /* eslint-env and, mocha */
 
-const assert = require('assert');
-const config = require('../config/config');
-const _ = require('lodash');
+import assert from 'assert';
+
+import config from '../config/config';
+import _ from 'lodash';
 
 describe('Cards', () => {
   describe('value', () => {

@@ -1,8 +1,8 @@
-const fs = require('fs-extra');
-const JaySchema = require('jayschema');
-const _ = require('lodash');
-const models = require('../models');
-const env = require('./../config/env/all.js');
+import fs from 'fs-extra';
+import JaySchema from 'jayschema';
+import _ from 'lodash';
+import models from '../models';
+import env from './../config/env/all.js';
 
 let config;
 // Init validator
@@ -276,4 +276,4 @@ main().then(() => {
   });
 });
 
-module.exports = config;
+export default config;

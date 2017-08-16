@@ -1,4 +1,4 @@
-module.exports = (sequelize, { INTEGER, BOOLEAN }) =>
+export default (sequelize, { INTEGER, BOOLEAN }) =>
   sequelize.define(
     'Points',
     {

@@ -1,6 +1,6 @@
-const cmt = require('../plugin_code/redbrick_committee/setup.js');
+import cmt from '../plugin_code/redbrick_committee/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   cmt(app);
   callback();
-};
+}

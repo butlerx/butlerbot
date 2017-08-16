@@ -1,11 +1,12 @@
-const fs = require('fs');
-const _ = require('lodash');
-const path = require('path');
-const Sequelize = require('sequelize');
+import fs from 'fs';
+import _ from 'lodash';
+import path from 'path';
+import Sequelize from 'sequelize';
 
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(`${__dirname}/../config/config.json`)[env];
+const config = require('./../config/config.json')[env];
+
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 const db = {};
 
@@ -26,4 +27,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = db;
+export default db;

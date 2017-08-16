@@ -1,6 +1,6 @@
-const Announce = require('./app/controllers/announce.js');
+import Announce from './app/controllers/announce';
 
-module.exports = app => {
-  const redbrickCommittee = new Announce();
-  app.joinChannels(redbrickCommittee.announce.channelsToJoin);
+export default app => {
+  const announce = new Announce();
+  app.joinChannels(announce.config.channelsToJoin);
 };

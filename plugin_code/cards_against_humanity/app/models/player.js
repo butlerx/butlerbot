@@ -1,20 +1,21 @@
-const _ = require('lodash');
-const Cards = require('../controllers/cards');
+import _ from 'lodash';
+import Cards from '../controllers/cards';
 
-function Player(nick, user, hostname) {
-  const self = this;
-  self.id = _.uniqueId('card');
-  self.nick = nick;
-  self.user = user;
-  self.hostname = hostname;
-  self.cards = new Cards();
-  self.hasPlayed = false;
-  self.hasDiscarded = false;
-  self.isCzar = false;
-  self.isActive = true;
-  self.idleCount = 0;
-  self.points = 0;
-  self.inactiveRounds = 0;
+class Player {
+  constructor(nick, user, hostname) {
+    this.id = _.uniqueId('card');
+    this.nick = nick;
+    this.user = user;
+    this.hostname = hostname;
+    this.cards = new Cards();
+    this.hasPlayed = false;
+    this.hasDiscarded = false;
+    this.isCzar = false;
+    this.isActive = true;
+    this.idleCount = 0;
+    this.points = 0;
+    this.inactiveRounds = 0;
+  }
 }
 
-module.exports = Player;
+export default Player;

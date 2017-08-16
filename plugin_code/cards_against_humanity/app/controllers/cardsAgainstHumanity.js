@@ -1,12 +1,13 @@
-const _ = require('lodash');
-const Game = require('./game');
-const Player = require('../models/player');
-const config = require('../../config/config');
-const dbModels = require('../../models');
+import _ from 'lodash';
+import Game from './game';
+import Player from '../models/player';
+import config from '../../config/config';
+import dbModels from '../../models';
 
-function CardsAgainstHumanity() {
-  const self = this;
-  self.config = config;
+class CardsAgainstHumanity {
+  constructor() {
+    this.config = config;
+  }
 
   /**
      * Start a game
@@ -14,7 +15,7 @@ function CardsAgainstHumanity() {
      * @param message
      * @param cmd
      */
-  self.start = (client, message, cmd) => {
+  start(client, message, cmd) {
     // check if game running on the channel
     const channel = message.args[0];
     const nick = message.nick;
@@ -22,17 +23,17 @@ function CardsAgainstHumanity() {
     const hostname = message.host;
     const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
-    if (!_.isUndefined(self.game) && self.game.state !== Game.STATES.STOPPED) {
+    if (!_.isUndefined(this.game) && this.game.state !== Game.STATES.STOPPED) {
       // game exists
       client.say(channel, 'A game is already running. Type !join to join the game.');
     } else {
       // init game
       const player = new Player(nick, user, hostname);
-      const newGame = new Game(channel, client, self.config, cmdArgs, dbModels);
-      self.game = newGame;
-      self.game.addPlayer(player);
+      const newGame = new Game(channel, client, this.config, cmdArgs, dbModels);
+      this.game = newGame;
+      this.game.addPlayer(player);
     }
-  };
+  }
 
   /**
      * Stop a game
@@ -40,35 +41,35 @@ function CardsAgainstHumanity() {
      * @param message
      * @param cmdArgs
      */
-  self.stop = (client, message) => {
+  stop(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
-    } else if (!_.isUndefined(self.game.getPlayer({ nick, hostname }))) {
-      self.game.stop(self.game.getPlayer({ nick, hostname }));
-      self.game = undefined;
+    } else if (!_.isUndefined(this.game.getPlayer({ nick, hostname }))) {
+      this.game.stop(this.game.getPlayer({ nick, hostname }));
+      this.game = undefined;
     }
-  };
+  }
 
   /**
      * Pause a game
      * @param client
      * @param message
      */
-  self.pause = (client, message) => {
+  pause(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
-    } else if (!_.isUndefined(self.game.getPlayer({ nick, hostname }))) {
-      self.game.pause();
+    } else if (!_.isUndefined(this.game.getPlayer({ nick, hostname }))) {
+      this.game.pause();
     }
-  };
+  }
 
   /**
      * Resume a game
@@ -76,108 +77,108 @@ function CardsAgainstHumanity() {
      * @param message
      * @param cmdArgs
      */
-  self.resume = (client, message) => {
+  resume(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
-    } else if (!_.isUndefined(self.game.getPlayer({ nick, hostname }))) {
-      self.game.resume();
+    } else if (!_.isUndefined(this.game.getPlayer({ nick, hostname }))) {
+      this.game.resume();
     }
-  };
+  }
 
   /**
      * Add player to game
      * @param client
      * @param message
      */
-  self.join = (client, message, cmd) => {
+  join(client, message, cmd) {
     const nick = message.nick;
     const user = message.user;
     const hostname = message.host;
     const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
-      self.start(client, message, cmdArgs);
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
+      this.start(client, message, cmdArgs);
     } else {
       const player = new Player(nick, user, hostname);
-      self.game.addPlayer(player);
+      this.game.addPlayer(player);
     }
-  };
+  }
 
   /**
      * Remove player from game
      * @param client
      * @param message
      */
-  self.quit = (client, message) => {
+  quit(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      self.game.removePlayer(self.game.getPlayer({ nick, hostname }));
+      this.game.removePlayer(this.game.getPlayer({ nick, hostname }));
     }
-  };
+  }
 
   /**
      * Get players cards
      * @param client
      * @param message
      */
-  self.cards = (client, message) => {
+  cards(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      const player = self.game.getPlayer({ nick, hostname });
-      self.game.showCards(player);
+      const player = this.game.getPlayer({ nick, hostname });
+      this.game.showCards(player);
     }
-  };
+  }
 
   /**
      * Play cards
      * @param client
      * @param message
      */
-  self.play = (client, message, cmd) => {
+  play(client, message, cmd) {
     // check if everyone has played and end the round
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
     const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      const player = self.game.getPlayer({ nick, hostname });
+      const player = this.game.getPlayer({ nick, hostname });
       if (!_.isUndefined(player)) {
-        self.game.playCard(cmdArgs, player);
+        this.game.playCard(cmdArgs, player);
       }
     }
-  };
+  }
 
   /**
      * List players in the game
      * @param client
      * @param message
      */
-  self.list = (client, { args }) => {
+  list(client, { args }) {
     const channel = args[0];
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      self.game.listPlayers();
+      this.game.listPlayers();
     }
-  };
+  }
 
   /**
      * Select the winner
@@ -185,96 +186,96 @@ function CardsAgainstHumanity() {
      * @param message
      * @param cmd
      */
-  self.winner = (client, message, cmd) => {
+  winner(client, message, cmd) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
     const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      const player = self.game.getPlayer({ nick, hostname });
+      const player = this.game.getPlayer({ nick, hostname });
       if (!_.isUndefined(player)) {
-        self.game.selectWinner(cmdArgs[0], player);
+        this.game.selectWinner(cmdArgs[0], player);
       }
     }
-  };
+  }
 
   /**
      * Show top players in current game
      * @param client
      * @param message
      */
-  self.points = (client, { args }) => {
+  points(client, { args }) {
     const channel = args[0];
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      self.game.showPoints();
+      this.game.showPoints();
     }
-  };
+  }
 
   /**
      * Show top players in current game
      * @param client
      * @param message
      */
-  self.status = (client, { args }) => {
+  status(client, { args }) {
     const channel = args[0];
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      self.game.showStatus();
+      this.game.showStatus();
     }
-  };
+  }
 
-  self.pick = (client, message, cmd) => {
+  pick(client, message, cmd) {
     // check if everyone has played and end the round
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
     const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start.');
     } else {
-      const player = self.game.getPlayer({ nick, hostname });
+      const player = this.game.getPlayer({ nick, hostname });
 
       if (!_.isUndefined(player)) {
-        if (self.game.state === Game.STATES.PLAYED && channel === self.game.channel) {
-          self.game.selectWinner(cmdArgs[0], player);
-        } else if (self.game.state === Game.STATES.PLAYABLE) {
-          self.game.playCard(cmdArgs, player);
+        if (this.game.state === Game.STATES.PLAYED && channel === this.game.channel) {
+          this.game.selectWinner(cmdArgs[0], player);
+        } else if (this.game.state === Game.STATES.PLAYABLE) {
+          this.game.playCard(cmdArgs, player);
         } else {
           client.say(channel, '!pick command not available in current state.');
         }
       }
     }
-  };
+  }
 
-  self.discard = (client, message, cmd) => {
+  discard(client, message, cmd) {
     const channel = message.args[0];
     const nick = message.nick;
     const hostname = message.host;
     const cmdArgs = cmd !== '' ? _.map(cmd.match(/(\w+)\s?/gi), str => str.trim()) : cmd;
 
-    if (_.isUndefined(self.game) || self.game.state === Game.STATES.STOPPED) {
+    if (_.isUndefined(this.game) || this.game.state === Game.STATES.STOPPED) {
       client.say(channel, 'No game running. Start the game by typing !start');
     } else {
-      const player = self.game.getPlayer({ nick, hostname });
+      const player = this.game.getPlayer({ nick, hostname });
 
-      if (self.game.state === Game.STATES.PLAYABLE) {
-        self.game.discard(cmdArgs, player);
+      if (this.game.state === Game.STATES.PLAYABLE) {
+        this.game.discard(cmdArgs, player);
       } else {
         client.say(channel, '!discard command not available in current state');
       }
     }
-  };
+  }
 
-  self.wiki = (client, { args, nick }) => {
+  wiki(client, { args, nick }) {
     if (client.nick.toLowerCase() === args[0].toLowerCase()) {
       client.say(nick, 'https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity');
     } else {
@@ -283,7 +284,8 @@ function CardsAgainstHumanity() {
         `${nick}: https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity`,
       );
     }
-  };
+    return this;
+  }
 }
 
-module.exports = CardsAgainstHumanity;
+export default CardsAgainstHumanity;

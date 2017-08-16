@@ -1,5 +1,5 @@
-const _ = require('lodash');
-const models = require('../models');
+import _ from 'lodash';
+import models from '../models';
 
 const cardFixes = [];
 

@@ -1,8 +1,8 @@
-const _ = require('lodash');
-const dBus = require('dublin-bus.js');
-const config = require('../../config/config.json');
+import _ from 'lodash';
+import dBus from 'dublin-bus.js';
+import config from '../../config/config.json';
 
-const printBuses = ({ stop, buses }, client, channel) => {
+function printBuses({ stop, buses }, client, channel) {
   client.say(channel, `Stop address: ${stop}`);
   buses.forEach(({ due, route, destination, expected }) => {
     client.say(
@@ -12,13 +12,14 @@ const printBuses = ({ stop, buses }, client, channel) => {
         : `${route} to ${destination} expected in ${due} min, at ${expected}`,
     );
   });
-};
+}
 
-function DublinBusInfo() {
-  const self = this;
-  self.config = config;
+class DublinBusInfo {
+  constructor() {
+    this.config = config;
+  }
 
-  self.showStopInfo = (client, { args, nick }, cmdArgs) => {
+  showStopInfo(client, { args, nick }, cmdArgs) {
     const cmd = cmdArgs !== '' ? _.map(cmdArgs.match(/(\w+)\s?/gi), str => str.trim()) : cmdArgs;
 
     if (cmd.length < 1 || isNaN(cmd[0])) {
@@ -34,7 +35,8 @@ function DublinBusInfo() {
         .then(info => printBuses(info, client, args[0]))
         .catch(reason => client.say(args[0], `${nick}: Sorry, ${reason}.`));
     }
-  };
+    return this;
+  }
 }
 
-module.exports = DublinBusInfo;
+export default DublinBusInfo;

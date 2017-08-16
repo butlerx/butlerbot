@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   up(queryInterface, { INTEGER, STRING, DATE }) {
     return queryInterface.createTable('players', {
       id: {

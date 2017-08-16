@@ -1,39 +1,37 @@
-const schedule = require('node-schedule');
-const request = require('request-promise-native');
-const moment = require('moment');
+import schedule from 'node-schedule';
+import request from 'request-promise-native';
+import moment from 'moment';
+import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
-const config = require('../../config/config.json')[env];
 
-function Announce() {
-  const self = this;
+class Announce {
+  constructor(client) {
+    this.config = config[env];
+    this.post = null;
+    schedule.scheduleJob(' */5 * * * *', () => {
+      if (client !== null) {
+        console.log('Scheduled update');
+        this.getLatestPost()
+          .then(post => {
+            if (!moment(post.date).isSameOrBefore(this.post.date)) {
+              this.post = post;
+              this.config.forEach(channel => {
+                client.setTopic(channel, `${post.title} - ${post.permalink}`);
+              });
+            }
+          })
+          .catch(console.log);
+      } else {
+        console.log('update failed');
+      }
+    });
+  }
 
-  self.config = config;
-  self.post = null;
-
-  self.update = schedule.scheduleJob(' */5 * * * *', () => {
-    if (self.client !== null) {
-      console.log('Scheduled update');
-      self
-        .getLatestPost()
-        .then(post => {
-          if (!moment(post.date).isSameOrBefore(self.post.date)) {
-            self.post = post;
-            self.config.forEach(channel => {
-              self.setTopic(channel, `${self.post.title} - ${self.post.permalink}`);
-            });
-          }
-        })
-        .catch(reason => console.log(reason));
-    } else {
-      console.log('update failed');
-    }
-  });
-
-  self.getLatestPost = () =>
-    new Promise((resolve, reject) => {
+  getLatestPost() {
+    return new Promise((resolve, reject) => {
       request({
-        uri    : `${config.url}/posts`,
+        uri    : `${this.config.url}/posts`,
         headers: {
           'User-Agent': 'butlerbot',
         },
@@ -42,6 +40,7 @@ function Announce() {
         .then(posts => resolve(posts[0]))
         .catch(error => reject(error));
     });
+  }
 }
 
-module.exports = Announce;
+export default Announce;

@@ -1,8 +1,8 @@
-const _ = require('lodash');
-const Game = require('./game');
-const Player = require('../models/player');
-const challenges = require('../../config/challenges.json');
-const fs = require('fs');
+import _ from 'lodash';
+import Game from './game';
+import Player from '../models/player';
+import challenges from '../../config/challenges.json';
+import fs from 'fs';
 
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
@@ -277,4 +277,4 @@ function Countdown() {
   };
 }
 
-module.exports = Countdown;
+export default Countdown;

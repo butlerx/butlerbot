@@ -1,6 +1,6 @@
-const dBus = require('../plugin_code/dublin_bus/setup.js');
+import dBus from '../plugin_code/dublin_bus/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   dBus(app);
   callback();
-};
+}

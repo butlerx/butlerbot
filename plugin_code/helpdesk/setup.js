@@ -1,6 +1,6 @@
-const Helpdesk = require('./app/controllers/Helpdesk.js');
+import Helpdesk from './app/controllers/Helpdesk';
 
-module.exports = app => {
+export default app => {
   const helpdesk = new Helpdesk();
 
   // Join Channels

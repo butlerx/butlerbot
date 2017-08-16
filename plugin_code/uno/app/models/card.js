@@ -1,11 +1,11 @@
-const c = require('irc-colors');
+import c from 'irc-colors';
 
-function Card(card) {
+function Card({ type, color, value }) {
   const self = this;
 
-  self.type = card.type;
-  self.color = card.color;
-  self.value = card.value;
+  self.type = type;
+  self.color = color;
+  self.value = value;
 
   self.onPlay = game => {
     switch (self.type) {
@@ -174,4 +174,4 @@ function Card(card) {
   };
 }
 
-module.exports = Card;
+export default Card;

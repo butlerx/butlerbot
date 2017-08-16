@@ -1,6 +1,6 @@
-const pop = require('../plugin_code/popping/setup.js');
+import pop from '../plugin_code/popping/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   pop(app);
   callback();
-};
+}

@@ -1,18 +1,17 @@
-const request = require('request-promise');
-const cheerio = require('cheerio');
+import request from 'request-promise';
+import cheerio from 'cheerio';
+import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
-const config = require('../../config/config.json')[env];
 
-function Helpdesk() {
-  const self = this;
-  self.config = config;
+class Helpdesk {
+  constructor() {
+    this.config = config[env];
+  }
 
-  self.help = (client, { args, nick }, cmdArgs) => {
+  help(client, { args, nick }, cmdArgs) {
     let channel = args[0];
-    if (channel === client.nick) {
-      channel = nick;
-    }
+    if (channel === client.nick) channel = nick;
     const input = cmdArgs.split(' ', 1);
     if (input[0] === '') {
       client.say(
@@ -22,7 +21,7 @@ function Helpdesk() {
       return false;
     }
     const options = {
-      uri      : self.config.wiki + input[0],
+      uri      : this.config.wiki + input[0],
       transform: body => cheerio.load(body),
     };
     request(options)
@@ -37,14 +36,14 @@ function Helpdesk() {
       .catch(err => {
         console.log(`We’ve encountered an error: ${err}`);
       });
-  };
+  }
 
-  self.list = (client, { args, nick }) => {
+  list(client, { args, nick }) {
     const channel = args[0] === client.nick ? nick : args[0];
-    const commands = self.config.commands.join(', ');
-    const pmCommands = self.config.pmCommands.join(', ');
+    const commands = this.config.commands.join(', ');
+    const pmCommands = this.config.pmCommands.join(', ');
     client.say(channel, `The commands are ${commands} and pm only commands are ${pmCommands}`);
-  };
+  }
 }
 
-module.exports = Helpdesk;
+export default Helpdesk;

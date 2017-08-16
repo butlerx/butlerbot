@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   up(queryInterface, { INTEGER }) {
     return queryInterface.createTable('rounds', {
       game_id: {

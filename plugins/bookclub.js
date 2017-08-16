@@ -1,6 +1,6 @@
-const bookclup = require('../plugin_code/bookclub/setup.js');
+import bookclup from '../plugin_code/bookclub/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   bookclup(app);
   callback();
-};
+}

@@ -1,6 +1,6 @@
-const Bookclub = require('./app/controllers/Bookclub.js');
+import Bookclub from './app/controllers/Bookclub';
 
-module.exports = app => {
+export default app => {
   const bookclub = new Bookclub();
 
   // Join Channels

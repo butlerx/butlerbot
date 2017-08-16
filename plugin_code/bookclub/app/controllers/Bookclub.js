@@ -1,77 +1,78 @@
-const _ = require('lodash');
-const fs = require('fs-extra');
-const schedule = require('node-schedule');
-const amazon = require('amazon-product-api');
+import _ from 'lodash';
+import fs from 'fs-extra';
+import schedule from 'node-schedule';
+import amazon from 'amazon-product-api';
+import booksToRead from '../../config/booksToRead.json';
+import booksRead from '../../config/booksRead.json';
+import thisMonthBook from '../../config/thisMonthBook.json';
+import nextMonthBook from '../../config/nextMonthBook.json';
+
+import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
-const config = require('../../config/config.json')[env];
-const booksToRead = require('../../config/booksToRead.json');
-const booksRead = require('../../config/booksRead.json');
-const thisMonthBook = require('../../config/thisMonthBook.json');
-const nextMonthBook = require('../../config/nextMonthBook.json');
 
-function Bookclub() {
-  const self = this;
-  self.config = config;
-  self.booksToRead = booksToRead;
-  self.thisMonthBook = thisMonthBook;
-  self.nextMonthBook = nextMonthBook;
-  self.booksRead = booksRead;
-  self.date = new Date();
-  self.client = null;
-  self.new = 0;
-  self.keep = 0;
-  self.voted = [];
+class Bookclub {
+  constructor() {
+    this.config = config[env];
+    this.booksToRead = booksToRead;
+    this.thisMonthBook = thisMonthBook;
+    this.nextMonthBook = nextMonthBook;
+    this.booksRead = booksRead;
+    this.date = new Date();
+    this.client = null;
+    this.new = 0;
+    this.keep = 0;
+    this.voted = [];
 
-  self.amazon = amazon.createClient({
-    awsId    : process.env.AWSID || self.config.awsId,
-    awsSecret: process.env.AWSSECRET || self.config.awsSecret,
-    awsTag   : 'BookClub',
-  });
+    this.amazon = amazon.createClient({
+      awsId    : process.env.AWSID || this.config.awsId,
+      awsSecret: process.env.AWSSECRET || this.config.awsSecret,
+      awsTag   : 'BookClub',
+    });
+    schedule.scheduleJob('0 0 1 * *', () => {
+      if (this.client !== null) {
+        console.log('Scheduled update');
+        const month = this.date.getMonth();
+        this.changeBook(this.client, month, this.config.channels[0]);
+      } else {
+        console.log('update failed');
+      }
+    });
+  }
 
-  self.update = schedule.scheduleJob('0 0 1 * *', () => {
-    if (self.client !== null) {
-      console.log('Scheduled update');
-      const month = self.date.getMonth();
-      self.changeBook(self.client, month, self.config.channels[0]);
-    } else {
-      console.log('update failed');
-    }
-  });
-
-  self.thisMonth = (client, { args }) => {
+  thisMonth(client, { args }) {
     console.log('in thisMonth');
-    const month = self.date.getMonth();
-    self.client = client;
-    if (month === self.thisMonthBook.month) {
+    const month = this.date.getMonth();
+    this.client = client;
+    if (month === this.thisMonthBook.month) {
       client.say(
         args[0],
-        `This months book is ${self.thisMonthBook.title} by ${self.thisMonthBook.author}, ${self
+        `This months book is ${this.thisMonthBook.title} by ${this.thisMonthBook.author}, ${this
           .thisMonthBook.link}`,
       );
     } else {
-      self.changeBook(client, month, args[0]);
+      this.changeBook(client, month, args[0]);
     }
-  };
+  }
 
-  self.nextMonth = (client, { args }) => {
+  nextMonth(client, { args }) {
     console.log('in nextMonth');
-    const month = self.date.getMonth();
-    self.client = client;
-    if (month === self.thisMonthBook.month) {
+    const month = this.date.getMonth();
+    this.client = client;
+    if (month === this.thisMonthBook.month) {
       client.say(
         args[0],
-        `Next months book is ${self.nextMonthBook.title} by ${self.nextMonthBook.author}, ${self
+        `Next months book is ${this.nextMonthBook.title} by ${this.nextMonthBook.author}, ${this
           .nextMonthBook.link}`,
       );
     } else {
-      self.changeBook(client, month, args[0]);
+      this.changeBook(client, month, args[0]);
     }
-  };
+  }
 
-  self.suggest = (client, { args, nick }, cmdArgs) => {
+  suggest(client, { args, nick }, cmdArgs) {
     console.log('in suggest');
-    self.client = client;
+    this.client = client;
     const input = cmdArgs.split('; ');
 
     if (input[0] === '') {
@@ -88,12 +89,12 @@ function Bookclub() {
     }
 
     const books = _.filter(
-      self.booksToRead,
+      this.booksToRead,
       book => book.title.toLowerCase() === input[0].toLowerCase(),
     );
     const titles = _.map(books, book => book.title.toLowerCase());
     const read = _.filter(
-      self.booksRead,
+      this.booksRead,
       book => book.title.toLowerCase() === input[0].toLowerCase(),
     );
     const titlesRead = _.map(read, book => book.title.toLowerCase());
@@ -102,19 +103,17 @@ function Bookclub() {
     const author = input[1].toString();
     let pages = input[2];
 
-    if (!_.isNumber(pages)) {
-      pages = null;
-    }
+    if (!_.isNumber(pages)) pages = null;
     if (
       _.includes(titlesRead, title.toLowerCase()) ||
-      title.toLowerCase() === self.thisMonthBook.title.toLowerCase() ||
-      title.toLowerCase() === self.nextMonthBook.title.toLowerCase()
+      title.toLowerCase() === this.thisMonthBook.title.toLowerCase() ||
+      title.toLowerCase() === this.nextMonthBook.title.toLowerCase()
     ) {
       client.say(args[0], 'That book has already been read');
     } else if (_.includes(titles, title.toLowerCase())) {
       client.say(args[0], 'That book has already been suggested');
     } else {
-      self.amazon.itemSearch(
+      this.amazon.itemSearch(
         {
           title,
           author,
@@ -129,49 +128,50 @@ function Bookclub() {
             const result = results[0].DetailPageURL[0].split('%');
             link = result[0];
           }
-          self.booksToRead.push({ title, author, pages, suggested: nick, month: 0, link });
-          self.write('booksToRead', self.booksToRead);
+          this.booksToRead.push({ title, author, pages, suggested: nick, month: 0, link });
+          this.write('booksToRead', this.booksToRead);
           client.say(args[0], 'Book added!');
         },
       );
     }
-  };
+  }
 
-  self.changeBook = (client, month, channel) => {
+  changeBook(client, month, channel) {
     console.log('changing book');
     // add book to read list
-    self.setTopic(
+    this.setTopic(
       client,
       channel,
-      `This months book is ${self.nextMonthBook.title} by ${self.nextMonthBook
-        .author} || This months discussion: ${self.thisMonthBook.title}`,
+      `This months book is ${this.nextMonthBook.title} by ${this.nextMonthBook
+        .author} || This months discussion: ${this.thisMonthBook.title}`,
     );
-    self.booksRead.push(thisMonthBook);
-    self.write('booksRead', self.booksRead);
+    this.booksRead.push(thisMonthBook);
+    this.write('booksRead', this.booksRead);
     // choose random book from booksToRead
-    self.thisMonthBook = self.nextMonthBook;
-    const newbook = Math.floor(Math.random() * self.booksToRead.length);
-    self.nextMonthBook = self.booksToRead[newbook];
-    self.booksToRead.splice(newbook, 1);
-    self.nextMonthBook.month = (month + 1) % 12;
+    this.thisMonthBook = this.nextMonthBook;
+    const newbook = Math.floor(Math.random() * this.booksToRead.length);
+    this.nextMonthBook = this.booksToRead[newbook];
+    this.booksToRead.splice(newbook, 1);
+    this.nextMonthBook.month = (month + 1) % 12;
     // write out booksToRead and thisMonthBook
-    self.write('booksToRead', self.booksToRead);
-    self.write('thisMonthBook', self.thisMonthBook);
-    self.write('nextMonthBook', self.nextMonthBook);
+    this.write('booksToRead', this.booksToRead);
+    this.write('thisMonthBook', this.thisMonthBook);
+    this.write('nextMonthBook', this.nextMonthBook);
     // say book and cvhange TOPIC
     client.say(
       channel,
-      `This months book is ${self.thisMonthBook.title} by ${self.thisMonthBook
-        .author} suggested by ${self.thisMonthBook.suggested}, ${self.thisMonthBook.link}`,
+      `This months book is ${this.thisMonthBook.title} by ${this.thisMonthBook
+        .author} suggested by ${this.thisMonthBook.suggested}, ${this.thisMonthBook.link}`,
     );
     client.say(
       channel,
-      `Next months book is ${self.nextMonthBook.title} by ${self.nextMonthBook
-        .author} suggested by ${self.nextMonthBook.suggested}, ${self.nextMonthBook.link}`,
+      `Next months book is ${this.nextMonthBook.title} by ${this.nextMonthBook
+        .author} suggested by ${this.nextMonthBook.suggested}, ${this.nextMonthBook.link}`,
     );
-  };
+  }
 
-  self.setTopic = (client, channel, topic) => {
+  setTopic(client, channel, topic) {
+    this.client = client;
     // ignore if not configured to set topic
     if (_.isUndefined(config.setTopic) || !config.setTopic) {
       return false;
@@ -183,29 +183,26 @@ function Bookclub() {
     }
     // set it
     client.send('TOPIC', channel, newTopic);
-  };
+  }
 
-  self.write = (fileName, file) => {
+  write(fileName, file) {
     fs
       .outputJson(`plugin_code/bookclub/config/${fileName}.json`, file)
       .then(console.log(`writing to ${fileName}`))
       .catch(console.error);
-  };
+    return this;
+  }
 
-  self.showBooks = (client, { nick }) => {
-    self.client = client;
-    for (let i = 0; i < self.booksToRead.length; i += 1) {
-      client.say(
-        nick,
-        ` [${i}] ${self.booksToRead[i].title} by ${self.booksToRead[i].author} suggested by ${self
-          .booksToRead[i].suggested}, ${self.booksToRead[i].link}`,
-      );
-    }
-  };
+  showBooks(client, { nick }) {
+    this.client = client;
+    this.booksToRead.forEach(({ title, author, suggested, link }, i) => {
+      client.say(nick, ` [${i}] ${title} by ${author} suggested by ${suggested}, ${link}`);
+    });
+  }
 
-  self.showRead = (client, { nick }) => {
-    self.client = client;
-    self.booksRead.forEach(book => {
+  showRead(client, { nick }) {
+    this.client = client;
+    this.booksRead.forEach(book => {
       let month = 'No Month';
       switch (book.month) {
         case 0:
@@ -253,58 +250,58 @@ function Bookclub() {
         `${month}: ${book.title} by ${book.author} suggested by ${book.suggested}, ${book.link}`,
       );
     });
-  };
+  }
 
-  self.vote = (client, message, cmdArgs) => {
+  vote(client, message, cmdArgs) {
     const args = cmdArgs.split(' ', 1);
-    self.client = client;
+    this.client = client;
     if (args[0] === '') {
-      client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
+      client.say(message.args[0], `Keep: ${this.keep} Against: ${this.new}`);
     } else {
-      if (_.includes(self.voted, message.nick.toLowerCase())) {
+      if (_.includes(this.voted, message.nick.toLowerCase())) {
         client.say(message.args[0], `${message.nick} you've arlready voted`);
         return false;
       }
       if (args[0].toLowerCase() === 'keep') {
-        self.keep += 1;
-        self.voted.push(message.nick.toLowerCase());
-        client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
+        this.keep += 1;
+        this.voted.push(message.nick.toLowerCase());
+        client.say(message.args[0], `Keep: ${this.keep} Against: ${this.new}`);
       } else if (args[0].toLowerCase() === 'new') {
-        if (self.new === 2) {
-          self.startTimeout = setTimeout(self.startTimeoutFunction, 10 * 60 * 1000);
+        if (this.new === 2) {
+          this.startTimeout = setTimeout(this.startTimeoutFunction, 10 * 60 * 1000);
         }
-        self.new += 1;
-        self.voted.push(message.nick.toLowerCase());
-        if (self.new === 6 && self.keep === 0) {
-          const month = self.date.getMonth();
-          self.changeBook(self.client, month, message.args[0]); // NOTE: need to fix change book
-          self.keep = 0;
-          self.new = 0;
-          self.voted = [];
-          clearTimeout(self.startTimeout);
+        this.new += 1;
+        this.voted.push(message.nick.toLowerCase());
+        if (this.new === 6 && this.keep === 0) {
+          const month = this.date.getMonth();
+          this.changeBook(this.client, month, message.args[0]); // NOTE: need to fix change book
+          this.keep = 0;
+          this.new = 0;
+          this.voted = [];
+          clearTimeout(this.startTimeout);
           return true;
         }
-        client.say(message.args[0], `Keep: ${self.keep} Against: ${self.new}`);
+        client.say(message.args[0], `Keep: ${this.keep} Against: ${this.new}`);
       } else {
         client.say(message.args[0], `${args[0]} is not a valid input`);
       }
     }
-  };
+  }
 
-  self.startTimeoutFunction = () => {
-    clearTimeout(self.startTimeout);
-    if (self.client !== null) {
-      if (self.new > self.keep) {
-        const month = self.date.getMonth() - 1;
-        self.changeBook(self.client, month, self.config.channels[0]);
+  startTimeoutFunction() {
+    clearTimeout(this.startTimeout);
+    if (this.client !== null) {
+      if (this.new > this.keep) {
+        const month = this.date.getMonth() - 1;
+        this.changeBook(this.client, month, this.config.channels[0]);
       } else {
-        self.client.say(self.config.channels[0], "You've voted to keep this months book");
+        this.client.say(this.config.channels[0], "You've voted to keep this months book");
       }
-      self.keep = 0;
-      self.new = 0;
-      self.voted = [];
+      this.keep = 0;
+      this.new = 0;
+      this.voted = [];
     }
-  };
+  }
 }
 
-module.exports = Bookclub;
+export default Bookclub;

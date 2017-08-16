@@ -1,6 +1,6 @@
-const uno = require('../plugin_code/uno/setup.js');
+import uno from '../plugin_code/uno/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   uno(app);
   callback();
-};
+}

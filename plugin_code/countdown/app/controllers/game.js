@@ -1,8 +1,8 @@
-const _ = require('lodash');
-const inflection = require('inflection');
-const mathjs = require('mathjs');
-const dictionary = require('../../config/dictionary.json');
-const conundrums = require('../../config/conundrums.json');
+import _ from 'lodash';
+import inflection from 'inflection';
+import mathjs from 'mathjs';
+import dictionary from '../../config/dictionary.json';
+import conundrums from '../../config/conundrums.json';
 
 const STATES = {
   STOPPED          : 'Stopped',
@@ -1319,4 +1319,4 @@ function Game(
 
 Game.STATES = STATES;
 
-module.exports = Game;
+export default Game;

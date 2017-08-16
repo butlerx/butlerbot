@@ -1,7 +1,7 @@
-const path = require('path');
-const plug = require('plug');
+import path from 'path';
+import plug from 'plug';
 
-module.exports = app => {
+export default app => {
   const plugger = plug.create(app);
 
   plugger.on('connect', pluginName => {

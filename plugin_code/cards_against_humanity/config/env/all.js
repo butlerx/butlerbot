@@ -1,5 +1,5 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
   root: path.normalize(`${__dirname}/../..`),
 };

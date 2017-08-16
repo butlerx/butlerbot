@@ -1,72 +1,70 @@
-const _ = require('lodash');
-const Card = require('../models/card');
+import _ from 'lodash';
+import Card from '../models/card';
 
-function Cards(allCards) {
-  const self = this;
-
-  self.cards = [];
-
-  // add all cards in init array
-  _.forEach(allCards, c => {
-    let card;
-    if (c instanceof Card) {
-      card = c;
-    } else if ({}.hasOwnProperty.call(c, 'value')) {
-      card = new Card(c);
-    } else {
-      console.error('Invalid card', c);
-    }
-    self.cards.push(card);
-  });
+class Cards {
+  constructor(allCards) {
+    this.cards = [];
+    // add all cards in init array
+    _.forEach(allCards, c => {
+      let card;
+      if (c instanceof Card) {
+        card = c;
+      } else if ({}.hasOwnProperty.call(c, 'value')) {
+        card = new Card(c);
+      } else {
+        console.error('Invalid card', c);
+      }
+      this.cards.push(card);
+    });
+  }
 
   /**
      * Reset the collection
      * @param cards Optional replacement list of cards
      * @returns {Array} Array of the old, replaced cards
      */
-  self.reset = cards => {
+  reset(cards) {
     let hand = cards;
     if (_.isUndefined(hand)) hand = [];
-    const oldCards = self.cards;
-    self.cards = hand;
+    const oldCards = this.cards;
+    this.cards = hand;
     return oldCards;
-  };
+  }
 
   /**
      * Shuffle the cards
      * @returns {Cards} The shuffled collection
      */
-  self.shuffle = () => {
-    self.cards = _.shuffle(self.cards);
-    return self;
-  };
+  shuffle() {
+    this.cards = _.shuffle(this.cards);
+  }
 
   /**
      * Add card to collection
      * @param card
      * @returns {*}
      */
-  self.addCard = card => {
-    self.cards.push(card);
+  addCard(card) {
+    this.cards.push(card);
     return card;
-  };
+  }
 
   /**
      * Remove a card from the collection
      * @param card
      * @returns {*}
      */
-  self.removeCard = card => {
-    if (!_.isUndefined(card)) self.cards = _.without(self.cards, card);
+  removeCard(card) {
+    if (!_.isUndefined(card)) this.cards = _.without(this.cards, card);
     return card;
-  };
+  }
 
   /**
      * Pick cards from the collection
      * @param cardIndex (int|Array) Index of a single card, of Array of multiple indexes to remove and return
      * @returns {Card|Cards} Instance of a single card, or instance of Cards if multiple indexes picked
      */
-  self.pickCards = function PickCard(cardIndex) {
+  PickCard(cardIndex) {
     let index = cardIndex;
     if (_.isUndefined(index)) index = 0;
     if (_.isArray(index)) {
@@ -76,40 +74,44 @@ function Cards(allCards) {
       _.forEach(
         index,
         _.bind(i => {
-          const c = self.cards[i];
+          const c = this.cards[i];
           if (_.isUndefined(c)) throw new Error('Invalid card index');
           pickedCards.addCard(c);
         }, this),
       );
       // then remove them
-      self.cards = _.without.apply(this, _.union([self.cards], pickedCards.cards));
+      this.cards = _.without.apply(this, _.union([this.cards], pickedCards.cards));
       //            _.forEach(pickedCards, function(card) {
-      //                self.cards.removeCard(card);
+      //                this.cards.removeCard(card);
       //            }, this);
       console.log('picked cards:');
       console.log(_.map(pickedCards.cards, 'id'));
       console.log(_.map(pickedCards.cards, 'value'));
       console.log('remaining cards:');
-      console.log(_.map(self.cards, 'id'));
-      console.log(_.map(self.cards, 'value'));
+      console.log(_.map(this.cards, 'id'));
+      console.log(_.map(this.cards, 'value'));
       return pickedCards;
     }
-    const card = self.cards[index];
-    self.removeCard(card);
+    const card = this.cards[index];
+    this.removeCard(card);
     return card;
-  };
+  }
 
   /**
      * Get all cards in collection
      * @returns {Array}
      */
-  self.getCards = () => self.cards;
+  getCards() {
+    return this.cards;
+  }
 
   /**
      * Get amount of cards in collection
      * @returns {Number}
      */
-  self.numCards = () => this.cards.length;
+  numCards() {
+    return this.cards.length;
+  }
 }
 
-module.exports = Cards;
+export default Cards;

@@ -1,9 +1,9 @@
-const _ = require('lodash');
-const { Client } = require('irc');
+import _ from 'lodash';
+import { Client } from 'irc';
+import configs from '../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config.json')[env];
-
+const config = configs[env];
 let client;
 const commands = [];
 const msgs = [];
@@ -113,7 +113,7 @@ exports.init = function bot() {
     // parse command
     const cmdArr = text.trim().match(/^[.|!](\w+)\s?(.*)$/i);
     if (!cmdArr || cmdArr.length <= 1) return false;
-    const cmd = cmdArr[1].toLowerCase();
+    const command = cmdArr[1].toLowerCase();
     // parse arguments
     const cmdArgs = cmdArr[2];
     console.log(cmdArr);
@@ -124,7 +124,7 @@ exports.init = function bot() {
       _.forEach(
         msgs,
         _.bind(c => {
-          if (cmd === c.cmd) {
+          if (command === c.cmd) {
             console.log(`command: ${c.cmd}`);
             // check user mode
             if (checkUserMode(message, c.mode)) {
@@ -139,7 +139,7 @@ exports.init = function bot() {
         commands,
         _.bind(c => {
           // If the command matches
-          if (cmd === c.cmd) {
+          if (command === c.cmd) {
             // If the channel matches the command channels or is set to respond on all channels and is not in the
             // commands excluded channels
             if (_.includes(c.channel, to) || c.channel === 'all') {
@@ -164,15 +164,15 @@ exports.init = function bot() {
  * @param mode User mode that is allowed
  * @param cb Callback function
  */
-exports.cmd = (cmd, mode, channel, excludes, cb) => {
+export function cmd(command, mode, channel, excludes, cb) {
   commands.push({
-    cmd,
+    cmd     : command,
     mode,
     channel,
     exclude : excludes,
     callback: cb,
   });
-};
+}
 
 /**
  * Add a msg command to the bot
@@ -180,10 +180,10 @@ exports.cmd = (cmd, mode, channel, excludes, cb) => {
  * @param mode User mode that is allowed
  * @param cb Callback function
  */
-exports.msg = (cmd, mode, cb) => {
+export function msg(command, mode, cb) {
   msgs.push({
-    cmd,
+    cmd     : command,
     mode,
     callback: cb,
   });
-};
+}

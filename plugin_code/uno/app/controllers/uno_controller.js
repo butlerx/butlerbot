@@ -1,6 +1,6 @@
-const _ = require('lodash');
-const Game = require('../models/game');
-const Player = require('../models/player');
+import _ from 'lodash';
+import Game from '../models/game';
+import Player from '../models/player';
 
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
@@ -104,4 +104,4 @@ function Uno() {
   };
 }
 
-module.exports = Uno;
+export default Uno;

@@ -1,7 +1,7 @@
-const c = require('irc-colors');
-const _ = require('lodash');
-const inflection = require('inflection');
-const Deck = require('../controllers/deck');
+import c from 'irc-colors';
+import _ from 'lodash';
+import inflection from 'inflection';
+import Deck from '../controllers/deck';
 
 const STATES = {
   STOPPED : 'Stopped',
@@ -639,4 +639,4 @@ function Game(channel, client, config, cmdArgs) {
 
 Game.STATES = STATES;
 
-module.exports = Game;
+export default Game;

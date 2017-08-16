@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   up(queryInterface, { INTEGER, BOOLEAN }) {
     return queryInterface.createTable('points', {
       player_id: {

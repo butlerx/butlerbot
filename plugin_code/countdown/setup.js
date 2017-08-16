@@ -1,6 +1,6 @@
-const Countdown = require('./app/controllers/countdown_controller.js');
+import Countdown from './app/controllers/countdown_controller.js';
 
-module.exports = app => {
+export default app => {
   const countdown = new Countdown();
 
   // Join channels

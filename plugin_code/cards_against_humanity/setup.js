@@ -1,6 +1,6 @@
-const CardsAgainstHumanity = require('./app/controllers/cards_against_humanity_controller.js');
+import CardsAgainstHumanity from './app/controllers/cardsAgainstHumanity';
 
-module.exports = app => {
+export default app => {
   const cardsAgainstHumanity = new CardsAgainstHumanity();
 
   // Join Channels

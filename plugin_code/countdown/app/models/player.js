@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
 function Player(nick) {
   const self = this;
@@ -16,4 +16,4 @@ function Player(nick) {
   self.idleCount = 0;
 }
 
-module.exports = Player;
+export default Player;

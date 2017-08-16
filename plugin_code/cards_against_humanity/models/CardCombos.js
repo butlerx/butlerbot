@@ -1,4 +1,4 @@
-module.exports = (sequelize, { INTEGER, STRING }) =>
+export default (sequelize, { INTEGER, STRING }) =>
   sequelize.define(
     'CardCombo',
     {

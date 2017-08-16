@@ -1,4 +1,4 @@
-const Deck = require('../controllers/deck.js');
+import Deck from '../controllers/deck.js';
 
 function Player(nick, user, hostname) {
   const self = this;
@@ -17,4 +17,4 @@ function Player(nick, user, hostname) {
   self.challengable = false;
 }
 
-module.exports = Player;
+export default Player;

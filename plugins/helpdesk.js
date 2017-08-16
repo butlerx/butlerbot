@@ -1,6 +1,6 @@
-const helpdesk = require('../plugin_code/helpdesk/setup.js');
+import helpdesk from '../plugin_code/helpdesk/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   helpdesk(app);
   callback();
-};
+}

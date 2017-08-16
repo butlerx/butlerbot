@@ -1,6 +1,6 @@
-const DublinBusInfo = require('./app/controllers/dublin_bus_info.js');
+import DublinBusInfo from './app/controllers/dublinBusInfo';
 
-module.exports = app => {
+export default app => {
   const dublinBusInfo = new DublinBusInfo();
   app.joinChannels(dublinBusInfo.config.channelsToJoin);
   app.cmd(

@@ -1,4 +1,4 @@
-module.exports = (sequelize, { INTEGER }) =>
+export default (sequelize, { INTEGER }) =>
   sequelize.define(
     'Round',
     {

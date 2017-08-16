@@ -1,6 +1,6 @@
-const cah = require('../plugin_code/cards_against_humanity/setup.js');
+import cah from '../plugin_code/cards_against_humanity/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   cah(app);
   callback();
-};
+}

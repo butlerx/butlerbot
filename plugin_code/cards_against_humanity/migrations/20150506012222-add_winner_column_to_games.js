@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   up(queryInterface, { INTEGER }) {
     return queryInterface.addColumn('games', 'winner_id', {
       type      : INTEGER,

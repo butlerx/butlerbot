@@ -1,6 +1,6 @@
-const announce = require('../plugin_code/announce/setup.js');
+import announce from '../plugin_code/announce/setup';
 
-exports.connect = (app, callback) => {
+export default function connect(app, callback) {
   announce(app);
   callback();
-};
+}
