@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import JaySchema from 'jayschema';
 import _ from 'lodash';
 import path from 'path';
-import models from '../models';
 import development from './env/development.json';
 import production from './env/production.json';
 
@@ -16,7 +15,7 @@ const config = _.assignIn(
 // Init validator
 const validator = new JaySchema();
 // Define schema to calidate against
-const schema = {
+export const schema = {
   $schema: 'http://json-schema.org/draft-04/schema#',
   title  : 'Card Schema',
   type   : 'array',
@@ -63,27 +62,11 @@ async function loadCardFile(identifier, filename) {
   try {
     if (!fs.exists(filename)) throw new Error('File does not exists');
     const data = await fs.readJson(filename);
+    if (data.length === 0) return;
     validator.validate(data, schema, err => {
       if (err) throw new Error(`${identifier}: Validation error: ${err}`);
       console.log(`${identifier}: Validation OK!`);
       config.cards = _.union(config.cards, data);
-      _.forEach(data, ({ type, value }) => {
-        if (type.toLowerCase() === 'question') {
-          updateOrCreateInstance(
-            models.Card,
-            { where: { text: value } },
-            { text: value, times_played: 0, question: true },
-            null,
-          );
-        } else if (type.toLowerCase() === 'answer') {
-          updateOrCreateInstance(
-            models.Card,
-            { where: { text: value } },
-            { text: value, times_played: 0, question: false },
-            null,
-          );
-        }
-      });
     });
   } catch (err) {
     console.error(err);
@@ -92,7 +75,7 @@ async function loadCardFile(identifier, filename) {
 
 // Initialize base configuration and ENV
 
-async function main() {
+export async function main() {
   try {
     // check custom card files and create them if they don't exist
     if (!fs.existsSync(`${__dirname}/../config/cards/Custom_a.json`)) {
@@ -106,7 +89,7 @@ async function main() {
   }
 }
 
-const cardFiles = {
+export const cardFiles = {
   // Base Set
   OfficialBaseSetQuestions: `${__dirname}/../config/cards/OfficialBaseSet_questions.json`,
   OfficialBaseSetAnswers  : `${__dirname}/../config/cards/OfficialBaseSet_answers.json`,
@@ -262,16 +245,6 @@ const cardFiles = {
   // Custom Questions
   CustomQuestions: `${__dirname}/../config/cards/Custom_q.json`,
 };
-
-function updateOrCreateInstance(model, query, createFields, updateFields) {
-  model.findOne(query).then(instance => {
-    if (instance === null && createFields !== null) {
-      model.create(createFields);
-    } else if (instance !== null && updateFields !== null) {
-      instance.update(updateFields);
-    }
-  });
-}
 
 // Validate and load cards files
 console.log('Loading card data...');

@@ -1,8 +1,8 @@
 {
   "name": "butlerbot",
   "version": "1.2.0",
-  "description": "Butlerbot",
-  "main": "app.js",
+  "description": "IRC Game Bot",
+  "main": "index.js",
   "author": "butlerx <butlerx@redbrick.dcu.ie>",
   "repository": {
     "type": "git",

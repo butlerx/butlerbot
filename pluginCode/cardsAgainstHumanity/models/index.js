@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs-extra';
 import _ from 'lodash';
 import path from 'path';
 import Sequelize from 'sequelize';
