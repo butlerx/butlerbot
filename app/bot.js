@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { Client } from 'irc';
+import irc from 'irc';
 import configs from '../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
@@ -34,7 +34,7 @@ exports.init = function bot() {
   }
 
   console.log(`Connecting to ${config.server} as ${config.nick}...`);
-  client = new Client(config.server, config.nick, config.clientOptions);
+  client = new irc.Client(config.server, config.nick, config.clientOptions);
 
   self.joinChannels = channels => {
     if (!_.isUndefined(channels)) {

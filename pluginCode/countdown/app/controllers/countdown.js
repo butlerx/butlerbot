@@ -104,7 +104,7 @@ class Countdown {
     } else if (client.nick.toLowerCase() === args[0].toLowerCase()) {
       client.say(channel, "You can't challenge the bot");
     } else if (message.nick.toLowerCase() === args[0].toLowerCase()) {
-      client.say(channel, "You can't challenge yourthis");
+      client.say(channel, "You can't challenge yourself");
     } else if (
       !_.isUndefined(
         _.find(this.challenges, {
