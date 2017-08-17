@@ -11,5 +11,16 @@
     "channels": "all",
     "channelsToExclude": [],
     "channelsToJoin": ["#botdev"]
-  }
+  },
+
+  "postions": [
+    "System Administrator",
+    "Chairperson",
+    "Secretary",
+    "Public Relations Officer",
+    "Treasurer",
+    "Events Officer",
+    "Helpdesk",
+    "First Year Representative"
+  ]
 }
