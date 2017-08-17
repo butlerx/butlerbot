@@ -1,4 +1,4 @@
-import pop from '../plugin_code/popping/setup';
+import pop from '../pluginCode/popping';
 
 export default function connect(app, callback) {
   pop(app);

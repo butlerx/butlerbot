@@ -1,6 +1,6 @@
-import bookclup from '../plugin_code/bookclub/setup';
+import bookclub from '../pluginCode/bookclub';
 
 export default function connect(app, callback) {
-  bookclup(app);
+  bookclub(app);
   callback();
 }

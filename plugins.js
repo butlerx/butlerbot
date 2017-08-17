@@ -8,5 +8,5 @@ export default app => {
     console.log(`Loaded ${pluginName} plugin.`);
   });
 
-  plugger.find(path.resolve(__dirname, 'plugins_enabled'));
+  plugger.find(path.resolve(__dirname, 'pluginsEnabled'));
 };

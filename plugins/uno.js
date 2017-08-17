@@ -1,4 +1,4 @@
-import uno from '../plugin_code/uno/setup';
+import uno from '../pluginCode/uno';
 
 export default function connect(app, callback) {
   uno(app);

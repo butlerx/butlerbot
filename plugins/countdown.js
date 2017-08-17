@@ -1,4 +1,4 @@
-import countdown from '../plugin_code/countdown/setup';
+import countdown from '../pluginCode/countdown';
 
 export default function connect(app, callback) {
   countdown(app);

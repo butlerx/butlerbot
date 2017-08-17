@@ -1,6 +1,6 @@
-import helpdesk from '../pluginCode/helpdesk';
+import cah from '../pluginCode/cardsAgainstHumanity';
 
 export default function connect(app, callback) {
-  helpdesk(app);
+  cah(app);
   callback();
 }

@@ -1,6 +1,6 @@
-import helpdesk from '../pluginCode/helpdesk';
+import cmt from '../pluginCode/redbrickCommittee';
 
 export default function connect(app, callback) {
-  helpdesk(app);
+  cmt(app);
   callback();
 }

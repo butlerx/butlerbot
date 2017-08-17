@@ -8,9 +8,7 @@ let client;
 const commands = [];
 const msgs = [];
 
-function checkUserMode() {
-  return true;
-}
+const checkUserMode = () => true;
 
 /**
  * Initialize the bot
@@ -52,9 +50,7 @@ exports.init = function bot() {
 
   self.setTopic = (channel, topic) => {
     // ignore if not configured to set topic
-    if (_.isUndefined(config.setTopic) || !config.setTopic) {
-      return false;
-    }
+    if (_.isUndefined(config.setTopic) || !config.setTopic) return false;
 
     // construct new topic
     let newTopic = topic;
