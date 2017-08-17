@@ -1,4 +1,4 @@
-import DublinBusInfo from './app/controllers/dublinBusInfo';
+import DublinBusInfo from './app/dublinBusInfo';
 
 export default app => {
   const dublinBusInfo = new DublinBusInfo();
