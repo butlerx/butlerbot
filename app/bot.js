@@ -5,10 +5,11 @@ import config from '../config/config.json';
 const env = process.env.NODE_ENV || 'development';
 const checkUserMode = () => true;
 
-/**
- * Initialize the bot
- */
+/** Class for IRC Bot */
 export default class Bot {
+  /**
+   * Initialize the bot
+   */
   constructor() {
     // Don't join channels until registered on the server
     this.registered = false;
@@ -30,6 +31,10 @@ export default class Bot {
     }
   }
 
+  /**
+   * Join channels on irc server
+   * @param {string[]} channels List of channels to join
+   */
   joinChannels(channels) {
     if (!_.isUndefined(channels)) {
       if (this.registered) {
@@ -45,15 +50,16 @@ export default class Bot {
   setTopic(channel, topic) {
     // ignore if not configured to set topic
     if (_.isUndefined(this.config.setTopic) || !this.config.setTopic) return false;
-
     // construct new topic
     let newTopic = topic;
     if (!_.isUndefined(this.config.topicBase)) newTopic = `${topic} ${this.config.topicBase}`;
-
     // set it
     this.client.send('TOPIC', channel, newTopic);
   }
 
+  /**
+   * Initialize the bot and connect to irc server
+   */
   init() {
     console.log(`Connecting to ${this.config.server} as ${this.config.nick}...`);
     this.client = new irc.Client(this.config.server, this.config.nick, this.config.clientOptions);
@@ -65,16 +71,12 @@ export default class Bot {
       // Send connect commands after joining a server
       if (!_.isUndefined(this.config.connectCommands) && this.config.connectCommands.length > 0) {
         _.forEach(this.config.connectCommands, ({ target, message }) => {
-          if (target && message) {
-            this.client.say(target, message);
-          }
+          if (target && message) this.client.say(target, message);
         });
       }
 
       // Join delayed channels
-      if (this.delayedChannels.length > 0) {
-        this.joinChannels(this.delayedChannels);
-      }
+      if (this.delayedChannels.length > 0) this.joinChannels(this.delayedChannels);
     });
 
     // handle joins to channels for logging
@@ -93,9 +95,7 @@ export default class Bot {
     });
 
     // output errors
-    this.client.addListener('error', message => {
-      console.warn('IRC client error: ', message);
-    });
+    this.client.addListener('error', message => console.warn('IRC client error: ', message));
 
     this.client.addListener('message', function messageListener(from, to, text, message) {
       console.log(`message from ${from} to ${to}: ${text}`);
@@ -145,31 +145,33 @@ export default class Bot {
 
   /**
    * Add a public command to the bot
-   * @param cmd Command keyword
-   * @param mode User mode that is allowed
-   * @param cb Callback function
+   * @param {string} cmd Command keyword
+   * @param {string} mode User mode that is allowed
+   * @param {string[]} channel list of channels to listen too
+   * @param {string[]} exclude list of channels to ignore
+   * @param {requestCallback} cb Callback function
    */
-  cmd(cmd, mode, channel, excludes, cb) {
+  cmd(cmd, mode, channel, exclude, callback) {
     this.commands.push({
       cmd,
       mode,
       channel,
-      exclude : excludes,
-      callback: cb,
+      exclude,
+      callback,
     });
   }
 
   /**
- * Add a msg command to the bot
- * @param cmd Command keyword
- * @param mode User mode that is allowed
- * @param cb Callback function
- */
-  msg(cmd, mode, cb) {
+   * Add a msg command to the bot
+   * @param {string} cmd Command keyword
+   * @param {string} mode User mode that is allowed
+   * @param {requestCallback} cb Callback function
+   */
+  msg(cmd, mode, callback) {
     this.msgs.push({
       cmd,
       mode,
-      callback: cb,
+      callback,
     });
   }
 }

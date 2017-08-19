@@ -12,7 +12,7 @@
     "url": "http://github.com/butlerx/butlerbot/issues"
   },
   "scripts": {
-    "start": "node app",
+    "start": "node index.js",
     "test": "yarn lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

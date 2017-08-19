@@ -19,16 +19,16 @@ const STATES = {
   PAUSED   : 'Paused',
 };
 
-/**
- * A single game object that handles all operations in a game
- * @param channel The channel the game is running on
- * @param client The IRC client object
- * @param config Configuration variables
- * @param cmdArgs !start command arguments
- * @param dbModels sequelize database Models
- * @constructor
- */
+/** Class for Game of Cards Against Humanity */
 class Game {
+  /**
+   * A single game object that handles all operations in a game
+   * @param {String} channel The channel the game is running on
+   * @param {Object} client The IRC client object
+   * @param {Object} config Configuration variables
+   * @param {Object} cmdArgs !start command arguments
+   * @param {Object} dbModels sequelize database Models
+   */
   constructor(channel, client, config, cmdArgs, dbModels) {
     this.waitCount = 0; // number of times waited until enough players
     this.round = 0; // round number
@@ -61,7 +61,7 @@ class Game {
 
     // wait for players to join
     this.startTime = new Date();
-    this.startTimeout = setTimeout(this.nextRound, config.gameOptions.secondsBeforeStart * 1000);
+    this.startTimeout = setTimeout(this.nextRound, seconds(config.gameOptions.secondsBeforeStart));
 
     // client listeners
     client.addListener('part', this.playerPartHandler);
@@ -109,12 +109,9 @@ class Game {
     }
   }
 
-  /*
-   *
-   *  Database functions
-   *
+  /**
+   * Add Game to Database
    */
-
   createGameDatabaseRecord() {
     if (this.config.gameOptions.database === true) {
       // Adding game to database
@@ -1249,10 +1246,10 @@ class Game {
   }
 
   /**
-     * Handle player nick changes
-     * @param oldnick
-     * @param newnick
-     */
+   * Handle player nick changes
+   * @param {String} oldnick old nick of player
+   * @param {String} newnick new nick of player
+   */
   playerNickChangeHandler(oldnick, newnick) {
     console.log(`Player changed nick from ${oldnick} to ${newnick}`);
     const player = this.getPlayer({ nick: oldnick });
@@ -1261,8 +1258,8 @@ class Game {
   }
 
   /**
-     * Notify users in channel that game has started
-     */
+   * Notify users in channel that game has started
+   */
   notifyUsers() {
     // request names
     this.client.send('NAMES', this.channel);
@@ -1272,9 +1269,9 @@ class Game {
   }
 
   /**
-     * Handle names response to notify users
-     * @param nicks
-     */
+   * Handle names response to notify users
+   * @param {String} nicks user to notify
+   */
   notifyUsersHandler(nicks) {
     // ignore if we haven't requested this
     if (this.notifyUsersPending === false) return false;
@@ -1297,17 +1294,27 @@ class Game {
   }
 
   /**
-     * Public message to the game channel
-     * @param string
-     */
+   * Public message to the game channel
+   * @param {String} string message to send to channel
+   */
   say(string) {
     this.client.say(this.channel, string);
   }
 
+  /**
+   * Public message to the game channel
+   * @param {String} nick nick or channel to send notice
+   * @param {String} string message to send to channel
+   */
   pm(nick, string) {
     this.client.say(nick, string);
   }
 
+  /**
+   * Public notice to the game channel or nick
+   * @param {String} nick nick or channel to send notice
+   * @param {String} string message to send to channel
+   */
   notice(nick, string) {
     this.client.notice(nick, string);
   }

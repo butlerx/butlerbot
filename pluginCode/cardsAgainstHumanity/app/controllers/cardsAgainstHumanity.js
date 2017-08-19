@@ -4,17 +4,22 @@ import Player from '../models/player';
 import config from '../../config';
 import dbModels from '../../models';
 
+/** Class for Cards Against Humanity Plugin */
 class CardsAgainstHumanity {
+  /**
+   * Initialise Plugin
+   */
   constructor() {
     this.config = config;
+    this.wikiUrl = 'https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity';
   }
 
   /**
-     * Start a game
-     * @param client
-     * @param message
-     * @param cmd
-     */
+   * Start a game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   start(client, message, cmd) {
     // check if game running on the channel
     const channel = message.args[0];
@@ -36,11 +41,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Stop a game
-     * @param client
-     * @param message
-     * @param cmdArgs
-     */
+   * Stop a game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   stop(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -55,10 +59,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Pause a game
-     * @param client
-     * @param message
-     */
+   * Pause a game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   pause(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -72,11 +76,11 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Resume a game
-     * @param client
-     * @param message
-     * @param cmdArgs
-     */
+   * Resume a game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   resume(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -90,10 +94,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Add player to game
-     * @param client
-     * @param message
-     */
+   * Add player to game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   join(client, message, cmd) {
     const nick = message.nick;
     const user = message.user;
@@ -109,10 +113,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Remove player from game
-     * @param client
-     * @param message
-     */
+   * Remove player from game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   quit(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -126,10 +130,11 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Get players cards
-     * @param client
-     * @param message
-     */
+   * Get players cards
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   cards(client, message) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -144,10 +149,11 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Play cards
-     * @param client
-     * @param message
-     */
+   * Play cards
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   play(client, message, cmd) {
     // check if everyone has played and end the round
     const channel = message.args[0];
@@ -166,10 +172,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * List players in the game
-     * @param client
-     * @param message
-     */
+   * List players in the game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   list(client, { args }) {
     const channel = args[0];
 
@@ -181,11 +187,11 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Select the winner
-     * @param client
-     * @param message
-     * @param cmd
-     */
+   * Select the winner
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   winner(client, message, cmd) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -203,10 +209,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Show top players in current game
-     * @param client
-     * @param message
-     */
+   * Show top players in current game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   points(client, { args }) {
     const channel = args[0];
 
@@ -218,10 +224,10 @@ class CardsAgainstHumanity {
   }
 
   /**
-     * Show top players in current game
-     * @param client
-     * @param message
-     */
+   * Show top players in current game
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   status(client, { args }) {
     const channel = args[0];
 
@@ -232,6 +238,13 @@ class CardsAgainstHumanity {
     }
   }
 
+  /**
+   * Pick a winning command if CardZar
+   * Pick a card to Play if a Player
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   pick(client, message, cmd) {
     // check if everyone has played and end the round
     const channel = message.args[0];
@@ -256,6 +269,12 @@ class CardsAgainstHumanity {
     }
   }
 
+  /**
+   * Discard a card from players hand
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   * @param {string} cmd Command Arguements
+   */
   discard(client, message, cmd) {
     const channel = message.args[0];
     const nick = message.nick;
@@ -275,16 +294,17 @@ class CardsAgainstHumanity {
     }
   }
 
+  /**
+   * Link to wiki on how to interact with bot
+   * @param {Object} client IRC Client
+   * @param {Object} message Raw message from IRC server
+   */
   wiki(client, { args, nick }) {
     if (client.nick.toLowerCase() === args[0].toLowerCase()) {
-      client.say(nick, 'https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity');
+      client.say(nick, this.wikiUrl);
     } else {
-      client.say(
-        args[0],
-        `${nick}: https://github.com/butlerx/butlerbot/wiki/Cards-Against-Humanity`,
-      );
+      client.say(args[0], `${nick}: ${this.wikiUrl}`);
     }
-    return this;
   }
 }
 
