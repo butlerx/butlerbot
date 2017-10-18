@@ -11,23 +11,23 @@ import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
 
-class Bookclub {
-  constructor() {
+export default class Bookclub {
+  constructor(client) {
     this.config = config[env];
     this.booksToRead = booksToRead;
     this.thisMonthBook = thisMonthBook;
     this.nextMonthBook = nextMonthBook;
     this.booksRead = booksRead;
     this.date = new Date();
-    this.client = null;
+    this.client = client;
     this.new = 0;
     this.keep = 0;
     this.voted = [];
 
     this.amazon = amazon.createClient({
-      awsId    : process.env.AWSID || this.config.awsId,
+      awsId: process.env.AWSID || this.config.awsId,
       awsSecret: process.env.AWSSECRET || this.config.awsSecret,
-      awsTag   : 'BookClub',
+      awsTag: 'BookClub',
     });
     schedule.scheduleJob('0 0 1 * *', () => {
       if (this.client !== null) {
@@ -70,7 +70,7 @@ class Bookclub {
     }
   }
 
-  suggest(client, { args, nick }, cmdArgs) {
+  async suggest(client, { args, nick }, cmdArgs) {
     console.log('in suggest');
     this.client = client;
     const input = cmdArgs.split('; ');
@@ -90,14 +90,14 @@ class Bookclub {
 
     const books = _.filter(
       this.booksToRead,
-      book => book.title.toLowerCase() === input[0].toLowerCase(),
+      ({ title }) => title.toLowerCase() === input[0].toLowerCase(),
     );
-    const titles = _.map(books, book => book.title.toLowerCase());
+    const titles = _.map(books, ({ title }) => title.toLowerCase());
     const read = _.filter(
       this.booksRead,
-      book => book.title.toLowerCase() === input[0].toLowerCase(),
+      ({ title }) => title.toLowerCase() === input[0].toLowerCase(),
     );
-    const titlesRead = _.map(read, book => book.title.toLowerCase());
+    const titlesRead = _.map(read, ({ title }) => title.toLowerCase());
 
     const title = input[0].toString();
     const author = input[1].toString();
@@ -113,26 +113,23 @@ class Bookclub {
     } else if (_.includes(titles, title.toLowerCase())) {
       client.say(args[0], 'That book has already been suggested');
     } else {
-      this.amazon.itemSearch(
-        {
+      let link;
+      try {
+        const results = await this.amazon.itemSearch({
           title,
           author,
           searchIndex: 'Books',
-        },
-        (err, results) => {
-          let link;
-          if (err) {
-            console.log(err);
-            link = 'No link found';
-          } else {
-            const result = results[0].DetailPageURL[0].split('%');
-            link = result[0];
-          }
-          this.booksToRead.push({ title, author, pages, suggested: nick, month: 0, link });
-          this.write('booksToRead', this.booksToRead);
-          client.say(args[0], 'Book added!');
-        },
-      );
+        });
+        const result = results[0].DetailPageURL[0].split('%');
+        link = result[0];
+      } catch (err) {
+        console.log(err);
+        link = 'No link found';
+      } finally {
+        this.booksToRead.push({ title, author, pages, suggested: nick, month: 0, link });
+        this.write('booksToRead', this.booksToRead);
+        client.say(args[0], 'Book added!');
+      }
     }
   }
 
@@ -186,11 +183,7 @@ class Bookclub {
   }
 
   write(fileName, file) {
-    fs
-      .outputJson(`plugin_code/bookclub/config/${fileName}.json`, file)
-      .then(console.log(`writing to ${fileName}`))
-      .catch(console.error);
-    return this;
+    return fs.outputJson(`plugin_code/bookclub/config/${fileName}.json`, file);
   }
 
   showBooks(client, { nick }) {
@@ -202,7 +195,7 @@ class Bookclub {
 
   showRead(client, { nick }) {
     this.client = client;
-    this.booksRead.forEach(book => {
+    this.booksRead.forEach((book) => {
       let month = 'No Month';
       switch (book.month) {
         case 0:
@@ -303,5 +296,3 @@ class Bookclub {
     }
   }
 }
-
-export default Bookclub;

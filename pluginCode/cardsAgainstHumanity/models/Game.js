@@ -3,18 +3,18 @@ export default (sequelize, { INTEGER, DATE }) =>
     'Game',
     {
       id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: true,
       },
       ended_at: {
         type: DATE,
       },
       winner_id: {
-        type      : INTEGER,
+        type: INTEGER,
         references: {
           model: 'players',
-          key  : 'id',
+          key: 'id',
         },
       },
       num_rounds: {

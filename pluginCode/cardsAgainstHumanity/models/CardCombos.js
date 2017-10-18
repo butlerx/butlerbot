@@ -3,30 +3,30 @@ export default (sequelize, { INTEGER, STRING }) =>
     'CardCombo',
     {
       game_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
       player_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'player',
-          key  : 'id',
+          key: 'id',
         },
       },
       question_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'cards',
-          key  : 'id',
+          key: 'id',
         },
       },
       answer_ids: {
@@ -34,7 +34,7 @@ export default (sequelize, { INTEGER, STRING }) =>
       },
     },
     {
-      tableName : 'card_combos',
+      tableName: 'card_combos',
       timestamps: false,
     },
   );

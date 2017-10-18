@@ -3,8 +3,8 @@ export default (sequelize, { INTEGER, STRING }) =>
     'Player',
     {
       id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: true,
       },
       nick: {

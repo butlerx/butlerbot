@@ -9,7 +9,7 @@ import models from '../models';
 
 const config = _.assignIn(
   {
-    root : path.normalize(`${__dirname}/../..`),
+    root: path.normalize(`${__dirname}/../..`),
     cards: [],
   },
   process.env.NODE_ENV === 'production' ? production : development,
@@ -20,7 +20,7 @@ const validator = new JaySchema();
 
 function updateOrCreateInstance(model, query, createFields, updateFields) {
   console.log(model);
-  model.findOne(query).then(instance => {
+  model.findOne(query).then((instance) => {
     if (instance === null && createFields !== null) {
       model.create(createFields);
     } else if (instance !== null && updateFields !== null) {
@@ -40,7 +40,7 @@ async function loadCardFile(identifier, filename) {
     if (!fs.exists(filename)) throw new Error('File does not exists');
     const data = await fs.readJson(filename);
     if (data.length === 0) return;
-    validator.validate(data, schema, err => {
+    validator.validate(data, schema, (err) => {
       if (err) throw new Error(`${identifier}: Validation error: ${err}`);
       console.log(`${identifier}: Validation OK!`);
       config.cards = _.union(config.cards, data);

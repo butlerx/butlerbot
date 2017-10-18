@@ -1,6 +1,6 @@
 import CardsAgainstHumanity from './app/controllers/cardsAgainstHumanity';
 
-export default app => {
+export default (app) => {
   const cardsAgainstHumanity = new CardsAgainstHumanity();
 
   // Join Channels

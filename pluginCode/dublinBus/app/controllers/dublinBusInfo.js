@@ -14,29 +14,23 @@ function printBuses({ stop, buses }, client, channel) {
   });
 }
 
-class DublinBusInfo {
+export default class DublinBusInfo {
   constructor() {
     this.config = config;
   }
 
-  showStopInfo(client, { args, nick }, cmdArgs) {
+  async showStopInfo(client, { args, nick }, cmdArgs) {
     const cmd = cmdArgs !== '' ? _.map(cmdArgs.match(/(\w+)\s?/gi), str => str.trim()) : cmdArgs;
-
-    if (cmd.length < 1 || isNaN(cmd[0])) {
-      client.say(args[0], `${nick}: Please supply a stop number.`);
-    } else if (_.isUndefined(cmd[1])) {
-      dBus
-        .getStopInfo(cmd[0])
-        .then(info => printBuses(info, client, args[0]))
-        .catch(reason => client.say(args[0], `${nick}: Sorry, ${reason}.`));
-    } else {
-      dBus
-        .getStopInfoForBuses(cmd[0], cmd.splice(1))
-        .then(info => printBuses(info, client, args[0]))
-        .catch(reason => client.say(args[0], `${nick}: Sorry, ${reason}.`));
+    try {
+      if (cmd.length < 1 || isNaN(cmd[0])) {
+        client.say(args[0], `${nick}: Please supply a stop number.`);
+      } else if (_.isUndefined(cmd[1])) {
+        printBuses(await dBus.getStopInfo(cmd[0]), client, args[0]);
+      } else {
+        printBuses(await dBus.getStopInfoForBuses(cmd[0], cmd.splice(1)), client, args[0]);
+      }
+    } catch (reason) {
+      client.say(args[0], `${nick}: Sorry, ${reason}.`);
     }
-    return this;
   }
 }
-
-export default DublinBusInfo;

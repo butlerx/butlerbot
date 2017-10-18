@@ -1,6 +1,6 @@
-import Helpdesk from './app/controllers/helpdesk';
+import Helpdesk from './app/controllers/Helpdesk';
 
-export default app => {
+export default (app) => {
   const helpdesk = new Helpdesk();
 
   // Join Channels

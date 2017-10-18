@@ -3,30 +3,30 @@ export default (sequelize, { INTEGER }) =>
     'Round',
     {
       game_id: {
-        type      : INTEGER,
+        type: INTEGER,
         primaryKey: true,
         references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
       winner_id: {
-        type      : INTEGER,
+        type: INTEGER,
         references: {
           model: 'players',
-          key  : 'id',
+          key: 'id',
         },
       },
       round_number: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
       },
       question_id: {
-        type      : INTEGER,
+        type: INTEGER,
         references: {
           model: 'cards',
-          key  : 'id',
+          key: 'id',
         },
       },
       num_active_players: {
@@ -37,7 +37,7 @@ export default (sequelize, { INTEGER }) =>
       },
     },
     {
-      tableName : 'rounds',
+      tableName: 'rounds',
       timestamps: false,
     },
   );

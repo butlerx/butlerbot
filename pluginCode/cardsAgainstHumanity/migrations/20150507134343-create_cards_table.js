@@ -2,8 +2,8 @@ export default {
   up(queryInterface, { INTEGER, BOOLEAN }) {
     return queryInterface.createTable('cards', {
       id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: true,
       },
       text: {

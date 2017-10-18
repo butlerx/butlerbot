@@ -1,6 +1,6 @@
 import Bookclub from './app/controllers/bookclub';
 
-export default app => {
+export default (app) => {
   const bookclub = new Bookclub();
 
   // Join Channels

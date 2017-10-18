@@ -1,6 +1,6 @@
 import c from 'irc-colors';
 
-class Card {
+export default class Card {
   constructor({ type, color, value }) {
     this.type = type;
     this.color = color;
@@ -148,25 +148,17 @@ class Card {
 
     switch (this.color) {
       case 'YELLOW':
-        cardString = c.bold.yellow(cardString);
-        break;
+        return c.bold.yellow(cardString);
       case 'GREEN':
-        cardString = c.bold.green(cardString);
-        break;
+        return c.bold.green(cardString);
       case 'BLUE':
-        cardString = c.bold.blue(cardString);
-        break;
+        return c.bold.blue(cardString);
       case 'RED':
-        cardString = c.bold.red(cardString);
-        break;
+        return c.bold.red(cardString);
       case 'WILD':
-        cardString = c.bold.rainbow(cardString);
-        break;
+        return c.bold.rainbow(cardString);
       default:
-        break;
+        return cardString;
     }
-    return cardString;
   }
 }
-
-export default Card;

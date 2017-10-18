@@ -4,12 +4,12 @@ import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
 
-class Helpdesk {
+export default class Helpdesk {
   constructor() {
     this.config = config[env];
   }
 
-  help(client, { args, nick }, cmdArgs) {
+  async help(client, { args, nick }, cmdArgs) {
     let channel = args[0];
     if (channel === client.nick) channel = nick;
     const input = cmdArgs.split(' ', 1);
@@ -20,22 +20,20 @@ class Helpdesk {
       );
       return false;
     }
-    const options = {
-      uri      : this.config.wiki + input[0],
-      transform: body => cheerio.load(body),
-    };
-    request(options)
-      .then($ => {
-        if ($('.noarticletext').exists('p')) {
-          client.say(channel, 'Sorry theres no help for that');
-          return;
-        }
-        client.say(nick, $('.mw-content-ltr').children().first().text());
-        client.say(channel, options.uri);
-      })
-      .catch(err => {
-        console.log(`We’ve encountered an error: ${err}`);
+    try {
+      const $ = await request({
+        uri: this.config.wiki + input[0],
+        transform: body => cheerio.load(body),
       });
+      if ($('.noarticletext').exists('p')) {
+        client.say(channel, 'Sorry theres no help for that');
+        return;
+      }
+      client.say(nick, $('.mw-content-ltr').children().first().text());
+      client.say(channel, this.config.wiki + input[0]);
+    } catch (err) {
+      console.log(`We’ve encountered an error: ${err}`);
+    }
   }
 
   list(client, { args, nick }) {
@@ -45,5 +43,3 @@ class Helpdesk {
     client.say(channel, `The commands are ${commands} and pm only commands are ${pmCommands}`);
   }
 }
-
-export default Helpdesk;

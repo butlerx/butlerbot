@@ -2,30 +2,30 @@ export default {
   up(queryInterface, { INTEGER, STRING }) {
     return queryInterface.createTable('card_combos', {
       game_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
       player_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'players',
-          key  : 'id',
+          key: 'id',
         },
       },
       question_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'cards',
-          Key  : 'id',
+          Key: 'id',
         },
       },
       answer_ids: {

@@ -1,6 +1,6 @@
 import RedbrickCommittee from './app/controllers/redbrickCommittee';
 
-export default app => {
+export default (app) => {
   const redbrickCommittee = new RedbrickCommittee();
 
   // Join Channels

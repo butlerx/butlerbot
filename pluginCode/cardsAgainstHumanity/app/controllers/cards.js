@@ -10,7 +10,7 @@ class Cards {
   constructor(allCards) {
     this.cards = [];
     // add all cards in init array
-    _.forEach(allCards, c => {
+    _.forEach(allCards, (c) => {
       if (c instanceof Card) {
         this.cards.push(c);
       } else if ({}.hasOwnProperty.call(c, 'value')) {
@@ -75,7 +75,7 @@ class Cards {
       // first get all cards
       _.forEach(
         index,
-        _.bind(i => {
+        _.bind((i) => {
           const c = this.cards[i];
           if (_.isUndefined(c)) throw new Error('Invalid card index');
           pickedCards.addCard(c);

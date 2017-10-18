@@ -2,12 +2,12 @@ import _ from 'lodash';
 import Card from '../models/card';
 import cards from '../../config/cards.json';
 
-class Deck {
+export default class Deck {
   constructor(deck) {
     this.cards = [];
 
     if (deck === true) {
-      _.forEach(cards, card => {
+      _.forEach(cards, (card) => {
         this.cards.push(new Card(card));
       });
     } else {
@@ -55,5 +55,3 @@ class Deck {
     return this.cards.length;
   }
 }
-
-export default Deck;

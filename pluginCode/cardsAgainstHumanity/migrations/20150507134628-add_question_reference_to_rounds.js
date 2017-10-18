@@ -1,10 +1,10 @@
 export default {
   up(queryInterface, { INTEGER }) {
     return queryInterface.addColumn('rounds', 'question_id', {
-      type      : INTEGER,
+      type: INTEGER,
       references: {
         model: 'cards',
-        key  : 'id',
+        key: 'id',
       },
     });
   },

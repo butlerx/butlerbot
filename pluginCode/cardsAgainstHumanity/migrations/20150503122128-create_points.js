@@ -2,19 +2,19 @@ export default {
   up(queryInterface, { INTEGER, BOOLEAN }) {
     return queryInterface.createTable('points', {
       player_id: {
-        type      : INTEGER,
+        type: INTEGER,
         primaryKey: true,
         references: {
           model: 'players',
-          key  : 'id',
+          key: 'id',
         },
       },
       game_id: {
-        type      : INTEGER,
+        type: INTEGER,
         primaryKey: true,
         references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
       is_active: {

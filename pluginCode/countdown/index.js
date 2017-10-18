@@ -1,6 +1,6 @@
 import Countdown from './app/controllers/countdown';
 
-export default app => {
+export default (app) => {
   const countdown = new Countdown();
 
   // Join channels

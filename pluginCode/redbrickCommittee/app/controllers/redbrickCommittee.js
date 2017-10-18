@@ -4,7 +4,7 @@ import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
 
-class RedbrickCommittee {
+export default class RedbrickCommittee {
   constructor() {
     this.config = config[env];
     this.postions = config.position;
@@ -12,7 +12,7 @@ class RedbrickCommittee {
 
   committee() {
     return request({
-      uri    : this.config.url,
+      uri: this.config.url,
       headers: {
         'User-Agent': 'Request-Promise',
       },
@@ -35,7 +35,7 @@ class RedbrickCommittee {
       const cmt = _.isUndefined(cmtArg) ? await this.committee() : cmtArg;
       const memebers = _.filter(cmt, { position });
       if (!_.isUndefined(memebers)) {
-        memebers.forEach(memeber => {
+        memebers.forEach((memeber) => {
           client.say(
             nick,
             `${position}: ${memeber.name} (${memeber.nick}) contact by /m ${memeber.nick} <message>, or email ${memeber.name}@redbrick.dcu.ie`,
@@ -91,5 +91,3 @@ class RedbrickCommittee {
     return this.show(client, nick, 'System Administrator');
   }
 }
-
-export default RedbrickCommittee;

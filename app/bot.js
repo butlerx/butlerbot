@@ -38,7 +38,7 @@ export default class Bot {
   joinChannels(channels) {
     if (!_.isUndefined(channels)) {
       if (this.registered) {
-        _.forEach(channels, channel => {
+        _.forEach(channels, (channel) => {
           this.client.join(channel);
         });
       } else {
@@ -112,7 +112,7 @@ export default class Bot {
         // private message commands
         _.forEach(
           this.msgs,
-          _.bind(c => {
+          _.bind((c) => {
             if (command === c.cmd) {
               console.log(`command: ${c.cmd}`);
               // check user mode
@@ -124,7 +124,7 @@ export default class Bot {
         // public commands
         _.forEach(
           this.commands,
-          _.bind(c => {
+          _.bind((c) => {
             // If the command matches
             if (command === c.cmd) {
               // If the channel matches the command channels or is set to respond on all channels and is not in the

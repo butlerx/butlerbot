@@ -3,21 +3,21 @@ export default (sequelize, { INTEGER, BOOLEAN }) =>
     'Points',
     {
       player_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'players',
-          key  : 'id',
+          key: 'id',
         },
       },
       game_id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        references   : {
+        references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
       is_active: {
@@ -28,7 +28,7 @@ export default (sequelize, { INTEGER, BOOLEAN }) =>
       },
     },
     {
-      tableName : 'points',
+      tableName: 'points',
       timestamps: false,
     },
   );

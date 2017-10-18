@@ -2,23 +2,23 @@ export default {
   up(queryInterface, { INTEGER }) {
     return queryInterface.createTable('rounds', {
       game_id: {
-        type      : INTEGER,
+        type: INTEGER,
         primaryKey: true,
         references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
       round_number: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: false,
       },
       winner_id: {
-        type      : INTEGER,
+        type: INTEGER,
         references: {
           model: 'players',
-          key  : 'id',
+          key: 'id',
         },
       },
       num_active_players: {

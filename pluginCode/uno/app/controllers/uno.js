@@ -6,7 +6,7 @@ import config from '../../config/config.json';
 
 const env = process.env.NODE_ENV || 'development';
 
-class Uno {
+export default class Uno {
   constructore() {
     this.config = config[env];
   }
@@ -106,5 +106,3 @@ class Uno {
     return this;
   }
 }
-
-export default Uno;

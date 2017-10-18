@@ -2,8 +2,8 @@ export default {
   up(queryInterface, { INTEGER, STRING, DATE }) {
     return queryInterface.createTable('players', {
       id: {
-        type         : INTEGER,
-        primaryKey   : true,
+        type: INTEGER,
+        primaryKey: true,
         autoIncrement: true,
       },
       nick: {
@@ -16,10 +16,10 @@ export default {
         type: DATE,
       },
       last_game_id: {
-        type      : INTEGER,
+        type: INTEGER,
         references: {
           model: 'games',
-          key  : 'id',
+          key: 'id',
         },
       },
     });

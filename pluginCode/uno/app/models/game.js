@@ -4,15 +4,15 @@ import inflection from 'inflection';
 import Deck from '../controllers/deck';
 
 const STATES = {
-  STOPPED : 'Stopped',
-  STARTED : 'Started',
+  STOPPED: 'Stopped',
+  STARTED: 'Started',
   PLAYABLE: 'Playable',
   TURN_END: 'Turn End',
   FINISHED: 'Game Finished',
-  WAITING : 'Waiting',
+  WAITING: 'Waiting',
 };
 
-class Game {
+export default class Game {
   constructor(channel, client, config, cmdArgs) {
     this.players = [];
     this.channel = channel;
@@ -236,7 +236,7 @@ class Game {
 
     this.turn += 1;
     // Unset flags
-    _.forEach(this.players, player => {
+    _.forEach(this.players, (player) => {
       player.skipped = false;
       player.hasPlayed = false;
       player.hasDrawn = false;
@@ -329,7 +329,7 @@ class Game {
 
     this.state = STATES.STARTED;
 
-    _.forEach(this.players, player => {
+    _.forEach(this.players, (player) => {
       this.deal(player, 7);
     });
     this.setTopic(
@@ -462,7 +462,7 @@ class Game {
     this.deal(this.currentPlayer, 1, true);
     this.currentPlayer.hasDrawn = true;
 
-    _.forEach(this.players, player => {
+    _.forEach(this.players, (player) => {
       player.challengeable = false;
     });
 
@@ -527,8 +527,8 @@ class Game {
 
   addPlayer(player) {
     const alreadyPlayer = this.getPlayer({
-      nick    : player.nick,
-      user    : player.user,
+      nick: player.nick,
+      user: player.user,
       hostname: player.hostname,
     });
 
@@ -545,9 +545,7 @@ class Game {
     if (_.isUndefined(player)) return false;
 
     // Add cards back into the deck
-    _.forEach(player.hand.getCards(), card => {
-      this.deck.addCard(card);
-    });
+    _.forEach(player.hand.getCards(), card => this.deck.addCard(card));
 
     this.deck.shuffle();
     console.log(`${player.nick} removed.`);
@@ -594,7 +592,6 @@ class Game {
 
   findAndRemoveIfPlaying(nick) {
     const player = this.getPlayer({ nick });
-
     if (!_.isUndefined(player)) {
       this.removePlayer(player.nick);
     }
@@ -635,5 +632,3 @@ class Game {
 }
 
 Game.STATES = STATES;
-
-export default Game;

@@ -1,6 +1,6 @@
 import Uno from './app/controllers/uno';
 
-export default app => {
+export default (app) => {
   const uno = new Uno();
 
   // Join channels

@@ -10,13 +10,13 @@ const seconds = sec => sec * 1000;
  * @type {{STOPPED: string, STARTED: string, PLAYABLE: string, PLAYED: string, ROUND_END: string, WAITING: string}}
  */
 const STATES = {
-  STOPPED  : 'Stopped',
-  STARTED  : 'Started',
-  PLAYABLE : 'Playable',
-  PLAYED   : 'Played',
+  STOPPED: 'Stopped',
+  STARTED: 'Started',
+  PLAYABLE: 'Playable',
+  PLAYED: 'Played',
   ROUND_END: 'RoundEnd',
-  WAITING  : 'Waiting',
-  PAUSED   : 'Paused',
+  WAITING: 'Waiting',
+  PAUSED: 'Paused',
 };
 
 /** Class for Game of Cards Against Humanity */
@@ -81,17 +81,17 @@ class Game {
     // init decks
     this.decks = {
       question: new Cards(questions),
-      answer  : new Cards(answers),
+      answer: new Cards(answers),
     };
     // init discard piles
     this.discards = {
       question: new Cards(),
-      answer  : new Cards(),
+      answer: new Cards(),
     };
     // init table slots
     this.table = {
       question: null,
-      answer  : [],
+      answer: [],
     };
     // shuffle decks
     this.decks.question.shuffle();
@@ -115,9 +115,9 @@ class Game {
   createGameDatabaseRecord() {
     if (this.config.gameOptions.database === true) {
       // Adding game to database
-      this.dbModels.Game.create({ num_rounds: this.round }).then(game => {
+      this.dbModels.Game.create({ num_rounds: this.round }).then((game) => {
         this.dbGame = game;
-        _.forEach(this.playersToAdd, player => {
+        _.forEach(this.playersToAdd, (player) => {
           this.addPlayer(player);
         });
       });
@@ -157,7 +157,7 @@ class Game {
   }
 
   updateOrCreateInstance(model, query, createFields, updateFields) {
-    model.findOne(query).then(instance => {
+    model.findOne(query).then((instance) => {
       if (instance === null && createFields !== null) {
         model.create(createFields);
       } else if (instance !== null && updateFields !== null) {
@@ -169,7 +169,7 @@ class Game {
 
   recordRound(cardValue) {
     if (this.config.gameOptions.database === true) {
-      this.dbModels.Card.findOne({ where: { text: cardValue } }).then(instance => {
+      this.dbModels.Card.findOne({ where: { text: cardValue } }).then((instance) => {
         instance.update({ times_played: instance.times_played + 1 }).then(({ id }) => {
           this.createRound(id);
         });
@@ -198,12 +198,12 @@ class Game {
             },
           },
         })
-        .then(cards => {
+        .then((cards) => {
           if (playerCards.length === 1) {
             cardString = cards[0].id;
           } else {
             _.forEach(playerCards, ({ value }) => {
-              _.forEach(cards, card => {
+              _.forEach(cards, (card) => {
                 if (value === card.text) {
                   cardString.push(card.id);
                 }
@@ -217,17 +217,17 @@ class Game {
             this.dbModels.CardCombo,
             { where: { game_id: this.dbGame.id, player_id: id, questionID: round.questionID } },
             {
-              game_id   : this.dbGame.id,
-              player_id : id,
+              game_id: this.dbGame.id,
+              player_id: id,
               questionID: round.questionID,
               answer_ids: cardString,
-              winner    : false,
+              winner: false,
             },
             null,
           );
 
           // Finally update each of the cards times played count
-          _.forEach(cards, card => {
+          _.forEach(cards, (card) => {
             card.update({ times_played: card.times_played + 1 });
           });
         });
@@ -238,13 +238,13 @@ class Game {
     if (this.config.gameOptions.database === true) {
       this.dbModels.Round
         .create({
-          game_id           : this.dbGame.id,
-          round_number      : this.round,
+          game_id: this.dbGame.id,
+          round_number: this.round,
           num_active_players: _.filter(this.players, ({ isActive }) => isActive).length,
-          total_players     : this.players.length,
+          total_players: this.players.length,
           questionID,
         })
-        .then(round => {
+        .then((round) => {
           this.dbCurrentRound = round;
         });
     }
@@ -437,7 +437,7 @@ class Game {
     this.playQuestion();
 
     // show cards for all players (except czar)
-    _.forEach(this.players, player => {
+    _.forEach(this.players, (player) => {
       if (player.isCzar !== true && player.isActive === true) {
         this.showCards(player);
         this.pm(player.nick, 'Play cards with !cah');
@@ -489,7 +489,7 @@ class Game {
     if (_.isUndefined(targetPlayer)) {
       _.forEach(
         this.players,
-        _.bind(player => {
+        _.bind((player) => {
           if (player.isActive) {
             console.log(
               `${player.nick}(${player.hostname}) has ${player.cards.numCards()} cards. Dealing ${10 -
@@ -527,7 +527,7 @@ class Game {
       _.bind(function cleanCards(cards) {
         _.forEach(
           cards.getCards(),
-          _.bind(card => {
+          _.bind((card) => {
             card.owner = null;
             this.discards.answer.addCard(card);
             cards.removeCard(card);
@@ -539,7 +539,7 @@ class Game {
 
     // reset players
     const removedNicks = [];
-    _.forEach(this.players, player => {
+    _.forEach(this.players, (player) => {
       player.hasPlayed = false;
       player.hasDiscarded = false;
       player.isCzar = false;
@@ -587,7 +587,7 @@ class Game {
 
     // draw cards
     if (this.table.question.draw > 0) {
-      _.forEach(_.filter(this.players, { isCzar: false, isActive: true }), player => {
+      _.forEach(_.filter(this.players, { isCzar: false, isActive: true }), (player) => {
         for (let i = 0; i < this.table.question.draw; i += 1) {
           this.checkDecks();
           const pickedCard = this.decks.answer.pickCards();
@@ -711,7 +711,7 @@ class Game {
         this.deal(player, player.cards.numCards() + playerCards.numCards());
 
         // Add the cards to the discard pile, and reduce points, and mark the player as having discarded
-        _.forEach(playerCards.getCards(), card => {
+        _.forEach(playerCards.getCards(), (card) => {
           card.owner = null;
           this.discards.answer.addCard(card);
           playerCards.removeCard(card);
@@ -897,7 +897,7 @@ class Game {
     const args = [value];
     _.forEach(
       answers,
-      _.bind(answer => {
+      _.bind((answer) => {
         args.push(answer.value);
       }, this),
     );
@@ -949,7 +949,7 @@ class Game {
     ) {
       // Returning players
       const oldPlayer = _.find(this.players, {
-        nick    : player.nick,
+        nick: player.nick,
         hostname: player.hostname,
         isActive: false,
       });
@@ -1022,7 +1022,7 @@ class Game {
       // remove player
       player.isActive = false;
       // put player's cards to discard
-      _.forEach(cards, card => {
+      _.forEach(cards, (card) => {
         console.log('Add card ', card.text, 'to discard');
         this.discards.answer.addCard(card);
       });
@@ -1076,7 +1076,7 @@ class Game {
   markInactivePlayers() {
     _.forEach(
       this.getNotPlayed(),
-      _.bind(player => {
+      _.bind((player) => {
         player.inactiveRounds += 1;
       }, this),
     );

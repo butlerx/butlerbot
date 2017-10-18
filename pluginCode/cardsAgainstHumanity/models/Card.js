@@ -3,8 +3,8 @@ export default (sequelize, DataTypes) =>
     'Card',
     {
       id: {
-        type         : DataTypes.INTEGER,
-        primaryKey   : true,
+        type: DataTypes.INTEGER,
+        primaryKey: true,
         autoIncrement: true,
       },
       text: {
@@ -18,7 +18,7 @@ export default (sequelize, DataTypes) =>
       },
     },
     {
-      tableName : 'cards',
+      tableName: 'cards',
       timestamps: false,
     },
   );

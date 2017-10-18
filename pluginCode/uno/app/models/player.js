@@ -1,6 +1,6 @@
 import Deck from '../controllers/deck';
 
-class Player {
+export default class Player {
   constructor(nick, user, hostname) {
     this.nick = nick;
     this.user = user;
@@ -16,4 +16,3 @@ class Player {
     this.challengable = false;
   }
 }
-export default Player;

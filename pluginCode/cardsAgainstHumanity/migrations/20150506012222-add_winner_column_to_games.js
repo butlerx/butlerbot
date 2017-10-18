@@ -1,10 +1,10 @@
 export default {
   up(queryInterface, { INTEGER }) {
     return queryInterface.addColumn('games', 'winner_id', {
-      type      : INTEGER,
+      type: INTEGER,
       references: {
         model: 'players',
-        key  : 'id',
+        key: 'id',
       },
     });
   },

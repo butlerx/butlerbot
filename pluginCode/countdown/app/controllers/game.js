@@ -5,18 +5,18 @@ import dictionary from '../../config/dictionary.json';
 import conundrums from '../../config/conundrums.json';
 
 const STATES = {
-  STOPPED          : 'Stopped',
-  STARTED          : 'Started',
-  LETTERS          : 'Letters',
-  NUMBERS          : 'Numbers',
-  CONUNDRUM        : 'Conundrum',
-  PLAYED           : 'Played',
-  PLAY_LETTERS     : 'Play letters',
-  PLAY_NUMBERS     : 'Play numbers',
+  STOPPED: 'Stopped',
+  STARTED: 'Started',
+  LETTERS: 'Letters',
+  NUMBERS: 'Numbers',
+  CONUNDRUM: 'Conundrum',
+  PLAYED: 'Played',
+  PLAY_LETTERS: 'Play letters',
+  PLAY_NUMBERS: 'Play numbers',
   LETTERS_ROUND_END: 'Letters round end',
   NUMBERS_ROUND_END: 'Numbers round end',
-  WAITING          : 'Waiting',
-  SELECTING        : 'Selecting',
+  WAITING: 'Waiting',
+  SELECTING: 'Selecting',
 };
 
 const seconds = sec => sec * 1000;
@@ -107,16 +107,16 @@ class Game {
 
     // Selections
     this.table = {
-      letters  : [],
-      numbers  : [],
-      target   : 0,
+      letters: [],
+      numbers: [],
+      target: 0,
       conundrum: null,
     };
 
     // Discards
     this.discards = {
       consonants: [],
-      vowels    : [],
+      vowels: [],
     };
 
     // Answers
@@ -649,7 +649,7 @@ class Game {
         this.discards.consonants = [];
       }
 
-      _.forEach(letters, letter => {
+      _.forEach(letters, (letter) => {
         if (letter.toLowerCase() === 'c') {
           this.table.letters.push(this.consonants.shift().toUpperCase());
         } else if (letter.toLowerCase() === 'v') {
@@ -822,7 +822,7 @@ class Game {
         return false;
       }
 
-      _.forEach(numbers, number => {
+      _.forEach(numbers, (number) => {
         if (number.toLowerCase() === 'l') {
           this.table.numbers.push(this.large.shift());
         } else if (number.toLowerCase() === 's') {

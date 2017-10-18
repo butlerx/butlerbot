@@ -120,7 +120,7 @@ class Countdown {
         challenged: args[0].toLowerCase(),
       })
     ) {
-      args.forEach(argRaw => {
+      args.forEach((argRaw) => {
         const arg = argRaw.split(':');
         if (_.reject(arg[1], number => _.includes(validNumbers, number) === true).length !== 0) {
           client.say(channel, `The ${arg[0]} isnt valid`);
@@ -142,9 +142,9 @@ class Countdown {
       this.challenges.push({
         challenger: message.nick,
         challenged: args[0],
-        letter    : letterTime,
-        number    : numberTime,
-        conundrum : conundrumTime,
+        letter: letterTime,
+        number: numberTime,
+        conundrum: conundrumTime,
       });
       fs.writeFile(this.challengesFile, JSON.stringify(this.challenges, null, 2));
       client.say(channel, `${message.nick}: has challenged ${args[0]}`);
