@@ -49,7 +49,13 @@ export default (app) => {
     uno.config.pluginOptions.channelsToExclude,
     uno.quit,
   );
-  // app.cmd('score', '', uno.config.pluginOptions.channels, uno.config.pluginOptions.channelsToExclude, uno.score);
+  /* app.cmd(
+    'score',
+    '',
+    uno.config.pluginOptions.channels,
+    uno.config.pluginOptions.channelsToExclude,
+    uno.score,
+  ); */
   app.cmd(
     'status',
     '',
