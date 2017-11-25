@@ -1,3 +1,3 @@
-import cah from '../pluginCode/cardsAgainstHumanity';
+import cah from 'butlerbot-cards-against-humanity';
 
 export default cah;
