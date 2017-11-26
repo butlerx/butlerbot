@@ -1,6 +1,6 @@
 {
   "name": "butlerbot",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "IRC Game Bot",
   "main": "index.js",
   "author": "butlerx <butlerx@redbrick.dcu.ie>",
@@ -29,23 +29,19 @@
   "license": "CC-BY-NC-SA-2.0",
   "dependencies": {
     "@std/esm": "^0.2.2",
-    "amazon-product-api": "^0.4.3",
-    "butlerbot-cards-against-humanity": "^1.0.1",
+    "butlerbot-announce": "^1.0.0",
+    "butlerbot-bookclub": "^1.0.0",
+    "butlerbot-cards-against-humanity": "^1.1.1",
+    "butlerbot-countdown": "^1.0.0",
     "butlerbot-dublin-bus": "^1.0.1",
     "butlerbot-helpdesk": "^1.0.0",
     "butlerbot-popping": "^1.0.0",
-    "cheerio": "^0.22.0",
-    "fs-extra": "^4.0.1",
+    "butlerbot-redbrick-committee": "^1.0.2",
+    "butlerbot-uno": "^1.0.0",
     "glob": "^7.1.2",
     "irc": "^0.5.2",
     "lodash": "^4.17.4",
-    "mathjs": "^3.10.1",
-    "moment": "^2.18.1",
-    "node-schedule": "^1.2.1",
-    "request": "^2.34.0",
-    "request-promise": "^4.2.1",
-    "request-promise-native": "^1.0.4",
-    "snoowrap": "^1.14.0"
+    "request": "2.34"
   },
   "devDependencies": {
     "eslint": "^4.6.0",

@@ -1,6 +1,5 @@
-import Bot from './bot';
+import Bot from './Bot';
 import pkg from '../package.json';
-import fs from 'fs-extra';
 import glob from 'glob';
 import { promisify } from 'util';
 

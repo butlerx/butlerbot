@@ -1,4 +1,4 @@
-import cmt from 'butlerbot-redbrickCommittee';
+import cmt from 'butlerbot-redbrick-committee';
 
 export default cmt({
   production: {
